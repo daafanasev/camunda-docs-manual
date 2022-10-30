@@ -31,10 +31,9 @@ The flow of executing external tasks can be conceptually separated into three st
 
 When the process engine encounters a service task that is configured to be externally handled, it creates an external task instance and adds it to a list of external tasks (step 1). The task instance receives a *topic* that identifies the nature of the work to be performed. At a time in the future, an external worker may fetch and lock tasks for a specific set of topics (step 2). To prevent one task being fetched by multiple workers at the same time, a task has a timestamp-based lock that is set when the task is acquired. Only when the lock expires, another worker can fetch the task again. When an external worker has completed the desired work, it can signal the process engine to continue process execution after the service task (step 3).
 
-{{< note class="info" title="The User Task Analogy" >}}
+**The User Task Analogy**
 External tasks are conceptually very similar to user tasks. When first trying to understand the external task pattern, it can be helpful to think about it in analogy to user tasks:
 User tasks are created by the process engine and added to a task list. The process engine then waits for a human user to query the list, claim a task and then complete it. External tasks are similar: An external task is created and then added to a topic. An external application then queries the topic and locks the task. After the task is locked, the application can work on it and complete it.
-{{< /note >}}
 
 The essence of this pattern is that the entities performing the actual work are independent of the process engine and receive work items by polling the process engine's API. This has the following benefits:
 
@@ -59,18 +58,19 @@ In the BPMN XML of a process definition, a service task can be declared to be pe
   camunda:topic="AddressValidation" />
 ```
 
-It is possible to define the topic name by using an [expression]({{< ref "/user-guide/process-engine/expression-language.md" >}}) instead of a constant value.
+It is possible to define the topic name by using an [expression](../../user-guide/process-engine/expression-language.md) instead of a constant value.
 
-In addition, other *service-task-like* elements such as send tasks, business rule tasks, and throwing message events can be implemented with the external task pattern. See the [BPMN 2.0 implementation reference]({{< ref "/reference/bpmn20/_index.md" >}}) for details.
+In addition, other *service-task-like* elements such as send tasks, business rule tasks, and throwing message events can be implemented with the external task pattern. 
+See the [BPMN 2.0 implementation reference](../../reference/bpmn20/_index.md) for details.
 
 ### Error Event Definitions
 
-External tasks allow for the definition of error events that throw a specified BPMN error. This can be done by adding a [camunda:errorEventDefinition]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}) extension element to the task's definition. Compared to the `bpmn:errorEventDefinition`, the `camunda:errorEventDefinition` elements accept an additional `expression` attribute which supports any JUEL expression. Within the expression, you have access to the {{< javadocref page="org/camunda/bpm/engine/externaltask/ExternalTask.html" text="ExternalTaskEntity" >}} object via the key `externalTask` which provides getter methods
+External tasks allow for the definition of error events that throw a specified BPMN error. This can be done by adding a [camunda:errorEventDefinition](../../reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition) extension element to the task's definition. Compared to the `bpmn:errorEventDefinition`, the `camunda:errorEventDefinition` elements accept an additional `expression` attribute which supports any JUEL expression. Within the expression, you have access to the {{< javadocref page="org/camunda/bpm/engine/externaltask/ExternalTask.html" text="ExternalTaskEntity object via the key `externalTask` which provides getter methods
 for `errorMessage`, `errorDetails`, `workerId`, `retries` and more. 
 
 The expression is evaluated on invocations of `ExternalTaskService#complete` and
 `ExternalTaskService#handleFailure`. If the expression evaluates to `true`, the actual method execution is canceled and replaced by throwing the respective BPMN error. This error can be caught by an
-[Error Boundary Event]({{< ref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}). This implies that the error event definition can be used in success and failure scenarios alike - even if the task was completed successfully, you can still decide to throw a BPMN error.
+[Error Boundary Event](../../reference/bpmn20/events/error-events.md#error-boundary-event). This implies that the error event definition can be used in success and failure scenarios alike - even if the task was completed successfully, you can still decide to throw a BPMN error.
 
 ```xml
 <serviceTask id="validateAddressTask"
@@ -89,7 +89,7 @@ Further information on the functionality of error event definitions on external 
 
 ## Rest API
 
-See the [REST API documentation]({{< ref "/reference/rest/external-task/_index.md" >}}) for how the API operations can be accessed via HTTP.
+See the [REST API documentation](../../reference/rest/external-task/_index.md) for how the API operations can be accessed via HTTP.
 
 ### Long Polling to Fetch and Lock External Tasks
 
@@ -97,7 +97,7 @@ Ordinary HTTP requests are immediately answered by the server, regardless of whe
 is available or not. This inevitably leads to a situation where the client has to perform multiple recurring requests until 
 the information is available (polling). This approach can obviously be expensive in terms of resources.
 
-{{< img src="../img/external-task-long-polling.png" alt="Long polling to fetch and lock external tasks" >}}
+![img](/img/external-task-long-polling.png)
 
 With the aid of long polling, a request is suspended by the server if no external tasks are available. As soon as new 
 external tasks occur, the request is reactivated and the response is performed. The suspension is limited to a 
@@ -106,7 +106,7 @@ configurable period of time (timeout).
 Long polling significantly reduces the number of requests and enables using resources more efficiently on both 
 the server and the client side.
 
-Please also see the [REST API documentation]({{< ref "/reference/rest/external-task/fetch.md" >}}).
+Please also see the [REST API documentation](../../reference/rest/external-task/fetch.md).
 
 #### Unique Worker Request
 By default, multiple workers can use the same `workerId`. In order to ensure `workerId` uniqueness on server-side, the 
@@ -205,7 +205,7 @@ for (LockedExternalTask task : tasks) {
 }
 ```
 
-The resulting tasks then contain the current values of the requested variable. Note that the variable values are the values that are visible in the scope hierarchy from the external task's execution. See the chapter on [Variable Scopes and Variable Visibility]({{< ref "/user-guide/process-engine/variables.md#variable-scopes-and-variable-visibility" >}}) for details.
+The resulting tasks then contain the current values of the requested variable. Note that the variable values are the values that are visible in the scope hierarchy from the external task's execution. See the chapter on [Variable Scopes and Variable Visibility](../../user-guide/process-engine/variables.md#variable-scopes-and-variable-visibility) for details.
 
 In order to fetch all variables, call to `variables()` method should be omitted 
 
@@ -244,7 +244,7 @@ for (LockedExternalTask task : tasks) {
 
 ### External Task Prioritization
 External task prioritization is similar to job prioritization. The same problem exists with starvation which should be considered. 
-For further details, see the section on [Job Prioritization]({{< ref "/user-guide/process-engine/the-job-executor.md#the-job-priority" >}}).
+For further details, see the section on [Job Prioritization](../../user-guide/process-engine/the-job-executor.md#the-job-priority).
 
 ### Configure the Process Engine for External Task Priorities
 
@@ -252,7 +252,7 @@ This section explains how to enable and disable external task priorities in the 
 
 `producePrioritizedExternalTasks`: Controls whether the process engine assigns priorities to external tasks. The default value is `true`.
 If priorities are not needed, the process engine configuration property `producePrioritizedExternalTasks` can be set to `false`. In this case, all external tasks receive a priority of 0.
-For details on how to specify external task priorities and how the process engine assigns them, see the following section on [Specifying External Task Priorities]({{< relref "#specify-external-task-priorities" >}}).
+For details on how to specify external task priorities and how the process engine assigns them, see the following section on [Specifying External Task Priorities]({{< relref "#specify-external-task-priorities).
 
 ### Specify External Task Priorities
 
@@ -262,7 +262,7 @@ External task priorities can be specified in the BPMN model as well as overridde
 
 External task priorities can be assigned at the process or the activity level. To achieve this, the Camunda extension attribute `camunda:taskPriority` can be used.
 
-For specifying the priority, both constant values and [expressions]({{< ref "/user-guide/process-engine/expression-language.md" >}}) are supported. 
+For specifying the priority, both constant values and [expressions](../../user-guide/process-engine/expression-language.md) are supported. 
 When using a constant value, the same priority is assigned to all instances of the process or activity. 
 Expressions, on the other hand, allow assigning a different priority to each instance of the process or activity. Expression must evaluate to a number in the Java `long` range.
 The concrete value can be the result of a complex calculation and be based on user-provided data (resulting from a task form or other sources).
@@ -347,9 +347,9 @@ for (LockedExternalTask task : tasks) {
 
 After fetching and performing the requested work, a worker can complete an external task by calling the `ExternalTaskService#complete` method. A worker can only complete tasks that it fetched and locked before. If the task has been locked by a different worker in the meantime, an exception is raised.
 
-{{< note class="info" title="Error Events" >}}
-External tasks can include [error event definitions]({{< ref "/user-guide/process-engine/external-tasks.md#error-event-definitions" >}}) that can cancel the execution of `#complete` in case the error event's expression evaluates to `true`. In case an error event's expression evaluation raises an exception, the call to `#complete` will fail with that same exception.
-{{< /note >}}
+### Error Events
+External tasks can include [error event definitions](../../user-guide/process-engine/external-tasks.md#error-event-definitions) that can cancel the execution of `#complete` in case the error event's expression evaluates to `true`. In case an error event's expression evaluation raises an exception, the call to `#complete` will fail with that same exception.
+
 
 ### Extending of Locks on External Tasks
 
@@ -387,13 +387,13 @@ A failure is reported for the locked task such that it can be retried once more 
 
 At the moment when error details are required, they are queried from the service using separate method. 
 
-{{< note class="info" title="Error Events" >}}
-External tasks can include [error event definitions]({{< ref "/user-guide/process-engine/external-tasks.md#error-event-definitions" >}}) that can cancel the execution of `#handleFailure` in case the error event's expression evaluates to `true`. In case an error event's expression evaluation raises an exception, this expression will be considered as evaluating to `false`.
-{{< /note >}}
+### Error Events
+External tasks can include [error event definitions](../../user-guide/process-engine/external-tasks.md#error-event-definitions) that can cancel the execution of `#handleFailure` in case the error event's expression evaluates to `true`. In case an error event's expression evaluation raises an exception, this expression will be considered as evaluating to `false`.
+
 
 ### Reporting BPMN Error
 
-See the documentation for [Error Boundary Events]({{< ref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}).
+See the documentation for [Error Boundary Events](../../reference/bpmn20/events/error-events.md#error-boundary-event).
 
 For some reason a business error can appear during execution. In this case, the worker can report a BPMN error to the process engine by using `ExternalTaskService#handleBpmnError`. 
 Like `#complete` or `#handleFailure`, it can only be invoked by the worker possessing the most recent lock for a task. 
