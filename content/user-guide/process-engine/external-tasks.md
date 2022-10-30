@@ -97,7 +97,7 @@ Ordinary HTTP requests are immediately answered by the server, regardless of whe
 is available or not. This inevitably leads to a situation where the client has to perform multiple recurring requests until 
 the information is available (polling). This approach can obviously be expensive in terms of resources.
 
-![img](/img/external-task-long-polling.png)
+![img](img/external-task-long-polling.png)
 
 With the aid of long polling, a request is suspended by the server if no external tasks are available. As soon as new 
 external tasks occur, the request is reactivated and the response is performed. The suspension is limited to a 
