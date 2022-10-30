@@ -13,7 +13,7 @@ menu:
 ---
 
 Validates a migration plan statically without executing it. This
-corresponds to the [creation time validation]({{< ref "/user-guide/process-engine/process-instance-migration.md#creation-time-validation" >}}) described in the user
+corresponds to the [creation time validation](../../user-guide/process-engine/process-instance-migration.md#creation-time-validation) described in the user
 guide.
 
 
@@ -208,7 +208,7 @@ The properties of a variable report are as follows:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>The instance could not be created due to an invalid variable value, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>The instance could not be created due to an invalid variable value, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
   <tr>
     <td>400</td>
@@ -216,7 +216,7 @@ The properties of a variable report are as follows:
     <td>
       In case additional parameters of the request are unexpected, an exception
       of type <code>InvalidRequestException</code> is returned. See the <a
-      href="{{< ref "/reference/rest/overview/_index.md#error-handling">}}">
+      href="../../reference/rest/overview/_index.md#error-handling">}}">
       Introduction</a> for the error response format.
     </td>
   </tr>

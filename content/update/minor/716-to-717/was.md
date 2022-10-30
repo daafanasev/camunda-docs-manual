@@ -112,5 +112,5 @@ The following steps are required to update the Camunda web applications Cockpit,
 1. Deploy the web application `$WAS_DISTRIBUTION/webapps/camunda-webapp-ee-was-$PLATFORM_VERSION.war` to your IBM WebSphere instance.
 2. Associate the web application with the `Camunda` shared library.
 
-[configuration-location]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
-[update-guide]: {{< ref "/update/minor/716-to-717/_index.md" >}}
+[configuration-location]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
+[update-guide]: ../../update/minor/716-to-717/_index.md" >}}

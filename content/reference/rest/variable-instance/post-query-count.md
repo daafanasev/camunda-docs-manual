@@ -14,7 +14,7 @@ menu:
 
 
 Query for the number of variable instances that fulfill given parameters. This method takes the same message body as the 
-[Get Variable Instances (POST)]({{< ref "/reference/rest/variable-instance/post-query.md" >}}) method and therefore it is slightly more powerful than the [Get Variable Instance Count]({{< ref "/reference/rest/variable-instance/get-query-count.md" >}}) method.
+[Get Variable Instances (POST)](../../reference/rest/variable-instance/post-query.md) method and therefore it is slightly more powerful than the [Get Variable Instance Count](../../reference/rest/variable-instance/get-query-count.md) method.
 
 # Method
 
@@ -144,7 +144,7 @@ A JSON object that contains the count as the only property.
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid, for example if an invalid operator for variable comparison is used. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid, for example if an invalid operator for variable comparison is used. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

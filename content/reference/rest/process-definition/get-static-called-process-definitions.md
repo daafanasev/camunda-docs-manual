@@ -113,7 +113,7 @@ Each called process definition object has the following properties:
   <tr>
     <td>historyTimeToLive</td>
     <td>Number</td>
-    <td>History time to live value of the process definition. Is used within <a href="{{< ref "/user-guide/process-engine/history.md#history-cleanup">}}">History cleanup</a>.</td>
+    <td>History time to live value of the process definition. Is used within <a href="../../user-guide/process-engine/history.md#history-cleanup">}}">History cleanup</a>.</td>
   </tr>
   <tr>
     <td>startableInTasklist</td>
@@ -151,7 +151,7 @@ Each called process definition object has the following properties:
     <td>404</td>
     <td>application/json</td>
     <td>Process definition with given key does not exist. 
-        See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+        See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

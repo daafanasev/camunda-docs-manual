@@ -72,11 +72,11 @@ class MyListener {
 }
 ```
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   If the method, annotated with `EventListener` returns a non-`void` result, Spring will
   throw it as a new event on Spring event bus. This allows to build event handler chains
   for processing. For more information on eventing, please consult the Spring manual.
-{{< /note >}}
+
 
 # Specifying event type
 

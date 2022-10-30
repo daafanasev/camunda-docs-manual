@@ -20,14 +20,14 @@ lightweight wrapper objects.
 Spin can be used in any Java-based application by adding the following maven
 dependency to your `pom.xml` file:
 
-{{< note title="Camunda BOM" >}}
+### Camunda BOM" >}}
   If you use Spin in combination with the Camunda process engine,
   please consult the [process engine user guide on Spin integration](/user-guide/data-formats/configuring-spin-integration/)
   on how to properly integrate Spin with the engine.
   Please import the <a class="alert-link" href="/get-started/apache-maven/">
   Camunda BOM</a> to ensure that you use the Camunda Spin version matching your process engine
   version.
-{{< /note >}}
+
 
 ```xml
 <dependencyManagement>

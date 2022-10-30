@@ -23,7 +23,7 @@ The update procedure takes the following steps:
 
 In each of the following steps, the identifier `$*_VERSION` refers to the current versions and the new versions of the artifacts.
 
-{{< note title="Updated Tomcat Version" class="info" >}}
+### Updated Tomcat Version
 The pre-built Camunda 7.8 distribution ships with Tomcat 8.0.47, whereas 7.7 comes with Tomcat 8.0.24. Camunda 7.8 is 
 supported on all Tomcat 6/7/8 versions such that a Tomcat update is not required when migrating from 7.7 to 7.8.
 
@@ -32,7 +32,7 @@ Should you want to update Tomcat along with Camunda, perform the following steps
 * Copy all your Camunda-related libraries from `$TOMCAT_HOME/lib` to the new Tomcat server's `lib`-directory.
 * Apply all modifications to Tomcat configuration files such as `server.xml`/`bpm-platform.xml` to the files located in the new Tomcat server's directory.
 * Undeploy all process applications and copy them to the new Tomcat server's directory for redeployment.
-{{< /note >}}
+
 
 # 1. Update the Camunda Platform Core Libraries
 
@@ -100,6 +100,6 @@ The following steps are required to update the Camunda web applications Cockpit,
 2. Download the Camunda web application archive from our [Maven Nexus Server][nexus]. Alternatively, switch to the private repository for the enterprise version (credentials from license required). Choose the correct version named `$PLATFORM_VERSION/camunda-webapp-tomcat-$PLATFORM_VERSION.war`.
 3. Deploy the web application archive to your Tomcat instance.
 
-[update-guide]: {{< ref "/update/minor/77-to-78/_index.md" >}}
+[update-guide]: ../../update/minor/77-to-78/_index.md" >}}
 [nexus]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/
 [tomcat-distribution]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/tomcat/camunda-bpm-tomcat/

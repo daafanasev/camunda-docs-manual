@@ -26,14 +26,14 @@ This documentation covers everything integration-specific about the **FEEL Scala
 Camunda DMN Engine. By default, Camunda Platform relies on the [FEEL Scala Engine][] (opens external link) 
 in version `1.11.0`. 
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 If you come from a Camunda Platform version <= 7.12.x and already use FEEL, 
 please read the documentation about the 
-<a href="{{< ref "/user-guide/dmn-engine/feel/legacy-behavior.md" >}}">FEEL Engine Legacy Behavior</a>.
-{{< /note >}}
+<a href="../../user-guide/dmn-engine/feel/legacy-behavior.md" >}}">FEEL Engine Legacy Behavior</a>.
+
 
 [FEEL Scala Engine]: https://github.com/camunda/feel-scala
-[input entries]: {{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
-[Input Expressions]: {{< ref "/reference/dmn/decision-table/input.md#input-expression" >}}
-[Output Entries]: {{< ref "/reference/dmn/decision-table/rule.md#output-entry-conclusion" >}}
-[Literal Expressions]: {{< ref "/reference/dmn/decision-literal-expression/_index.md" >}}
+[input entries]: ../../reference/dmn/decision-table/rule.md#input-entry-condition" >}}
+[Input Expressions]: ../../reference/dmn/decision-table/input.md#input-expression" >}}
+[Output Entries]: ../../reference/dmn/decision-table/rule.md#output-entry-conclusion" >}}
+[Literal Expressions]: ../../reference/dmn/decision-literal-expression/_index.md" >}}

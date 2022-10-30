@@ -28,11 +28,11 @@ The update procedure takes the following steps:
 
 Whenever the instructions are to *replace* a module, make sure to delete the previous version of the module first to avoid orphan jars.
 
-{{< note title="Updated Wildfly Version" class="info" >}}
+### Updated Wildfly Version
 The pre-built Camunda 7.5 distribution ships with Wildfly 8 and in addition with Wildfly 10, whereas 7.4 comes just with Wildfly 8. In particular, Camunda 7.5 is supported on Wildfly 8.2 and 10.1 such that a Wildfly update is not required when migrating from 7.4 to 7.5.
 
 See the [Wildfly migration guide](https://docs.jboss.org/author/display/CMTOOL/WildFly+8+to+10) for any Wildfly-specific migration notes and procedures.
-{{< /note >}}
+
 
 # 1. Update the Camunda Platform Modules
 
@@ -230,7 +230,7 @@ This section describes changes in the internal API of the engine. If you have im
 
 ## Incident Handler
 
-The interface of an [Incident Handler]({{< ref "/user-guide/process-engine/incidents.md" >}}) has changed. Instead of a long parameter list, the methods pass a context object which bundles all required information, like process definition id, execution id and tenant id. Since the existing methods have been overridden, custom implementations of an incident handler have to be adjusted.
+The interface of an [Incident Handler](../../user-guide/process-engine/incidents.md) has changed. Instead of a long parameter list, the methods pass a context object which bundles all required information, like process definition id, execution id and tenant id. Since the existing methods have been overridden, custom implementations of an incident handler have to be adjusted.
 
 ## Correlation Handler
 
@@ -262,10 +262,10 @@ The following steps are required to update the Camunda web applications Cockpit,
 3. Deploy the web application archive to your JBoss/Wildfly instance.
 
 
-[jboss-threads-to-camunda-mapping-table]: {{< ref "/update/minor/74-to-75/jboss.md#jboss-threads-to-camunda-subsystem-mapping-table" >}}
-[update-guide]: {{< ref "/update/minor/74-to-75/_index.md" >}}
+[jboss-threads-to-camunda-mapping-table]: ../../update/minor/74-to-75/jboss.md#jboss-threads-to-camunda-subsystem-mapping-table" >}}
+[update-guide]: ../../update/minor/74-to-75/_index.md" >}}
 [jboss-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/jboss/camunda-bpm-jboss/
 [wildfly-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/wildfly/camunda-bpm-wildfly/
 [engine-rest]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/
 [webapp-jboss]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-jboss/
-[jboss-container-integration]: {{< ref "/user-guide/runtime-container-integration/jboss.md" >}}
+[jboss-container-integration]: ../../user-guide/runtime-container-integration/jboss.md" >}}

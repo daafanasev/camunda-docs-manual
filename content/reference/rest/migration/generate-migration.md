@@ -136,13 +136,13 @@ Its properties are as follows:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Invalid variable value, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Invalid variable value, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
   <tr>
     <td>400</td>
     <td>application/json</td>
     <td>
-      The requested migration was invalid. See <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a>
+      The requested migration was invalid. See <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a>
       for the error response format.
     </td>
   </tr>

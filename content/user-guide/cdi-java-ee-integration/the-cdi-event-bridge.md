@@ -23,9 +23,9 @@ The process engine can be hooked-up to the CDI event bus. We call this the "CDI 
 
 Now the engine is configured for publishing events using the CDI event bus.
 
-{{< note title="" class="info" >}}
-  The above configuration can be used in combination with an embedded process engine. If you want to use this feature in combination with the shared process engine in a multi application environment, you need to add the CdiEventListener as process application event listener. [See next section]({{< relref "#the-cdi-event-bridge-in-a-process-application" >}}).
-{{< /note >}}
+### Заметка class="info" >}}
+  The above configuration can be used in combination with an embedded process engine. If you want to use this feature in combination with the shared process engine in a multi application environment, you need to add the CdiEventListener as process application event listener. [See next section]({{< relref "#the-cdi-event-bridge-in-a-process-application).
+
 
 The following gives an overview of how process events can be received in CDI beans. In CDI, we can declaratively specify event observers using the @Observes-annotation. Event notification is type-safe. The type of process events is org.camunda.bpm.engine.cdi.BusinessProcessEvent. The following is an example of a simple event observer method:
 
@@ -120,9 +120,9 @@ for modifying variables.
 
 # The CDI Event Bridge in a Process Application
 
-To use the CDI Event Bridge in combination with a multi application deployment and the shared process engine, the {{< javadocref page="org/camunda/bpm/engine/cdi/impl/event/CdiEventListener" text="CdiEventListener" >}} needs to be added as a [Process Application Execution Event Listener]({{< ref "/user-guide/process-applications/process-application-event-listeners.md" >}}).
+To use the CDI Event Bridge in combination with a multi application deployment and the shared process engine, the {{< javadocref page="org/camunda/bpm/engine/cdi/impl/event/CdiEventListener" text="CdiEventListener" >}} needs to be added as a [Process Application Execution Event Listener](../../user-guide/process-applications/process-application-event-listeners.md).
 
-Example configuration for [Servlet Process Application]({{< ref "/user-guide/process-applications/the-process-application-class.md#the-servletprocessapplication" >}}):
+Example configuration for [Servlet Process Application](../../user-guide/process-applications/the-process-application-class.md#the-servletprocessapplication):
 
 ```java
 @ProcessApplication
@@ -140,7 +140,7 @@ public class InvoiceProcessApplication extends ServletProcessApplication {
 }
 ```
 
-Example configuration for [Ejb Process Application]({{< ref "/user-guide/process-applications/the-process-application-class.md#the-ejbprocessapplication" >}}):
+Example configuration for [Ejb Process Application](../../user-guide/process-applications/the-process-application-class.md#the-ejbprocessapplication):
 
 ```java
 @Singleton

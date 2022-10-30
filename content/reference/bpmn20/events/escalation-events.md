@@ -63,10 +63,10 @@ Two optional attributes can be added to the escalation start event, <code>escala
 * In case an `escalationRef` is set, the event sub-process is only triggered by escalation events with the defined escalation code.
 * If `escalationCodeVariable` is set, the escalation code of the occurred escalation event can be retrieved using this variable.
 
-{{< note title="Current Limitations" class="warning" >}}
+### Current Limitations
 * The escalation code of the start event must be unique across the event sub-processes of the same scope.
 * If a start event has no `escalationRef` or `escalationCode` of referenced escalation then another event sub-process with an escalation start event is not supported.
-{{< /note >}}
+
 
 ### Camunda Extensions
 
@@ -76,7 +76,7 @@ The following extensions are supported for `escalationEventDefinition`.
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#escalationcodevariable" >}}">camunda:escalationCodeVariable</a>
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#escalationcodevariable" >}}">camunda:escalationCodeVariable</a>
     </td>
   </tr>
   <tr>
@@ -101,7 +101,7 @@ An intermediate catching escalation event on the boundary of an activity, or esc
 
 An escalation boundary event can only attached on an embedded sub-process or a call activity, since an escalation can only be thrown by an escalation intermediate throw event or an escalation end event. When the boundary event is triggered by an escalation event from a call activity, then the defined output variables of the call activity are passed to the scope of the boundary event.
 
-Two optional attributes can be added to the escalation boundary event, <code>escalationRef</code> and <code>escalationCodeVariable</code>, see [Escalation Start Event]({{< relref "#escalation-start-event" >}}).
+Two optional attributes can be added to the escalation boundary event, <code>escalationRef</code> and <code>escalationCodeVariable</code>, see [Escalation Start Event]({{< relref "#escalation-start-event).
 
 ```xml
 <boundaryEvent id="catchEscalation" name="late shipment" attachedToRef="productProcurement">
@@ -109,10 +109,10 @@ Two optional attributes can be added to the escalation boundary event, <code>esc
 </boundaryEvent>
 ```
 
-{{< note title="Current Limitations" class="warning" >}}
+### Current Limitations
 * The escalation code of the boundary event must be unique across the boundary events of the attached activity.
 * If a boundary event has no `escalationRef` or `escalationCode` of referenced escalation then another escalation boundary event is not supported.
-{{< /note >}}
+
 
 ### Camunda Extensions
 
@@ -122,7 +122,7 @@ The following extensions are supported for `escalationEventDefinition`.
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#escalationcodevariable" >}}">camunda:escalationCodeVariable</a>
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#escalationcodevariable" >}}">camunda:escalationCodeVariable</a>
     </td>
   </tr>
   <tr>
@@ -158,7 +158,7 @@ Like an error event, an escalation event is propagated to upper scopes (e.g., fr
 
 {{< bpmn-symbol type="escalation-end-event" >}}
 
-When process execution arrives at an escalation end event, the current path of execution is ended and a named escalation is thrown. It has the same behavior as an [escalation intermediate throw event]({{< relref "#escalation-intermediate-throw-event" >}}).
+When process execution arrives at an escalation end event, the current path of execution is ended and a named escalation is thrown. It has the same behavior as an [escalation intermediate throw event]({{< relref "#escalation-intermediate-throw-event).
 
 <div data-bpmn-diagram="../bpmn/escalation-end-event"></div>
 

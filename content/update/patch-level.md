@@ -20,7 +20,7 @@ Please note that Patch Level Updates are only provided to enterprise customers, 
 
 # Database Patches
 
-Between patch levels, the structure of the database schema is not changed. The database structure of all patch releases is backward compatible with the corresponding minor version. Our [database schema update guide]({{< ref "/installation/database-schema.md#patch-level-update" >}}) provides details on the update procedure as well as available database patches.
+Between patch levels, the structure of the database schema is not changed. The database structure of all patch releases is backward compatible with the corresponding minor version. Our [database schema update guide](../../installation/database-schema.md#patch-level-update) provides details on the update procedure as well as available database patches.
 
 # Special Considerations
 
@@ -34,7 +34,7 @@ Reason: Passing EL expressions in a task query enables execution of arbitrary co
 
 The process engine no longer evaluates these expressions by default and throws an exception instead. The previous behavior can be re-enabled by setting the process configuration `enableExpressionsInAdhocQueries` to true.
 
-See the user guide on [security considerations for custom code]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for details.
+See the user guide on [security considerations for custom code](../../user-guide/process-engine/securing-custom-code.md) for details.
 
 
 ## 7.6.10 to 7.6.11 / 7.7.5 to 7.7.6 / 7.8.0 to 7.8.1
@@ -43,7 +43,7 @@ See the user guide on [security considerations for custom code]({{< ref "/user-g
 
 You can now configure, if you forbid the usage of Java serialization format, when passing object variables in their Java serialized representation.
 
-The new [configuration parameter `javaSerializationFormatEnabled`]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) 
+The new [configuration parameter `javaSerializationFormatEnabled`](../../reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled) 
 defaults to `true`, but can be configured to `false` in Camunda engine configuration.
 
 Following use cases are affected:
@@ -74,7 +74,7 @@ runtimeService.setVariable(processInstanceId, "varName",
           .create());
 ```
 
-You can disable Java serialization usage with the help of [this configuration parameter]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}):
+You can disable Java serialization usage with the help of [this configuration parameter](../../reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled):
 
 ```xml
 <property name="javaSerializationFormatEnabled">false</property>
@@ -99,7 +99,7 @@ This feature can be configured in two ways:
 1. The default timer period can be changed to 'this week', 'this month' or 'complete'
 2. The manual selection of the time period within cockpit can be disabled.   
 
-These attributes can be modified in the [configuration file]({{< ref "/webapps/cockpit/extend/configuration.md#historic-activity-instance-metrics" >}})
+These attributes can be modified in the [configuration file](../../webapps/cockpit/extend/configuration.md#historic-activity-instance-metrics)
 
 ## 7.8.6 to 7.8.7
 
@@ -135,8 +135,8 @@ Before you upgrade to a Camunda Platform Runtime version >= 7.14.0-alpha1, 7.13.
 
 Camunda cannot be held responsible in the event of unauthorized installation or activation of this function.
 
-[engine-config-initializeTelemetry]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
-[telemetry]: {{< ref "/introduction/telemetry.md" >}}
+[engine-config-initializeTelemetry]: ../../reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
+[telemetry]: ../../introduction/telemetry.md" >}}
 
 ### Custom REST API
 
@@ -167,7 +167,7 @@ The following modules are dependent on the newly introduced `feel-engine` module
 * `camunda-engine-plugin-spin`
 * `camunda-engine-feel-scala`
 
-[FEEL Engine]: {{<ref "/user-guide/dmn-engine/feel/_index.md" >}}
+[FEEL Engine]: ../../user-guide/dmn-engine/feel/_index.md" >}}
 
 ## 7.14.3 to 7.14.4 / 7.13.9 to 7.13.10 / 7.12.15 to 7.12.16
 
@@ -204,7 +204,7 @@ file located under `/camunda/standalone/configuration/` from `com.mysql.cj.jdbc.
 ##### 1) Milliseconds Precision for Date/Time values
 
 The new version of the Driver changes how a date/time value is handled. Please make sure to configure 
-the Driver as described in [MySQL Database Configuration]({{< ref "/user-guide/process-engine/database/mysql-configuration.md" >}})
+the Driver as described in [MySQL Database Configuration](../../user-guide/process-engine/database/mysql-configuration.md)
 to avoid breaking behavior.
 
 ##### 2) Changed Time Zone Handling
@@ -219,12 +219,12 @@ are returned correctly after the migration and date values are stored correctly 
 You can achieve this by specifying the correct time zone via the property [`serverTimeZone`](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-connp-props-datetime-types-processing.html#cj-conn-prop_serverTimezone) in your JDBC connection URL.\
 For instance, if your process engine operates in CET but your MySQL Server does not, set the property to `serverTimeZone=CET`.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 Changing the time zone of the MySQL Server to the one the process engine operates in can have unwanted side-effects 
 to date values that are stored in columns of type `TIMESTAMP`: MySQL converts `TIMESTAMP` values from the server time zone 
 to UTC for storage, and back from UTC to the current time zone for retrieval. Read more about it in the 
 [MySQL Docs](https://dev.mysql.com/doc/refman/5.6/en/datetime.html).
-{{< /note >}}
+
 
 #### Further Reading
 
@@ -307,7 +307,7 @@ parser against [XXE attacks](https://en.wikipedia.org/wiki/XML_external_entity_a
 
 You can restore the old behavior by passing the appropriate [configuration properties to the Spin process engine plugin][spin-config].
 
-[spin-config]: {{< ref "/user-guide/data-formats/configuring-spin-integration.md#configuration-properties-of-the-spin-plugin" >}}
+[spin-config]: ../../user-guide/data-formats/configuring-spin-integration.md#configuration-properties-of-the-spin-plugin" >}}
 
 ## 7.16.5 to 7.16.6 / 7.15.11 to 7.15.12 / 7.14.17 to 7.14.18
 
@@ -357,16 +357,16 @@ If you have extended the Camunda docker images yourself, please read the release
 
 ### XLTS for AngularJS
 
-These patches replace the AngularJS libraries with XLTS for AngularJS. Where AngularJS was licensed entirely under the MIT license, XLTS for AngularJS licenses additional parts under the XLTS for AngularJS – EULA. By downloading and using Camunda with XLTS for AngularJS, you agree to the terms of the XLTS for AngularJS – EULA. Please see our [third-Party libraries documentation]({{< ref "/introduction/third-party-libraries/_index.md#xlts-for-angularjs" >}}) for details and the terms of the EULA.
+These patches replace the AngularJS libraries with XLTS for AngularJS. Where AngularJS was licensed entirely under the MIT license, XLTS for AngularJS licenses additional parts under the XLTS for AngularJS – EULA. By downloading and using Camunda with XLTS for AngularJS, you agree to the terms of the XLTS for AngularJS – EULA. Please see our [third-Party libraries documentation](../../introduction/third-party-libraries/_index.md#xlts-for-angularjs) for details and the terms of the EULA.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
 
 Please note that the following procedure may differ for cluster scenarios. Contact our [support team](https://app.camunda.com/jira/browse/SUPPORT) if you need further assistance.
 
 * Shut down the server
-* Exchange Camunda Platform libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< ref "/installation/full/_index.md" >}}) for your server.
+* Exchange Camunda Platform libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide](../../installation/full/_index.md) for your server.
 * Restart the server
 
 # Application With Embedded Process Engine
@@ -379,7 +379,7 @@ In case you use an embedded process engine inside your Java Application, you nee
 
 # Standalone Webapplication Distribution
 
-In case you installed the [Standalone Webapplication Distribution]({{< ref "/introduction/downloading-camunda.md#download-the-runtime" >}}) you need to
+In case you installed the [Standalone Webapplication Distribution](../../introduction/downloading-camunda.md#download-the-runtime) you need to
 
 1. undeploy the previous version of the webapplication,
 2. deploy the new version of the webapplication.

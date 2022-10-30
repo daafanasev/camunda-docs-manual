@@ -11,7 +11,7 @@ menu:
     pre: "GET `/history/cleanup/jobs`"
 
 ---
-Finds history cleanup jobs (See [History cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}})).
+Finds history cleanup jobs (See [History cleanup](../../user-guide/process-engine/history.md#history-cleanup">}})).
 
 # Method
 
@@ -31,7 +31,7 @@ Not used
 # Result
 
 A list of JSON objects representing scheduled jobs.
-See [Get Job]({{<ref "/reference/rest/job/get.md#result" >}}) for the structure and example.
+See [Get Job](../../reference/rest/job/get.md#result) for the structure and example.
 
 # Response Codes
 

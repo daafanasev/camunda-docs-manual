@@ -40,7 +40,7 @@ Camunda cannot be held responsible in the event of unauthorized installation or 
 
 You can find more details on the telemetry topic in the [general introduction][telemetry].
 
-[engine-config-initializeTelemetry]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
+[engine-config-initializeTelemetry]: ../../reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
 
 
 # Database Updates
@@ -49,7 +49,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend executing these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.13_patch_?.sql`.
@@ -65,7 +65,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -78,10 +78,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.14 di
 
 Please choose the application server you are working with from the following list:
 
-* [JBoss AS/Wildfly]({{< ref "/update/minor/713-to-714/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/713-to-714/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/713-to-714/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/713-to-714/was.md" >}})
+* [JBoss AS/Wildfly](../../update/minor/713-to-714/jboss.md)
+* [Apache Tomcat](../../update/minor/713-to-714/tomcat.md)
+* [Oracle WebLogic](../../update/minor/713-to-714/wls.md)
+* [IBM WebSphere](../../update/minor/713-to-714/was.md)
 
 ## Custom Process Applications
 
@@ -102,7 +102,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -153,7 +153,7 @@ for this change of behavior.
 
 # New Engine Dependency - Connect
 
-Camunda Connect dependency has been added to the process engine (`camunda-engine`) artifact, allowing usage of simple [connectors]({{< ref "/user-guide/process-engine/connectors.md" >}}) in the context of the new [telemetry][] feature. And changes the status of the dependency from optional to required. See below the details:
+Camunda Connect dependency has been added to the process engine (`camunda-engine`) artifact, allowing usage of simple [connectors](../../user-guide/process-engine/connectors.md) in the context of the new [telemetry][] feature. And changes the status of the dependency from optional to required. See below the details:
 
 -- In a case of **Embedded engine** scenario (includes **Spring Boot Starter** setups), there are two new dependencies added to the `camunda-engine`:
 
@@ -180,7 +180,7 @@ Camunda Connect dependency has been added to the process engine (`camunda-engine
 
 -- In a case of **Shared engine** scenario, you will need to add the connect modules if they are not present yet to the setup. The respective update guides for the application servers contain the necessary steps to do this.
 
-In case you already have a [Connect]({{< ref "/reference/connect/_index.md#maven-coordinates" >}}) dependencies to some of your projects, please consider consolidating the version of them with one that comes as dependency with the engine. That will prevent inconsistencies on the system. Please note that the Connect process engine plugin is still an optional dependency.
+In case you already have a [Connect](../../reference/connect/_index.md#maven-coordinates) dependencies to some of your projects, please consider consolidating the version of them with one that comes as dependency with the engine. That will prevent inconsistencies on the system. Please note that the Connect process engine plugin is still an optional dependency.
 
 
 # Changes to the Cockpit Config File
@@ -236,17 +236,17 @@ Camunda directives, such as search widgets (`cam-widget-search`) or variable tab
 <!-- If you used Angular services -->
 As with directives, services you could inject into your AngularJS component are no longer available. Only the services included in documented in the [AngularJS documentation](https://docs.angularjs.org/api) are available by default. Services such as `camAPI` and `Uri` can no longer be injected. You can still make requests against the REST API using the [$http service](https://docs.angularjs.org/api/ng/service/$http) and the API Urls that get passed into the render function. 
 
-If you changed the CSRF-cookie name or use other HTTP-clients such as the `fetch` API, you'll also need to set the headers appropriately. The current CSRF token is always passed into the render function in the second argument as `api.CSRFToken`. The `api.engineApi` corresponds to the root of our [REST API](https://docs.camunda.org/manual/develop/reference/rest/). Check out the [documentation]({{< ref "/webapps/cockpit/extend/plugins.md#attributes-in-detail" >}}) for more details on the render function.
+If you changed the CSRF-cookie name or use other HTTP-clients such as the `fetch` API, you'll also need to set the headers appropriately. The current CSRF token is always passed into the render function in the second argument as `api.CSRFToken`. The `api.engineApi` corresponds to the root of our [REST API](https://docs.camunda.org/manual/develop/reference/rest/). Check out the [documentation](../../webapps/cockpit/extend/plugins.md#attributes-in-detail) for more details on the render function.
 
 ### Diagram Interaction
 <!-- If you used `DataDepend` for your diagram Interactions -->
-Previously, there was no documented way to create interactions with the diagram. We recommend to use 2 plugins to achieve diagram interaction - one [diagram overlay]({{< ref "/webapps/cockpit/extend/plugins.md#process-definition-diagram-overlay" >}}) to capture click events and highlight tasks and one [tab plugin]({{< ref "/webapps/cockpit/extend/plugins.md#process-definition-runtime-tab" >}}) which displays information related to the selection.
+Previously, there was no documented way to create interactions with the diagram. We recommend to use 2 plugins to achieve diagram interaction - one [diagram overlay](../../webapps/cockpit/extend/plugins.md#process-definition-diagram-overlay) to capture click events and highlight tasks and one [tab plugin](../../webapps/cockpit/extend/plugins.md#process-definition-runtime-tab) which displays information related to the selection.
 
 Diagram plugin points are available for all views with a BPMN viewer. We created an [example](https://github.com/camunda/camunda-bpm-examples/tree/7.14/cockpit/cockpit-diagram-interactions) to show you how the interaction can look like.
 
 ### New Routes
 <!-- If you used the `routeProvider` -->
-If you used the `routeProvider` to create new routes, you can simply use the new [`Route` plugin point]({{< ref "/webapps/cockpit/extend/plugins.md#route" >}}). The same principles for migrating plugins also apply to migrating routes.
+If you used the `routeProvider` to create new routes, you can simply use the new [`Route` plugin point](../../webapps/cockpit/extend/plugins.md#route). The same principles for migrating plugins also apply to migrating routes.
 
 # End of Spring 3 Support
 
@@ -268,8 +268,8 @@ In case the custom installation id property is not adjusted, the telemetry featu
 
 With the new [telemetry][] feature and on a strict opt-in basis, we are looking to collect environment and usage data to further improve the user experience for you. However, for certain scenarios it will be better to completely disable the telemetry functionality. One of those scenarios is testing, if that includes process engine usage. Therefore we highly recommend to disable the telemetry reporter to prevent sending any requests from your tests:
 
-* via XML-based configuration file: [example]({{<ref "/user-guide/testing/_index.md#disabling-telemetry">}})
-* via YAML-based configuration file in Spring Boot: [example]({{<ref "/user-guide/spring-boot-integration/develop-and-test.md#disabling-telemetry">}})
+* via XML-based configuration file: [example](../../user-guide/testing/_index.md#disabling-telemetry">}})
+* via YAML-based configuration file in Spring Boot: [example](../../user-guide/spring-boot-integration/develop-and-test.md#disabling-telemetry">}})
 * via Java:
 
 ```java
@@ -278,7 +278,7 @@ processEngineConfiguration.setTelemetryReporterActivate(false);
 processEngineConfiguration.buildProcessEngine();
 ```
 
-[telemetry]: {{< ref "/introduction/telemetry.md" >}}
+[telemetry]: ../../introduction/telemetry.md" >}}
 
 # PostgreSQL Support Clarification
 
@@ -295,4 +295,4 @@ Note that this adjustment doesn't change the supported versions of Amazon Aurora
 service built on top of PostgreSQL, and as such, needs to be tested for support separately from PostgreSQL.
 
 [postgresql-versioning]: https://www.postgresql.org/support/versioning/
-[supported-environments]: {{< ref "/introduction/supported-environments.md#supported-database-products" >}}
+[supported-environments]: ../../introduction/supported-environments.md#supported-database-products" >}}

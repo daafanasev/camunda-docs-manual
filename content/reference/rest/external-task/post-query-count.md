@@ -14,7 +14,7 @@ menu:
 
 
 Queries for the number of external tasks that fulfill given parameters. This method takes the same message body as the 
-[Get External Tasks (POST)]({{< ref "/reference/rest/external-task/post-query.md" >}}) method.
+[Get External Tasks (POST)](../../reference/rest/external-task/post-query.md) method.
 
 
 # Method
@@ -115,7 +115,7 @@ A JSON object with the following properties:
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 # Result
 
@@ -151,7 +151,7 @@ A JSON object that contains the count as the only property.
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

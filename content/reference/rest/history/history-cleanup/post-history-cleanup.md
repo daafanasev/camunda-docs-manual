@@ -12,7 +12,7 @@ menu:
 
 ---
 
-Schedules asynchronous history cleanup (See [History cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}})).
+Schedules asynchronous history cleanup (See [History cleanup](../../user-guide/process-engine/history.md#history-cleanup">}})).
 
 
 # Method
@@ -42,15 +42,15 @@ Not used
 
 # Result
 
-{{< note title="Result is not reliable any more" class="warning" >}}
+### Result is not reliable any more
   This endpoint will return at most a single history cleanup job. Since version `7.9.0` it is possible 
-  to configure multiple [parallel history cleanup jobs]({{<ref "/user-guide/process-engine/history.md#parallel-execution" >}})
-  Use [`GET /history/cleanup/jobs`]({{<ref "/reference/rest/history/history-cleanup/get-history-cleanup-jobs.md" >}}) 
+  to configure multiple [parallel history cleanup jobs](../../user-guide/process-engine/history.md#parallel-execution)
+  Use [`GET /history/cleanup/jobs`](../../reference/rest/history/history-cleanup/get-history-cleanup-jobs.md) 
   to find all the available history cleanup jobs.
 {{</note>}}
 
 A JSON object representing scheduled job.
-See [Get Job]({{<ref "/reference/rest/job/get.md#result" >}}) for the structure and example.
+See [Get Job](../../reference/rest/job/get.md#result) for the structure and example.
 
 # Response Codes
 
@@ -70,7 +70,7 @@ See [Get Job]({{<ref "/reference/rest/job/get.md#result" >}}) for the structure 
     <td>application/json</td>
     <td>
       Returned if some of the query parameters are invalid or the engine does not participate in history cleanup.
-      See <a href="{{<ref "/user-guide/process-engine/history.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>.
+      See <a href="../../user-guide/process-engine/history.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>.
     </td>
   </tr>
 </table>

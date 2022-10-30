@@ -33,13 +33,13 @@ This guide covers mandatory migration steps and optional considerations for the 
 
 # Database updates
 
-Every Camunda installation requires a database schema update. Check our [database schema update guide]({{< ref "/installation/database-schema.md#update" >}}) 
+Every Camunda installation requires a database schema update. Check our [database schema update guide](../../installation/database-schema.md#update) 
 for further instructions.
 
 # Full distribution
 
 This section is applicable if you installed the 
-[Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) 
+[Full Distribution](../../introduction/downloading-camunda.md#full-distribution) 
 with a **shared process engine**.
 
 The following steps are required:
@@ -53,10 +53,10 @@ Before starting, ensure you have downloaded the Camunda Platform 7.18 distributi
 
 Choose the application server you are working with from the following list:
 
-* [JBoss EAP 6 or Wildfly / JBoss EAP 7]({{< ref "/update/minor/717-to-718/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/717-to-718/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/717-to-718/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/717-to-718/was.md" >}})
+* [JBoss EAP 6 or Wildfly / JBoss EAP 7](../../update/minor/717-to-718/jboss.md)
+* [Apache Tomcat](../../update/minor/717-to-718/tomcat.md)
+* [Oracle WebLogic](../../update/minor/717-to-718/wls.md)
+* [IBM WebSphere](../../update/minor/717-to-718/was.md)
 
 ## Custom process applications
 
@@ -76,7 +76,7 @@ Take the following steps to complete the update:
 
 1. Undeploy the current version of the standalone web application.
 2. Update the database to the new schema as described in the [database update](#database-updates) section.
-3. Configure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}}) section.
+3. Configure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration) section.
 4. Deploy the new and configured standalone web application to the server.
 
 # Groovy version update
@@ -118,7 +118,7 @@ If you have extended the Camunda docker images yourself, please read the release
 
 # XLTS for AngularJS
 
-Camunda Platform 7.18.0 replaces the AngularJS libraries with XLTS for AngularJS. Where AngularJS was licensed entirely under the MIT license, XLTS for AngularJS licenses additional parts under the XLTS for AngularJS – EULA. By downloading and using Camunda with XLTS for AngularJS, you agree to the terms of the XLTS for AngularJS – EULA. Please see our [third-Party libraries documentation]({{< ref "/introduction/third-party-libraries/_index.md#xlts-for-angularjs" >}}) for details and the terms of the EULA.
+Camunda Platform 7.18.0 replaces the AngularJS libraries with XLTS for AngularJS. Where AngularJS was licensed entirely under the MIT license, XLTS for AngularJS licenses additional parts under the XLTS for AngularJS – EULA. By downloading and using Camunda with XLTS for AngularJS, you agree to the terms of the XLTS for AngularJS – EULA. Please see our [third-Party libraries documentation](../../introduction/third-party-libraries/_index.md#xlts-for-angularjs) for details and the terms of the EULA.
 
 # Stricter default Content Security Policy
 
@@ -133,7 +133,7 @@ If you have added custom script tags in one of the `index.html` files of the web
 
 You don't need to worry about whitelisting for scripts you load via our plugin system.
 
-Find the details in the [Content Security Policy]({{< ref "/webapps/shared-options/header-security.md#content-security-policy" >}}) section.
+Find the details in the [Content Security Policy](../../webapps/shared-options/header-security.md#content-security-policy) section.
 
 # Log level configuration for BPMN stack trace
 
@@ -141,12 +141,12 @@ We've added a new configuration property called `logLevelBpmnStackTrace` to chan
 The default behaviour remains the same as before, so you don't have to do anything.
 However, if you want to see the bpmn stack traces in the log, but don't want to turn on debug logging, then you can change their log level with this parameter.
 
-See the [Logging level parameters]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace" >}}) section for details.  
-Additionally, you can find out more about logging in the [Logging User Guide]({{< ref "/user-guide/logging.md" >}}) section.
+See the [Logging level parameters](../../reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace) section for details.  
+Additionally, you can find out more about logging in the [Logging User Guide](../../user-guide/logging.md) section.
 
 # Adjusted class structure for Expression Language handling
 
-To provide a more convenient pluggability of the [Unified Expression Language (EL)]({{< ref "/user-guide/process-engine/expression-language.md" >}}) used in the engine, the structure of related classes changes with Camunda Platform 7.18.
+To provide a more convenient pluggability of the [Unified Expression Language (EL)](../../user-guide/process-engine/expression-language.md) used in the engine, the structure of related classes changes with Camunda Platform 7.18.
 The `ExpressionManager` class is now a Java `Interface` that needs to be implemented to provide a custom expression manager for the EL of your choice. If you still want to extend the default JUEL-based expression manager, you can subclass the new `JuelExpressionManager` class.
 
 Additionally, if you want your custom expression manager to be available in the DMN Engine, you can implement the new `ElProviderCompatible` interface in your expression manager as well.
@@ -154,7 +154,7 @@ The process engine configuration will then take care of passing on your expressi
 
 # Adjusted exception handling in the Java External Task Client
 
-In the course of exposing the new [exception codes]({{< ref "/user-guide/process-engine/error-handling.md#exception-codes" >}}) feature to the Java External Task Client, 
+In the course of exposing the new [exception codes](../../user-guide/process-engine/error-handling.md#exception-codes) feature to the Java External Task Client, 
 the client's exception handling was slightly overhauled which might lead to migration effort.
 
 ## Deprecated exception types

@@ -30,7 +30,7 @@ You can access various information regarding the specific instance by selecting 
 In the Audit Log you find a detailed overview of the activities that took place within the case instance, including start time, end time, activity instance ID and the current state.
 
 **Variables**  
-In the Variables tab you see an overview of the variables used within the case instances, including the name, last value, variable type and scope. Additionally, you can [edit variables]({{< relref "#edit-variables" >}}).
+In the Variables tab you see an overview of the variables used within the case instances, including the name, last value, variable type and scope. Additionally, you can [edit variables]({{< relref "#edit-variables).
 
 **User Tasks**  
 In the User Tasks tab you find an overview of all the user tasks related to this case instance and the details of the specific user tasks, such as the activity, the assignee, owner, creation date, completion date, the duration, due date, follow up date, priority of the user task and the unique task ID.
@@ -65,5 +65,5 @@ Edit variables in the list of variables by using the {{< glyphicon name="pencil"
 In the case instance view you can terminate a single case instance. Hit the {{< glyphicon name="remove" >}} button on the right side.
 
 
-[case-definition-view]: {{< ref "/webapps/cockpit/cmmn/case-definition-view.md" >}}
-[case-instance-view]: {{< ref "/webapps/cockpit/cmmn/case-instance-view.md" >}}
+[case-definition-view]: ../../webapps/cockpit/cmmn/case-definition-view.md" >}}
+[case-instance-view]: ../../webapps/cockpit/cmmn/case-instance-view.md" >}}

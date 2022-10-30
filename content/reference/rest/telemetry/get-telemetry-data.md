@@ -14,7 +14,7 @@ menu:
 
 Fetches the telemetry data that would be sent to Camunda if telemetry was enabled. Telemetry metrics and statistics are monitored constantly so the dynamic parts of the telemetry data will change over time. Even if sending this data to Camunda is not enabled it is available through this endpoint.
 
-Using this endpoint will not send data to Camunda or enable telemetry. Its main purpose is transparency and easy access to important system information and metrics. For more information on the telemetry topic, visit the [Telemetry]({{< ref "/introduction/telemetry.md" >}}) page.
+Using this endpoint will not send data to Camunda or enable telemetry. Its main purpose is transparency and easy access to important system information and metrics. For more information on the telemetry topic, visit the [Telemetry](../../introduction/telemetry.md) page.
 
 # Method
 

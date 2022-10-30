@@ -15,11 +15,11 @@ Each version of the Camunda Spring Boot Starter is bound to a specific version o
 Only these default combinations are recommended (and supported) by Camunda.
 Other combinations must be thoroughly tested before being used in production.
 
-{{< note title="Heads Up" class="info" >}}
+### Heads Up
   Starting with version 7.13.0, Camunda Platform and its compatible Spring Boot Starter always share the same version.
   Also, the Camunda Platform version used in the Spring Boot Starter doesn't have to be overridden anymore. Simply pick
   the version of the Starter that resembles the version of Camunda Platform you want to use.
-{{< /note >}}
+
 
 <table class="table table-striped">
   <tr>

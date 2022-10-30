@@ -11,11 +11,11 @@ menu:
 
 ---
 
-{{< note title="Installation Guide" class="info" >}}
+### Installation Guide
   If you [download a full distribution](http://camunda.org/download/), the Camunda Wildfly subsystem is readily installed into the application server.
 
-  [Read the installation guide]({{< ref "/installation/full/jboss/_index.md" >}}) to learn how to install the Camunda Wildfly subsystem into your Wildfly Server.
-{{< /note >}}
+  [Read the installation guide](../../installation/full/jboss/_index.md) to learn how to install the Camunda Wildfly subsystem into your Wildfly Server.
+
 
 Camunda Platform provides advanced integration for Wildfly in the form of a custom [Wildfly Subsystem](https://docs.wildfly.org/23/Extending_WildFly.html).
 
@@ -115,7 +115,7 @@ public void setMyCustomProperty(boolean boolean) {
 }
 ```
 
-{{< note title="Module dependency of custom configuration class" class="warning" >}}
+### Module dependency of custom configuration class
   If you configure the process engine in `standalone.xml` and provide a custom configuration class packaged inside an own module, the camunda-wildfly-subsystem module needs to have a module dependency on the module providing the class.
 
   If you fail to do this, you will see the following error log:
@@ -127,7 +127,7 @@ public void setMyCustomProperty(boolean boolean) {
       at org.camunda.bpm.container.impl.jboss.service.MscManagedProcessEngineController$3.run(MscManagedProcessEngineController.java:126) [camunda-wildfly-subsystem-7.16.0.jar:]
   ```
 
-{{< /note >}}
+
 
 
 # Extend a Process Engine Using Process Engine Plugins
@@ -161,7 +161,7 @@ You specify the process engine plugins in `standalone.xml`/`domain.xml` for each
 ```
 
 You have to provide the fully qualified classname between the `<class>` tags. Additional properties can be specified using the `<properties>` element.
-The restrictions which apply for [providing a custom process engine configuration class]({{< relref "#provide-a-custom-process-engine-configuration-class" >}}) are also valid for process engine plugins:
+The restrictions which apply for [providing a custom process engine configuration class]({{< relref "#provide-a-custom-process-engine-configuration-class) are also valid for process engine plugins:
 
  * Plugin class must be visible in the classpath for the Camunda subsystem.
  * Properties map can be used for invoking primitive valued setters (Integer, String, Boolean) that follow the Java Bean conventions.
@@ -189,7 +189,7 @@ System properties may be set via command line (`-D`option). Read more on express
 
 # Look Up a Process Engine in JNDI
 
-The Camunda Wildfly subsystem provides the same [JNDI bindings for the ProcessApplicationService and the ProcessEngineService]({{< ref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) as provided on other containers. In addition, the Camunda Wildfly subsystem creates JNDI Bindings for all managed process engines, allowing us to look them up directly.
+The Camunda Wildfly subsystem provides the same [JNDI bindings for the ProcessApplicationService and the ProcessEngineService](../../user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md) as provided on other containers. In addition, the Camunda Wildfly subsystem creates JNDI Bindings for all managed process engines, allowing us to look them up directly.
 
 The global JNDI bindings for process engines follow the pattern
 
@@ -199,14 +199,14 @@ java:global/camunda-bpm-platform/process-engine/$PROCESS_ENGINE_NAME
 
 If a process engine is named "engine1", it will be available using the name `java:global/camunda-bpm-platform/process-engine/engine1`.
 
-Note that when looking up the process engine, using a declarative mechanism (like `@Resource` or referencing the resource in a deployment descriptor) is preferred over a programmatic way. The declarative mechanism makes the application server aware of our dependency on the Process Engine Service and allows it to manage that dependency for us. See also: [Managing Service Dependencies]({{< relref "#explicit-service-dependencies" >}}).
+Note that when looking up the process engine, using a declarative mechanism (like `@Resource` or referencing the resource in a deployment descriptor) is preferred over a programmatic way. The declarative mechanism makes the application server aware of our dependency on the Process Engine Service and allows it to manage that dependency for us. See also: [Managing Service Dependencies]({{< relref "#explicit-service-dependencies).
 A declarative mechanism like `@Resource` could be
 
     @Resource(mappedName = "java:global/camunda-bpm-platform/process-engine/$PROCESS_ENGINE_NAME"
 
-{{< note title="Look Up a Process Engine From JNDI Using Spring" class="warning" >}}
-  On Wildfly, Spring users should always [create a resource-ref for the process engine in web.xml]({{< relref "#manage-service-dependencies" >}})</a> and then lookup the local name in the `java:comp/env/` namespace. [For an example, see this Quickstart](https://github.com/camunda/camunda-bpm-examples/tree/master/deployment/spring-wildfly-non-pa)</a>
-{{< /note >}}
+### Look Up a Process Engine From JNDI Using Spring
+  On Wildfly, Spring users should always [create a resource-ref for the process engine in web.xml]({{< relref "#manage-service-dependencies)</a> and then lookup the local name in the `java:comp/env/` namespace. [For an example, see this Quickstart](https://github.com/camunda/camunda-bpm-examples/tree/master/deployment/spring-wildfly-non-pa)</a>
+
 
 
 # Manage the Process Engine Through the JBoss Management System
@@ -266,9 +266,9 @@ Once the process engine is registered in the JBoss Management Model, it is possi
 
 This removes the process engine and all dependent services. This means that if you remove a process engine, the application server will stop all deployed applications which use the process engine.
 
-{{< note title="Declaring Service Dependencies" class="warning" >}}
+### Declaring Service Dependencies
   For this to work, but also to avoid race conditions at deployment time, it is necessary that each application explicitly declares dependencies on the process engines it is using.
-{{< /note >}}
+
 
 
 ## Start the Process Engine Through the JBoss Management System
@@ -297,9 +297,9 @@ The JConsole plugin allows you to inspect the management model graphically and b
 
 # Manage Classpath Dependencies
 
-{{< note title="Implicit Module Dependencies" class="info" >}}
-   Classpath dependencies are automatically managed for you if you use the [Process Application API]({{< ref "/user-guide/process-applications/_index.md" >}}).
-{{< /note >}}
+### Implicit Module Dependencies
+   Classpath dependencies are automatically managed for you if you use the [Process Application API](../../user-guide/process-applications/_index.md).
+
 
 When using the Camunda Wildfly subsystem, the process engine classes are deployed as WildFly module. The module is named
 `org.camunda.bpm.camunda-engine` and is deployed in the folder `$WILDFLY_HOME/modules/org/camunda/bpm/camunda-engine`.
@@ -339,9 +339,9 @@ As a result, the Application Service will add the process engine module to the c
 
 # Manage Service Dependencies
 
-{{< note title="Implicit Service Dependencies" class="info" >}}
-   Service dependencies are automatically managed for you if you use the [Process Application API]({{< ref "/user-guide/process-applications/_index.md" >}}).
-{{< /note >}}
+### Implicit Service Dependencies
+   Service dependencies are automatically managed for you if you use the [Process Application API](../../user-guide/process-applications/_index.md).
+
 
 The Camunda Wildfly subsystem manages process engines as JBoss Services in the JBoss Module Service Container. For the Module Service Container to provide the process engine service(s) to the deployed applications, it is important that the dependencies are known. Consider the following example:
 

@@ -74,7 +74,7 @@ A JSON array representing the result of the newly evaluated decision. The array 
 
 {{< rest-var-response >}}
 
-See the [user guide]({{< ref "/user-guide/dmn-engine/evaluate-decisions.md#interpret-the-decision-result" >}}) for details about the decision result.
+See the [user guide](../../user-guide/dmn-engine/evaluate-decisions.md#interpret-the-decision-result) for details about the decision result.
 
 ## Response codes
 
@@ -92,17 +92,17 @@ See the [user guide]({{< ref "/user-guide/dmn-engine/evaluate-decisions.md#inter
   <tr>
     <td>403</td>
     <td>application/json</td>
-    <td>The authenticated user is unauthorized to evaluate this decision. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>The authenticated user is unauthorized to evaluate this decision. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
   <tr>
     <td>404</td>
     <td>application/json</td>
-  <td>The decision could not be evaluated due to a nonexistent decision definition. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+  <td>The decision could not be evaluated due to a nonexistent decision definition. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
   <tr>
     <td>500</td>
     <td>application/json</td>
-    <td>The decision could not be evaluated successfully, e.g. some of the input values are not provided but they are required. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>The decision could not be evaluated successfully, e.g. some of the input values are not provided but they are required. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

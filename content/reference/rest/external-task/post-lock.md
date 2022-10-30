@@ -79,7 +79,7 @@ This method returns no content.
    <td>application/json</td>
    <td>In case the lock duration is negative or the external task is already locked by
        a different worker, an exception of type <code>InvalidRequestException</code> is 
-       returned. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> 
+       returned. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> 
        for the error response format.</td>
   </tr>
   <tr>
@@ -87,7 +87,7 @@ This method returns no content.
     <td>application/json</td>
     <td>Returned if the task does not exist. This could indicate a wrong task id as well 
     as a cancelled task, e.g., due to a caught BPMN boundary event. See the 
-    <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> 
+    <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> 
     for the error response format.</td>
   </tr>
 </table>

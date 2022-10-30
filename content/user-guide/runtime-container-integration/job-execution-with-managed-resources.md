@@ -62,10 +62,10 @@ public class EngineBuilder {
 }
 ```
 
-{{< note title="Unmanaged resources" class="info" >}}
+### Unmanaged resources
   The example above injects a container managed resource, the `ManagedExecutorService`, into an object for which the lifecycle is **not** controlled by the application server (the `ManagedJobExecutor` which is instantiated with its constructor). This is not a generally recommended practice, because the dependencies that are injected may become unavailable.
 
   In this use case however, this approach is chosen because the `ManagedJobExecutor` relies on the existence of the `ManagedExecutorService` and this interface was only introduced with JEE7. Earlier versions of JEE could not fulfill this dependency and would fault if the component was activated automatically for all application servers.
 
   In order to avoid that the job executor is running on unavailable resources, we recommend to shutdown the job executor via its `shutdown()` method when the `ManagedExecutorService` becomes unavailable.
-{{< /note >}}
+

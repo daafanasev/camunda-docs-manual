@@ -14,7 +14,7 @@ menu:
 
 A password policy consists of a list of rules that new passwords must follow to be policy compliant. This end point returns a JSON representation of the list of policy rules.
 
-More information on password policies in Camunda can be found in the password policy [user guide]({{< ref "/user-guide/process-engine/password-policy.md" >}}) and in the [security instructions]({{< ref "/user-guide/security.md" >}}).
+More information on password policies in Camunda can be found in the password policy [user guide](../../user-guide/process-engine/password-policy.md) and in the [security instructions](../../user-guide/security.md).
 
 # Method
 

@@ -89,9 +89,9 @@ This functionality is provided by the `org.camunda.bpm.engine.spring.application
 2. It then delegates to that process application for resolving expressions.
 3. The process application delegates to the `SpringProcessApplicationElResolver` which uses the local Spring application context for resolving beans.
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   The `SpringProcessApplicationElResolver` class is automatically detected if the `camunda-engine-spring` module is included as a library of the process application, not as a global library.
-{{< /note >}}
+
 
 # Using Spring Beans in scripting
 

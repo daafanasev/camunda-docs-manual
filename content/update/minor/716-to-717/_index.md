@@ -34,13 +34,13 @@ functionality included in Camunda Platform 7.17.
 
 # Database updates
 
-Every Camunda installation requires a database schema update. Check our [database schema update guide]({{< ref "/installation/database-schema.md#update" >}}) 
+Every Camunda installation requires a database schema update. Check our [database schema update guide](../../installation/database-schema.md#update) 
 for further instructions.
 
 # Full distribution
 
 This section is applicable if you installed the 
-[Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) 
+[Full Distribution](../../introduction/downloading-camunda.md#full-distribution) 
 with a **shared process engine**.
 
 The following steps are required:
@@ -56,10 +56,10 @@ distribution to a path named `$DISTRIBUTION_PATH`.
 
 Choose the application server you are working with from the following list:
 
-* [JBoss EAP 6 or Wildfly / JBoss EAP 7]({{< ref "/update/minor/716-to-717/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/716-to-717/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/716-to-717/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/716-to-717/was.md" >}})
+* [JBoss EAP 6 or Wildfly / JBoss EAP 7](../../update/minor/716-to-717/jboss.md)
+* [Apache Tomcat](../../update/minor/716-to-717/tomcat.md)
+* [Oracle WebLogic](../../update/minor/716-to-717/wls.md)
+* [IBM WebSphere](../../update/minor/716-to-717/was.md)
 
 ## Custom process applications
 
@@ -79,20 +79,20 @@ Take the following steps to complete the update:
 
 1. Undeploy the current version of the standalone web application.
 2. Update the database to the new schema as described in the [database update](#database-updates) section.
-3. Configure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Configure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section.
 4. Deploy the new and configured standalone web application to the server.
 
 # Task worker metrics
 
 Starting from version 7.17, the task worker metrics are displayed by default.
-If this causes slow page loading, you can turn it off in the [admin webapp configuration]({{< ref "/webapps/admin/configuration.md#task-worker-metrics" >}}).
+If this causes slow page loading, you can turn it off in the [admin webapp configuration](../../webapps/admin/configuration.md#task-worker-metrics).
 
 # System permissions
 
 Camunda Platform 7.17 introduces a new set of permissions which grant operation engineers access to system properties and data without the need for administrator privileges.
 
-For more details, including a full list of features and their required permissions, visit our [authorization documentation page]({{< ref "/user-guide/process-engine/authorization-service.md#system-permissions" >}}).
+For more details, including a full list of features and their required permissions, visit our [authorization documentation page](../../user-guide/process-engine/authorization-service.md#system-permissions).
 
 # Spin configuration options
 
@@ -106,7 +106,7 @@ parser against [XXE attacks](https://en.wikipedia.org/wiki/XML_external_entity_a
 
 You can restore the old behavior by passing the appropriate [configuration properties to the Spin process engine plugin][spin-config].
 
-[spin-config]: {{< ref "/user-guide/data-formats/configuring-spin-integration.md#configuration-properties-of-the-spin-plugin" >}}
+[spin-config]: ../../user-guide/data-formats/configuring-spin-integration.md#configuration-properties-of-the-spin-plugin" >}}
 
 # Extended Camunda Run CORS configuration properties
 
@@ -114,7 +114,7 @@ Version 7.17 of the Camunda Run distribution brings new [CORS configuration prop
 changes in the existing CORS behavior. The new CORS configuration properties rather allow you to set additional parameters on the CORS filter like 
 credentials support.
 
-[cors-properties]: {{< ref "/user-guide/camunda-bpm-run.md#cross-origin-resource-sharing" >}}
+[cors-properties]: ../../user-guide/camunda-bpm-run.md#cross-origin-resource-sharing" >}}
 
 # Improved Camunda Run library support
 
@@ -123,12 +123,12 @@ credentials support.
 Previous versions of the Camunda Run distribution already supported the Camunda LDAP identity service plugin. With this
 version, we made it easier to configure and use Camunda Run with the LDAP plugin with the following additions:
 
-The [Administrator Authorization plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) 
+The [Administrator Authorization plugin](../../user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin) 
 is now available within Camunda Run by default. With the Administrator Authorization plugin, you can configure which 
 LDAP user group gains administrative access to configure additional authorizations.
 
 The Administrator Authorization plugin configuration properties are integrated with Camunda Run. You can find them
-in the [LDAP Adminstrator Authorization section]({{< ref "/user-guide/camunda-bpm-run.md#ldap-administrator-authorization" >}})
+in the [LDAP Adminstrator Authorization section](../../user-guide/camunda-bpm-run.md#ldap-administrator-authorization)
 of the Camunda Run documentation. You can also find a template LDAP configuration in the Camunda Run `production.yml`.
 
 ## Groovy scripting engine included
@@ -149,14 +149,14 @@ when upgrading to a new Camunda Run version anymore.
 
 # Changed Camunda Run start script behavior
 
-Camunda Run starts with the [provided `start.sh` or `start.bat` scripts]({{< ref "/user-guide/camunda-bpm-run.md#starting-with-camunda-platform-run" >}}).
+Camunda Run starts with the [provided `start.sh` or `start.bat` scripts](../../user-guide/camunda-bpm-run.md#starting-with-camunda-platform-run).
 When you execute one of these scripts, Camunda Run starts and outputs logs to the command line.
 
 With version 7.17, we made a small change to the behavior of these start scripts. If you don't provide any additional
 arguments to the start script, it will start Camunda Run as a detached process. You can then use the new `shutdown.sh`
 or `shutdown.bat` script to stop Camunda Run.
 
-If you want to have the old start script behavior, pass the desired [start script arguments]({{< ref "/user-guide/camunda-bpm-run.md#start-script-arguments" >}})
+If you want to have the old start script behavior, pass the desired [start script arguments](../../user-guide/camunda-bpm-run.md#start-script-arguments)
 directly to the script.
 
 # Disabled remote access to H2 console
@@ -192,7 +192,7 @@ Camunda Platform 7.17.0 supports H2 version 2.0 and drops support for H2 version
 When using Camunda with a file-persisted H2 database, this implies:
 
 * The H2 database must be migrated from version 1.4 to 2.0.
-* It is not possible to perform a [rolling update]({{< ref "/update/rolling-update.md" >}}) from Camunda 7.16 to 7.17.
+* It is not possible to perform a [rolling update](../../update/rolling-update.md) from Camunda 7.16 to 7.17.
 
 To migrate from 7.16 to 7.17, and from H2 1.4 to 2.0, follow these steps:
 
@@ -209,7 +209,7 @@ Also see the [migration instructions provided by the h2 project](https://h2datab
 # Official support for JUnit 5 community extension
 
 Camunda took over the development of a JUnit 5 extension which was maintained by the community in the [Camunda Community Hub](https://github.com/camunda-community-hub). The source code is is now located in the [Camunda Platform 7 repository](https://github.com/camunda/camunda-bpm-platform/tree/master/test-utils/junit5-extension).
-The extension allows users to access the process engine and its API in JUnit 5 tests. Documentation on how to use the extension was migrated to the [Testing documentation]({{< ref "/user-guide/testing/_index.md#junit-5" >}}) in the Camunda 7 docs.
+The extension allows users to access the process engine and its API in JUnit 5 tests. Documentation on how to use the extension was migrated to the [Testing documentation](../../user-guide/testing/_index.md#junit-5) in the Camunda 7 docs.
 
 ## Versioning of the JUnit 5 extension
 
@@ -231,14 +231,14 @@ The group id changed from `<groupId>org.camunda.bpm.extension</groupId>` to `<gr
 
 # Changes to Camunda Platform Assert
 
-The source code of [Camunda Platform Assert]({{< ref "/user-guide/testing#camunda-assertions" >}}) has moved from its [previous location](https://github.com/camunda/camunda-bpm-assert) into the [Camunda Platform 7 repository](https://github.com/camunda/camunda-bpm-platform/tree/master/test-utils/assert).
+The source code of [Camunda Platform Assert](../../user-guide/testing#camunda-assertions) has moved from its [previous location](https://github.com/camunda/camunda-bpm-assert) into the [Camunda Platform 7 repository](https://github.com/camunda/camunda-bpm-platform/tree/master/test-utils/assert).
 
 Moving the project has several implications:
 
 * Camunda Platform Assert version is now tied to the Camunda Platform 7 release.
 * The Maven group id for Camunda Platform Assert [changed](#camunda-platform-assert-maven-coordinates).
 * Camunda Platform Assert uses AssertJ under the hood. The version of AssertJ is tied to the version that the latest version of Spring Boot currently supported by Camunda Platform uses.
-Find details on supported AssertJ versions in the version [compatibility table]({{< ref "/user-guide/testing/_index.md#assertions-version-compatibility" >}}) in the testing documentation.
+Find details on supported AssertJ versions in the version [compatibility table](../../user-guide/testing/_index.md#assertions-version-compatibility) in the testing documentation.
 
 ## Versioning of Camunda Platform Assert
 

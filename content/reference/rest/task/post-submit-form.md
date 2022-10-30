@@ -14,10 +14,10 @@ menu:
 
 
 Completes a task and updates process variables using a form submit. There are two differences between this method
-and the [complete]({{< ref "/reference/rest/task/post-complete.md" >}}) method:
+and the [complete](../../reference/rest/task/post-complete.md) method:
 
 * If the task is in state `PENDING` - i.e., has been delegated before, it is not completed but resolved. Otherwise it will be completed.
-* If the task has Form Field Metadata defined, the process engine will perform backend validation for any form fields which have validators defined. See the [Generated Task Forms]({{< ref "/user-guide/task-forms/_index.md#generated-task-forms" >}}) section of the [User Guide]({{< ref "/user-guide/_index.md" >}}) for more information. Note that Form Field Metadata does not restrict which variables you can submit via this endpoint.
+* If the task has Form Field Metadata defined, the process engine will perform backend validation for any form fields which have validators defined. See the [Generated Task Forms](../../user-guide/task-forms/_index.md#generated-task-forms) section of the [User Guide](../../user-guide/_index.md) for more information. Note that Form Field Metadata does not restrict which variables you can submit via this endpoint.
 
 # Method
 
@@ -87,12 +87,12 @@ This method returns no content.
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>The variable value or type is invalid, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>The variable value or type is invalid, for example if the value could not be parsed to an Integer value or the passed variable type is not supported. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
   <tr>
     <td>500</td>
     <td>application/json</td>
-    <td>If the task does not exist or the corresponding process instance could not be resumed successfully. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>If the task does not exist or the corresponding process instance could not be resumed successfully. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

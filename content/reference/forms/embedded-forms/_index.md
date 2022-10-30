@@ -17,11 +17,11 @@ This reference covers the features of the Camunda Platform Forms SDK. The Forms 
 implementation of user task forms in HTML5 / JavaScript based Applications. The Forms SDK itself is
 written in JavaScript and can be added to any  JavaScript based Application.
 
-{{< note title="The Forms SDK and Camunda Tasklist" class="info" >}}
-<a href="{{< ref "/webapps/tasklist/_index.md" >}}">
+### The Forms SDK and Camunda Tasklist
+<a href="../../webapps/tasklist/_index.md" >}}">
 Camunda Tasklist</a> uses the Form SDK for providing support for Embedded Forms. By default, the 
 tasklist uses the Form SDKs AngularJS integration.
-{{< /note >}}
+
 
 
 # Features

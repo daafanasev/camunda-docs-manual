@@ -22,7 +22,7 @@ In the following section, we walk through the different implementations and disc
 
 # The ServletProcessApplication
 
-**Supported on:** Apache Tomcat, Wildfly. The Servlet process application is supported on all containers. Read the [note about Servlet Process Application and EJB/Java EE containers]({{< relref "#using-the-servletprocessapplication-inside-an-ejb-java-ee-container-such-as-wildfly" >}})
+**Supported on:** Apache Tomcat, Wildfly. The Servlet process application is supported on all containers. Read the [note about Servlet Process Application and EJB/Java EE containers]({{< relref "#using-the-servletprocessapplication-inside-an-ejb-java-ee-container-such-as-wildfly)
 
 **Packaging**: WAR (or embedded WAR inside EAR)
 
@@ -49,9 +49,9 @@ Notice the `@ProcessApplication` annotation. This annotation fulfills two purpos
 
 This means that in case you deploy to a Servlet 3.0 compliant container (such as Apache Tomcat) annotating your class with `@ProcessApplication` is sufficient.
 
-{{< note title="" class="info" >}}
-  There is a [project template for Maven]({{< ref "/user-guide/process-applications/maven-archetypes.md" >}}) called ```camunda-archetype-servlet-war```, which gives you a complete running project based on a ServletProcessApplication.
-{{< /note >}}
+### Заметка class="info" >}}
+  There is a [project template for Maven](../../user-guide/process-applications/maven-archetypes.md) called ```camunda-archetype-servlet-war```, which gives you a complete running project based on a ServletProcessApplication.
+
 
 
 ## Using the ServletProcessApplication Inside an EJB/Java EE Container such as Wildfly
@@ -85,9 +85,9 @@ Both options are explained in greater detail below.
 
 The most convenient option for deploying a process application to an Ejb Container is by adding the following maven dependency to your maven project:
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   Please import the [Camunda BOM](/get-started/apache-maven/) to ensure correct versions for every Camunda project.
-{{< /note >}}
+
 
 ```xml
 <dependency>
@@ -100,11 +100,11 @@ The camunda-ejb-client contains a reusable default implementation of the EjbProc
 
 This deployment option requires that your project is a composite deployment (such as a WAR or EAR) since you need to add a library JAR file. You could of course use something like the maven shade plugin for adding the class contained in the camunda-ejb-client artifact to a JAR-based deployment.
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   We always recommend using the camunda-ejb-client over deploying a custom EjbProcessApplication class unless you want to customize the behavior of the EjbProcessApplication.
 
-  There is a [project template for Maven]({{< ref "/user-guide/process-applications/maven-archetypes.md" >}}) called ```camunda-archetype-servlet-war```, which gives you a complete running project based on a ServletProcessApplication.
-{{< /note >}}
+  There is a [project template for Maven](../../user-guide/process-applications/maven-archetypes.md) called ```camunda-archetype-servlet-war```, which gives you a complete running project based on a ServletProcessApplication.
+
 
 
 ## Deploying a Custom EjbProcessApplication Class
@@ -136,7 +136,7 @@ public class MyEjbProcessApplication extends EjbProcessApplication {
 
 ## Expose Servlet Context Path Using a Custom EjbProcessApplication
 
-If your application is a `WAR` (or a `WAR` inside an `EAR`) and you want to use [embedded forms]({{< ref "/user-guide/task-forms/_index.md#embedded-task-forms" >}}) or [external task forms]({{< ref "/user-guide/task-forms/_index.md#external-task-forms" >}}) inside the [Tasklist]({{< ref "/webapps/tasklist/_index.md" >}}) application, then your custom EjbProcessApplication must expose the servlet context path of your application as a property. This enables the Tasklist to resolve the path to the embedded or external task forms.
+If your application is a `WAR` (or a `WAR` inside an `EAR`) and you want to use [embedded forms](../../user-guide/task-forms/_index.md#embedded-task-forms) or [external task forms](../../user-guide/task-forms/_index.md#external-task-forms) inside the [Tasklist](../../webapps/tasklist/_index.md) application, then your custom EjbProcessApplication must expose the servlet context path of your application as a property. This enables the Tasklist to resolve the path to the embedded or external task forms.
 
 Therefore your custom EjbProcessApplication must be extended by a `Map` and a getter-method for that `Map` as follows:
 

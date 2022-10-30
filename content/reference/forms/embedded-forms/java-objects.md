@@ -16,7 +16,7 @@ This section explains how to work with serialized Java Objects in embedded task 
 Out of the box, you can only work with Java Objects which are serialized in *JSON format*
 If Java Classes are serialized using JAX-B, you need to add custom XML parsing and writing logic
 to the embedded form. Java Objects serialized using Java Serialization cannot be used in forms.
-{{< /note >}}
+
 
 
 # Fetching an existing Serialized Java Object Variable

@@ -14,11 +14,11 @@ menu:
 {{< img src="../../img/cockpit-process-instances-view.png" title="Process Instance View" >}}
 
 Open the process instance view by selecting a process instance from the [process definition view][process-definition-view] instance list. This view allows you to drill down into a single process instance and explore its running activities as well as the variables, tasks, jobs, etc.
-Beside the diagram view the process will be displayed as an [activity instance tree view]({{< relref "#activity-instance-tree" >}}). Variables that belong to the instance will be listed in a variables table of the [detailed information panel]({{< relref "#detailed-information-panel" >}}). Now you can select single or multiple ('ctrl + click') flow nodes in the interactive BPMN 2.0 diagram or you can select an activity instance within the activity tree view. As diagram, tree view and variables table correspond with each other, the selected flow node will also be selected in the tree and the associated variables will be shown and vice versa.
+Beside the diagram view the process will be displayed as an [activity instance tree view]({{< relref "#activity-instance-tree). Variables that belong to the instance will be listed in a variables table of the [detailed information panel]({{< relref "#detailed-information-panel). Now you can select single or multiple ('ctrl + click') flow nodes in the interactive BPMN 2.0 diagram or you can select an activity instance within the activity tree view. As diagram, tree view and variables table correspond with each other, the selected flow node will also be selected in the tree and the associated variables will be shown and vice versa.
 
 Furthermore, you can maximize the diagram view or the detailed information panel by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-resize-full"></i></button> button, respectively the <button class="btn btn-xs"><i class="glyphicon glyphicon-menu-up"></i></button> button, at the bottom left of the diagram view.
 
-[process-definition-view]: {{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}
+[process-definition-view]: ../../webapps/cockpit/bpmn/process-definition-view.md" >}}
 
 
 # Activity Instance Tree
@@ -42,9 +42,9 @@ However, if the number of called process instances exceeds one, then clicking th
 
 {{< img src="../../img/cockpit-detailed-information-view.png" title="Detailed Information Panel" >}}
 
-Use the detailed information panel to get an overview of the variables, incidents, called process instances, user tasks and external tasks that the process instance contains. Furthermore, you can access the [instance modification]({{< ref "/webapps/cockpit/bpmn/process-instance-modification.md" >}}) tab. Depending on the selected activity instance in the rendered diagram, the panel lists the corresponding information. You can also focus on the activity instance via a scope link in the table.
+Use the detailed information panel to get an overview of the variables, incidents, called process instances, user tasks and external tasks that the process instance contains. Furthermore, you can access the [instance modification](../../webapps/cockpit/bpmn/process-instance-modification.md) tab. Depending on the selected activity instance in the rendered diagram, the panel lists the corresponding information. You can also focus on the activity instance via a scope link in the table.
 
-In addition to the instance information you can [edit variables]({{< relref "#edit-variables" >}}) or change the assignees of user tasks.
+In addition to the instance information you can [edit variables]({{< relref "#edit-variables) or change the assignees of user tasks.
 
 In the incidents tab you can click on the incident message name, which will open the stacktrace of the selected incident. Furthermore, you can increment the number of retries for a failed job by hitting the {{< glyphicon name="repeat" >}} button.
 
@@ -52,7 +52,7 @@ The user tasks tab allows managing users and groups for selected user tasks. Hit
 
 The jobs tab gives you an overview of all currently active jobs. If the job has a duedate, you can edit the duedate by clicking on the {{< glyphicon name="time" >}} button. A dialogue will open where you can choose to recalculate the duedate based on the current time or its creation time. It is also possible to set a specific duedate. Furthermore, you can suspend or activate a job by pressing the {{< glyphicon name="pause" >}} or {{< glyphicon name="play" >}} button respectively.
 
-The external tasks tab displays various information about external tasks, such as the External Task Id, the activity, amount of retries, the Worker Id of the external task, lock expiration time, topic name and the set priority. See the [external tasks]({{< ref "/user-guide/process-engine/external-tasks.md" >}}) section of the user guide for more information about external tasks.
+The external tasks tab displays various information about external tasks, such as the External Task Id, the activity, amount of retries, the Worker Id of the external task, lock expiration time, topic name and the set priority. See the [external tasks](../../user-guide/process-engine/external-tasks.md) section of the user guide for more information about external tasks.
 
 # Filter for Variables
 

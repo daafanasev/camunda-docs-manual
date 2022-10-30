@@ -18,7 +18,7 @@ or [Camunda Platform 7.11 Wildfly distribution](https://downloads.camunda.cloud/
 `$APP_SERVER` should be replaced with either `jboss` or `wildfly`, depending on
 the used application server.
 
-{{< note title="WildFly 8 Modules" class="info" >}}
+### WildFly 8 Modules
 From version 7.11, only a single **Camunda Platform WildFly distribution** is provided, packaged with the latest WildFly version. For WildFly 10+ users,
 the update guide remains the same. However, if you are a WildFly 8 user, please download the [Camunda WildFly 8 Modules](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/wildfly/camunda-wildfly8-modules/) archive
 for updating the Camunda Platform Modules.
@@ -32,7 +32,7 @@ Furthermore, the Camunda subsystem extension in the application server's configu
     <extension module="org.camunda.bpm.wildfly.camunda-wildfly8-subsystem"/>
 ```
 
-{{< /note >}}
+
 
 The update procedure takes the following steps:
 
@@ -123,7 +123,7 @@ The following steps are required to update the Camunda web applications Cockpit,
 3. Deploy the web application archive to your JBoss/Wildfly instance.
 
 
-[update-guide]: {{< ref "/update/minor/710-to-711/_index.md" >}}
+[update-guide]: ../../update/minor/710-to-711/_index.md" >}}
 [engine-rest]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/7.11.0/
 [webapp-jboss]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-jboss/7.11.0/camunda-webapp-jboss-7.11.0.war
-[jackson-update]: {{< ref "/update/minor/710-to-711/_index.md#jackson-version-update" >}}
+[jackson-update]: ../../update/minor/710-to-711/_index.md#jackson-version-update" >}}

@@ -22,7 +22,7 @@ you will need the following:
 * A basic understanding on [how to deploy applications in Websphere Liberty][liberty-app-deploy]. 
 * You should also consider the [WebSphere Liberty Java support documentation][liberty-java].
 
-{{< note title="Reading this Guide" class="info" >}}
+### Reading this Guide
 This section provides examples for Camuna Platform `{{< minor-version >}}.0-ee`. If you are installing a patch version
 please replace the version numbers in the examples with the patch version you are using.
 
@@ -34,7 +34,7 @@ You don't have to create these variables in your environment. They are just used
 
 The distribution is available at the [Camunda enterprise release page](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/ibm-was9/).
 You will be asked to enter the credentials you received during the trial or subscription process.
-{{< /note >}}
+
 
 To fully install Camunda Platform 7 on WebSphere Liberty, you need to configure the following components:
 
@@ -49,12 +49,12 @@ WebSphere Liberty relies on [Liberty features][liberty-features] to make servers
 A Liberty server configuration is centralized in a single `server.xml` file that exists in the `$SERVER_CONFIG_DIR`
 folder.
 
-{{< note title="WebSphere Liberty vs Open Liberty" class="info" >}}
+### WebSphere Liberty vs Open Liberty
 Camunda Platform 7 requires certain Liberty features that are only available in the WebSphere Liberty edition. As a
 result, Open Liberty is not supported by Camunda Platform 7.
-{{< /note >}}
 
-{{< note title="Java EE Liberty features support" class="info" >}}
+
+### Java EE Liberty features support
 Liberty supports multiple Java/Jakarta EE versions through features with multiple versions (ex. `cdi-1.0`, `cdi-1.2`,
 `cdi-2.0`, etc.).
 
@@ -66,7 +66,7 @@ We recommend using Java EE 8 Liberty features to run Camunda Platform 7 on WebSp
 If you decide to mix Liberty features from different Java EE versions, check the
 <a href="https://www.ibm.com/docs/en/was-liberty/base?topic=architecture-supported-java-ee-7-8-feature-combinations" >Java EE feature combinations page</a>
 to ensure that the all the features are inter-compatible.
-{{< /note >}}
+
 
 This guide will show you what to place in the `$SERVER_CONFIG_DIR` folder, and what to add in the `server.xml` file
 to successfully install Camunda Platform 7 on WebSphere Liberty.
@@ -227,11 +227,11 @@ Once you perform all the steps, the `server.xml` should have the following conte
 </server>
 ```
 
-{{< note title="WebSphere Liberty SPI discovery" class="info" >}}
+### WebSphere Liberty SPI discovery
 WebSphere Liberty doesn't perform SPI discovery by default. Since Camunda Platform 7 uses SPI for certain features,
 you need to enable SPI discovery by adding the `bells-1.0` Liberty feature, and use the `bell` element in the
 `server.xml` to specify any shared libraries that rely on SPI.
-{{< /note >}}
+
 
 ## Camunda Platform EAR
 
@@ -349,7 +349,7 @@ WebSphere Liberty provides more details on [configuring a datasource][liberty-da
 [shared library][liberty-lib-conf] definition.
 
 Note that you may configure multiple datasources used by different process engine instances.
-See the [User Guide]({{< ref "/user-guide/_index.md" >}}) for details.
+See the [User Guide](../../user-guide/_index.md) for details.
 
 #### Datasource JNDI name
 
@@ -696,5 +696,5 @@ deployment.
 [liberty-datasource-conf]: https://www.ibm.com/docs/en/was-liberty/base?topic=liberty-configuring-default-data-source
 
 [ee-downloads]: /enterprise/download
-[bpm-platform-xml-config]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}
-[db-schema-install]: {{< ref "/installation/database-schema.md" >}}
+[bpm-platform-xml-config]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}
+[db-schema-install]: ../../installation/database-schema.md" >}}

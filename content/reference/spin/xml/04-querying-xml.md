@@ -127,4 +127,3 @@ SpinXmlTreeElement child = XML(xml).xPath("/root/t:child")
   If you are using `xmlns="<URI>"` in your XML file, spin uses `DEFAULT` as prefix for the namespace.<br />
   E.g.,: ```<root xmlns="http://camunda.org"></root>``` -- prefix: DEFAULT, namespace: http://camunda.org so you need
   to use `XML(xml).xPath("/DEFAULT:root")` to fetch the correct element.
-{{< /note >}}

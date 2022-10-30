@@ -15,7 +15,7 @@ menu:
 
 This section describes how you can install the Camunda Platform and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://downloads.camunda.cloud/release/camunda-bpm/tomcat/) or [Enterprise Edition Tomcat distribution](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/tomcat/) to fetch the required Camunda modules.
 
-{{< note title="Reading the Guide" class="info" >}}
+### Reading the Guide
 Throughout this guide we will use a number of variables to denote common path names and constants:
 
 * `$TOMCAT_HOME` points to the main directory of the tomcat server.
@@ -23,7 +23,7 @@ Throughout this guide we will use a number of variables to denote common path na
 * `$PLATFORM_VERSION` denotes the version of the Camunda Platform you want to install or already have installed, e.g. `7.0.0`.
 * `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Camunda Platform distribution for Tomcat, e.g. `camunda-bpm-tomcat-$PLATFORM_VERSION.zip` or `camunda-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
 
-{{< /note >}}
+
 
 
 # Setup
@@ -36,7 +36,7 @@ Before you can install the Camunda components, you need to perform a number of r
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
 * Create a database schema for the Camunda Platform yourself.
-* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+* Install the database schema to create all required tables and default indices using our [database schema installation guide](../../installation/database-schema.md).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In Tomcat, this is done in the `bpm-platform.xml`, located in the `$TOMCAT_DISTRIBUTION\server\apache-tomcat-$VERSION\conf\` folder.
 
@@ -110,7 +110,7 @@ Furthermore, you have to merge your corresponding JDBC driver into the folder `$
 
 ## Add bpm-platform.xml
 
-You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or, optionally, you can configure the location through some available mechanisms, see [Configure location of the bpm-platform.xml file]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}):
+You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or, optionally, you can configure the location through some available mechanisms, see [Configure location of the bpm-platform.xml file](../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -179,7 +179,7 @@ The following steps are required to deploy the REST API:
 3. Startup Tomcat.
 4. Access the REST API on the context you configured.
     For example, http://localhost:8080/engine-rest/engine should return the names of all engines of the platform, provided that you deployed the application in the context `/engine-rest`.
-5. Enable authentication as described in the [REST API documentation]({{< ref "/reference/rest/overview/authentication.md" >}})
+5. Enable authentication as described in the [REST API documentation](../../reference/rest/overview/authentication.md)
 
 
 ## Camunda Connect Plugin

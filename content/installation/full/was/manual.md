@@ -16,7 +16,7 @@ menu:
 This section will describe how you can install the Camunda Platform and its components on an [IBM WebSphere 
 Application Server][was9].
 
-{{< note title="Reading this Guide" class="info" >}}
+### Reading this Guide
 Throughout this section we will use a number of variables to denote common path names and constants.
 You don't have to create these variables in your environment.
 They are just used in this guide to make it more readable.
@@ -27,7 +27,7 @@ They are just used in this guide to make it more readable.
 
 The distribution is available at the [Camunda enterprise release page](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/ibm-was9/).
 You will be asked to enter the credentials you received during the trial or subscription process.
-{{< /note >}}
+
 
 Before  you can install the Camunda components, you need to perform a number of required setup steps.
 
@@ -73,7 +73,7 @@ The following screenshot shows the configuration of an XA datasource:
 
 {{< img src="../img/jdbc.png" title="JDBC Configuration" >}}
 
-Note that you may configure multiple datasources used by different process engine instances. See the [User Guide]({{< ref "/user-guide/_index.md" >}}) for details.
+Note that you may configure multiple datasources used by different process engine instances. See the [User Guide](../../user-guide/_index.md) for details.
 
 # Configure a WorkManager
 
@@ -224,7 +224,7 @@ The EAR must be installed to your IBM WebSphere Application Server:
 5. In **Step 1**, enter an application-name, eg. **"camunda-bpm-platform"**, customize other settings and click **"Next"**.
 6. Continue through **Steps 2-4**, customize to your liking and finish the installation in **Step 4** by clicking **"Finish"**.
 7. Save the configuration.
-8. (optional) [Configure location of the `bpm-platform.xml` file]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}})
+8. (optional) [Configure location of the `bpm-platform.xml` file](../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file)
 9. Start the camunda-bpm-platform application. If this initially fails, try to restart the server. Also make sure the EAR does correctly reference the previously created 'Camunda' shared library.
     If it doesn't, make sure you have correctly created the shared library as 'Camunda' or assign the 'Camunda' shared library manually after the EAR installation.
 
@@ -383,6 +383,6 @@ When installing the Camunda Platform application, you may see error messages ind
 
 [was9]: https://www.ibm.com/docs/en/was/9.0.5?topic=SSEQTP_9.0.5/as_ditamaps/was9_welcome_base.html
 
-[bpm-platform-xml-config]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}
-[db-schema-install]: {{< ref "/installation/database-schema.md" >}}
+[bpm-platform-xml-config]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}
+[db-schema-install]: ../../installation/database-schema.md" >}}
 

@@ -15,7 +15,7 @@ menu:
 
 
 Queries for event subscriptions that fulfill given parameters.
-The size of the result set can be retrieved by using the [Get Event Subscription Count]({{< ref "/reference/rest/event-subscription/get-query-count.md" >}}) method.
+The size of the result set can be retrieved by using the [Get Event Subscription Count](../../reference/rest/event-subscription/get-query-count.md) method.
 
 
 # Method
@@ -160,7 +160,7 @@ Each event subscription object has the following properties:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

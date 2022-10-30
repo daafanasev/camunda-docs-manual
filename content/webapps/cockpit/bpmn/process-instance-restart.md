@@ -34,7 +34,7 @@ To add an instruction, hover over an activity in the process diagram. By using t
 
 In the top-left corner of the activity, a badge will appear, indicating the restart (3).
 
-At any point during the creation of the restart, you can show the payload by clicking the {{< glyphicon name="eye-open" >}} button. This will show the request payload that will be sent via the [REST API]({{< ref "/reference/rest/_index.md" >}}).
+At any point during the creation of the restart, you can show the payload by clicking the {{< glyphicon name="eye-open" >}} button. This will show the request payload that will be sent via the [REST API](../../reference/rest/_index.md).
 
 
 ## Restart Instructions 
@@ -49,9 +49,9 @@ When you click on **Select Instances**, a modal opens. Initially, all instances 
 You can use the filter bar above the list of instances to filter the displayed instances.
 You can select specific instances or click on the **Query** radio button to select all instances matching the filter.
 
-{{< note title="Warning" class="warning">}}
+### Warning" class="warning">}}
 Selecting all instances might create a high load on the database and application runtime/server if the query has a high number of results.
-{{< /note >}}
+
 
 When you have made your selection you can proceed by clicking the red button. This leads you to the **Confirm Restart** modal.  
 

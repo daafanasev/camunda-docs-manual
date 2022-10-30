@@ -16,7 +16,7 @@ Inside a form script, the following built-in variables and functions are availab
 # camForm
 
 The `camForm` variable is an instance of the `CamSDK.Form` class. It is the primary access point to
-the form API and allows definition of event handers for participation in the form [lifecycle]({{< ref "/reference/forms/embedded-forms/lifecycle.md" >}}):
+the form API and allows definition of event handers for participation in the form [lifecycle](../../reference/forms/embedded-forms/lifecycle.md):
 
 ```html
 <form role="form">
@@ -38,7 +38,7 @@ the form API and allows definition of event handers for participation in the for
 
 {{< note class="info" >}}
 Only available with AngularJS integration.
-{{< /note >}}
+
 
 Provides access to the current AngularJS scope:
 
@@ -65,7 +65,7 @@ Provides access to the current AngularJS scope:
 
 {{< note class="info" >}}
 Only available with AngularJS integration.
-{{< /note >}}
+
 
 ```html
 <form role="form">

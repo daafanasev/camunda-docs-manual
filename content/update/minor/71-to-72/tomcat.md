@@ -172,9 +172,9 @@ The following steps are required to update the camunda web applications Cockpit,
 2. Download the Camunda web application archive from our [Maven Nexus Server](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-tomcat/). Or switch to the private repository for the enterprise version (User and password from license required). Choose the correct version named `$PLATFORM_VERSION/camunda-webapp-tomcat-$PLATFORM_VERSION.war`.
 3. Deploy the web application archive to your Tomcat instance.
 
-{{< note title="LDAP Entity Caching" class="info" >}}
-With 7.2, it is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation]({{< ref "/reference/rest/overview/hal.md" >}}) for details.
-{{< /note >}}
+### LDAP Entity Caching
+With 7.2, it is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation](../../reference/rest/overview/hal.md) for details.
 
-[configuration-location]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
-[migration-guide]: {{< ref "/update/minor/71-to-72/_index.md" >}}
+
+[configuration-location]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
+[migration-guide]: ../../update/minor/71-to-72/_index.md" >}}

@@ -179,6 +179,6 @@ information. The description text is set inside the `description` XML element.
 ```
 
 
-[supported EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
-[default EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
-[FEEL]: {{< ref "/reference/dmn/feel/_index.md" >}}
+[supported EL]: ../../user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
+[default EL]: ../../user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
+[FEEL]: ../../reference/dmn/feel/_index.md" >}}

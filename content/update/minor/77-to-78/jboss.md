@@ -107,10 +107,10 @@ The following steps are required to update the Camunda web applications Cockpit,
 3. Deploy the web application archive to your JBoss/Wildfly instance.
 
 
-[jboss-threads-to-camunda-mapping-table]: {{< ref "/update/minor/77-to-78/jboss.md#jboss-threads-to-camunda-subsystem-mapping-table" >}}
-[update-guide]: {{< ref "/update/minor/77-to-78/_index.md" >}}
+[jboss-threads-to-camunda-mapping-table]: ../../update/minor/77-to-78/jboss.md#jboss-threads-to-camunda-subsystem-mapping-table" >}}
+[update-guide]: ../../update/minor/77-to-78/_index.md" >}}
 [jboss-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/jboss/camunda-bpm-jboss/
 [wildfly-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/wildfly/camunda-bpm-wildfly/
 [engine-rest]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/
 [webapp-jboss]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-jboss/
-[jboss-container-integration]: {{< ref "/user-guide/runtime-container-integration/jboss.md" >}}
+[jboss-container-integration]: ../../user-guide/runtime-container-integration/jboss.md" >}}

@@ -15,22 +15,22 @@ menu:
 
 This document guides you through the update from Camunda Platform `7.2.x` to `7.3.0`. It covers these use cases:
 
-1. For administrators and developers: [Database Updates]({{< relref "#database-updates" >}})
-2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution" >}})
-3. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine" >}})
-4. For developers: [Migrating a Cockpit plugin]({{< relref "#cockpit-plugins" >}})
-5. For administrators: [Migrating a Tasklist translation file]({{< relref "#tasklist-translation-file" >}})
-6. For administrators and developers: [Checking authorizations for newly introduced authorization resources]({{< relref "#notewothy-new-features" >}})
+1. For administrators and developers: [Database Updates]({{< relref "#database-updates)
+2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution)
+3. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine)
+4. For developers: [Migrating a Cockpit plugin]({{< relref "#cockpit-plugins)
+5. For administrators: [Migrating a Tasklist translation file]({{< relref "#tasklist-translation-file)
+6. For administrators and developers: [Checking authorizations for newly introduced authorization resources]({{< relref "#notewothy-new-features)
 
 This guide covers mandatory migration steps as well as optional considerations for initial configuration of new functionality included in Camunda Platform 7.3.
 
 Noteworthy new Features in 7.3:
 
-* **Authorization:** With [Authorization]({{< relref "#notewothy-new-features" >}}) being used for restricting access to applications and identity-related data in Camunda Platform 7.2, 7.3 extends authorization checks to execution-related concepts like process instances and task
+* **Authorization:** With [Authorization]({{< relref "#notewothy-new-features) being used for restricting access to applications and identity-related data in Camunda Platform 7.2, 7.3 extends authorization checks to execution-related concepts like process instances and task
 
-{{< note title="No Rolling Updates" class="warning" >}}
+### No Rolling Updates
 It is not possible to migrate process engines from Camunda 7.2 to 7.3 in a rolling fashion. This means, it is not possible to run process engines of version 7.2 and 7.3 in parallel with the same database configuration. The reason is that a 7.2 engine may not be able to execute process instances that have been previously executed by a 7.3 engine, as these may use features that were not available yet in 7.2.
-{{< /note >}}
+
 
 # Database Updates
 
@@ -38,7 +38,7 @@ The first step consists in updating the database.
 
 ## Basic Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.2_patch_?.sql`.
@@ -65,7 +65,7 @@ This script is the same as patch `$DATABASE_engine_7.2_patch_7.2.4_to_7.2.5.sql`
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -78,11 +78,11 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.3 dis
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/72-to-73/tomcat.md" >}})
-* [JBoss/Wildfly]({{< ref "/update/minor/72-to-73/jboss.md" >}})
-* [Glassfish]({{< ref "/update/minor/72-to-73/glassfish.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/72-to-73/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/72-to-73/wls.md" >}})
+* [Apache Tomcat](../../update/minor/72-to-73/tomcat.md)
+* [JBoss/Wildfly](../../update/minor/72-to-73/jboss.md)
+* [Glassfish](../../update/minor/72-to-73/glassfish.md)
+* [IBM WebSphere](../../update/minor/72-to-73/was.md)
+* [Oracle WebLogic](../../update/minor/72-to-73/wls.md)
 
 ## Custom Process Applications
 
@@ -119,7 +119,7 @@ This section describes a change in the engine's default behavior. While the chan
 
 ### Task Query Expressions
 
-As of 7.3.3, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for details.
+As of 7.3.3, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code](../../user-guide/process-engine/securing-custom-code.md) for details.
 This is already the default for Camunda Platform versions after and including 7.2.8.
 
 # Cockpit Plugins
@@ -128,13 +128,13 @@ Migrating a Cockpit Plugin from Camunda Platform 7.2 to 7.3 consists of the foll
 
 Client side:
 
-* [Replacing ngDefine with requireJS]({{< relref "#replacing-ngdefine-with-requirejs" >}})
-* [Reviewing usage of angular-ui]({{< relref "#reviewing-usage-of-angular-ui" >}})
-* [Reviewing usage of bootstrap]({{< relref "#reviewing-usage-of-bootstrap" >}})
+* [Replacing ngDefine with requireJS]({{< relref "#replacing-ngdefine-with-requirejs)
+* [Reviewing usage of angular-ui]({{< relref "#reviewing-usage-of-angular-ui)
+* [Reviewing usage of bootstrap]({{< relref "#reviewing-usage-of-bootstrap)
 
 Server side:
 
-* [Replacing Jackson 1 with Jackson 2]({{< relref "#replacing-jackson-1-with-jackson-2" >}})
+* [Replacing Jackson 1 with Jackson 2]({{< relref "#replacing-jackson-1-with-jackson-2)
 
 ## Replace ngDefine With requireJS
 
@@ -290,19 +290,19 @@ As of version 7.3, it is possible to authorize access to process-related resourc
 * `Process Instance`
 * `Task`
 
-so that an authenticated user can only see, modify, and delete those process definitions, process instances, and tasks for which the user is authorized to do so (for further details please read the [User Guide]({{< ref "/user-guide/process-engine/authorization-service.md" >}})).
+so that an authenticated user can only see, modify, and delete those process definitions, process instances, and tasks for which the user is authorized to do so (for further details please read the [User Guide](../../user-guide/process-engine/authorization-service.md)).
 
 The update script `$DATABASE_engine_7.2_to_7.3.sql` contains `INSERT`-statements that create a new `GLOBAL` authorization and a new `GRANT` authorization for the group `camunda-admin` for each new authorization resource. These authorizations ensure that all users are able to access above-mentioned resources so that the process engine behaves the same way after the update as it did before the update.
 
 If these authorizations are not desired and you want to restrict access to the listed resources, you have the following options:
 
 * Before executing the update script `$DATABASE_engine_7.2_to_7.3.sql` remove the corresponding `INSERT`-statements inside the script.
-* Use the [Camunda Admin application]({{< ref "/webapps/admin/authorization-management.md" >}}) to delete the created authorizations.
-* Use the [Camunda Admin application]({{< ref "/webapps/admin/authorization-management.md" >}}) to add authorizations that restrict access.
+* Use the [Camunda Admin application](../../webapps/admin/authorization-management.md) to delete the created authorizations.
+* Use the [Camunda Admin application](../../webapps/admin/authorization-management.md) to add authorizations that restrict access.
 
-{{< note title="Note" class="warning" >}}
+### Note
 If you use custom authorization resources with 7.2, make sure to check that they have a different id than the newly introduced resources (listed above). Otherwise, granted/restricted authorizations apply to both resources which may result in undesired behavior.
-{{< /note >}}
+
 
 [ng-define]: http://nikku.github.io/requirejs-angular-define
 [requirejs]: http://requirejs.org

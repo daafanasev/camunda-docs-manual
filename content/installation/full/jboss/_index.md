@@ -12,6 +12,6 @@ menu:
 
 ---
 
-This document describes the installation of the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) for [Wildfly Application Server / JBoss EAP 7](http://www.wildfly.org).
+This document describes the installation of the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) for [Wildfly Application Server / JBoss EAP 7](http://www.wildfly.org).
 
 There are different options for installing the Full Distribution:

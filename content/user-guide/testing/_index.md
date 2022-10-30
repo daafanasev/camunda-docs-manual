@@ -140,9 +140,9 @@ public class MyBusinessProcessTest {
 }
 ```
 
-{{< note title="" class="info" >}}
-  Our [Project Templates for Maven]({{< ref "/user-guide/process-applications/maven-archetypes.md" >}}) give you a complete running project including a JUnit test out of the box.
-{{< /note >}}
+### Заметка class="info" >}}
+  Our [Project Templates for Maven](../../user-guide/process-applications/maven-archetypes.md) give you a complete running project including a JUnit test out of the box.
+
 
 
 ## JUnit 3
@@ -178,7 +178,7 @@ will pick the files `myProcess.bpmn` and `mySubProcess.bpmn` directly from the t
 
 Method-level annotations override class-level annotations. See the Javadocs for {{< javadocref page="org/camunda/bpm/engine/test/Deployment.html" text="@Deployment" >}}more details.
 
-The annotation is supported for [JUnit 3]({{< relref "#junit-3" >}}) and [JUnit 4]({{< relref "#junit-4" >}}) style of testing.
+The annotation is supported for [JUnit 3]({{< relref "#junit-3) and [JUnit 4]({{< relref "#junit-4) style of testing.
 
 ## Specify the required History Level
 
@@ -210,7 +210,7 @@ public class MyBusinessProcessTest {
 }
 ```
 
-The annotation is supported for [JUnit 3]({{< relref "#junit-3" >}}) and [JUnit 4]({{< relref "#junit-4" >}}) style of testing. Note that a skipped test is marked as passed for JUnit 3 style tests since JUnit 3 doesn't support skipping of tests.  
+The annotation is supported for [JUnit 3]({{< relref "#junit-3) and [JUnit 4]({{< relref "#junit-4) style of testing. Note that a skipped test is marked as passed for JUnit 3 style tests since JUnit 3 doesn't support skipping of tests.  
 
 ## Disabling Telemetry
 
@@ -222,8 +222,8 @@ Example of disabling the reporter in XML-based configuration:
 <property name="telemetryReporterActivate">false</property>
 ```
 
-[engine-config-telemetryReporterActivate]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
-[telemetry-initial-report]: {{< ref "/introduction/telemetry.md#initial-data-report" >}}
+[engine-config-telemetryReporterActivate]: ../../reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
+[telemetry-initial-report]: ../../introduction/telemetry.md#initial-data-report" >}}
 
 ## Debug Unit Tests
 
@@ -263,7 +263,7 @@ assertThat(processInstance).isWaitingAt("UserTask_InformCustomer");
 assertThat(task()).hasCandidateGroup("Sales").isNotAssigned();
 ```
 
-You can find a more extensive guide with examples under [Assert Examples]({{< ref "/user-guide/testing/assert-examples.md" >}}).
+You can find a more extensive guide with examples under [Assert Examples](../../user-guide/testing/assert-examples.md).
 
 To use Camunda Platform Assert, add the following dependency to your `pom.xml`:
 
@@ -506,13 +506,13 @@ one should make sure, that they are registered before the deployment happens. E.
 `@Deployment` annotation, beans should not be registered in `@Before` method, but rather the separate test rule can be created, that registers beans on startup, 
 and chained before `ProcessEngineRule`. 
 
-**The mocked beans feature should be used for testing purposes only.** Beans that are stored with `Mocks` are exclusively available within the respective storing thread as it is based on `ThreadLocal`. In most productive environments, it is not possible to access mocked beans during process execution due to the reason that jobs are executed by the multi-threaded Job Executor. Since the [Job Executor is disabled in unit test scenarios]({{< ref "/user-guide/process-engine/the-job-executor.md#job-executor-in-a-unit-test" >}}), the thread of process execution is the same that creates mocked bean instances.
+**The mocked beans feature should be used for testing purposes only.** Beans that are stored with `Mocks` are exclusively available within the respective storing thread as it is based on `ThreadLocal`. In most productive environments, it is not possible to access mocked beans during process execution due to the reason that jobs are executed by the multi-threaded Job Executor. Since the [Job Executor is disabled in unit test scenarios](../../user-guide/process-engine/the-job-executor.md#job-executor-in-a-unit-test), the thread of process execution is the same that creates mocked bean instances.
 
 # Best Practice
 
 ## Write Focused Tests
 
-The feature to [start a process instance at a set of activities]({{< ref "/user-guide/process-engine/process-engine-concepts.md#start-a-process-instance-at-any-set-of-activities" >}}) can be used to to create a very specific scenario without much setup. Similarly, certain activities can be skipped by using [process instance modification]({{< ref "/user-guide/process-engine/process-instance-modification.md" >}}).
+The feature to [start a process instance at a set of activities](../../user-guide/process-engine/process-engine-concepts.md#start-a-process-instance-at-any-set-of-activities) can be used to to create a very specific scenario without much setup. Similarly, certain activities can be skipped by using [process instance modification](../../user-guide/process-engine/process-instance-modification.md).
 
 ## Scoping Tests
 

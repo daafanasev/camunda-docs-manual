@@ -12,4 +12,4 @@ menu:
 
 ---
 
-To learn how to run Camunda Platform with Spring Boot, please consult the [Spring Boot user guide]({{< ref "/user-guide/spring-boot-integration/_index.md" >}}).
+To learn how to run Camunda Platform with Spring Boot, please consult the [Spring Boot user guide](../../user-guide/spring-boot-integration/_index.md).

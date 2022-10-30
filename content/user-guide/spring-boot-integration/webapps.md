@@ -11,7 +11,7 @@ menu:
 
 ---
 
-To enable the [Web Applications]({{<ref "/webapps/_index.md">}}) you can use the following starter in your `pom.xml`:
+To enable the [Web Applications](../../webapps/_index.md">}}) you can use the following starter in your `pom.xml`:
 
 ```xml
 <dependency>
@@ -41,9 +41,9 @@ To use the enterprise Web applications, include another starter:
 
 Also don't forget to define the appropriate Camunda engine version (with "ee" suffix): see [Using Enterprise Edition](../#using-enterprise-edition).
 
-If you are using the enterprise edition, you can also use the [`camunda.bpm.license-file`]({{<ref "/user-guide/spring-boot-integration/configuration.md#license-file">}}) 
+If you are using the enterprise edition, you can also use the [`camunda.bpm.license-file`](../../user-guide/spring-boot-integration/configuration.md#license-file">}}) 
 property to provide a license file that is inserted on application start. Or copy your license file under the name 
-`camunda-license.txt` to your `src/main/resources`. See the dedicated [License docs section]({{< ref "/user-guide/license-use.md" >}})
+`camunda-license.txt` to your `src/main/resources`. See the dedicated [License docs section](../../user-guide/license-use.md)
 for more details on how to add a License key to your Camunda installation.
 
 ## Configurations

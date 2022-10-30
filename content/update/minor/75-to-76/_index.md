@@ -23,19 +23,19 @@ menu:
 
 This document guides you through the update from Camunda Platform `7.5.x` to `7.6.0`. It covers these use cases:
 
-1. For administrators and developers: [Database Update]({{< relref "#database-updates" >}})
-2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution" >}})
-3. For administrators: [Standalone Web Application]({{< relref "#standalone-web-application" >}})
-4. For administrators: [Updating a Tasklist Translation File]({{< relref "#tasklist-translation-file" >}})
-5. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine" >}})
+1. For administrators and developers: [Database Update]({{< relref "#database-updates)
+2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution)
+3. For administrators: [Standalone Web Application]({{< relref "#standalone-web-application)
+4. For administrators: [Updating a Tasklist Translation File]({{< relref "#tasklist-translation-file)
+5. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine)
 
 This guide covers mandatory migration steps as well as optional considerations for initial configuration of new functionality included in Camunda Platform 7.6.
 
 Noteworthy new Features and Changes in 7.6:
 
-* [DRD support in DMN]({{< ref "/reference/dmn/drg/_index.md" >}})
-* [CMMN support in Cockpit]({{< ref "/webapps/cockpit/cmmn/_index.md" >}})
-* [Batch operations]({{< ref "/webapps/cockpit/batch/batch-operation.md" >}})
+* [DRD support in DMN](../../reference/dmn/drg/_index.md)
+* [CMMN support in Cockpit](../../webapps/cockpit/cmmn/_index.md)
+* [Batch operations](../../webapps/cockpit/batch/batch-operation.md)
 * Rolling update support
 
 <blockquote class="upgrade-guide-quote">
@@ -72,7 +72,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.5_patch_?.sql`.
@@ -87,7 +87,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -100,10 +100,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.6 dis
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/75-to-76/tomcat.md" >}})
-* [JBoss AS/Wildfly]({{< ref "/update/minor/75-to-76/jboss.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/75-to-76/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/75-to-76/wls.md" >}})
+* [Apache Tomcat](../../update/minor/75-to-76/tomcat.md)
+* [JBoss AS/Wildfly](../../update/minor/75-to-76/jboss.md)
+* [IBM WebSphere](../../update/minor/75-to-76/was.md)
+* [Oracle WebLogic](../../update/minor/75-to-76/wls.md)
 
 ### Wildfly 10
 
@@ -129,7 +129,7 @@ If a database other than the default H2 database is used, the following steps mu
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database
    update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -162,4 +162,4 @@ This section describes changes in the engine's default behavior. While the chang
 
 ### Custom Mapping of the Decision Result
 
-With Camunda 7.6, the type of the decision result has changed from `DmnDecisionTableResult` to `DmnDecisionResult`. If the decision result of a business rule task or a decision task is processed by an `ExecutionListener` or a `CaseExecutionListener` (i.e., [custom decision result mapping]({{< ref "/user-guide/process-engine/decisions/bpmn-cmmn.md#custom-mapping-of-the-decision-result" >}})), then the listener has to adjusted to use the new result type. Since the type is semantically equal and provides the same methods, only the type of the result has to be changed.
+With Camunda 7.6, the type of the decision result has changed from `DmnDecisionTableResult` to `DmnDecisionResult`. If the decision result of a business rule task or a decision task is processed by an `ExecutionListener` or a `CaseExecutionListener` (i.e., [custom decision result mapping](../../user-guide/process-engine/decisions/bpmn-cmmn.md#custom-mapping-of-the-decision-result)), then the listener has to adjusted to use the new result type. Since the type is semantically equal and provides the same methods, only the type of the result has to be changed.

@@ -40,7 +40,7 @@ A JSON object with the following properties:
     <td>historicDecisionInstanceQuery</td>
     <td>
       A historic decision instance query like the request body described by
-      <a href="{{< ref "/reference/rest/history/decision-instance/get-decision-instance-query.md#query-parameters" >}}">
+      <a href="../../reference/rest/history/decision-instance/get-decision-instance-query.md#query-parameters" >}}">
         <code>POST /history/decision-instance</code>
       </a>.
     </td>
@@ -74,7 +74,7 @@ A JSON object corresponding to the Batch interface in the engine. Its properties
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid, i.e. neither historicDecisionInstanceIds, nor historicDecisionInstanceQuery is present. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid, i.e. neither historicDecisionInstanceIds, nor historicDecisionInstanceQuery is present. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

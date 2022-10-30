@@ -59,10 +59,10 @@ Make sure when declaring a `TransactionAwareDataSourceProxy` in Spring configura
 </beans>
 ```
   
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   The `processEngineConfiguration` attributes `transactionManager` and `dataSource` must be configured consistently, 
   i.e. the `transactionManager` bean must actually manage the data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
-{{< /note >}}
+
 
 The remainder of that Spring configuration file contains the beans and configuration that we'll use in this particular example:
 
@@ -232,7 +232,7 @@ try {
 
 # Using Spring Transactions with CockroachDB
 
-Please see the documentation section on [external transaction management with CockroachDB]({{< ref "/user-guide/process-engine/database/cockroachdb-configuration.md#using-external-transaction-management-with-the-spring-java-ee-integrations" >}})
+Please see the documentation section on [external transaction management with CockroachDB](../../user-guide/process-engine/database/cockroachdb-configuration.md#using-external-transaction-management-with-the-spring-java-ee-integrations)
 to understand how to use the Spring Transaction integration with CockroachDB.
 
-[transactions-and-engine-context]: {{< ref "/user-guide/process-engine/transactions-in-processes.md#transactions-and-the-process-engine-context" >}}
+[transactions-and-engine-context]: ../../user-guide/process-engine/transactions-in-processes.md#transactions-and-the-process-engine-context" >}}

@@ -52,7 +52,7 @@ Custom incidents must always be related to an existing Execution.
 
 An incident of any type, except for **failedJob** and **failedExternalTask**, can be resolved by calling `RuntimeService#resolveIncident`.
 
-Incidents can be [created]({{<ref "/reference/rest/execution/post-create-incident.md">}}) and [resolved]({{<ref "/reference/rest/incident/resolve-incident.md">}}) through the REST API as well.
+Incidents can be [created](../../reference/rest/execution/post-create-incident.md">}}) and [resolved](../../reference/rest/incident/resolve-incident.md">}}) through the REST API as well.
 
 
 # (De-)Activate Incidents

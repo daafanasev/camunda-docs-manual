@@ -14,9 +14,9 @@ This guide gives an introduction to Camunda Platform Run, a pre-packaged, lightw
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Camunda Platform is and what it does. Check out the [Get Started guides](https://docs.camunda.org/get-started/quick-start/) if you have never used Camunda Platform before. The [Installation guide]({{< ref "/installation/camunda-bpm-run.md" >}}) is also worth looking at if you are completely new to Camunda Platform.
+To use this guide, you should at least know what Camunda Platform is and what it does. Check out the [Get Started guides](https://docs.camunda.org/get-started/quick-start/) if you have never used Camunda Platform before. The [Installation guide](../../installation/camunda-bpm-run.md) is also worth looking at if you are completely new to Camunda Platform.
 
-This guide will teach you about Camunda Platform Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Camunda Platform Run. Head over to the [Installation guide]({{< ref "/installation/camunda-bpm-run.md" >}}) for details on how to install and start Camunda Platform Run.
+This guide will teach you about Camunda Platform Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Camunda Platform Run. Head over to the [Installation guide](../../installation/camunda-bpm-run.md) for details on how to install and start Camunda Platform Run.
 
 # What is Camunda Platform Run?
 
@@ -26,7 +26,7 @@ Camunda Platform Run is a full distribution of the Camunda Platform. It includes
   * Cockpit
   * Tasklist
   * Admin
-* [REST API]({{< ref "/reference/rest/overview/_index.md" >}})
+* [REST API](../../reference/rest/overview/_index.md)
 * [Swagger UI](https://github.com/swagger-api/swagger-ui) (web application for exploring the REST API)
 * [An example application](#example-application)
 
@@ -118,7 +118,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
 
 ## Starting Camunda Platform Run using Docker
 
-Camunda Platform Run is also available as a Docker image. Please see the Camunda Platform Run section of the Camunda Docker documentation [here]({{< ref "/installation/docker.md#start-camunda-bpm-run-using-docker" >}}) for more details.
+Camunda Platform Run is also available as a Docker image. Please see the Camunda Platform Run section of the Camunda Docker documentation [here](../../installation/docker.md#start-camunda-bpm-run-using-docker) for more details.
 
 ## Optional components
 
@@ -139,8 +139,8 @@ That way, the example application and its resources will be present on the class
 However, the example application will not be started.
 
 Disabling the example application with any of those mechanisms will **NOT** delete any deployments or process instances from Camunda Run once they are created.
-You have to delete this data manually through the [web apps]({{< ref "/webapps/cockpit/deployment-view.md#delete" >}}), the 
-[REST API]({{< ref "/reference/rest/deployment/delete-deployment.md" >}}), or by cleaning the database 
+You have to delete this data manually through the [web apps](../../webapps/cockpit/deployment-view.md#delete), the 
+[REST API](../../reference/rest/deployment/delete-deployment.md), or by cleaning the database 
 [configured in the application properties](#database).
 
 ## Choose between default and production configuration
@@ -148,7 +148,7 @@ You have to delete this data manually through the [web apps]({{< ref "/webapps/c
 Camunda Platform Run ships with two different configuration files which are both located in the `configuration` folder. 
 
 * The `default.yml` configuration only contains necessary configuration like the H2 database, a demo user and [CORS](#cross-origin-resource-sharing) for REST calls from a client application.
-* The `production.yml` configuration is intended to provide the recommended properties according to the [Security Instructions]({{< ref "/user-guide/security.md" >}}). 
+* The `production.yml` configuration is intended to provide the recommended properties according to the [Security Instructions](../../user-guide/security.md). 
   When using Camunda Platform Run in a production environment, make sure to base your custom configuration on this one and carefully read through the security instructions.
 
 By default, Run launches with the `default.yml` configuration. To enable the `production.yml` configuration, execute the start script with the `--production` property.
@@ -159,9 +159,9 @@ However, we do not recommended to use Swagger UI and the example application in 
 
 Camunda Platform Run is pre-configured to use a file-based H2 database for testing. The database schema and all required tables are automatically created when the engine starts up for the first time. If you want to use a custom standalone database, follow these steps:
 
-1. Make sure your database is among the [supported database systems]({{< ref "/introduction/supported-environments.md#supported-database-products" >}}).
+1. Make sure your database is among the [supported database systems](../../introduction/supported-environments.md#supported-database-products).
 1. Create a database schema for the Camunda Platform yourself.
-1. Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+1. Install the database schema to create all required tables and default indices using our [database schema installation guide](../../installation/database-schema.md).
 1. Drop a JDBC driver jar for your database system in the `configuration/userlib` folder.
 1. Add the JDBC URL and login credentials to the configuration file like described [below](#database).
 1. Restart Camunda Platform Run
@@ -172,22 +172,22 @@ In the unpacked distro, you will find a `resources` folder. All files (including
 
 You can reference forms and scripts in the BPMN diagram with `embedded:deployment:/my-form.html`, `camunda-forms:deployment:/myform.form`, or `deployment:/my-script.js`. The deployment requires adding an extra `/` as a prefix to the filename.
 
-Deployments via the [REST API]({{< ref "/reference/rest/deployment/post-deployment.md" >}}) are still possible.
+Deployments via the [REST API](../../reference/rest/deployment/post-deployment.md) are still possible.
 
 ## Automatic License Pickup
 
 If you downloaded the enterprise version of Camunda Platform Run, you will need a license key to enable the enterprise 
-features. Please see the [dedicated License section]({{< ref "/user-guide/license-use.md#with-the-camunda-spring-boot-starter-camunda-run" >}}) 
+features. Please see the [dedicated License section](../../user-guide/license-use.md#with-the-camunda-spring-boot-starter-camunda-run) 
 of the docs, to learn more.
 
 # Configure Camunda Platform Run
 
 Just like all the other distros, you can tailor Camunda Platform Run to your needs. To do this, you only have to edit one of the [configuration files](#choose-between-default-and-production-configuration) that you can find in the configuration folder.
 
-{{< note title="Note:" class="info" >}}
+### Note:
 Camunda Platform Run is based on the [Camunda Spring Boot Starter](https://github.com/camunda/camunda-bpm-platform/tree/master/spring-boot-starter). 
-All [configuration properties]({{< ref "/user-guide/spring-boot-integration/configuration.md#camunda-engine-properties" >}}) from the camunda-spring-boot-starter are available to customize Camunda Platform Run.
-{{< /note >}}
+All [configuration properties](../../user-guide/spring-boot-integration/configuration.md#camunda-engine-properties) from the camunda-spring-boot-starter are available to customize Camunda Platform Run.
+
 
 ## Database
 
@@ -225,7 +225,7 @@ The distro comes with a file-based h2 database for testing. It is recommended to
 
 ## Authentication
 
-To add authentication to requests against the [REST API]({{< ref "/reference/rest/overview/_index.md" >}}), you can enable basic authentication.
+To add authentication to requests against the [REST API](../../reference/rest/overview/_index.md), you can enable basic authentication.
 
 <table class="table desc-table">
   <tr>
@@ -249,7 +249,7 @@ To add authentication to requests against the [REST API]({{< ref "/reference/res
 
 ## Cross-Origin Resource Sharing
 
-If you want to allow cross-origin requests to the [REST API]({{< ref "/reference/rest/overview/_index.md" >}}), you need to enable CORS.
+If you want to allow cross-origin requests to the [REST API](../../reference/rest/overview/_index.md), you need to enable CORS.
 <table class="table desc-table">
   <tr>
       <th>Prefix</th>
@@ -294,10 +294,10 @@ If you want to allow cross-origin requests to the [REST API]({{< ref "/reference
 
 ## LDAP Identity Service
 
-Camunda Platform can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< ref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
+Camunda Platform can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin](../../user-guide/process-engine/identity-service.md#the-ldap-identity-service)
 which provides read-only access to the LDAP repository.
 
-Find all available configuration properties in the [LDAP Plugin Guide]({{< ref "/user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin" >}})
+Find all available configuration properties in the [LDAP Plugin Guide](../../user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin)
 
 <table class="table desc-table">
   <tr>
@@ -316,9 +316,9 @@ Find all available configuration properties in the [LDAP Plugin Guide]({{< ref "
 
 ### LDAP Administrator Authorization
 
-You can also use the [Administrator Authorization plugin]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}) 
+You can also use the [Administrator Authorization plugin](../../user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin) 
 to ensure the appropriate LDAP user or group gains administrative access. Review all the available 
-configuration options in the [Administrator Authorization plugin section]({{< ref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
+configuration options in the [Administrator Authorization plugin section](../../user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin)
 of our documentation.
 
 In the table below, observe the Camunda Run-specific properties for the Administrator Authorization plugin.
@@ -435,7 +435,7 @@ camunda.bpm.run.process-engine-plugins:
 3. Start Camunda Run. The `TestPlugin` will be read from the YAML configuration and registered with the
 process engine.
 
-[engine-plugins]: {{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}
+[engine-plugins]: ../../user-guide/process-engine/process-engine-plugins.md" >}}
 
 ## Example application launch
 
@@ -512,7 +512,7 @@ After starting Camunda Platform Run, you can access the webapps via https://loca
 
 ## Logging
 
-Camunda Platform provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< ref "/user-guide/logging.md#process-engine" >}}).
+Camunda Platform provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide](../../user-guide/logging.md#process-engine).
 To configure the logging behavior in Camunda Platform Run, customize your configuration file with the following properties.
 
 For more information on logging configuration visit the [Spring Boot Logging Guide](https://docs.spring.io/spring-boot/docs/2.4.0/reference/html/spring-boot-features.html#boot-features-logging).
@@ -532,7 +532,7 @@ For more information on logging configuration visit the [Spring Boot Logging Gui
   </tr>
   <tr>
       <td><code>.level.{logger-name}</code></td>
-      <td>Set a logging level for a specific logging category. Find an overview over the available categories in the <a href="{{<ref "/user-guide/logging.md#process-engine" >}}">Logging User Guide</a>.
+      <td>Set a logging level for a specific logging category. Find an overview over the available categories in the <a href="../../user-guide/logging.md#process-engine" >}}">Logging User Guide</a>.
       Value can be one of the following: <code>OFF</code>. <code>ERROR</code>. <code>WARN</code>. <code>INFO</code>. <code>DEBUG</code>. <code>ALL</code></td>
       <td><code>-</code></td>
   </tr>

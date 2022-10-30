@@ -37,7 +37,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.10_patch_?.sql`.
@@ -60,7 +60,7 @@ Be aware that `DATETIME` does not store time zone information. This means that, 
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -73,10 +73,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.11 di
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/710-to-711/tomcat.md" >}})
-* [JBoss AS/Wildfly]({{< ref "/update/minor/710-to-711/jboss.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/710-to-711/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/710-to-711/wls.md" >}})
+* [Apache Tomcat](../../update/minor/710-to-711/tomcat.md)
+* [JBoss AS/Wildfly](../../update/minor/710-to-711/jboss.md)
+* [IBM WebSphere](../../update/minor/710-to-711/was.md)
+* [Oracle WebLogic](../../update/minor/710-to-711/wls.md)
 
 ## Custom Process Applications
 
@@ -97,7 +97,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -105,7 +105,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 If you are using Camunda Spring Boot Starter within you Spring Boot application, then you need to:
 
-1. Check [Version Compatibility Matrix]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
+1. Check [Version Compatibility Matrix](../../user-guide/spring-boot-integration/version-compatibility.md)
 2. Update **Spring Boot Starter** and, when required, Spring Boot versions in your `pom.xml`.
 3. Update the Camunda Platform version in your `pom.xml` in case you override it before (e.g. when using the enterprise version or a patch releases)
 
@@ -146,12 +146,12 @@ following Spring artifacts:
 
 If you are using the **Camunda External Task Client**, please make sure to:
 
-1. Check out the [Version Compatibility Matrix]({{< ref "/user-guide/ext-client/compatibility-matrix.md" >}})
+1. Check out the [Version Compatibility Matrix](../../user-guide/ext-client/compatibility-matrix.md)
 2. Update the version in your `pom.xml` (Java) or `package.json` (NodeJs)
 
 # Changes Affecting Custom Permissions/Resources
 
-This section concerns you in case the [authorization checks]({{< ref "/user-guide/process-engine/authorization-service.md#enable-authorization-checks" >}}) are enabled and you use custom permissions or resources.
+This section concerns you in case the [authorization checks](../../user-guide/process-engine/authorization-service.md#enable-authorization-checks) are enabled and you use custom permissions or resources.
 
 An Authorization assigns a set of Permissions to an identity to interact with a given Resource.
 The build-in [Permissions] (https://docs.camunda.org/javadoc/camunda-bpm-platform/7.11/org/camunda/bpm/engine/authorization/Permissions.html) define the way an identity is allowed to interact with a certain resource.
@@ -214,7 +214,7 @@ In case you have at least one of these custom implementations please have a look
 ## How to avoid a permission clash
 
 1. Check if any of your custom permissions is in conflict with one of the built-in permissions: Check the permission enums in the [org.camunda.bpm.engine.authorization](https://docs.camunda.org/javadoc/camunda-bpm-platform/7.11/index.html?org/camunda/bpm/engine/authorization/package-summary.html) package. Determine if there is any permission that applies to the same resource and has the same value as one of your custom permissions.
-1. Deactivate this built-in permission via a [process engine configuration property]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#disabledPermissions">}}). Note that in this case Camunda no longer enforces the disabled permissions.
+1. Deactivate this built-in permission via a [process engine configuration property](../../reference/deployment-descriptors/tags/process-engine.md#disabledPermissions">}}). Note that in this case Camunda no longer enforces the disabled permissions.
 
 # User Operation Log Permissions
 
@@ -231,8 +231,8 @@ In order to read (or delete) entries that are not related to process definitions
 
 * permission `READ` (or `DELETE`) on resource `UserOperationLogCategory` with the resource id set to the respective category of the entry or `*`
 
-An overview of the operation logs and their categories can be found at [User Operation Log]({{< ref "/user-guide/process-engine/history.md#glossary-of-operations-logged-in-the-user-operation-log" >}}).
-Authorization management is detailed in [Authorization Service]({{< ref "/user-guide/process-engine/authorization-service.md" >}}).
+An overview of the operation logs and their categories can be found at [User Operation Log](../../user-guide/process-engine/history.md#glossary-of-operations-logged-in-the-user-operation-log).
+Authorization management is detailed in [Authorization Service](../../user-guide/process-engine/authorization-service.md).
 
 # Custom WritableIdentityProvider
 
@@ -264,15 +264,15 @@ You can also inspect the [DbIdentityServiceProvider](https://github.com/camunda/
 
 # Exception Handling in Processes
 
-As of 7.11.0, exceptions thrown from execution and task listeners can trigger BPMN error events (for more information, please check the [User Guide]({{< ref "/user-guide/process-engine/delegation-code.md#throw-bpmn-errors-from-listeners" >}})). Accordingly, the semantics of existing processes may change if there is an error event that catches the exception.
+As of 7.11.0, exceptions thrown from execution and task listeners can trigger BPMN error events (for more information, please check the [User Guide](../../user-guide/process-engine/delegation-code.md#throw-bpmn-errors-from-listeners)). Accordingly, the semantics of existing processes may change if there is an error event that catches the exception.
 
 # Updated Front End Libraries
 
 With this release, we updated all front end libraries. Changes introduced with newer package versions might impacting:
 
-* [Embedded Task Forms]({{< ref "/user-guide/task-forms#embedded-task-forms" >}})
-* [Custom Scripts]({{< ref "/webapps/cockpit/extend/configuration.md#custom-scripts" >}})
-* [Cockpit Plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) or [Tasklist Plugins]({{< ref "/webapps/tasklist/tasklist-plugins.md" >}})
+* [Embedded Task Forms](../../user-guide/task-forms#embedded-task-forms)
+* [Custom Scripts](../../webapps/cockpit/extend/configuration.md#custom-scripts)
+* [Cockpit Plugins](../../webapps/cockpit/extend/plugins.md) or [Tasklist Plugins](../../webapps/tasklist/tasklist-plugins.md)
 
 Please find below a complete table of the updated front end libraries.
 
@@ -421,7 +421,7 @@ we have added the XSS Protection Header to all server responses in conjunction w
 
 By default, the XSS Protection HTTP Header is configured in a way that a page gets blocked as soon as the browser detects 
 a cross-site scripting attack. You can either loosen this behavior or even disable the XSS Protection Header. Learn more 
-about how to configure the [HTTP Header Security Filter]({{< ref "/webapps/shared-options/header-security.md" >}}). 
+about how to configure the [HTTP Header Security Filter](../../webapps/shared-options/header-security.md). 
 
 For further reading on how the XSS protection header works in detail, 
 please see [Mozillas MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection).

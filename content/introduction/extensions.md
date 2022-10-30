@@ -18,9 +18,9 @@ The commercial [Camunda Platform 7 product](https://camunda.com/platform-7/) con
 
 Camunda supports the community in its effort to build additional community extensions under the Camunda Platform umbrella. Such community extensions are maintained by the community and are not part of the commercial Camunda Platform product. 
 
-{{< note title="Camunda Support" class="warning" >}}
+### Camunda Support
   Camunda does not support community extensions as part of its commercial services to enterprise subscription customers.
-{{< /note >}}
+
 
 The [Camunda Community Hub](https://github.com/camunda-community-hub) is a GitHub organization that serves as the home of Camunda open source, community-contributed extensions. You can migrate an extension you've built to the Hub, search for existing extensions, or get started with open source by helping community extension maintainers with open issue or pull request triage.
 

@@ -33,7 +33,7 @@ database. Thus, you will be prompted to enter the license key separately for eac
 ## Through the Admin Webapp UI
 
 Any environment setup that uses the enterprise Camunda Admin webapp, can use the provided License key page to
-enter a valid license key. Please see the dedicated [Admin webapp]({{< ref "/webapps/admin/system-management.md#camunda-license-key" >}}) 
+enter a valid license key. Please see the dedicated [Admin webapp](../../webapps/admin/system-management.md#camunda-license-key) 
 docs section for more details.
 
 ## Through the Java API
@@ -60,7 +60,7 @@ automatically loaded in the database table unless a valid license key is already
 Camunda Run, and other Spring Boot applications (including Camunda Platform RPA Bridge) that use the 
 Camunda Spring Boot Starter, can be provided with license  keys in two additional ways:
 
-* provide a URL to a license file via a custom [Spring Property]({{< ref "/user-guide/spring-boot-integration/configuration.md#license-file" >}}).
+* provide a URL to a license file via a custom [Spring Property](../../user-guide/spring-boot-integration/configuration.md#license-file).
 * provide the license key in a file called `camunda-license.txt` which is on the classpath of the application.
 
 **Note:** For these two properties to be available, the Camunda Run EE edition must be used, or the Spring Boot 

@@ -175,8 +175,8 @@ The variable can be used in an expression of an [input entry]. For example, the
 JUEL expression `currentSeason != "Fall"` checks if the season input is not
 `"Fall"`.
 
-[supported EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
-[default EL]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
-[supported DT]: {{< ref "/user-guide/dmn-engine/data-types.md#supported-data-types" >}}
-[inputVariable]: {{< ref "/reference/dmn/custom-extensions/camunda-attributes.md#inputvariable" >}}
-[input entry]: {{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}
+[supported EL]: ../../user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
+[default EL]: ../../user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
+[supported DT]: ../../user-guide/dmn-engine/data-types.md#supported-data-types" >}}
+[inputVariable]: ../../reference/dmn/custom-extensions/camunda-attributes.md#inputvariable" >}}
+[input entry]: ../../reference/dmn/decision-table/rule.md#input-entry-condition" >}}

@@ -111,6 +111,6 @@ The following steps are required to update the Camunda web applications Cockpit,
 3. Deploy the web application archive to your JBoss/Wildfly instance.
 
 
-[update-guide]: {{< ref "/update/minor/714-to-715/_index.md" >}}
+[update-guide]: ../../update/minor/714-to-715/_index.md" >}}
 [engine-rest]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/7.15.0/
 [webapp-jboss]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/webapp/camunda-webapp-jboss/7.15.0/camunda-webapp-jboss-7.15.0.war

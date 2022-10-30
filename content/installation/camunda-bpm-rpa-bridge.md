@@ -38,9 +38,9 @@ The easiest way to create a BPMN model that connects to an RPA bot is by using C
 # Installation Procedure
 1. Download the Camunda RPA Bridge distro from [here](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/rpa/).
 1. Extract the downloaded archive
-1. Configure the bridge with the shipped `application.yml` file (see the [user guide]({{< ref "/user-guide/camunda-bpm-rpa-bridge.md#camunda-bpm-rpa-bridge-configuration" >}}) for a full list of configuration options).
+1. Configure the bridge with the shipped `application.yml` file (see the [user guide](../../user-guide/camunda-bpm-rpa-bridge.md#camunda-bpm-rpa-bridge-configuration) for a full list of configuration options).
 1. Start the Bridge by executing the jar file: `java -jar camunda-bpm-rpa-bridge.jar`
-1. Create and deploy a model that includes an RPA service task (see the [user guide]({{< ref "/user-guide/camunda-bpm-rpa-bridge.md#set-up-an-rpa-task" >}}) for more information) to the Camunda Platform
+1. Create and deploy a model that includes an RPA service task (see the [user guide](../../user-guide/camunda-bpm-rpa-bridge.md#set-up-an-rpa-task) for more information) to the Camunda Platform
 
 The bridge will now forward RPA tasks to the configured RPA vendor and publish the result back to Camunda. You can observe the process via Cockpit.
 

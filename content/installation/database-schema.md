@@ -12,25 +12,25 @@ menu:
 
 ---
 
-This document will guide you through the installation and update of the Camunda Platform [database schema]({{< ref "/user-guide/process-engine/database/database-schema.md" >}}) used by the process engine.
-Regardless of the [architecture of your application setup]({{< ref "/introduction/architecture.md" >}}), the process engine always requires this database schema.
+This document will guide you through the installation and update of the Camunda Platform [database schema](../../user-guide/process-engine/database/database-schema.md) used by the process engine.
+Regardless of the [architecture of your application setup](../../introduction/architecture.md), the process engine always requires this database schema.
 In a production environment, we recommend setting up this schema yourself and reference the prepared database instance in your application configuration.
-Consult the installation guide related to your setup to configure the database for a [remote engine]({{< ref "/installation/camunda-bpm-run.md" >}}), [shared engine]({{< ref "/installation/full/_index.md" >}}), or [embedded engine]({{< ref "/installation/spring-boot.md" >}}) accordingly.
+Consult the installation guide related to your setup to configure the database for a [remote engine](../../installation/camunda-bpm-run.md), [shared engine](../../installation/full/_index.md), or [embedded engine](../../installation/spring-boot.md) accordingly.
 
 This guide will not detail how to set up an instance of your target database or how to create a schema object on it.
 Consult the documentation of your target database on how to do that.
-Camunda Platform supports a variety of databases that are documented in the [supported environments]({{< ref "/introduction/supported-environments.md#databases" >}}). 
+Camunda Platform supports a variety of databases that are documented in the [supported environments](../../introduction/supported-environments.md#databases). 
 
 Camunda Platform supports the following ways of installing the database schema:
 
 * Use the database migration tool [Liquibase](https://www.liquibase.org/) with the provided changelog for a semi-automatic installation and update. Liquibase keeps track of database schema changes. This allows you to focus on *when* changes should be applied rather than also on *which* changes are relevant. Starting with version `7.16.0`, Camunda Platform comes with a curated *changelog file* that Liquibase can consume.
 * Use the provided SQL scripts with the tools related to your database for a fully manual installation and update. A manual procedure allows you to fully control the SQL statements that are executed on your database instance and to adjust those statements to your needs if necessary.
 
-{{< note title="Isolation level" class="info" >}}
+### Isolation level
 READ COMMITED is the required isolation level for database systems to run Camunda Platform with. 
 You may have to change the default setting on your database when installing Camunda. 
-For more information see the documentation on [isolation levels]({{< ref "/user-guide/process-engine/database/database-configuration.md#isolation-level-configuration" >}}).
-{{< /note >}}
+For more information see the documentation on [isolation levels](../../user-guide/process-engine/database/database-configuration.md#isolation-level-configuration).
+
 
 # Installation
 
@@ -65,13 +65,13 @@ The `DATABASECHANGELOG` table keeps track of all applied changes. The `DATABASEC
 
 As you create the tables externally via Liquibase, you have to configure the engine to **not** create tables at startup as well.
 Set the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`).
-Consult the [manual installation guide]({{< ref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
+Consult the [manual installation guide](../../installation/full/_index.md) of your distribution for further information on how to achieve that.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 Liquibase provides additional commands to preview all changes that will be applied by commands that execute SQL statements on a database. For the `update` command, you can execute the [updateSql](https://docs.liquibase.com/commands/community/updatesql.html) command. This will let you inspect all statements that Liquibase will issue on your database without actually executing them.
 
 Furthermore, if you have defined a specific prefix for the entities of your database, you will have to manually adjust the `create` scripts in the `liquibase/baseline` directory accordingly so that the tables are created with the prefix.
-{{< /note >}}
+
 
 ## Manual installation
 
@@ -91,11 +91,11 @@ Select the appropriate scripts for your database and run them with your database
 
 As you create the tables manually, you have to configure the engine to **not** create tables at startup as well.
 Set the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`).
-Consult the [manual installation guide]({{< ref "/installation/full/_index.md" >}}) of your distribution for further information on how to achieve that.
+Consult the [manual installation guide](../../installation/full/_index.md) of your distribution for further information on how to achieve that.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 If you have defined a specific prefix for the entities of your database, you will have to manually adjust the `create` scripts accordingly so that the tables are created with the prefix.
-{{< /note >}}
+
 
 # Update
 
@@ -127,13 +127,13 @@ You can pass on the connection details to your database instance via parameters 
 
     _Attention_: This step is only relevant when you are using an enterprise version of the Camunda Platform, e.g., `7.16.X` where `X > 0`.
 
-{{< note title="Do I need to apply every minor version if I missed a few?" class="warning" >}}
+### Do I need to apply every minor version if I missed a few?
 Liquibase takes care of determining which upgrade scripts to apply automatically according to the changelog of your target version (`$Y`).
-{{< /note >}}
 
-{{< note title="Dry run" class="info" >}}
+
+### Dry run
 Liquibase provides additional commands to preview all changes applied by commands that execute SQL statements on a database. For the `update` command, you can execute the [updateSql](https://docs.liquibase.com/commands/community/updatesql.html) command to inspect all statements that Liquibase will issue on your database without actually executing them.
-{{< /note >}}
+
 
 ### Migrate to Liquibase
 
@@ -174,13 +174,13 @@ The scripts update the database from one minor version to the next and change th
 
     _Attention_: This step is only relevant when you are using an enterprise version of the Camunda Platform, e.g., `7.16.X` where `X > 0`.
 
-{{< note title="Do I need to apply every minor version if I missed a few?" class="warning" >}}
+### Do I need to apply every minor version if I missed a few?
 If you need to apply multiple minor versions, you MUST execute the database alteration scripts in minor version order as they are NOT cumulative.
-{{< /note >}}
+
 
 ## Patch level update
 
-This section explains how to perform a [patch-level update]({{< ref "/update/patch-level.md" >}}) for your database schema. The *patch level* is the version number "after the second dot". For example, update from `7.14.2` to `7.14.3`.
+This section explains how to perform a [patch-level update](../../update/patch-level.md) for your database schema. The *patch level* is the version number "after the second dot". For example, update from `7.14.2` to `7.14.3`.
 
 {{< enterprise >}}
 Please note that Patch Level Updates are only provided to enterprise customers. They are not available in the community edition.
@@ -634,4 +634,4 @@ If you do choose to apply a database patch, then you must apply all patch script
 <strong>Note:</strong> Some patches are provided for multiple versions. It is not required to execute them more than once. See the description of the [patch version list](#patch-level-update) for information on duplicate fixes.
 
 [Nexus]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/
-[pre-packaged distribution]: {{< ref "/introduction/downloading-camunda.md#full-distribution" >}}
+[pre-packaged distribution]: ../../introduction/downloading-camunda.md#full-distribution" >}}

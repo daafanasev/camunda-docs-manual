@@ -40,7 +40,7 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
     <td>LOCATION</td>
     <td>Can be either <code>deployment</code> or <code>app</code>:
     <ul>
-      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< ref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="https://docs.camunda.org/get-started/quick-start/deploy/#use-the-camunda-modeler-to-deploy-the-process">by deploying from the Camunda Modeler</a>), which means that it is stored in the Camunda database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
+      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="../../reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="https://docs.camunda.org/get-started/quick-start/deploy/#use-the-camunda-modeler-to-deploy-the-process">by deploying from the Camunda Modeler</a>), which means that it is stored in the Camunda database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
       <li><em>app</em>: Add the file to your development project in a folder <code>src/main/webapp/forms</code>. The form file will be packaged into your deployment artifact (typically a WAR archive). During runtime it will be loaded from there.</li>
     </ul>
   </td>
@@ -62,7 +62,7 @@ To configure the form in your process, open the process with the [Camunda Modele
 
 # Embedded Task Forms
 
-Embedded task forms are HTML and JavaScript forms. We provide more information about the creation of embedded forms in our [Embedded Task Forms Reference]({{< ref "/reference/forms/embedded-forms/_index.md" >}}).
+Embedded task forms are HTML and JavaScript forms. We provide more information about the creation of embedded forms in our [Embedded Task Forms Reference](../../reference/forms/embedded-forms/_index.md).
 
 To add an embedded form to your application, simply create an HTML file and refer to it from a [UserTask][user-tasks] or a [StartEvent][start-event] in your process model. For example, you can create a `FORM_NAME.html` file containing the relevant content for your form, e.g., a simple form with two input fields:
 
@@ -88,16 +88,16 @@ The form key for this file could be `embedded:deployment:FORM_NAME.html` or `emb
 
 # Camunda Forms
 
-Camunda Forms are created as separate files using the Camunda Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build Camunda Forms in the [Camunda Modeler documentation]({{< ref "/modeler/forms.md" >}}) or refer to the [Camunda Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
+Camunda Forms are created as separate files using the Camunda Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build Camunda Forms in the [Camunda Modeler documentation](../../modeler/forms.md) or refer to the [Camunda Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
 
-[Process variables]({{< ref "/user-guide/process-engine/variables.md" >}}) are mapped to form fields where the field's key matches the variable name.
+[Process variables](../../user-guide/process-engine/variables.md) are mapped to form fields where the field's key matches the variable name.
 
-{{< note title="Process variables access" class="warning" >}}
+### Process variables access
 Defining forms does not introduce any permissions on process variables.
 Users can still submit any variables via APIs for form completion like the
-[Submit Task Form]({{< ref "/reference/rest/task/post-submit-form.md" >}}) REST API.
+[Submit Task Form](../../reference/rest/task/post-submit-form.md) REST API.
 Forms can be used on top of the task completion API to render form fields and validate submitted values.
-{{< /note >}}
+
 
 ## Form Reference
 
@@ -133,7 +133,7 @@ The attributes `camunda:formRef` and `camunda:formRefVersion` can be specified a
 
 ## Form Key
 
-Aa an alternative to `formRef` you can reference a Camunda Form file with a `deployment` or `app` [form key]({{< ref "/user-guide/task-forms/_index.md#form-key-details" >}}):
+Aa an alternative to `formRef` you can reference a Camunda Form file with a `deployment` or `app` [form key](../../user-guide/task-forms/_index.md#form-key-details):
 
 * `camunda-forms:deployment:FORM_NAME.form`
 * `camunda-forms:app:forms/FORM_NAME.form`
@@ -202,9 +202,9 @@ If you want to include your Camunda Form as part of the `deployment`, then you n
 You can also include Camunda Forms from other deployments by using [form references](#form-reference).
 
 # External Task Forms
-{{< note title="Using Task Forms outside of Camunda Tasklist" class="info" >}}
+### Using Task Forms outside of Camunda Tasklist
   When embedding the process engine into a custom application, you can use any value in the form key property as a reference to your custom form. This way, your front-end can ensure to render the correct form for each user task.
-{{< /note >}}
+
 
 If you want to call a task form that is not part of your application, you can add a reference to the desired form. The referenced task form will be configured in a way similar to the embedded task form. Open the properties view and enter `FORM_NAME.html` as form key. The relevant XML tag looks like this:
 
@@ -222,9 +222,9 @@ Tasklist creates the URL by the pattern:
 
 When you have completed the task, the call back URL will be called.
 
-{{< note title="How To" class="info" >}}
-  [How to add JSF Forms to your process application]({{< ref "/user-guide/task-forms/jsf-task-forms.md" >}})
-{{< /note >}}
+### How To
+  [How to add JSF Forms to your process application](../../user-guide/task-forms/jsf-task-forms.md)
+
 
 
 # Other Task Forms
@@ -243,15 +243,15 @@ After hitting the *Complete* button, the process instance contains the entered v
 You can also retrieve already existing variables of the process instance by clicking the *Load Variables* button.
 
 
-[user-tasks]: {{< ref "/reference/bpmn20/tasks/user-task.md" >}}
-[start-event]: {{< ref "/reference/bpmn20/events/start-events.md" >}}
-[jsf-task-forms]: {{< ref "/user-guide/task-forms/jsf-task-forms.md" >}}
+[user-tasks]: ../../reference/bpmn20/tasks/user-task.md" >}}
+[start-event]: ../../reference/bpmn20/events/start-events.md" >}}
+[jsf-task-forms]: ../../user-guide/task-forms/jsf-task-forms.md" >}}
 
 ## Generated Task Forms
 
-{{< note title="Camunda Forms or Generated Task Forms?" class="info" >}}
+### Camunda Forms or Generated Task Forms?
   The feature set of Camunda Forms and Generated Task Forms are similar. For new projects, we recommend to use Camunda Forms, as they offer more flexibility and are easier to create.
-{{< /note >}}
+
 
 
 The Camunda process engine supports generating HTML task forms based on Form Data Metadata provided in the BPMN 2.0 XML. Form Data Metadata is a set of BPMN 2.0 vendor extensions provided by Camunda, allowing you to define form fields directly in the BPMN 2.0 XML:
@@ -308,12 +308,12 @@ A form data can have following attributes:
 
 ### Form Fields
 
-{{< note title="Process variables access" class="warning" >}}
+### Process variables access
 Defining form fields does not introduce any permissions on process variables.
 Users can still submit any variables via APIs for form completion like the
-[Submit Task Form]({{< ref "/reference/rest/task/post-submit-form.md" >}}) REST API.
+[Submit Task Form](../../reference/rest/task/post-submit-form.md) REST API.
 Form fields can be used on top of the task completion API to render forms and validate submitted values.
-{{< /note >}}
+
 
 A form field can have the following attributes:
 
@@ -459,9 +459,9 @@ Camunda Platform supports custom validators. Custom validators are referenced us
 </camunda:formField>
 ```
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   The name attribute must be set to "validator" in order to use custom form field validator.
-{{< /note >}}
+
 
 A custom validator implements the `org.camunda.bpm.engine.impl.form.validator.FormFieldValidator` interface:
 

@@ -11,7 +11,7 @@ menu:
 
 ---
 
-**Can be used with**: [Task]({{< ref "/reference/cmmn11/tasks/_index.md" >}}), [Stage]({{< ref "/reference/cmmn11/grouping-tasks/stage.md" >}}), [Milestone]({{< ref "/reference/cmmn11/milestone.md" >}})
+**Can be used with**: [Task](../../reference/cmmn11/tasks/_index.md), [Stage](../../reference/cmmn11/grouping-tasks/stage.md), [Milestone](../../reference/cmmn11/milestone.md)
 
 {{< cmmn-symbol type="marker-repetition" >}}
 
@@ -54,9 +54,9 @@ The behavior of the repetition relies on the presence of entry criteria. If ther
 
 To repeat a task or stage when it gets completed a repetition rule must be defined and the task or stage must not have any entry criteria. Whenever a task or stage instance transitions into the `COMPLETED` state, the repetition rule is evaluated and if it evaluates to `true` a new instance of the task or stage is created. The new instance transitions into the `AVAILABLE` state.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 It is not advisable to define a repetition rule without entry criteria on a milestone. Since a milestone without entry criteria gets fulfilled upon its instantiation, this would lead to an infinite loop.
-{{< /note >}}
+
 
 Consider the following excerpt of a CMMN case definition:
 
@@ -129,7 +129,7 @@ This means that the repetition rule is  evaluated in the transition `disable`. S
 
 # Repetition triggered by entry criteria
 
-A trigger for a repetition of a milestone, stage or task is a satisfied [sentry]({{< ref "/reference/cmmn11/sentry.md" >}}), that is referenced as [entry criterion]({{< ref "/reference/cmmn11/concepts/entry-exit-criteria.md" >}}). Whenever an entry criterion is satisfied, the repetition rule is evaluated and if it evaluates to `true`, a new instance of the milestone, stage or task is created. The new instance transitions into the `AVAILABLE` state. The *previous* instance, in case of a milestone instance, transitions in state `COMPLETED` and, in case of a stage or task instance, into the `ACTIVE` or `ENABLED` state (depending on the [manual activation rule]({{< ref "/reference/cmmn11/markers/manual-activation-rule.md" >}})) because the entry criterion is satisfied.
+A trigger for a repetition of a milestone, stage or task is a satisfied [sentry](../../reference/cmmn11/sentry.md), that is referenced as [entry criterion](../../reference/cmmn11/concepts/entry-exit-criteria.md). Whenever an entry criterion is satisfied, the repetition rule is evaluated and if it evaluates to `true`, a new instance of the milestone, stage or task is created. The new instance transitions into the `AVAILABLE` state. The *previous* instance, in case of a milestone instance, transitions in state `COMPLETED` and, in case of a stage or task instance, into the `ACTIVE` or `ENABLED` state (depending on the [manual activation rule](../../reference/cmmn11/markers/manual-activation-rule.md)) because the entry criterion is satisfied.
 
 Consider the following excerpt of a CMMN case definition, where the repetition of the tasks depends on the occurrence of an entry criterion:
 
@@ -202,7 +202,7 @@ In our example, the following steps might take place:
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/cmmn11/custom-extensions/camunda-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
+      <a href="../../reference/cmmn11/custom-extensions/camunda-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
     </td>
   </tr>
   <tr>

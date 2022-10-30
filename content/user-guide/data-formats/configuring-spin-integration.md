@@ -81,7 +81,7 @@ Depending on the application and process engine setup, it is recommended to use 
 
 ## Embedded Process Engine
 
-If your application manages its own process engine, then using `camunda-engine-plugin-spin` with `camunda-spin-core` is the recommended approach. Declare the dependencies in the `compile` scope so that the Spin libraries and their dependencies are added to your application when you bundle it. Configure `org.camunda.spin.plugin.impl.SpinProcessEnginePlugin` as a process engine plugin according to the [process engine plugin documentation]({{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}).
+If your application manages its own process engine, then using `camunda-engine-plugin-spin` with `camunda-spin-core` is the recommended approach. Declare the dependencies in the `compile` scope so that the Spin libraries and their dependencies are added to your application when you bundle it. Configure `org.camunda.spin.plugin.impl.SpinProcessEnginePlugin` as a process engine plugin according to the [process engine plugin documentation](../../user-guide/process-engine/process-engine-plugins.md).
 
 ## Application with Camunda Spring Boot Starter
 

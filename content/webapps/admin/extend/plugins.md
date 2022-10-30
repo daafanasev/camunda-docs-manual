@@ -11,18 +11,18 @@ menu:
 
 ---
 
-{{< note title="Plugin Compatibility" class="info" >}}
+### Plugin Compatibility
   Please note that the code of Admin plugins might need to be migrated when updating Camunda Platform to a higher version (e.g. CSS styles).
-{{< /note >}}
+
 
 Admin uses the concept of plugins to add own functionality without having to extend or hack the Admin web application.
 
-For further details about the concepts behind plugins, please read the [Cockpit plugins section]({{< ref "/webapps/cockpit/extend/plugins.md" >}}).
+For further details about the concepts behind plugins, please read the [Cockpit plugins section](../../webapps/cockpit/extend/plugins.md).
 
-{{< note title="Difference between Cockpit and Admin plugins:" class="warning">}}
+### Difference between Cockpit and Admin plugins:" class="warning">}}
   * To publish the plugin with Admin, its class name must be put into a file called ```org.camunda.bpm.admin.plugin.spi.AdminPlugin``` that resides in the directory ```META-INF/services```.
   * The plugin mechanism of Admin does not allow to provide additional SQL queries by using [MyBatis](http://www.mybatis.org/) mappings.
-{{< /note >}}
+
 
 
 # Plugin Points
@@ -46,7 +46,7 @@ properties: {
 
 {{< img src="../../img/admin-start-page-view.png" title="Dashboard" >}}
 
-With Camunda Platform 7.5, the Admin webapp gets a dashboard based on plugins similar to the [Cockpit dashboard ones]({{< ref "/webapps/cockpit/extend/plugins.md" >}}#dashboard).
+With Camunda Platform 7.5, the Admin webapp gets a dashboard based on plugins similar to the [Cockpit dashboard ones](../../webapps/cockpit/extend/plugins.md" >}}#dashboard).
 
 This plugin points properties contain the attributes `label` and `pagePath`, which are the heading of the new Section as well as the linked sub-page of the heading. If `pagePath` is `undefined`, the label will not be rendered as a link.
 

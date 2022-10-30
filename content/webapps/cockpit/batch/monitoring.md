@@ -26,7 +26,7 @@ For batches that are currently in progress, the ID, type, user, started time, nu
 Please note that if a batch has failed jobs, the batch cannot be completed.
 You have to go to the details view of the batch and resolve the failed jobs (i.e., retrying or deleting them).
 Also, it can take some time after the progress is at 100% for the batch to actually finish.
-See the [process engine section]({{< ref "/user-guide/process-engine/batch.md" >}}) for details.
+See the [process engine section](../../user-guide/process-engine/batch.md) for details.
 
 ### Search
 
@@ -40,7 +40,7 @@ You can combine multiple search pills to narrow down the search results.
 
 ## Completed
 
-Below the currently running batches, completed batches along with their start- and end-time are displayed. Completed batches are only visible when the process engine [history level]({{< ref "/user-guide/process-engine/history.md#choose-a-history-level">}}) is set to FULL.
+Below the currently running batches, completed batches along with their start- and end-time are displayed. Completed batches are only visible when the process engine [history level](../../user-guide/process-engine/history.md#choose-a-history-level">}}) is set to FULL.
 
 # Batch Details
 
@@ -48,7 +48,7 @@ When selecting a batch either from in progress or completed ones, the details of
 
 ## In Progress Batch Details
 
-The displayed information corresponds to the response of the [REST API query]({{< ref "/reference/rest/batch/get-statistics-query.md#result" >}}).
+The displayed information corresponds to the response of the [REST API query](../../reference/rest/batch/get-statistics-query.md#result).
 
 If the batch is in progress and has failed jobs, the failed jobs and their exception message are displayed below the details table. You can access the complete stacktrace for every job by clicking on the `Full stack trace` link at the end of the exception message summary. Using the <button class="btn btn-xs"><i class="glyphicon glyphicon-repeat"></i></button> button you can increment the number of retries for this job. Using the <button class="btn btn-xs"><i class="glyphicon glyphicon-trash"></i></button> button you can delete this job. You can also increment the number of retries for all jobs by clicking the <button class="btn btn-xs"><i class="glyphicon glyphicon-repeat"></i></button> button above the details table.
 
@@ -58,6 +58,6 @@ Clicking the <button class="btn btn-xs btn-danger"><i class="glyphicon glyphicon
 
 ## Completed Batch Details
 
-The displayed information corresponds to the response of the [REST API query]({{< ref "/reference/rest/history/batch/get.md#result" >}}).
+The displayed information corresponds to the response of the [REST API query](../../reference/rest/history/batch/get.md#result).
 
 Clicking the <button class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i></button> button above the details table deletes the batch history.

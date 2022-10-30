@@ -91,7 +91,7 @@ GET `/history/process-definition/{id}/statistics`
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 
 # Result
@@ -164,7 +164,7 @@ Each object has the following properties:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

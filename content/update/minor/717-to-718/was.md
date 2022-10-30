@@ -34,10 +34,10 @@ and the Camunda applications Cockpit, Tasklist, and Admin (artifact name like `c
 
 Uninstall the Camunda EAR; its name should be `camunda-ibm-websphere-ear-7.17.0-ee.ear`.
 
-{{< note title="WebSphere Liberty steps" class="info" >}}
+### WebSphere Liberty steps
 If you are using WebSphere Liberty, you just need to remove the Camunda EAR, REST API, and web applications from the
 Liberty `$YOUR_SERVER/apps/` directory.
-{{< /note >}}
+
 
 # 2. Replace Camunda core libraries
 
@@ -120,7 +120,7 @@ this configuration. This can be done by repeating the configuration replacement 
 Install the Camunda EAR, or the file `$WAS_DISTRIBUTION/modules/camunda-ibm-websphere-ear-7.18.0-ee.ear`.
 
 * During the installation on WebSphere 9, the EAR will try to reference the `Camunda` shared library.
-* On WebSphere Liberty, please follow [the EAR installation guide]({{< ref "installation/full/was/manual-liberty.md#camunda-platform-ear" >}}) 
+* On WebSphere Liberty, please follow [the EAR installation guide]({{< ref "installation/full/was/manual-liberty.md#camunda-platform-ear) 
 to deploy the Camunda EAR correctly.
 
 # 6. Install the web applications
@@ -134,7 +134,7 @@ The following steps are required to update the Camunda REST API on an IBM WebSph
   2. Associate the web application with the `Camunda` shared library.
 * On WebSphere Liberty:
   1. Place the web application `$WAS_DISTRIBUTION/webapps/camunda-engine-rest-7.18.0-ee-was.war` in the Liberty `$YOUR_SERVER/apps/` directory.
-  2. Configure the `server.xml` as described in [the Liberty installation guide]({{< ref "installation/full/was/manual-liberty.md#rest-api" >}}).
+  2. Configure the `server.xml` as described in [the Liberty installation guide]({{< ref "installation/full/was/manual-liberty.md#rest-api).
 
 ## Cockpit, Tasklist, and Admin
 
@@ -145,7 +145,7 @@ The following steps are required to update the Camunda web applications Cockpit,
   2. Associate the web application with the `Camunda` shared library.
 * On WebSphere Liberty:
   1. Place the web application `$WAS_DISTRIBUTION/webapps/camunda-webapp-ee-was-7.18.0-ee.war` in the Liberty `$YOUR_SERVER/apps/` directory.
-  2. Configure the `server.xml` as described in [the Liberty installation guide]({{< ref "installation/full/was/manual-liberty.md#cockpit-tasklist-and-admin" >}}).
+  2. Configure the `server.xml` as described in [the Liberty installation guide]({{< ref "installation/full/was/manual-liberty.md#cockpit-tasklist-and-admin).
 
-[configuration-location]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
-[update-guide]: {{< ref "/update/minor/717-to-718/_index.md" >}}
+[configuration-location]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
+[update-guide]: ../../update/minor/717-to-718/_index.md" >}}

@@ -14,7 +14,7 @@ menu:
 
 
 Configures whether Camunda receives data collection of the process engine setup and usage.
-For more information, please check the [Telemetry]({{< ref "/introduction/telemetry.md" >}}) page.
+For more information, please check the [Telemetry](../../introduction/telemetry.md) page.
 
 
 # Method
@@ -61,7 +61,7 @@ This method returns no content.
   </tr>
 </table>
 
-Also see the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">introduction</a> for the error 
+Also see the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">introduction</a> for the error 
 response format.
 
 # Example

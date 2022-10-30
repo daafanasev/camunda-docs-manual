@@ -46,7 +46,7 @@ DmnEngine dmnEngine = configuration.buildEngine();
 ```
 
 # Configuration of the DMN Engine
-This section gives more insights of embedded DMN engine configuration. In case you want to use DMN engine as part of the BPMN engine, please refer to the [DMN Engine Configuration]({{< ref "/user-guide/process-engine/decisions/configuration" >}})  section of the [User Guide]({{< ref "/user-guide/_index.md" >}}) for the configuration in that scenario.
+This section gives more insights of embedded DMN engine configuration. In case you want to use DMN engine as part of the BPMN engine, please refer to the [DMN Engine Configuration](../../user-guide/process-engine/decisions/configuration)  section of the [User Guide](../../user-guide/_index.md) for the configuration in that scenario.
 
 ## Decision Table Evaluation Listeners
 
@@ -118,11 +118,11 @@ configuration.getCustomPostDecisionEvaluationListeners()
 
 # Customizing and Extending the DMN Engine
 
-{{< note title="Use of Internal API" class="warning" >}}
+### Use of Internal API
 
-Please be aware that these APIs are **not** part of the [public API]({{< ref "/introduction/public-api.md" >}}) and may change in later releases.
+Please be aware that these APIs are **not** part of the [public API](../../introduction/public-api.md) and may change in later releases.
 
-{{< /note >}}
+
 
 The {{< javadocref
 page="?org/camunda/bpm/dmn/engine/impl/DefaultDmnEngineConfiguration.html"
@@ -354,11 +354,11 @@ For more information on how to configure and use SLF4J, please refer to the
 
 [evaluation listener]: {{< javadocref page="org/camunda/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html" text="DmnDecisionTableEvaluationListener Interface" >}}
 [DMN model API]: https://github.com/camunda/camunda-dmn-model
-[data types]: {{< ref "/user-guide/dmn-engine/data-types.md" >}}
-[hit policies]: {{< ref "/reference/dmn/decision-table/hit-policy.md" >}}
+[data types]: ../../user-guide/dmn-engine/data-types.md" >}}
+[hit policies]: ../../reference/dmn/decision-table/hit-policy.md" >}}
 [SLF4J]: http://www.slf4j.org/
 [LOGBack]: http://logback.qos.ch/
 [user manual]: http://www.slf4j.org/manual.html
-[DMN decision table]: {{< ref "/reference/dmn/decision-table/_index.md" >}}
-[DMN decision literal expression]: {{< ref "/reference/dmn/decision-literal-expression/_index.md" >}}
-[expressions]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md" >}}
+[DMN decision table]: ../../reference/dmn/decision-table/_index.md" >}}
+[DMN decision literal expression]: ../../reference/dmn/decision-literal-expression/_index.md" >}}
+[expressions]: ../../user-guide/dmn-engine/expressions-and-scripts.md" >}}

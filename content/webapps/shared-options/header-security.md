@@ -54,10 +54,10 @@ This nonce can be then used to enable inline scripts in the `index.html` pages u
 <script type="application/javascript" nonce="$CSP_NONCE">
 ```
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 If you have custom inline scripts defined, make sure to add the aforementioned `nonce` attribute to
 the script tag, otherwise they will be ignored by the browser.
-{{< /note >}}
+
 
 #### Policy Details
 
@@ -96,9 +96,9 @@ This section describes what our default policy contains:
   * The site is rendered inside a sandbox.
   * Submitting forms, executing scripts, accessing the local storage, opening popups as well as downloading files must be allowed since the web applications make use of these mechanisms.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 Keep in mind a stricter configuration than the one introduced above might break the functionality of the web applications.
-{{< /note >}}
+
 
 ### Content-Type Options
 
@@ -111,13 +111,13 @@ When enabled, the browser remembers that the Webapps must be accessed via HTTPS.
 HTTPS request, all subsequent requests will be redirected to HTTPS on the client-level — even though
 the user tries to access the Webapps via HTTP.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 * The **Strict Transport Security** header is disabled by default. When going into production, it is highly
   recommended to enable **Strict Transport Security** and [Strengthen the Base Configuration](#strengthen-the-base-configuration) 
   to protect the Webapps against man-in-the-middle attacks.
 * When accessing the Webapps via HTTP, the **Strict Transport Security** header is ignored. Therefore, 
   make sure to redirect HTTP requests to HTTPS.
-{{< /note >}}
+
 
 #### Base Configuration
 
@@ -157,11 +157,11 @@ the config property <code>hstsValue</code>.
 
 Choose a container from the list and learn where to configure the HTTP Security Headers:
 
-* [Tomcat]({{< ref "/installation/full/tomcat/configuration.md#security-related-http-headers-in-webapps" >}})
-* [JBoss EAP & Wildfly]({{< ref "/installation/full/jboss/configuration.md#security-related-http-headers-in-webapps" >}})
-* [IBM WebSphere Application Server]({{< ref "/installation/full/was/configuration.md#security-related-http-headers-in-webapps" >}})
-* [Oracle WebLogic Server]({{< ref "/installation/full/wls/configuration.md#security-related-http-headers-in-webapps" >}})
-* [Spring Boot]({{< ref "/user-guide/spring-boot-integration/configuration.md#header-security" >}})
+* [Tomcat](../../installation/full/tomcat/configuration.md#security-related-http-headers-in-webapps)
+* [JBoss EAP & Wildfly](../../installation/full/jboss/configuration.md#security-related-http-headers-in-webapps)
+* [IBM WebSphere Application Server](../../installation/full/was/configuration.md#security-related-http-headers-in-webapps)
+* [Oracle WebLogic Server](../../installation/full/wls/configuration.md#security-related-http-headers-in-webapps)
+* [Spring Boot](../../user-guide/spring-boot-integration/configuration.md#header-security)
 
 ## How to Configure?
 

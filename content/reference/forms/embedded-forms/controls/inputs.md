@@ -37,7 +37,7 @@ A text input field supports multiple variable types.
 *Binding to existing variables*: Note that if you bind the input field to an existing variable,
 the type of the variable is provided by the process engine and the `cam-variable-type` directive
 is not required.
-{{< /note >}}
+
 
 ## String
 
@@ -55,7 +55,7 @@ Example:
 {{< note >}}
 *Trimming*: Note that the value of the String variable is trimmed before it is submitted to the
 process engine: leading and trailing whitespace is removed.
-{{< /note >}}
+
 
 ## Integer
 

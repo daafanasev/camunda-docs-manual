@@ -32,9 +32,9 @@ This guide covers mandatory migration steps as well as optional considerations f
 
 Noteworthy new Features and Changes in 7.10:
 
-* [Startable in Tasklist]({{< ref "/user-guide/process-engine/process-engine-concepts.md#start-process-instances-via-tasklist" >}})
-* [Set Business Key from Delegation Code]({{< ref "/user-guide/process-engine/delegation-code.md#set-business-key-from-delegation-code" >}})
-* [Extending the BPMN Viewer in Cockpit]({{< ref "/webapps/cockpit/extend/configuration.md#bpmn-diagram-viewer-bpmn-js" >}})
+* [Startable in Tasklist](../../user-guide/process-engine/process-engine-concepts.md#start-process-instances-via-tasklist)
+* [Set Business Key from Delegation Code](../../user-guide/process-engine/delegation-code.md#set-business-key-from-delegation-code)
+* [Extending the BPMN Viewer in Cockpit](../../webapps/cockpit/extend/configuration.md#bpmn-diagram-viewer-bpmn-js)
 
 # Database Updates
 
@@ -42,7 +42,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.9_patch_?.sql`.
@@ -63,7 +63,7 @@ error message, please ignore it and continue with the upgrade procedure.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -82,10 +82,10 @@ For **WildFly 8** users, separate **`camunda-wildfly8-modules`** and **`camunda-
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/79-to-710/tomcat.md" >}})
-* [JBoss AS/Wildfly]({{< ref "/update/minor/79-to-710/jboss.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/79-to-710/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/79-to-710/wls.md" >}})
+* [Apache Tomcat](../../update/minor/79-to-710/tomcat.md)
+* [JBoss AS/Wildfly](../../update/minor/79-to-710/jboss.md)
+* [IBM WebSphere](../../update/minor/79-to-710/was.md)
+* [Oracle WebLogic](../../update/minor/79-to-710/wls.md)
 
 ## Custom Process Applications
 
@@ -106,7 +106,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -114,7 +114,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 If you are using Camunda Spring Boot Starter within you Spring Boot application, then you would need to:
 
-1. Check [Version Compatibility Matrix]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
+1. Check [Version Compatibility Matrix](../../user-guide/spring-boot-integration/version-compatibility.md)
 2. Update **Spring Boot Starter** and, when required, Spring Boot versions in your `pom.xml`.
 3. Update the Camunda Platform version in your `pom.xml` in case you override it before (e.g. when using the enterprise version or a patch releases)
 
@@ -122,7 +122,7 @@ If you are using Camunda Spring Boot Starter within you Spring Boot application,
 
 If you are using the **Camunda External Task Client**, please make sure to:
 
-1. Check out the [Version Compatibility Matrix]({{< ref "/user-guide/ext-client/compatibility-matrix.md" >}})
+1. Check out the [Version Compatibility Matrix](../../user-guide/ext-client/compatibility-matrix.md)
 2. Update the version in your `pom.xml` (Java) or `package.json` (NodeJs)
 
 # CSRF Prevention in the Webapps
@@ -130,68 +130,68 @@ If you are using the **Camunda External Task Client**, please make sure to:
 This release secures the Webapps with CSRF Prevention. If you want to make use of the newly introduced security enhancement, 
 please make sure to enable the `CsrfPreventionFilter` when migrating to 7.10 by adjusting the `web.xml` file of Camunda Platform Webapps.
 
-Please also see the documentation about [CSRF Prevention]({{< ref "/webapps/shared-options/csrf-prevention.md" >}}).
+Please also see the documentation about [CSRF Prevention](../../webapps/shared-options/csrf-prevention.md).
 
 # Whitelist Pattern for User, Group and Tenant IDs
 
 With Camunda Platform 7.10 a whitelist pattern of User, Group and Tenant IDs has been introduced. By default, on creating or 
 updating users, groups or tenants the ID is matched against the pattern **"[a-zA-Z0-9]+|camunda-admin"**. To disable or 
-adjust the default pattern, please see the documentation under [Identity Service]({{< ref "/user-guide/process-engine/identity-service.md#custom-whitelist-for-user-group-and-tenant-ids" >}}) in the User Guide.
+adjust the default pattern, please see the documentation under [Identity Service](../../user-guide/process-engine/identity-service.md#custom-whitelist-for-user-group-and-tenant-ids) in the User Guide.
 
 # Support for JDK 9 / 10 / 11
 This release introduces support for JDK 9 / 10 / 11.
 
 ## JRuby
 
-The Camunda Platform [supports scripting]({{< ref "/user-guide/process-engine/scripting.md" >}}) with JSR-223 compatible 
+The Camunda Platform [supports scripting](../../user-guide/process-engine/scripting.md) with JSR-223 compatible 
 script engine implementations. 
 
 If the optional JRuby script engine implementation is used, the respective dependency needs to be updated to 
 [version 9.1.14.0](http://jruby.org/2017/11/08/jruby-9-1-14-0.html) or higher to work properly in conjunction with the 
 newly supported JDK versions.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 Please bear in mind, that the default language level of JRuby 9 is Ruby 2, whereas the default language level of the 
 previous version (JRuby 1.7) is Ruby 1.9. Updating the JRuby version might break your scripts.
-{{< /note >}}
+
 
 # History Related Changes
 
 ## Skipped Optimistic Locking Exceptions
 
-Starting with 7.10, by default the occurrence of [`OptimisticLockingException`s]({{< ref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-camunda" >}}) 
+Starting with 7.10, by default the occurrence of [`OptimisticLockingException`s](../../user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-camunda) 
 on UPDATE/DELETE operations for historic data is prevented. This allows to successfully complete process instances even 
 if the associated historic instances have been removed during execution.
 
-There exist a [process engine configuration flag]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#skipHistoryOptimisticLockingExceptions" >}}) 
+There exist a [process engine configuration flag](../../reference/deployment-descriptors/tags/process-engine.md#skipHistoryOptimisticLockingExceptions) 
 to preserve the previous behavior.
 
 ## Changed Default Cleanup Strategy
 
-The default strategy of the [History Cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}}) feature 
+The default strategy of the [History Cleanup](../../user-guide/process-engine/history.md#history-cleanup">}}) feature 
 has been changed. From now on, each historic instance related to processes, decisions or batches needs a 
-[removal time]({{< ref "/user-guide/process-engine/history.md#removal-time">}}) to be cleaned-up.
+[removal time](../../user-guide/process-engine/history.md#removal-time">}}) to be cleaned-up.
 
 Historic instances which (1) have been produced by a Camunda Platform version prior to 7.10 and (2) belong to a top-level instance 
 which has been completed already cannot be cleaned-up after the migration took place. This is due to the reason, that a 
 removal time is missing for these historic instances. If you want to get rid of them anyway, please add a removal time 
 or switch the `historyCleanupStrategy` to the `endTimeBased` cleanup strategy via a 
-[process engine configuration property]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#historyCleanupStrategy" >}}).
+[process engine configuration property](../../reference/deployment-descriptors/tags/process-engine.md#historyCleanupStrategy).
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 Starting with Camunda Platform 7.11 there exist several Batch Operations to set a removal time to historic processes, decisions and batches.
 This allows you to set a removal time via Camunda Cockpit as well as REST & Java API.
 
-You can learn more about it in the [User Guide]({{< ref "/user-guide/process-engine/batch-operations.md#set-a-removal-time">}}).
-{{< /note >}}
+You can learn more about it in the [User Guide](../../user-guide/process-engine/batch-operations.md#set-a-removal-time">}}).
+
 
 To gain a better understanding of the new cleanup strategy, please see the updated documentation about the 
-[History Cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}}) feature. 
+[History Cleanup](../../user-guide/process-engine/history.md#history-cleanup">}}) feature. 
 
 ### Custom History Level
-If you have implemented a [Custom History Level]({{< ref "/user-guide/process-engine/history.md#implement-a-custom-history-level">}}) 
+If you have implemented a [Custom History Level](../../user-guide/process-engine/history.md#implement-a-custom-history-level">}}) 
 and you want to use it in conjunction with the removal time based cleanup strategy, please also see the documentation about 
-[Removal Time Inheritance]({{< ref "/user-guide/process-engine/history.md#removal-time-inheritance">}}).
+[Removal Time Inheritance](../../user-guide/process-engine/history.md#removal-time-inheritance">}}).
 
 # Changed Webjar Structure
 
@@ -211,7 +211,7 @@ Structure of `webjar` and `webjar-ee` artifacts has changed related to adjustmen
 
 # Changed Permissions for Starting Process In Tasklist
 
-In order to [start a process via Tasklist]({{< ref "/webapps/tasklist/working-with-tasklist.md#start-a-process">}}) the user needs the following permissions:
+In order to [start a process via Tasklist](../../webapps/tasklist/working-with-tasklist.md#start-a-process">}}) the user needs the following permissions:
 
 * `CREATE_INSTANCE` and `READ` permissions at process definition level and
 * `CREATE` permission for all process instances.

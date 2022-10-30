@@ -24,6 +24,6 @@ A complete example how to embed the decision engine and test
 decisions can be found on [GitHub].
 
 
-[platform]: {{< ref "/user-guide/process-engine/decisions/_index.md" >}}
-[DMN reference]: {{< ref "/reference/dmn/_index.md" >}}
+[platform]: ../../user-guide/process-engine/decisions/_index.md" >}}
+[DMN reference]: ../../reference/dmn/_index.md" >}}
 [GitHub]: https://github.com/camunda/camunda-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method

@@ -24,4 +24,4 @@ Please also check out the [User Guide] to learn more about the integration of th
 in Camunda Platform.
 
 [FEEL Scala Engine Documentation]: https://camunda.github.io/feel-scala/
-[User Guide]: {{< ref "/user-guide/dmn-engine/feel/_index.md" >}}
+[User Guide]: ../../user-guide/dmn-engine/feel/_index.md" >}}

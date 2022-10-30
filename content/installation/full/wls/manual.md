@@ -15,7 +15,7 @@ menu:
 
 This section will describe how you can install the Camunda Platform and its components on Oracle WebLogic.
 
-{{< note title="Reading this Guide" class="info" >}}
+### Reading this Guide
 This guide uses a number of variables to denote common path names and constants.
 
 * `$WLS_DOMAIN_HOME` points to the Oracle WebLogic application server domain directory (typically something like `/opt/oracle/WebLogic/domains/mydomain`).
@@ -24,7 +24,7 @@ This guide uses a number of variables to denote common path names and constants.
 
 The distribution is available at the [Camunda enterprise release page](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/oracle-wls/).
 You will be asked to enter the credentials you received during the trial or subscription process.
-{{< /note >}}
+
 
 
 # Setup
@@ -45,7 +45,7 @@ The Camunda Platform requires a set of resources that need to be configured at t
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
 * Create a database schema for the Camunda Platform yourself.
-* Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< ref "/installation/database-schema.md" >}}).
+* Install the database schema to create all required tables and default indices using our [database schema installation guide](../../installation/database-schema.md).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In WebLogic, this is done in the `bpm-platform.xml`, located in the `$WLS_HOME\modules\camunda-oracle-weblogic-ear-$VERSION.ear\camunda-oracle-weblogic-service.jar\META-INF\` folder.
 
@@ -75,7 +75,7 @@ In this section we explain how to add a datasource using the Oracle WebLogic Ser
 7. When you finished the creation of the datasource, click the **"Finish"** Button to complete the installation.
 8. Check the box in front of your datasource and test if it works.
 
-Note that you can configure multiple datasources used by different process engine instances. See the [User Guide]({{< ref "/user-guide/_index.md" >}}) for details.
+Note that you can configure multiple datasources used by different process engine instances. See the [User Guide](../../user-guide/_index.md) for details.
 
 
 # Required Components
@@ -141,15 +141,15 @@ First the `camunda-oracle-weblogic-ear-$PLATFORM_VERSION.ear` RAR file must be i
 4. Using the File Browser, select the `camunda-oracle-weblogic-ear-$PLATFORM_VERSION.ear` from the modules folder of the Camunda Platform for Oracle WebLogic Application Server distribution and continue to the **"Next"** page.
 5. Select **"Install this deployment as an application"** and continue to the **"Next"** page.
 6. Fill in `camunda-bpm-platform` as name for the enterprise application deployment.
-{{< note title="Heads Up!" class="info" >}}
-The names of the [JNDI Bindings for Camunda Platform Services]({{< ref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) consist of the name of the enterprise application deployment.
+### Heads Up!
+The names of the [JNDI Bindings for Camunda Platform Services](../../user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md) consist of the name of the enterprise application deployment.
 
 **Please note:** If you change the name of the enterprise application deployment, the JNDI names change as well.
-{{< /note >}}
+
 {{< img src="../img/ear-name.png" title="EAR Name" >}}
 7. Continue to the **"Next"** page.
 8. Select **"Yes, take me to the deployment's configuration screen"** and click the **"Finish"** button to complete the installation.
-9. (optional) [Configure location of the bpm-platform.xml file]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file" >}}).
+9. (optional) [Configure location of the bpm-platform.xml file](../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md#configure-location-of-the-bpm-platform-xml-file).
 
 ### Configure the Deployment Order
 

@@ -26,12 +26,12 @@ the `camunda-engine-cdi` module provides. Some features documented under
 [CDI and Java EE Integration][cdi-and-java-ee-integration] are unsupported or only work with restrictions. 
 The limitations and differences are explained in more detail below.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 Quarkus ArC has more limitations not described in this section, as only those restrictions are highlighted 
 that affect the functionality of the `camunda-engine-cdi` module. For your individual application development, 
 we highly recommend you consider the <a href="https://quarkus.io/guides/cdi-reference#limitations">limitations</a> and 
 <a href="https://quarkus.io/guides/cdi-reference#supported_features">supported features</a> of the Quarkus version you are using.
-{{< /note >}}
+
 
 ### Limited support of JUEL Expression Resolution
 
@@ -124,10 +124,10 @@ The following API methods will throw an `UnsupportedOperationException`:
 * `io.quarkus.arc.InjectableContext#destroy(Contextual<?> contextual)`
 
 [java-cdi-20-standard]: http://docs.jboss.org/cdi/spec/2.0/cdi-spec.html
-[cdi-and-java-ee-integration]: {{< ref "/user-guide/cdi-java-ee-integration/_index.md">}}
+[cdi-and-java-ee-integration]: ../../user-guide/cdi-java-ee-integration/_index.md">}}
 [cdi-conversational-scope]: https://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#conversation_context_ee
 [cdi-request-scope]: https://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#request_context_ee
 [arc-config-reference]: https://quarkus.io/guides/cdi-reference#quarkus-arc_quarkus.arc.auto-inject-fields
-[business-process-scoped]: {{< ref "/user-guide/cdi-java-ee-integration/contextual-programming-model.md#work-with-businessprocessscoped-beans">}}
+[business-process-scoped]: ../../user-guide/cdi-java-ee-integration/contextual-programming-model.md#work-with-businessprocessscoped-beans">}}
 [cdi-passivation]: https://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#passivating_scope
 [destroy-jira-issue]: https://jira.camunda.com/browse/CAM-13755

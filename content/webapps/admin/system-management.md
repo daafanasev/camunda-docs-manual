@@ -15,9 +15,9 @@ menu:
 
 The System Settings menu gives you general information about the process engine. It enables users with system permissions to access certain system information, including telemetry, metrics, and license key. Provided that you are using the Enterprise Edition of the Camunda Platform, you can also insert your *License Key*.
 
-{{< note title="Accessing the System Settings menu" class="info" >}}
+### Accessing the System Settings menu
 The System Settings menu is only usable by users which are granted with *All* permission for authorizations.
-{{< /note >}}
+
 
 # Diagnostics
 
@@ -39,7 +39,7 @@ The Execution Metrics menu in Admin displays an approximate number of *Flow Node
 {{< /enterprise >}}
 
 Some features of the Camunda Webapps (e.g. enterprise plugins) require a license key. To read more about the Camunda
-license key, please see the [dedicated section]({{< ref "/user-guide/license-use.md" >}}) of the docs. The following 
+license key, please see the [dedicated section](../../user-guide/license-use.md) of the docs. The following 
 section explains how to activate a license through the Camunda Admin Webapp UI.
 
 Whenever you see one of the following messages, a valid license key must be entered.

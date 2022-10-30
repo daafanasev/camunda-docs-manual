@@ -38,7 +38,7 @@ A JSON object with the following properties:
     <td>processInstanceQuery</td>
     <td>
       A process instance query like the request body for the
-      <a href="{{< ref "/reference/rest/process-instance/post-query.md#request-body" >}}">
+      <a href="../../reference/rest/process-instance/post-query.md#request-body" >}}">
         <code>Get Instances (POST)</code>
       </a> method to select process instances the operation will set variables to.
     </td>
@@ -47,7 +47,7 @@ A JSON object with the following properties:
     <td>historicProcessInstanceQuery</td>
     <td>
       A historic process instance query like the request body for the
-      <a href="{{< ref "/reference/rest/history/process-instance/post-process-instance-query.md#request-body" >}}">
+      <a href="../../reference/rest/history/process-instance/post-process-instance-query.md#request-body" >}}">
         <code>Get Instances (POST)</code>
       </a> method to select process instances the operation will set variables to.
     </td>
@@ -94,7 +94,7 @@ A JSON object corresponding to the Batch interface in the engine. Its properties
         <li>If a transient variable is set</li>
         <li>If the engine config flag <code>javaSerializationFormatEnabled</code> is <code>false</code> and a Java serialized variable is given</li>
        </ul>
-       See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.
+       See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.
     </td>
   </tr>
 </table>

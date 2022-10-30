@@ -57,7 +57,7 @@ This method returns no content.
     <td>application/json</td>
     <td>
       Bad Request. The Task with the given id does not exist. See the 
-      <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response 
+      <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response 
       format.
     </td>
   </tr>
@@ -66,7 +66,7 @@ This method returns no content.
     <td>application/json</td>
     <td>
       The Task with the given id cannot be deleted because it is part of a running process or case instance. See the 
-      <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response 
+      <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response 
       format.
     </td>
   </tr>

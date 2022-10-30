@@ -25,10 +25,10 @@ The update procedure takes the following steps:
 
 In each of the following steps, the identifiers `$*_VERSION` refer to the current version and the new versions of the artifacts.
 
-{{< note title="Changing Platform Configuration" class="info" >}}
+### Changing Platform Configuration
 Depending on your chosen feature set for Camunda Platform, some of the (optional) migration steps may require to change the configuration of the Camunda Platform. The Camunda enterprise archive (EAR) contains a default platform configuration. If you want to change this configuration, you can replace it as described in the
-[deployment descriptor reference]({{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}).
-{{< /note >}}
+[deployment descriptor reference](../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md).
+
 
 ## 1. Uninstall the Camunda Libraries and Archives
 
@@ -73,9 +73,9 @@ There are artifacts for Camunda Connect, Camunda Spin, the Freemarker template l
 
 **Note:** The default Camunda configuration file contained by the Camunda EAR automatically activates the newly introduced, optional Camunda dependencies, Camunda Spin and Connect. If you do not use a custom Camunda Platform configuration as described [here][configuration-location] and do not intend to do so, you *must* install the Camunda Spin and Connect core libraries to the shared libraries folder.
 
-{{< note title="Not Using Connect/Spin" class="info" >}}
+### Not Using Connect/Spin
 If you do not want to use Camunda Connect or Camunda Spin, you cannot use the default Camunda Platform configuration that is contained in the Camunda EAR. In this case, make sure to change the configuration location as described [here][configuration-location]. As a starting point, you can copy the default configuration from `$WAS_DISTRIBUTION/modules/camunda-ibm-was-ear-$PLATFORM_VERSION.ear/camunda-ibm-was-service-$PLATFORM_VERSION.jar/META-INF/bpm-platform.xml` and remove the `<plugin>` entries for the classes `ConnectProcessEnginePlugin` and `SpinProcessEnginePlugin`.
-{{< /note >}}
+
 
 ### Camunda Connect
 
@@ -206,9 +206,9 @@ The following steps are required to update the Camunda web applications Cockpit,
 
 The new shared `Camunda` library affects process applications as well because the Camunda Platform libraries which are available with 7.1 on the global classpath are gone. In order to make the Camunda libraries available to applications, the `Camunda` shared library has to be associated with every process application. If this is not done, the applications fail due to missing resources.
 
-{{< note title="LDAP Entity Caching" class="info" >}}
-With 7.2, it is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation]({{< ref "/reference/rest/overview/hal.md" >}}) for details.
-{{< /note >}}
+### LDAP Entity Caching
+With 7.2, it is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation](../../reference/rest/overview/hal.md) for details.
 
-[configuration-location]: {{< ref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
-[migration-guide]: {{< ref "/update/minor/71-to-72/_index.md" >}}
+
+[configuration-location]: ../../reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}
+[migration-guide]: ../../update/minor/71-to-72/_index.md" >}}

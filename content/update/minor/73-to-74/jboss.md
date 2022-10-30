@@ -28,7 +28,7 @@ The update procedure takes the following steps:
 
 Whenever the instructions are to *replace* a module, make sure to delete the previous version of the module first to avoid orphan jars.
 
-{{< note title="Updated Wildfly Version" class="info" >}}
+### Updated Wildfly Version
 The pre-built Camunda 7.4 distribution ships with Wildfly 8.2.1.Final, whereas 7.3 comes with Wildfly 8.2.0.Final.
 The patch version of Wildfly contains some security bug fixes and component updates.
 Camunda 7.4 is supported on Wildfly 8.1 and 8.2 such that an update is not required when migrating from 7.3 to 7.4.
@@ -40,7 +40,7 @@ Should you want to update Wildfly along with Camunda, perform the following step
 * Undeploy all process applications and copy them to the new Wildfly server's directory for redeployment.
 
 See the [Wildfly 8.2.1.Final release notes](https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12313721&version=12327667) for any relevant changes compared to 8.2.0.Final.
-{{< /note >}}
+
 
 # 1. Update the Camunda Platform Modules
 
@@ -100,12 +100,12 @@ This section describes changes in the engine’s default behavior. While the cha
 
 ## Task Query Expressions
 
-As of 7.4, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for details.
+As of 7.4, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code](../../user-guide/process-engine/securing-custom-code.md) for details.
 This is already the default for Camunda Platform versions after and including 7.3.3 and 7.2.8.
 
 ## User Operation Log
 
-The behavior of the [user operation log]({{< ref "/user-guide/process-engine/history.md#user-operation-log" >}}) has changed, so that operations are only logged if they are performed in the context of a logged in user. This behavior can be toggled in the process engine configuration using the property `restrictUserOperationLogToAuthenticatedUsers` (default `true`). To restore the engine's prior behavior, i.e., to write log entries regardless of user context, set the flag to `false`.
+The behavior of the [user operation log](../../user-guide/process-engine/history.md#user-operation-log) has changed, so that operations are only logged if they are performed in the context of a logged in user. This behavior can be toggled in the process engine configuration using the property `restrictUserOperationLogToAuthenticatedUsers` (default `true`). To restore the engine's prior behavior, i.e., to write log entries regardless of user context, set the flag to `false`.
 
 Furthermore, with 7.4 task events are only logged when they occur in the context of a logged in user. Task events are accessible via the deprecated API `TaskService#getTaskEvents`. If you rely on this API method, the previous behavior can be restored by setting the flag `restrictUserOperationLogToAuthenticatedUsers` to `false`.
 
@@ -115,7 +115,7 @@ This section describes changes in behavior of API methods that your process appl
 
 ## CMMN Model API
 
-As a consequence of supporting CMMN 1.1, the CMMN model API is now based on the schema of CMMN 1.1. This leads to [limitations]({{< ref "/user-guide/model-api/cmmn-model-api/limitations.md" >}}) when editing CMMN 1.0 models. We therefore recommend to [migrate your CMMN 1.0 models to CMMN 1.1]({{< ref "/reference/cmmn11/migration/10-to-11.md" >}}).
+As a consequence of supporting CMMN 1.1, the CMMN model API is now based on the schema of CMMN 1.1. This leads to [limitations](../../user-guide/model-api/cmmn-model-api/limitations.md) when editing CMMN 1.0 models. We therefore recommend to [migrate your CMMN 1.0 models to CMMN 1.1](../../reference/cmmn11/migration/10-to-11.md).
 
 # 5. Update Camunda Web Applications
 
@@ -138,11 +138,11 @@ The following steps are required to update the Camunda web applications Cockpit,
    Choose the correct version named `$PLATFORM_VERSION/camunda-webapp-jboss.war`.
 3. Deploy the web application archive to your JBoss/Wildfly instance.
 
-{{< note title="LDAP Entity Caching" class="info" >}}
-It is possible to enable entity caching for Hypertext Application Language (HAL) requests that the Camunda web applications make. This can be especially useful when you use Camunda in combination with LDAP. To activate caching, the Camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation]({{< ref "/reference/rest/overview/hal.md" >}}) for details.
-{{< /note >}}
+### LDAP Entity Caching
+It is possible to enable entity caching for Hypertext Application Language (HAL) requests that the Camunda web applications make. This can be especially useful when you use Camunda in combination with LDAP. To activate caching, the Camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation](../../reference/rest/overview/hal.md) for details.
 
-[update-guide]: {{< ref "/update/minor/73-to-74/_index.md" >}}
+
+[update-guide]: ../../update/minor/73-to-74/_index.md" >}}
 [jboss-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/jboss/camunda-bpm-jboss/
 [wildfly-distro]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/wildfly/camunda-bpm-wildfly/
 [engine-rest]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/

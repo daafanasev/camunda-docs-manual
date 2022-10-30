@@ -715,7 +715,7 @@ assertThat(processInstance).variables()
 ```
 
 You may want to compare that with the other possibility to assert whether a process instance 
-[hasVariables]({{< relref "#instance-hasvariables" >}}) (without leaving your current ProcessInstanceAssert). 
+[hasVariables]({{< relref "#instance-hasvariables) (without leaving your current ProcessInstanceAssert). 
 
 
 ## Accessing tasks in the context of a process instance under test

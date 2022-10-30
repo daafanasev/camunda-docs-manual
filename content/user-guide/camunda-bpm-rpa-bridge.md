@@ -12,7 +12,7 @@ menu:
 
 The Camunda RPA Bridge is a standalone application that allows calling RPA (robotic process automation) bots from BPMN models deployed to a Camunda engine. RPA bots can be orchestrated as External Tasks using the Camunda Modeler and Cawemo.
 
-For detailed instructions on how to connect your first RPA bot to a BPMN model (using Cawemo and the Camunda Modeler) and execute it from a running process instance using the Camunda engine, head over to our [installation guide]({{< ref "/installation/camunda-bpm-rpa-bridge.md" >}}) or the [Getting Started Guide](https://docs.camunda.org/get-started/rpa).
+For detailed instructions on how to connect your first RPA bot to a BPMN model (using Cawemo and the Camunda Modeler) and execute it from a running process instance using the Camunda engine, head over to our [installation guide](../../installation/camunda-bpm-rpa-bridge.md) or the [Getting Started Guide](https://docs.camunda.org/get-started/rpa).
 
 {{< enterprise >}}
   Please note that the RPA bridge is only available as enterprise edition.
@@ -22,9 +22,9 @@ For detailed instructions on how to connect your first RPA bot to a BPMN model (
 
 ## What is the Camunda Platform RPA Bridge?
 
-The Camunda RPA Bridge serves as a connector between Camunda (BPMN) on the one side and a vendor for RPA bots on the other side. For an overview about what RPA vendors and which versions are supported, please consult the [Supported Environments]({{< ref "#prerequisites-and-supported-environments" >}}) section.
+The Camunda RPA Bridge serves as a connector between Camunda (BPMN) on the one side and a vendor for RPA bots on the other side. For an overview about what RPA vendors and which versions are supported, please consult the [Supported Environments]({{< ref "#prerequisites-and-supported-environments) section.
 
-Processes running inside the Camunda engine can define external tasks marked as RPA tasks. The bridge extends the regular [Java External Task Client](https://github.com/camunda/camunda-bpm-platform/clients/java), fetches, and locks the RPA tasks, and starts an RPA bot in one of the [supported RPA vendors]({{< ref "#prerequisites-and-supported-environments" >}}). Once the bot is executed, the Camunda RPA Bridge fetches the result (output variables) and state (success/failure) of the bot. It completes the previously locked external task while passing any result variables received from the bot to the Camunda engine.
+Processes running inside the Camunda engine can define external tasks marked as RPA tasks. The bridge extends the regular [Java External Task Client](https://github.com/camunda/camunda-bpm-platform/clients/java), fetches, and locks the RPA tasks, and starts an RPA bot in one of the [supported RPA vendors]({{< ref "#prerequisites-and-supported-environments). Once the bot is executed, the Camunda RPA Bridge fetches the result (output variables) and state (success/failure) of the bot. It completes the previously locked external task while passing any result variables received from the bot to the Camunda engine.
 
 ## How to use this Guide?
 
@@ -369,13 +369,13 @@ Please consult the [official Spring Boot documentation](https://docs.spring.io/s
 
 # Set up an RPA Task
 
-The RPA bridge is a regular Java external task client and RPA tasks are [external tasks]({{< ref "/user-guide/process-engine/external-tasks.md" >}}) with specific settings.
+The RPA bridge is a regular Java external task client and RPA tasks are [external tasks](../../user-guide/process-engine/external-tasks.md) with specific settings.
 
 The bridge listens for tasks with the topics configured in the `application.yml` file. When a process instance reaches an external task with one of these topics, the bridge will fetch and lock them. Once a task is locked, the bridge forwards it to the configured RPA vendor, which will take care of executing the associated robots.
 
 ## Map a Task to an RPA Bot
 
-It is necessary to add an [extension property]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#properties" >}}) with the name `bot` and a value that references the bot inside the RPA platform to tell the bridge for which RPA process a bot should be started. The different vendors have different ways of referencing RPA bots. Find the details in the table below.
+It is necessary to add an [extension property](../../reference/bpmn20/custom-extensions/extension-elements.md#properties) with the name `bot` and a value that references the bot inside the RPA platform to tell the bridge for which RPA process a bot should be started. The different vendors have different ways of referencing RPA bots. Find the details in the table below.
 
 <table class="table table-striped">
   <tr>
@@ -414,7 +414,7 @@ This example shows an external task that will trigger the RPA bot `myRobot` and 
 ```
 ## Variables
 
-You can send/receive variables to/from an RPA bot by using [input and output mapping]({{< ref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) on the external task.
+You can send/receive variables to/from an RPA bot by using [input and output mapping](../../user-guide/process-engine/variables.md#input-output-variable-mapping) on the external task.
 All local variables of the external task will be made available to the RPA bot. In return, all variables that the RPA bot exports will be returned back to the task and should be mapped to a higher scope via output mapping (if the rest of the process should have access to them).
 Make sure to define input variables in your RPA bot to access them.
 
@@ -439,7 +439,7 @@ The bot might return more variables that are ignored in this case.
 
 It is important to keep in mind that the Camunda engine does not have any control over the RPA bot execution. An RPA bot might return one set of variables if it succeeds and a different set in case of failure.
 If you configure output mapping for a variable that returns from the bot you are relying on that bot to always return this variable. If the bot does not return the correct variable, the output mapping will fail with an exception.
-To prevent that, you can enable an engine configuration flag called [skipOutputMappingOnCanceledActivities]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#skipOutputMappingOnCanceledActivities" >}}). The flag will cause all activities (not only RPA tasks) to skip the output mapping if they are canceled.
+To prevent that, you can enable an engine configuration flag called [skipOutputMappingOnCanceledActivities](../../reference/deployment-descriptors/tags/process-engine.md#skipOutputMappingOnCanceledActivities). The flag will cause all activities (not only RPA tasks) to skip the output mapping if they are canceled.
 
 ### Variable Conversion with UiPath
 
@@ -459,10 +459,10 @@ Please consult the Automation Anywhere [documentation page](https://docs.automat
 
 ## Error Handling
 
-In case an RPA bot fails for any reason, you might want to react to the failure by throwing a [BPMN error]({{< ref "/reference/bpmn20/events/error-events.md" >}}).
-You can do that by adding the [camunda:errorEventDefinition]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}) extension element to a service task.
+In case an RPA bot fails for any reason, you might want to react to the failure by throwing a [BPMN error](../../reference/bpmn20/events/error-events.md).
+You can do that by adding the [camunda:errorEventDefinition](../../reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition) extension element to a service task.
 
-Compared to the `bpmn:errorEventDefinition`, the `camunda:errorEventDefinition` elements accept an additional `expression` attribute which supports any JUEL expression. Within the expression you have access to the `ExternalTaskEntity` object like shown in the example below. For more information about External Task error handling via `camunda:errorEventDefinition` have a look at the [External Tasks Guide]({{< ref "/user-guide/process-engine/external-tasks.md#error-event-definitions" >}}).
+Compared to the `bpmn:errorEventDefinition`, the `camunda:errorEventDefinition` elements accept an additional `expression` attribute which supports any JUEL expression. Within the expression you have access to the `ExternalTaskEntity` object like shown in the example below. For more information about External Task error handling via `camunda:errorEventDefinition` have a look at the [External Tasks Guide](../../user-guide/process-engine/external-tasks.md#error-event-definitions).
 
 You can use this feature regardless of the outcome of the RPA bot. Even if the bot was executed successfully, you could still decide to throw a BPMN error. Also note, that
 the RPA bot's variables are available for mapping and error handling via `camunda:errorEventDefinition`, even if the bot failed.
@@ -539,9 +539,9 @@ When connected to Automation Anywhere, the bridge will use the following API end
 
 At Camunda, we strive to offer an excellent user experience at a high and stable level. On a strict opt-in basis, we are looking to collect environment and usage data to further improve the user experience for you. These insights help us to understand typical environment setups and product usage patterns and will be used to make informed product improvement decisions to your benefit.
 
-Find more information on the [general telemetry introduction page]({{< ref "/introduction/telemetry.md" >}})
+Find more information on the [general telemetry introduction page](../../introduction/telemetry.md)
 
-When enabled via including `org.camunda.bpm.rpa.enable-telemetry=true` in the [configuration file]({{< ref "/user-guide/camunda-bpm-rpa-bridge.md#enable-telemetry" >}}), the bridge will collect the following data and securely send them to a Camunda server.
+When enabled via including `org.camunda.bpm.rpa.enable-telemetry=true` in the [configuration file](../../user-guide/camunda-bpm-rpa-bridge.md#enable-telemetry), the bridge will collect the following data and securely send them to a Camunda server.
 
 ## General Data
 
@@ -562,6 +562,6 @@ License key data does not contain any protected data like the signature.
 
 ## Legal Note
 
-Before you install a Camunda Platform Runtime version >= 7.14.0-alpha1 or activate the telemetry functionality, please make sure that you are authorized to take this step and that the installation or activation of the [telemetry functionality]({{< ref "/user-guide/camunda-bpm-rpa-bridge.md#enable-telemetry" >}}) is not in conflict with any company-internal policies, compliance guidelines, any contractual or other provisions or obligations of your company.
+Before you install a Camunda Platform Runtime version >= 7.14.0-alpha1 or activate the telemetry functionality, please make sure that you are authorized to take this step and that the installation or activation of the [telemetry functionality](../../user-guide/camunda-bpm-rpa-bridge.md#enable-telemetry) is not in conflict with any company-internal policies, compliance guidelines, any contractual or other provisions or obligations of your company.
 
 Camunda cannot be held responsible in the event of unauthorized installation or activation of this function.

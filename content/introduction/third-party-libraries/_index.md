@@ -14,7 +14,7 @@ This section covers third party libraries and their use in Camunda. It provides 
 
 For selected third-party libraries that we consider especially noteworthy, this page describes their license terms and use in the Camunda Platform 7 artifacts.
 
-For legal reference and any other license-related aspects please refer to [Licences]({{< ref "/introduction/licenses.md" >}}).
+For legal reference and any other license-related aspects please refer to [Licences](../../introduction/licenses.md).
 
 
 # Web Applications (Cockpit, Tasklist, Admin)

@@ -51,4 +51,4 @@ Note that for this to work, you need to define a {{< javadocref page="org/camund
 </bean>
 ```
 
-[Testing Scopes]: {{< ref "/user-guide/testing/_index.md#scoping-tests" >}}
+[Testing Scopes]: ../../user-guide/testing/_index.md#scoping-tests" >}}

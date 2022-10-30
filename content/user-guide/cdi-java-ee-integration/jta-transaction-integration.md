@@ -19,13 +19,13 @@ manager integration, you need to use the
 * `org.camunda.bpm.engine.cdi.CdiJtaProcessEngineConfiguration` for additional CDI expression
   resolving support.
   
-The process engine requires access to an implementation of `javax.transaction.TransactionManager`. Not all application servers provide such an implementation. Most notably, IBM WebSphere and Oracle WebLogic historically did not provide this  implementation. To achieve JTA transaction integration on these containers, users should use the Spring Framework Abstraction and configure the process engine using the [SpringProcessEngineConfiguration]({{< ref "/user-guide/spring-framework-integration/_index.md">}}).
+The process engine requires access to an implementation of `javax.transaction.TransactionManager`. Not all application servers provide such an implementation. Most notably, IBM WebSphere and Oracle WebLogic historically did not provide this  implementation. To achieve JTA transaction integration on these containers, users should use the Spring Framework Abstraction and configure the process engine using the [SpringProcessEngineConfiguration](../../user-guide/spring-framework-integration/_index.md">}}).
   
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   When you configure a transaction manager, make sure that it actually manages the data source that
   you have configured for the process engine. If that is not the case, the data source works in auto-commit mode. 
   This can lead to inconsistencies in the database, because transaction commits and rollbacks are no longer performed.
-{{< /note >}}
+
 
 ## Shared Process Engine
 
@@ -56,7 +56,7 @@ public class MyBean {
 
 ## Using JTA transaction integration with CockroachDB
 
-Please see the documentation section on [external transaction management with CockroachDB]({{< ref "/user-guide/process-engine/database/cockroachdb-configuration.md#using-external-transaction-management-with-the-spring-java-ee-integrations" >}})
+Please see the documentation section on [external transaction management with CockroachDB](../../user-guide/process-engine/database/cockroachdb-configuration.md#using-external-transaction-management-with-the-spring-java-ee-integrations)
 to understand how to use the JTA Transaction Integration with CockroachDB.
 
 ## Using JTA transaction integration with WebSphere Liberty
@@ -72,4 +72,4 @@ As a workaround, you can throw a `RuntimeException` after invoking the `UserTran
 process engine will catch this `Exception` and handle the transaction rollback inside a job correctly.
 
 For more details on the WebSphere Liberty Camunda Platform 7 integration, check
-out the [WebSphere Liberty installation guide]({{< ref "/installation/full/was/manual-liberty.md" >}}) section.
+out the [WebSphere Liberty installation guide](../../installation/full/was/manual-liberty.md) section.

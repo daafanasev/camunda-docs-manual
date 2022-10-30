@@ -105,7 +105,7 @@ A JSON object containing a list of task comments.
   <tr>
     <td>404</td>
     <td>application/json</td>
-    <td>No process instance exists for the given process instance id. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>No process instance exists for the given process instance id. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

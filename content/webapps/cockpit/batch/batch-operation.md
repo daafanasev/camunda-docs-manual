@@ -39,9 +39,9 @@ After selecting the operation, fields may appear with additional data that is ei
 Next, you can define the instances affected by the batch operation. Initially, all instances are displayed. You can use the filter bar above the list of instances to filter the displayed instances.
 You can select specific instances or click on the **Query** radio button to select all instances matching the filter.
 
-{{< note title="Warning" class="warning">}}
+### Warning" class="warning">}}
 Selecting all instances might create a high load on the database and application runtime/server if the query has a high number of results.
-{{< /note >}}
+
 
 You can copy a link to the current search query to your clipboard by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-link"></i></button> button and you can save search queries to your local browser storage by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and inserting a name in the drop down menu that appears. You can then retrieve the search query by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and selecting the chosen name in the drop down menu.
 
@@ -68,9 +68,9 @@ start editing by clicking on the value. You can expand the value in a modal dial
 
 {{< img src="../../img/batch/batch-in-operator-modal.png" title="IN Operator Modal" >}}
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
   The instance search operates on the history endpoint of the engine. In case the requested historic data is not persisted to the database, then the search does not deliver the desired results.
-{{< /note >}}
+
 
 # Confirmation of operation
 
@@ -84,4 +84,4 @@ count as well as a <button class="btn btn-xs"><i class="glyphicon glyphicon-eye-
 {{< img src="../../img/batch/batch_operation_result.png" alt="Batch Operation Result" caption="" >}}
 
 On the results screen you will see the current status of the batch operation creation. Upon successful batch creation, the user is able to
-navigate to [batch monitoring]({{< ref "/webapps/cockpit/batch/monitoring.md" >}}). In case of error, this screen will display a corresponding error message.
+navigate to [batch monitoring](../../webapps/cockpit/batch/monitoring.md). In case of error, this screen will display a corresponding error message.

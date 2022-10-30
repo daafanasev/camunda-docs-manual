@@ -45,9 +45,9 @@ EventSubscription subscription = runtimeService.createEventSubscriptionQuery()
 runtimeService.messageEventReceived(subscription.getEventName(), subscription.getExecutionId());
 ```
 
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
 Correlation of a parallel multi instance isn't possible because the subscription can't be identified unambiguously.
-{{< /note >}}
+
 
 To continue a process instance that is currently waiting at a Receive Task without a message reference, the `runtimeService.signal(executionId)` can be called, using the id of the execution that arrived in the Receive Task.
 
@@ -72,17 +72,17 @@ runtimeService.signal(execution.getId());
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#asyncbefore" >}}">camunda:asyncBefore</a>,
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
+      <a href="../../reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
-      <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#inputoutput" >}}">camunda:inputOutput</a>
+      <a href="../../reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
+      <a href="../../reference/bpmn20/custom-extensions/extension-elements.md#inputoutput" >}}">camunda:inputOutput</a>
     </td>
   </tr>
   <tr>
@@ -98,5 +98,5 @@ runtimeService.signal(execution.getId());
 # Additional Resources
 
 * [Tasks](http://camunda.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://camunda.org/bpmn/reference.html)
-* [Message Receive Events]({{< ref "/reference/bpmn20/events/message-events.md" >}})
-* [Trigger a subscription via REST]({{< ref "/reference/rest/execution/post-signal.md" >}})
+* [Message Receive Events](../../reference/bpmn20/events/message-events.md)
+* [Trigger a subscription via REST](../../reference/rest/execution/post-signal.md)

@@ -14,7 +14,7 @@ menu:
 
 
 Queries for historic process instances that fulfill the given parameters.
-This method is slightly more powerful than the [Get Process Instances]({{< ref "/reference/rest/history/process-instance/get-process-instance-query.md" >}}) method because it allows filtering by multiple process variables of types `String`, `Number` or `Boolean`.
+This method is slightly more powerful than the [Get Process Instances](../../reference/rest/history/process-instance/get-process-instance-query.md) method because it allows filtering by multiple process variables of types `String`, `Number` or `Boolean`.
 
 
 # Method
@@ -136,7 +136,7 @@ A JSON object with the following properties:
   </tr>
     <tr>
       <td>incidentType</td>
-      <td>Filter by the incident type. See the <a href="{{< ref "/user-guide/process-engine/incidents.md#incident-types" >}}">User Guide</a> for a list of incident types.</td>
+      <td>Filter by the incident type. See the <a href="../../user-guide/process-engine/incidents.md#incident-types" >}}">User Guide</a> for a list of incident types.</td>
     </tr>
   <tr>
     <td>incidentStatus</td>
@@ -272,13 +272,13 @@ A JSON object with the following properties:
 
     All process instance query properties can be used except for: <code>sorting</code><br><br>
 
-    See the <a href="{{< ref "/user-guide/process-engine/process-engine-api.md#or-queries" >}}">user guide</a>
+    See the <a href="../../user-guide/process-engine/process-engine-api.md#or-queries" >}}">user guide</a>
     for more information about OR queries.
     </td>
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 # Result
 
@@ -397,7 +397,7 @@ Each historic process instance object has the following properties:
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 # Response Codes
 
@@ -415,7 +415,7 @@ Each historic process instance object has the following properties:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

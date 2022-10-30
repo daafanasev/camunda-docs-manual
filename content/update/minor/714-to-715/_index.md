@@ -39,7 +39,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend executing these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.14_patch_?.sql`.
@@ -55,7 +55,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -68,10 +68,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.15 di
 
 Please choose the application server you are working with from the following list:
 
-* [JBoss AS/Wildfly]({{< ref "/update/minor/714-to-715/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/714-to-715/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/714-to-715/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/714-to-715/was.md" >}})
+* [JBoss AS/Wildfly](../../update/minor/714-to-715/jboss.md)
+* [Apache Tomcat](../../update/minor/714-to-715/tomcat.md)
+* [Oracle WebLogic](../../update/minor/714-to-715/wls.md)
+* [IBM WebSphere](../../update/minor/714-to-715/was.md)
 
 ## Custom Process Applications
 
@@ -92,7 +92,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -113,8 +113,8 @@ For more information about the reporting of Bpmn Errors and BPMN Escalations in 
 
 [javadocs-taskservice-handleBpmnError]:https://docs.camunda.org/javadoc/camunda-bpm-platform/7.15/org/camunda/bpm/engine/TaskService.html#handleBpmnError-java.lang.String-java.lang.String-
 [javadocs-taskservice-handleEscalation]:https://docs.camunda.org/javadoc/camunda-bpm-platform/7.15/org/camunda/bpm/engine/TaskService.html#handleEscalation-java.lang.String-java.lang.String-
-[user-task-reference-error]: {{< ref "/reference/bpmn20/tasks/user-task.md#reporting-bpmn-error" >}}
-[user-task-reference-escalation]: {{< ref "/reference/bpmn20/tasks/user-task.md#reporting-bpmn-escalation" >}}
+[user-task-reference-error]: ../../reference/bpmn20/tasks/user-task.md#reporting-bpmn-error" >}}
+[user-task-reference-escalation]: ../../reference/bpmn20/tasks/user-task.md#reporting-bpmn-escalation" >}}
 
 # Update of MySQL JDBC Driver in Camunda Docker Images
 
@@ -149,7 +149,7 @@ file located under `/camunda/standalone/configuration/` from `com.mysql.cj.jdbc.
 ### 1) Milliseconds Precision for Date/Time values
 
 The new version of the Driver changes how a date/time value is handled. Please make sure to configure 
-the Driver as described in [MySQL Database Configuration]({{< ref "/user-guide/process-engine/database/mysql-configuration.md" >}})
+the Driver as described in [MySQL Database Configuration](../../user-guide/process-engine/database/mysql-configuration.md)
 to avoid breaking behavior.
 
 ### 2) Changed Time Zone Handling
@@ -164,12 +164,12 @@ are returned correctly after the migration and date values are stored correctly 
 You can achieve this by specifying the correct time zone via the property [`serverTimeZone`](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-connp-props-datetime-types-processing.html#cj-conn-prop_serverTimezone) in your JDBC connection URL.\
 For instance, if your process engine operates in CET but your MySQL Server does not, set the property to `serverTimeZone=CET`.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 Changing the time zone of the MySQL Server to the one the process engine operates in can have unwanted side-effects 
 to date values that are stored in columns of type `TIMESTAMP`: MySQL converts `TIMESTAMP` values from the server time zone 
 to UTC for storage, and back from UTC to the current time zone for retrieval. Read more about it in the 
 [MySQL Docs](https://dev.mysql.com/doc/refman/5.6/en/datetime.html).
-{{< /note >}}
+
 
 ## Further Reading
 
@@ -190,14 +190,14 @@ Starting with this release, the data necessary to track this metric will be kept
 This will make the metric independent from engine history data, allowing you to handle history and its cleanup as implied by your use case, 
 regardless of the metrics you might be required to report as an enterprise customer.
 
-You can read more about the metrics in our [Metrics Guide]({{< ref "/user-guide/process-engine/metrics.md" >}}).
+You can read more about the metrics in our [Metrics Guide](../../user-guide/process-engine/metrics.md).
 
 Since the metrics data accumulated over time can become substantial, it is possible to
 
-* configure a history time live for the task metrics data so it is picked up by [History Cleanup]({{< ref "/user-guide/process-engine/history.md#task-metrics" >}})
+* configure a history time live for the task metrics data so it is picked up by [History Cleanup](../../user-guide/process-engine/history.md#task-metrics)
 * manually clean up the task metrics data through API
 
-Manually deleting task metrics data can be done via [REST API]({{< ref "/reference/rest/metrics/delete-metrics-task-worker" >}}) or Java API by using the `deleteTaskMetrics` method provided by the `ManagementService`.
+Manually deleting task metrics data can be done via [REST API](../../reference/rest/metrics/delete-metrics-task-worker) or Java API by using the `deleteTaskMetrics` method provided by the `ManagementService`.
 Both APIs allow to provide a date, prior to which all task metrics data will be deleted. Please note that only users of the `camunda-admin` group can manually delete task metrics.
 
 Reporting task metrics can also be explicitly disabled via engine configuration by either adding a `taskMetricsEnabled` property with value `false` to the configuration or by setting the flag`isTaskMetricsEnabled` to `false` via Java API.
@@ -209,7 +209,7 @@ diagrams still used the DMN 1.1 specification. As of this version, the DMN Model
 with the DMN 1.3 specification. Users that rely on the DMN 1.1 specification from diagrams generated by the DMN Model
 API should adjust their logic to use the DMN 1.3 specification.
 
-[create-dmn-diagram]: {{< ref "/user-guide/model-api/dmn-model-api/create-a-model.md" >}}
+[create-dmn-diagram]: ../../user-guide/model-api/dmn-model-api/create-a-model.md" >}}
 
 # Changes in Webapps
 
@@ -221,7 +221,7 @@ end time is not null. This includes regularly completed as well as internally an
 
 ## Embedded Forms Preview in Cockpit
 Deployed Forms now show a preview in the Cockpit deployment view. If the HTML has embedded `<script>` tags, they will be executed, which may have unintended side-effects.
-You can disable this preview feature in the [Cockpit configuration]({{< ref "/webapps/cockpit/extend/configuration.md#preview-deployed-embedded-forms" >}}) to prevent script execution. Check out our [security instructions]({{< ref "/user-guide/security.md#forms" >}}) for more information on how to secure your Camunda installation.
+You can disable this preview feature in the [Cockpit configuration](../../webapps/cockpit/extend/configuration.md#preview-deployed-embedded-forms) to prevent script execution. Check out our [security instructions](../../user-guide/security.md#forms) for more information on how to secure your Camunda installation.
 
 
 ## Changes to the Webapp Config Files
@@ -260,7 +260,7 @@ If you do not have custom scripts or plugins, you are good to go. Otherwise, con
  
 ## New Frontend Plugin System for all Webapps
 
-With the 7.15.0 release, we updated all our Webapps frontend plugin system. They now use the same plugin system that we introduced to cockpit in the 7.14 release. Check out the [7.13 to 7.14 update guide]({{< ref "/update/minor/713-to-714/_index.md#migrate-existing-angularjs-plugins" >}}) for more details on how to migrate your plugins.
+With the 7.15.0 release, we updated all our Webapps frontend plugin system. They now use the same plugin system that we introduced to cockpit in the 7.14 release. Check out the [7.13 to 7.14 update guide](../../update/minor/713-to-714/_index.md#migrate-existing-angularjs-plugins) for more details on how to migrate your plugins.
 
 You can still use your old plugins if you include them as legacy plugins:
 
@@ -330,7 +330,7 @@ Note that this adjustment doesn't change the supported versions of Amazon Aurora
 service built on top of PostgreSQL, and as such, needs to be tested for support separately from PostgreSQL.
 
 [postgresql-versioning]: https://www.postgresql.org/support/versioning/
-[supported-environments]: {{< ref "/introduction/supported-environments.md#supported-database-products" >}}
+[supported-environments]: ../../introduction/supported-environments.md#supported-database-products" >}}
 
 # Changes to Camunda Platform Run Start Script
 With 7.15, we have introduced Swagger UI as an additional module of the Camunda Platform Run distro. This brings changes to the 
@@ -354,7 +354,7 @@ By default, Spring Boot serves static content through Spring Web MVC from any di
 `/META-INF/resources` on the classpath. To prevent users from accidentally serving files, we disable this in configuration files `default.yml` and `production.yml` 
 respectively, by setting `spring.web.resources.static-locations` to `NULL`. If you want serve static files, you can add paths there.
 
-[run-documentation]: {{< ref "/user-guide/camunda-bpm-run.md" >}}
+[run-documentation]: ../../user-guide/camunda-bpm-run.md" >}}
 
 # Java External Task Client: New Version Handling
 

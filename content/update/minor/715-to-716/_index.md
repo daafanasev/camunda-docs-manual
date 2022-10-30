@@ -27,13 +27,13 @@ This guide covers mandatory migration steps as well as optional considerations f
 
 # Database Updates
 
-Every Camunda installation requires a database schema update. Check our [database schema update guide]({{< ref "/installation/database-schema.md#update" >}}) for further instructions. 
+Every Camunda installation requires a database schema update. Check our [database schema update guide](../../installation/database-schema.md#update) for further instructions. 
 
-**Note**: Updating to Camunda Platform `7.16` from any version prior to `7.16` requires using the [manual update]({{< ref "/installation/database-schema.md#manual-update" >}}) approach.
+**Note**: Updating to Camunda Platform `7.16` from any version prior to `7.16` requires using the [manual update](../../installation/database-schema.md#manual-update) approach.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -46,10 +46,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.16 di
 
 Please choose the application server you are working with from the following list:
 
-* [JBoss AS/Wildfly]({{< ref "/update/minor/715-to-716/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/715-to-716/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/715-to-716/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/715-to-716/was.md" >}})
+* [JBoss AS/Wildfly](../../update/minor/715-to-716/jboss.md)
+* [Apache Tomcat](../../update/minor/715-to-716/tomcat.md)
+* [Oracle WebLogic](../../update/minor/715-to-716/wls.md)
+* [IBM WebSphere](../../update/minor/715-to-716/was.md)
 
 ## Custom Process Applications
 
@@ -69,15 +69,15 @@ Take the following steps to complete the update:
 
 1. Undeploy the current version of the standalone web application.
 2. Update the database to the new schema as described in the [database update](#database-updates) section.
-3. Configure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Configure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section. **Note** that with 7.16 the standalone web applications use **HikariCP** for data sources instead of Apache Commons DBCP. Replace the
    `targetDataSource`'s bean class to `com.zaxxer.hikari.HikariDataSource` and rename the `url` parameter of the data source to `jdbcUrl`.
 4. Deploy the new and configured standalone web application to the server.
 
 # Set Variables on Process Instance Migration
 
-We have extended the [Process Instance Migration Batch Operation]({{< ref "/user-guide/process-engine/process-instance-migration.md#set-variables-to-process-instances" >}}) to set variables into the process instances' scope.
-Please bear in mind that the [usage of new features]({{< ref "/rolling-update.md#usage-of-new-features" >}}) during a rolling update 
+We have extended the [Process Instance Migration Batch Operation](../../user-guide/process-engine/process-instance-migration.md#set-variables-to-process-instances) to set variables into the process instances' scope.
+Please bear in mind that the [usage of new features](../../rolling-update.md#usage-of-new-features) during a rolling update 
 leads to unexpected behavior and therefore must be avoided: When a migration batch with variables is 
 created during a rolling update, variables might or might not be set depending on the executing engine (old/new engine), 
 and batch variables might not be removed when an old engine executes the monitor job.
@@ -104,7 +104,7 @@ With Nashorn not included in Java 15 anymore, you can move forward with any of t
 1. Move away from JavaScript by using Java Delegates, External Tasks, or another scripting language like Groovy
 
 With Camunda Platform 7.16, we add out-of-the-box support for option #1. You can approach options #2 and #3 as you can with any previous version of Camunda Platform.
-Depending on your [application setup]({{< ref "/introduction/architecture.md#camunda-platform-architecture" >}}) and use of JavaScript, moving forward with 
+Depending on your [application setup](../../introduction/architecture.md#camunda-platform-architecture) and use of JavaScript, moving forward with 
 GraalVM JavaScript requires different follow-up tasks. In any case, make sure to thoroughly test your scripts after migrating your applications before using them in production. 
 
 Choose the section that fits your setup best to read on from the following:
@@ -184,11 +184,11 @@ If migration is not immediately possible, you can use the following options to r
 Furthermore, you can also configure the GraalVM JavaScript engine to your needs if necessary. 
 Please consult the [Configure Script Engine Guide] on how to achieve this.
 
-[Pre-Packaged Distributions]: {{< ref "/installation/full/_index.md" >}}
-[Camunda Platform Run]: {{< ref "/installation/camunda-bpm-run.md" >}}
+[Pre-Packaged Distributions]: ../../installation/full/_index.md" >}}
+[Camunda Platform Run]: ../../installation/camunda-bpm-run.md" >}}
 [official Nashorn migration guide]: https://www.graalvm.org/reference-manual/js/NashornMigrationGuide/
 [Full Distribution]: #full-distribution
-[Configure Script Engine Guide]: {{< ref "/user-guide/process-engine/scripting.md#configure-script-engine" >}}
+[Configure Script Engine Guide]: ../../user-guide/process-engine/scripting.md#configure-script-engine" >}}
 
 # Camunda Form Definition parsing
 
@@ -199,13 +199,13 @@ To create Camunda Form Definitions, the engine will parse the form JSON when it 
 might lead to unwanted behavior in cases where files with the `.form` ending that are not Camunda Forms already exist or are deployed to the engine. In those cases, the parser will throw
 an exception as the definition could not be parsed correctly.
 
-[Camunda Form]: {{< ref "/user-guide/task-forms/_index.md#camunda-forms" >}}
+[Camunda Form]: ../../user-guide/task-forms/_index.md#camunda-forms" >}}
 
 # Upcoming Liquibase support
 
-Starting with Camunda Platform `7.16.0`, Liquibase can be used to [install the database schema]({{< ref "/installation/database-schema.md" >}}) and keep track of necessary changes to it.
-However, Liquibase can *NOT* be used to update from `7.15.x` to `7.16`. Please use the [manual update approach]({{< ref "/installation/database-schema.md#manual-update" >}}) for that.
-Nonetheless, you can already [migrate to Liquibase]({{< ref "/installation/database-schema.md#migrate-to-liquibase" >}}) as soon as you updated to `7.16.0` and prepare your installation for any future updates.
+Starting with Camunda Platform `7.16.0`, Liquibase can be used to [install the database schema](../../installation/database-schema.md) and keep track of necessary changes to it.
+However, Liquibase can *NOT* be used to update from `7.15.x` to `7.16`. Please use the [manual update approach](../../installation/database-schema.md#manual-update) for that.
+Nonetheless, you can already [migrate to Liquibase](../../installation/database-schema.md#migrate-to-liquibase) as soon as you updated to `7.16.0` and prepare your installation for any future updates.
 
 # New Version of Templating Engines (Freemarker, Velocity)
 

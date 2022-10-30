@@ -14,8 +14,8 @@ menu:
 
 
 Queries for the number of historic tasks that fulfill the given parameters.
-Takes the same parameters as the [Get Tasks (Historic)]({{< ref "/reference/rest/history/task/get-task-query.md" >}}) method.
-Corresponds to the size of the result set of the [Get Tasks (Historic) (POST)]({{< ref "/reference/rest/history/task/post-task-query.md" >}}) method and takes the same parameters.
+Takes the same parameters as the [Get Tasks (Historic)](../../reference/rest/history/task/get-task-query.md) method.
+Corresponds to the size of the result set of the [Get Tasks (Historic) (POST)](../../reference/rest/history/task/post-task-query.md) method and takes the same parameters.
 
 
 # Method
@@ -292,7 +292,7 @@ A JSON object with the following properties:
     <td>orQueries</td>
     <td>
     A JSON array which contains at least one OR query JSON Object. All previously listed filter criteria can be used  
-    inside of this JSON object. See the <a href="{{< ref "/user-guide/process-engine/process-engine-api.md#or-queries" >}}">user guide</a> 
+    inside of this JSON object. See the <a href="../../user-guide/process-engine/process-engine-api.md#or-queries" >}}">user guide</a> 
     for more information about OR queries.<br><br>
     The following properties are not supported: <code>sorting</code>, <code>withCandidateGroups</code>, 
     <code>withoutCandidateGroups</code>.
@@ -300,7 +300,7 @@ A JSON object with the following properties:
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 # Result
 
@@ -336,7 +336,7 @@ A JSON object that contains the count as the only property.
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

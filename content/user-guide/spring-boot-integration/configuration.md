@@ -36,7 +36,7 @@ Sets the process engine name and automatically adds all `ProcessEnginePlugin` be
 
 ### `DefaultDatasourceConfiguration`
 
-Configures the Camunda data source and enables [transaction integration]({{< ref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
+Configures the Camunda data source and enables [transaction integration](../../user-guide/spring-framework-integration/transactions.md). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
 
 If you want to [configure more than one datasource](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources) 
 and don't want to use the `@Primary` one for the process engine, then you can create a separate 
@@ -74,13 +74,13 @@ public PlatformTransactionManager camundaTransactionManager(@Qualifier("camundaB
 }
 ```
 
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   The wired data source and transaction manager beans must match, i.e. make sure that the transaction manager actually manages the Camunda data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
-{{< /note >}}
+
 
 ### `DefaultHistoryConfiguration`
 
-Applies the history configuration to the process engine. If not configured, the history level [FULL]({{< ref "/user-guide/process-engine/history.md#choose-a-history-level" >}}) is used.
+Applies the history configuration to the process engine. If not configured, the history level [FULL](../../user-guide/process-engine/history.md#choose-a-history-level) is used.
 If you want to use a custom `HistoryEventHandler`, you just have to provide a bean implementing the interface.
 
 ```java
@@ -277,7 +277,7 @@ The available properties are as follows:
 <tr>
 <td><a name="license-file"></a><code>.license-file</code></td>
 <td>Provides a URL to your Camunda license file and is automatically inserted into the DB when the application starts (but only if no valid license key is found in the DB).</br></br>
-<b>Note:</b> This property is only available when using the <a href="{{<ref "/user-guide/spring-boot-integration/webapps.md#enterprise-webapps" >}}">camunda-bpm-spring-boot-starter-webapp-ee</a>
+<b>Note:</b> This property is only available when using the <a href="../../user-guide/spring-boot-integration/webapps.md#enterprise-webapps" >}}">camunda-bpm-spring-boot-starter-webapp-ee</a>
 </td>
 <td>By default, the license key will be loaded:
  <ol>
@@ -286,7 +286,7 @@ The available properties are as follows:
   <li>from path <i>${user.home}/.camunda/license.txt</i> (if present)</li>
  </ol>
  The license must be exactly in the format as we sent it to you including the header and footer line. Bear in mind 
- that for some licenses there is a minimum <a href="{{<ref "/user-guide/license-use.md#license-compatibility" >}}">version requirement</a>.
+ that for some licenses there is a minimum <a href="../../user-guide/license-use.md#license-compatibility" >}}">version requirement</a>.
 </td>
 </tr>
 
@@ -420,7 +420,7 @@ The available properties are as follows:
 <td><code>.jdbc-batch-processing</code></td>
 <td>Controls if the engine executes the jdbc statements as Batch or not.
 It has to be disabled for some databases.
-See the <a href="{{<ref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
+See the <a href="../../user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
 <td><i>Camunda default value: true</i></td>
 </tr>
 
@@ -429,21 +429,21 @@ See the <a href="{{<ref "/user-guide/process-engine/database/database-configurat
 <td rowspan="3"><code>camunda.bpm.eventing</code></td>
 <td><code>.execution</code></td>
 <td>Enables eventing of delegate execution events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="../../user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.history</code></td>
 <td>Enables eventing of history events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="../../user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.task</code></td>
 <td>Enables eventing of task events.
-See the <a href="{{<ref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
+See the <a href="../../user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
 <td><code>true</code></td>
 </tr>
 
@@ -529,35 +529,35 @@ When setting to <code>/</code>, the legacy behavior of Camunda Spring Boot Start
 </tr>
 <tr>
 <td><code>.target-origin</code></td>
-<td>Sets the application expected deployment domain. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the application expected deployment domain. See the <a href="../../webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><i>Not set</i></td>
 </tr>
 <tr>
 <td><code>.deny-status</code></td>
-<td>Sets the HTTP response status code used for a denied request. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the HTTP response status code used for a denied request. See the <a href="../../webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><code>403</code></td>
 </tr>
 <tr>
 <td><code>.random-class</code></td>
-<td>Sets the name of the class used to generate tokens. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets the name of the class used to generate tokens. See the <a href="../../webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><code>java.security.SecureRandom</code></td>
 </tr>
 <tr>
 <td><code>.entry-points</code></td>
-<td>Sets additional URLs that will not be tested for the presence of a valid token. See the <a href="{{<ref "/webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
+<td>Sets additional URLs that will not be tested for the presence of a valid token. See the <a href="../../webapps/shared-options/csrf-prevention.md" >}}">user guide</a> for details.</td>
 <td><i>Not set</i></td>
 </tr>
 <tr>
   <td><code>.enable-secure-cookie</code></td>
   <td>
-    If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.
+    If set to <code>true</code>, the cookie flag <a href="../../webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled.
   </td>
   <td><code>false</code></td>
 </tr>
 <tr>
   <td><code>.enable-same-site-cookie</code></td>
   <td>
-    If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.
+    If set to <code>false</code>, the cookie flag <a href="../../webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.
   </td>
   <td><code>true</code></td>
 </tr>
@@ -590,7 +590,7 @@ When setting to <code>/</code>, the legacy behavior of Camunda Spring Boot Start
   <td>
       A custom value to change the cookie name.<br>
       <strong>Note:</strong> Please make sure to additionally change the cookie name for each webapp 
-      (e. g. <a href="{{< ref "/webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
+      (e. g. <a href="../../webapps/cockpit/extend/configuration.md#change-csrf-cookie-name" >}}">Cockpit
       </a>) separately.
   </td>
   <td><code>XSRF-TOKEN</code></td>
@@ -602,8 +602,8 @@ When setting to <code>/</code>, the legacy behavior of Camunda Spring Boot Start
 <tr>
   <td><code>.enable-secure-cookie</code></td>
   <td>
-    If set to <code>true</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the 
-      <a href="{{< ref "/webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
+    If set to <code>true</code>, the cookie flag <a href="../../webapps/shared-options/cookie-security.md#secure" >}}">Secure</a> is enabled for the 
+      <a href="../../webapps/shared-options/cookie-security.md" >}}">Session Cookie</a>.<br><br>
     <strong>Note:</strong> If the <code>Secure</code> flag is set in the cookie by any other means already, this property will not remove it by setting it to <code>false</code>.
   </td>
   <td><code>false</code></td>
@@ -611,7 +611,7 @@ When setting to <code>/</code>, the legacy behavior of Camunda Spring Boot Start
 <tr>
   <td><code>.enable-same-site-cookie</code></td>
   <td>
-    If set to <code>false</code>, the cookie flag <a href="{{< ref "/webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
+    If set to <code>false</code>, the cookie flag <a href="../../webapps/shared-options/cookie-security.md#samesite" >}}">SameSite</a> is disabled. The default value of the <code>SameSite</code> cookie is <code>LAX</code> and it can be changed via <code>same-site-cookie-option</code> configuration property.<br><br>
     <strong>Note:</strong> If the <code>SameSite</code> flag is set in the cookie by any other means already, this property will not adjust or remove it.
   </td>
   <td><code>true</code></td>
@@ -839,11 +839,11 @@ camunda:
         ...
 ```
 
-{{< note title="Note:" class="info" >}}
+### Note:
   Overriding an already exposed property using the <code>generic-properties</code>
   keyword does not effect the process engine configuration. All exposed properties
   can only be overridden with their exposed identifier.
-{{< /note >}}
+
 
 ### Examples
 Override configuration using exposed properties:
@@ -893,7 +893,7 @@ server:
 ```
 
 Further details of the session cookie like the `SameSite` flag can be configured via 
-[camunda.bpm.webapp.session-cookie]({{< ref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
+[camunda.bpm.webapp.session-cookie](../../user-guide/spring-boot-integration/configuration.md#session-cookie) in the `application.yaml`.
 
 # Configuring Spin DataFormats
 
@@ -909,13 +909,13 @@ Auto-configuration is currently supported for the following [Jackson Java 8 modu
 2. Java 8 Date/time (`jackson-datatype-jdk8`)
 3. Java 8 Datatypes (`jackson-datatype-jsr310`)
 
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 The Spin Jackson Json DataFormat auto-configuration is disabled when using 
 `camunda-spin-dataformat-all` as a dependency. The `camunda-spin-dataformat-all` artifact shades the
 Jackson libraries, which breaks compatibility with the regular Jackson modules. If usage of 
 `camunda-spin-dataformat-all` is necessary, please use the standard method for 
-[Spin Custom DataFormat configuration]({{< ref "/reference/spin/extending-spin.md#custom-dataformats" >}}).
-{{< /note >}}
+[Spin Custom DataFormat configuration](../../reference/spin/extending-spin.md#custom-dataformats).
+
 
 For example, to provide support for Java 8 Date/time types in Spin, the following dependencies, with their 
 appropriate version tags, will need to be added in the Spring Boot Application's

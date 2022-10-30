@@ -12,7 +12,7 @@ menu:
 
 ---
 
-Retrieves history cleanup batch window configuration (See [History cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}})).
+Retrieves history cleanup batch window configuration (See [History cleanup](../../user-guide/process-engine/history.md#history-cleanup">}})).
 
 
 # Method
@@ -43,7 +43,7 @@ A JSON object representing batch window datetimes with timezone.
   <tr>
     <td>batchWindowStartTime</td>
     <td>Date</td>
-    <td>Start time of the current or next batch window. By <a href="{{<ref "/reference/rest/overview/date-format.md" >}}">default</a>,
+    <td>Start time of the current or next batch window. By <a href="../../reference/rest/overview/date-format.md" >}}">default</a>,
         the date must have the format <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code>, e.g., 
         <code>2013-01-23T14:42:45.000+0200</code>.
     </td>
@@ -51,7 +51,7 @@ A JSON object representing batch window datetimes with timezone.
   <tr>
     <td>batchWindowEndTime</td>
     <td>Date</td>
-    <td>End time of the current or next batch window. By <a href="{{<ref "/reference/rest/overview/date-format.md" >}}">default</a>,
+    <td>End time of the current or next batch window. By <a href="../../reference/rest/overview/date-format.md" >}}">default</a>,
         the date must have the format <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code>, e.g., 
         <code>2013-01-23T14:42:45.000+0200</code>.
     </td>
@@ -61,8 +61,8 @@ A JSON object representing batch window datetimes with timezone.
     <td>Boolean</td>
     <td>
       Indicates whether the engine node participates in history cleanup or not.<br>
-      The default is <code>true</code>. Participation can be disabled via <a href="{{<ref "/reference/deployment-descriptors/tags/process-engine.md#history-cleanup-enabled" >}}">Process Engine Configuration</a>.<br>
-      For more details, see <a href="{{<ref "/user-guide/process-engine/history.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>.
+      The default is <code>true</code>. Participation can be disabled via <a href="../../reference/deployment-descriptors/tags/process-engine.md#history-cleanup-enabled" >}}">Process Engine Configuration</a>.<br>
+      For more details, see <a href="../../user-guide/process-engine/history.md#cleanup-execution-participation-per-node" >}}">Cleanup Execution Participation per Node</a>.
     </td>
   </tr>
 </table>

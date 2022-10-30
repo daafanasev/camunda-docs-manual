@@ -21,7 +21,7 @@ The update procedure takes the following steps:
 
 In each of the following steps, the identifiers `$*_VERSION` refer to the current version and the new versions of the artifacts.
 
-{{< note title="Updated Tomcat Version" class="info" >}}
+### Updated Tomcat Version
 The pre-built Camunda 7.3 distribution ships with Tomcat 7.0.62, whereas 7.2 comes with Tomcat 7.0.50. Camunda 7.3 is supported on all Tomcat 6/7 versions such that a Tomcat update is not required when migrating from 7.2 to 7.3.
 
 Should you want to update Tomcat along with Camunda, perform the following steps either before or after updating Camunda:
@@ -31,7 +31,7 @@ Should you want to update Tomcat along with Camunda, perform the following steps
 * Undeploy all process applications and copy them to the new Tomcat server's directory for redeployment.
 
 See the [Tomcat migration guide](https://tomcat.apache.org/migration-7.html#Upgrading_7.0.x) for any Tomcat-specific migration notes and procedures.
-{{< /note >}}
+
 
 
 # 1. Update the Camunda Platform Core Libraries
@@ -88,16 +88,16 @@ The following steps are required to update the camunda web applications Cockpit,
 2. Download the Camunda web application archive from our [Maven Nexus Server][nexus]). Or switch to the private repository for the enterprise version (User and password from license required). Choose the correct version named `$PLATFORM_VERSION/camunda-webapp-tomcat-$PLATFORM_VERSION.war`.
 3. Deploy the web application archive to your Tomcat instance.
 
-{{< note title="LDAP Entity Caching" class="info" >}}
-It is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation]({{< ref "/reference/rest/overview/hal.md" >}}) for details.
-{{< /note >}}
+### LDAP Entity Caching
+It is possible to enable entity caching for Hypertext Application Language (HAL) requests that the camunda web applications make. This can be especially useful when you use camunda in combination with LDAP. To activate caching, the camunda webapp artifact has to be modified and the pre-built application cannot be used as is. See the [REST Api Documentation](../../reference/rest/overview/hal.md) for details.
+
 
 # 4. Configure Process Engines
 
 ## Task Query Expressions
 
-As of 7.3.3, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for details.
+As of 7.3.3, the default handling of expressions submitted as parameters of task queries has changed. Passing EL expressions in a task query enables execution of arbitrary code when the query is evaluated. The process engine no longer evaluates these expressions by default and throws an exception instead. This behavior can be toggled in the process engine configuration using the properties `enableExpressionsInAdhocQueries` (default `false`) and `enableExpressionsInStoredQueries` (default `true`). To restore the engine's previous behavior, set both flags to `true`. See the user guide on [security considerations for custom code](../../user-guide/process-engine/securing-custom-code.md) for details.
 This is already the default for Camunda Platform versions after and including 7.2.8.
 
-[migration-guide]: {{< ref "/update/minor/72-to-73/_index.md" >}}
+[migration-guide]: ../../update/minor/72-to-73/_index.md" >}}
 [nexus]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/camunda-engine-rest/

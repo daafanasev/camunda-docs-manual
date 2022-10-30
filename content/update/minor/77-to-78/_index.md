@@ -18,7 +18,7 @@ This document guides you through the update from Camunda Platform `7.7.x` to `7.
 1. For administrators and developers: [Database Updates](#database-updates)
 2. For administrators and developers: [Full Distribution Update](#full-distribution)
 3. For administrators: [Standalone Web Application](#standalone-web-application)
-4. For administrators and developers: [REST API Date Format]({{< relref "#rest-api-date-format" >}})
+4. For administrators and developers: [REST API Date Format]({{< relref "#rest-api-date-format)
 5. For administrators and developers: [Failed Jobs Retry Configuration](#failed-jobs-retry-configuration)
 6. For developers: [Incident Handler](#incident-handler)
 7. For administrators: [Batch processing for database operations](#batch-processing-for-database-operations)
@@ -28,13 +28,13 @@ This guide covers mandatory migration steps as well as optional considerations f
 
 Noteworthy new Features and Changes in 7.8:
 
-* [Perform a batch modification in Cockpit]({{< ref "/webapps/cockpit/bpmn/process-instance-modification.md#perform-a-batch-modification" >}})
-* [Instance Restart in Cockpit]({{< ref "/webapps/cockpit/bpmn/process-instance-restart.md" >}})
-* [History Cleanup View in Cockpit]({{< ref "/webapps/cockpit/cleanup.md" >}})
-* [Extending of Locks on External Tasks]({{< ref "/user-guide/process-engine/external-tasks.md#extending-of-locks-on-external-tasks" >}})
-* [Full Timezone Support for Webapps]({{< ref "/user-guide/process-engine/time-zones.md" >}})
-* [Default Retry Time Cycle Configuration]({{< ref "/user-guide/process-engine/the-job-executor.md#retry-time-cycle-configuration" >}}) and [Retry Intervals]({{< ref "/user-guide/process-engine/the-job-executor.md#retry-intervals" >}})
-* [Improved performance for database operations]({{< ref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}})
+* [Perform a batch modification in Cockpit](../../webapps/cockpit/bpmn/process-instance-modification.md#perform-a-batch-modification)
+* [Instance Restart in Cockpit](../../webapps/cockpit/bpmn/process-instance-restart.md)
+* [History Cleanup View in Cockpit](../../webapps/cockpit/cleanup.md)
+* [Extending of Locks on External Tasks](../../user-guide/process-engine/external-tasks.md#extending-of-locks-on-external-tasks)
+* [Full Timezone Support for Webapps](../../user-guide/process-engine/time-zones.md)
+* [Default Retry Time Cycle Configuration](../../user-guide/process-engine/the-job-executor.md#retry-time-cycle-configuration) and [Retry Intervals](../../user-guide/process-engine/the-job-executor.md#retry-intervals)
+* [Improved performance for database operations](../../user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing)
 
 # Database Updates
 
@@ -42,7 +42,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.7_patch_?.sql`.
@@ -57,7 +57,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -71,10 +71,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.8 dis
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/77-to-78/tomcat.md" >}})
-* [JBoss AS/Wildfly]({{< ref "/update/minor/77-to-78/jboss.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/77-to-78/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/77-to-78/wls.md" >}})
+* [Apache Tomcat](../../update/minor/77-to-78/tomcat.md)
+* [JBoss AS/Wildfly](../../update/minor/77-to-78/jboss.md)
+* [IBM WebSphere](../../update/minor/77-to-78/was.md)
+* [Oracle WebLogic](../../update/minor/77-to-78/wls.md)
 
 ## Custom Process Applications
 
@@ -95,7 +95,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -109,7 +109,7 @@ The Camunda webapps support the new format by default.
 In case some custom REST clients rely on the old date format, choose one of the two following options:
 
 1. Update REST clients to use the new format.
-2. Configure custom date format for Camunda REST API (explained in detail in the [Custom Date Format]({{< ref "/reference/rest/overview/date-format.md" >}})) section.
+2. Configure custom date format for Camunda REST API (explained in detail in the [Custom Date Format](../../reference/rest/overview/date-format.md)) section.
 
 # Failed Jobs Retry Configuration
 

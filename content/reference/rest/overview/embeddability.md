@@ -23,9 +23,9 @@ Furthermore, the engine classes and Jackson's `com.fasterxml.jackson.jaxrs:jacks
 
 **Step 1:** Add the REST API to your project as a Maven dependency.
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   Please import the [Camunda BOM](/get-started/apache-maven/) to ensure correct versions for every Camunda project.
-{{< /note >}}
+
 
 ```xml
 <dependency>
@@ -66,7 +66,7 @@ You may also have to add the following Jackson providers: `com.fasterxml.jackson
 Depending on the runtime environment, this may not be necessary.
 On Wildfly, these should be automatically added as an implicit module dependency.
 
-For proper exception responses of the format as described in the [Introduction]({{< ref "/reference/rest/overview/_index.md" >}}),
+For proper exception responses of the format as described in the [Introduction](../../reference/rest/overview/_index.md),
 it is necessary to include `RestExceptionHandler`. `ProcessEngineExceptionHandler` is used to translate any exception thrown by the
 engine that is not explicitly handled by the REST API classes to a generic HTTP 500 error with the same response body format.
 If you would like to have all kinds of exceptions translated to this format, you can use `org.camunda.bpm.engine.rest.exception.ExceptionHandler` instead of `ProcessEngineExceptionHandler`.

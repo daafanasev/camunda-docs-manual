@@ -33,7 +33,7 @@ Performing a migration consists of four steps:
 
 # Create a Migration Plan
 
-When accessing the migration page from the process definition or instance page, an appropriate source and target definition key and version is already set. Otherwise you can set the process definition key and version for both the source and target at the top of the page. After selecting a source and a target, the diagrams for these process definition versions are displayed. Also, a first draft of a migration plan is [generated]({{< ref "/user-guide/process-engine/process-instance-migration.md#generating-a-migration-plan" >}}) and successfully mapped activities are highlighted with a green checkmark symbol <span class="badge" style="border: 1px solid #4cae4c; background-color: #5cb85c;">
+When accessing the migration page from the process definition or instance page, an appropriate source and target definition key and version is already set. Otherwise you can set the process definition key and version for both the source and target at the top of the page. After selecting a source and a target, the diagrams for these process definition versions are displayed. Also, a first draft of a migration plan is [generated](../../user-guide/process-engine/process-instance-migration.md#generating-a-migration-plan) and successfully mapped activities are highlighted with a green checkmark symbol <span class="badge" style="border: 1px solid #4cae4c; background-color: #5cb85c;">
   <span class="glyphicon glyphicon-ok"></span>
 </span>. Hovering over an activity highlights the corresponding source and target activities for the mapping.
 
@@ -71,7 +71,7 @@ If you create a mapping that is incorrect, a red error indicator <span class="ba
 
 ## Set Update Event Trigger flag
 
-To set the [update event trigger flag]({{< ref "/user-guide/process-engine/process-instance-migration.md#events" >}}) for events, first create a mapping for the event. Then click on the green checkmark indicator to open the details tooltip. The opened popup contains a checkbox to update the event trigger.
+To set the [update event trigger flag](../../user-guide/process-engine/process-instance-migration.md#events) for events, first create a mapping for the event. Then click on the green checkmark indicator to open the details tooltip. The opened popup contains a checkbox to update the event trigger.
 
 
 ## Show migration plan
@@ -109,9 +109,9 @@ After finishing the **Set Variables** step, click **Select Instances** to procee
 
 Initially, all instances of the source process definition version are displayed. You can use the filter bar above the list of instances to filter the displayed instances. You can select specific instances or click on the **Query** radio button to select all instances matching the filter.
 
-{{< note title="Warning" class="warning">}}
+### Warning" class="warning">}}
 Selecting all instances might create a high load on the database and application runtime/server if the query has a high number of results.
-{{< /note >}}
+
 
 Furthermore, you can copy a link to the current filter query to your clipboard by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-link"></i></button> button and you can save filter queries to your local browser storage by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and inserting a name in the drop down menu that appears. You can then retrieve the filter query by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and selecting the chosen name in the drop down menu.
 
@@ -133,7 +133,7 @@ By clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-eye-
 
 {{< img src="../../img/migration/step5_batch.png" title="Executing migration asynchronously" >}}
 
-After clicking `Execute Migration`, the result screen is displayed. If the migration was performed successfully, that is indicated on this page. For asynchronous migrations, a link to the [batch page]({{< ref "/webapps/cockpit/batch/monitoring.md" >}}) is displayed where the progress of the batch can be observed.
+After clicking `Execute Migration`, the result screen is displayed. If the migration was performed successfully, that is indicated on this page. For asynchronous migrations, a link to the [batch page](../../webapps/cockpit/batch/monitoring.md) is displayed where the progress of the batch can be observed.
 
 ## Error: Migration Plan invalid
 

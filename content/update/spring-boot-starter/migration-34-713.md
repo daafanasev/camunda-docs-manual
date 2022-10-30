@@ -14,4 +14,4 @@ menu:
 # New version handling
 
 Starting with version 7.13.0, Camunda Platform and its compatible Camunda Spring Boot Starter artifact will share the same version.
-All adjustments in the Spring Boot Starter will now be covered in the general migration guide, i.e. the [7.12 to 7.13 guide]({{< ref "/update/minor/712-to-713/_index.md#spring-boot-starter-update" >}}).
+All adjustments in the Spring Boot Starter will now be covered in the general migration guide, i.e. the [7.12 to 7.13 guide](../../update/minor/712-to-713/_index.md#spring-boot-starter-update).

@@ -15,7 +15,7 @@ At Camunda, we strive to offer an excellent user experience at a high and stable
 
 ## Design
 
-The process engine has a dedicated thread called the **Telemetry Reporter** to periodically report telemetry data to Camunda. By default, this thread is always running, but only reports data if telemetry is explicitly enabled. See the [how to enable telemetry]({{< ref "#how-to-enable-telemetry" >}}) section for how to do this. The collected data is available through multiple APIs, even if sending the data to Camunda is not enabled. See [how to access the data]({{< ref "#how-to-access-the-data" >}}) for more information on how to do this.
+The process engine has a dedicated thread called the **Telemetry Reporter** to periodically report telemetry data to Camunda. By default, this thread is always running, but only reports data if telemetry is explicitly enabled. See the [how to enable telemetry]({{< ref "#how-to-enable-telemetry) section for how to do this. The collected data is available through multiple APIs, even if sending the data to Camunda is not enabled. See [how to access the data]({{< ref "#how-to-access-the-data) for more information on how to do this.
 
 When enabled, the collected data is sent once every 24 hours via HTTPS. The telemetry reporter is designed so that your implemented processes are not negatively affected in case the reporter suddenly faces an unexpected error. The telemetry reporter stops in any case when the process engine is stopped.
 
@@ -120,7 +120,7 @@ The counts are collected from the start of the engine or the last reported time 
 
 ### Logger
 
-The logger with name `org.camunda.bpm.engine.telemetry` logs details about the sent information and errors in case the data couldn't be collected or sent. For further information check the [Logging]({{< ref "/user-guide/logging.md#telemetry-data" >}}) page in the User Guide.
+The logger with name `org.camunda.bpm.engine.telemetry` logs details about the sent information and errors in case the data couldn't be collected or sent. For further information check the [Logging](../../user-guide/logging.md#telemetry-data) page in the User Guide.
 
 
 
@@ -192,7 +192,7 @@ In case you want further details, you can have a look at the implementation of t
 
 ## Initial data report
 
-{{< note title="Previous Camunda versions only" class="info" >}}
+### Previous Camunda versions only
 In previous Camunda versions, the installation sends an anonymized one-time initial report to Camunda. This applies to the following versions:
 
 * 7.17: All versions before 7.17.0
@@ -202,7 +202,7 @@ In previous Camunda versions, the installation sends an anonymized one-time init
 * 7.13 / 7.12 / 7.11: all versions
 
 In higher versions, the installation no longer sends this initial message.
-{{< /note >}}
+
 
 To support the understanding of typical use cases and the overall distribution of our products, the installation sends an anonymized one-time initial report to Camunda via HTTPS. This report contains no specifics that would allow any direct link to an outside entity and is limited to the following data:
 
@@ -222,11 +222,11 @@ No other information will be included in that report. Furthermore, this report w
 In case you disabled telemetry explicitly or did not configure it at all, this is the only report that will ever be sent to Camunda.
 
 If there is the necessity to also prevent this anonymized report from being sent to us, you can set the `telemetryReporterActivate` configuration [flag][engine-config-telemetryReporterActivate] to `false`.
-With this, the reporter thread will not be started and no request will ever be sent to Camunda. See the [how to enable telemetry]({{< ref "#how-to-enable-telemetry" >}}) section on how to do this.
+With this, the reporter thread will not be started and no request will ever be sent to Camunda. See the [how to enable telemetry]({{< ref "#how-to-enable-telemetry) section on how to do this.
 
 
-[engine-config-initializeTelemetry]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
-[engine-config-telemetryReporterActivate]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
-[telemetry-config-rest]: {{< ref "/reference/rest/telemetry/post-telemetry-config.md" >}}
-[telemetry-data-rest]: {{< ref "/reference/rest/telemetry/get-telemetry-data.md" >}}
-[system-management]: {{< ref "/webapps/admin/system-management.md" >}}
+[engine-config-initializeTelemetry]: ../../reference/deployment-descriptors/tags/process-engine.md#initializeTelemetry" >}}
+[engine-config-telemetryReporterActivate]: ../../reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
+[telemetry-config-rest]: ../../reference/rest/telemetry/post-telemetry-config.md" >}}
+[telemetry-data-rest]: ../../reference/rest/telemetry/get-telemetry-data.md" >}}
+[system-management]: ../../webapps/admin/system-management.md" >}}

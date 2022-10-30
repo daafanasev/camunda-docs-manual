@@ -25,13 +25,13 @@ behavior by flipping a config flag:
 [enableFeelLegacyBehavior][fluent feel flag setter] and [setEnableFeelLegacyBehavior][feel flag setter] 
 methods
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 By using the legacy FEEL Engine, the Camunda DMN Engine **only** supports `FEEL` for 
-<a href="{{< ref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}">Input Entries</a> of a decision table – this corresponds to FEEL 
+<a href="../../reference/dmn/decision-table/rule.md#input-entry-condition" >}}">Input Entries</a> of a decision table – this corresponds to FEEL 
 simple unary tests.
-{{< /note >}}
 
-[Migration Guide]: {{< ref "/update/minor/712-to-713/_index.md#entirely-replaced-feel-engine" >}}
-[legacy behavior flag]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#dmnFeelEnableLegacyBehavior" >}}
+
+[Migration Guide]: ../../update/minor/712-to-713/_index.md#entirely-replaced-feel-engine" >}}
+[legacy behavior flag]: ../../reference/deployment-descriptors/tags/process-engine.md#dmnFeelEnableLegacyBehavior" >}}
 [fluent feel flag setter]: {{< javadocref_url page="org/camunda/bpm/dmn/engine/impl/DefaultDmnEngineConfiguration.html#enableFeelLegacyBehavior" >}}
 [feel flag setter]: {{< javadocref_url page="org/camunda/bpm/dmn/engine/impl/DefaultDmnEngineConfiguration.html#setEnableFeelLegacyBehavior" >}}

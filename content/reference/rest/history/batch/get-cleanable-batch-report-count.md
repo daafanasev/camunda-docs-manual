@@ -12,8 +12,8 @@ menu:
 ---
 
 Queries for the number of report results about a historic batch operations relevant to history cleanup (see
-<a href="{{< ref "/user-guide/process-engine/history.md#history-cleanup" >}}">History cleanup</a>).
-Takes the same parameters as the [Get Cleanable Batch Report]({{< ref "/reference/rest/history/batch/get-cleanable-batch-report.md" >}}) method.
+<a href="../../user-guide/process-engine/history.md#history-cleanup" >}}">History cleanup</a>).
+Takes the same parameters as the [Get Cleanable Batch Report](../../reference/rest/history/batch/get-cleanable-batch-report.md) method.
 
 # Method
 
@@ -83,7 +83,7 @@ A JSON object that contains the count as the only property.
   <tr>
     <td>500</td>
     <td>application/json</td>
-    <td>See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

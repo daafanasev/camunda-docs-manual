@@ -13,9 +13,9 @@ menu:
 
 Run the Camunda Platform in every Java-runnable environment. Camunda Platform is supported with our QA infrastructure in the following environments. Here you can find more information about our [enterprise support](http://camunda.com/bpm/enterprise/).
 
-{{< note title="Supported Environments" class="info" >}}
+### Supported Environments
   Please note that the environments listed in this section depend on the version of the Camunda Platform. Please select the corresponding version of this documentation to see the environment that fits to your version of the Camunda Platform. e.g., [supported environments for version 7.15](http://docs.camunda.org/7.15/guides/user-guide/#introduction-supported-environments)
-{{< /note >}}
+
 
 
 # Container/Application Server for Runtime Components
@@ -24,11 +24,11 @@ Run the Camunda Platform in every Java-runnable environment. Camunda Platform is
 
 * All Java application servers
 * Camunda Spring Boot Starter: Embedded Tomcat
-  * [Supported versions]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
-  * [Deployment scenarios]({{< ref "/user-guide/spring-boot-integration/_index.md#supported-deployment-scenarios" >}})
+  * [Supported versions](../../user-guide/spring-boot-integration/version-compatibility.md)
+  * [Deployment scenarios](../../user-guide/spring-boot-integration/_index.md#supported-deployment-scenarios)
 * Camunda Engine Quarkus Extension
-  * [Supported versions]({{< ref "/user-guide/quarkus-integration/version-compatibility.md" >}})
-  * [Deployment scenarios]({{< ref "/user-guide/quarkus-integration/_index.md#supported-deployment-scenarios" >}})
+  * [Supported versions](../../user-guide/quarkus-integration/version-compatibility.md)
+  * [Deployment scenarios](../../user-guide/quarkus-integration/_index.md#supported-deployment-scenarios)
 
 ## Container-Managed Process Engine and Camunda Cockpit, Tasklist, Admin
 
@@ -37,7 +37,7 @@ Run the Camunda Platform in every Java-runnable environment. Camunda Platform is
 * Wildfly Application Server 14.0 / 15.0 / 16.0 / 17.0 / 18.0 / 19.0 / 20.0 / 21.0 / 22.0 / 23.0 / 24.0 / 25.0 / 26.0
 * IBM WebSphere Application Server 9.0 ([Enterprise Edition only](http://camunda.com/enterprise/))
 * IBM WebSphere Liberty 22 with Java EE 8 features ([Enterprise Edition only](http://camunda.com/enterprise/), 
-  see [Installation guide]({{< ref "/installation/full/was/manual-liberty.md" >}}))
+  see [Installation guide](../../installation/full/was/manual-liberty.md))
 * Oracle WebLogic Server 14c (14R1) ([Enterprise Edition only](http://camunda.com/enterprise/))
 
 
@@ -51,14 +51,14 @@ Run the Camunda Platform in every Java-runnable environment. Camunda Platform is
 * IBM DB2 11.5 (excluding IBM z/OS for all versions)
 * PostgreSQL 11 / 12 / 13 / 14
 * Amazon Aurora PostgreSQL compatible with PostgreSQL 11 / 12
-* Microsoft SQL Server 2016/2017/2019 (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
+* Microsoft SQL Server 2016/2017/2019 (see [Configuration Note](../../user-guide/process-engine/database/mssql-configuration.md))
 * Microsoft Azure SQL with Camunda-supported SQL Server compatibility levels 
-  (see [Configuration Note]({{< ref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-camunda" >}})): 
+  (see [Configuration Note](../../user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-camunda)): 
   * SQL Server on Azure Virtual Machines
   * Azure SQL Managed Instance
   * Azure SQL Database
-* H2 2.1 (not recommended for [Cluster Mode]({{< ref "/introduction/architecture.md#clustering-model" >}}) - see [Deployment Note]({{< ref "/user-guide/process-engine/deployments.md" >}}))
-* CockroachDB v20.1.3 (see [Configuration guide]({{< ref "/user-guide/process-engine/database/cockroachdb-configuration.md" >}}) for more details)
+* H2 2.1 (not recommended for [Cluster Mode](../../introduction/architecture.md#clustering-model) - see [Deployment Note](../../user-guide/process-engine/deployments.md))
+* CockroachDB v20.1.3 (see [Configuration guide](../../user-guide/process-engine/database/cockroachdb-configuration.md) for more details)
 
 ## Database Clustering & Replication
 

@@ -11,11 +11,11 @@ menu:
 ---
 
 
-{{< note title="Spin Dataformat Reference" class="info" >}}
+### Spin Dataformat Reference
   This section explains how to work with data formats such as XML or JSON in Camunda Platform. The
-  [Spin Dataformat Reference]({{< ref "/reference/spin/_index.md" >}}) provides a complete reference of
+  [Spin Dataformat Reference](../../reference/spin/_index.md) provides a complete reference of
   all data manipulation features available.
-{{< /note >}}
+
 
 While Camunda Platform is a Java platform, process data is not always represented by Java objects. When interacting with external systems, serialized formats such as JSON or XML are often used. While such process variables can be treated by the engine as plain String objects, there is a significant effort required to process such data like parsing, manipulating or mapping from/to Java objects. Thus, Camunda Platform offers an optional component that eases the work with this kind of data in the process engine.
 

@@ -14,7 +14,7 @@ menu:
 
 
 Queries for historic variable instances that fulfill the given parameters.
-This method is slightly more powerful than the [Get Variable Instances]({{< ref "/reference/rest/history/variable-instance/get-variable-instance-query.md" >}}) method because it allows filtering by variable values of the different types `String`, `Number` or `Boolean`.
+This method is slightly more powerful than the [Get Variable Instances](../../reference/rest/history/variable-instance/get-variable-instance-query.md) method because it allows filtering by variable values of the different types `String`, `Number` or `Boolean`.
 
 
 # Method
@@ -79,7 +79,7 @@ A JSON object with the following properties:
   </tr>
   <tr>
     <td>variableTypeIn</td>
-    <td>Only include historic variable instances which belong to one of the passed and comma-separated variable types. A list of all supported variable types can be found <a href="{{< ref "/user-guide/process-engine/variables.md#supported-variable-values" >}}">here</a>. <b>Note:</b> All non-primitive variables are associated with the type "serializable".
+    <td>Only include historic variable instances which belong to one of the passed and comma-separated variable types. A list of all supported variable types can be found <a href="../../user-guide/process-engine/variables.md#supported-variable-values" >}}">here</a>. <b>Note:</b> All non-primitive variables are associated with the type "serializable".
     </td>
   </tr>
   <tr>
@@ -277,7 +277,7 @@ Each historic activity instance object has the following properties:
   </tr>
 </table>
 
-\* For further information, please see the <a href="{{< ref "/reference/rest/overview/date-format.md" >}}"> documentation</a>.
+\* For further information, please see the <a href="../../reference/rest/overview/date-format.md" >}}"> documentation</a>.
 
 # Response Codes
 
@@ -295,7 +295,7 @@ Each historic activity instance object has the following properties:
   <tr>
     <td>400</td>
     <td>application/json</td>
-    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="{{< ref "/reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
+    <td>Returned if some of the query parameters are invalid, for example if a <code>sortOrder</code> parameter is supplied, but no <code>sortBy</code>. See the <a href="../../reference/rest/overview/_index.md#error-handling" >}}">Introduction</a> for the error response format.</td>
   </tr>
 </table>
 

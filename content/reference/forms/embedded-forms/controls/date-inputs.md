@@ -35,11 +35,11 @@ Example value: `2013-01-23T13:42:42`
 
 # Using a Date Picker
 
-The Form SDK itself does not provide any custom components or widgets. As such it also does not provide a date picker. However, you can integrate third party libraries providing such widgets or write one yourself (see [Custom JavaScript]({{< ref "/reference/forms/embedded-forms/javascript/_index.md" >}})).
+The Form SDK itself does not provide any custom components or widgets. As such it also does not provide a date picker. However, you can integrate third party libraries providing such widgets or write one yourself (see [Custom JavaScript](../../reference/forms/embedded-forms/javascript/_index.md)).
 
 {{< note >}}
 Inside Camunda Tasklist, datepicker support is provided through Angular UI.
-{{< /note >}}
+
 
 You can use the [Angular UI datepicker](http://angular-ui.github.io/bootstrap/)
 directive to offer a datepicker for the date input field. The complete markup of the input field
@@ -66,7 +66,7 @@ including the datepicker button is shown below.
 ```
 
 In addition to the HTML markup, the following JavaScript must be included in the form file
-(see [Custom JavaScript]({{< ref "/reference/forms/embedded-forms/javascript/_index.md" >}})):
+(see [Custom JavaScript](../../reference/forms/embedded-forms/javascript/_index.md)):
 
 ```html
 <script cam-script type="text/form-script">

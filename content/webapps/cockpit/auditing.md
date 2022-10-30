@@ -15,7 +15,7 @@ menu:
 Please note that this feature is only included in the enterprise edition of the Camunda Platform, it is not available in the community edition.
 {{< /enterprise >}}
 
-Since Cockpit is a very powerful tool, it is often desired to inspect which user performed which operation for auditing purposes. Cockpit operations that change state are logged in the Camunda Platform's [user operation log]({{< ref "/user-guide/process-engine/history.md#user-operation-log" >}}) that is part of the process engine history. The log allows to understand
+Since Cockpit is a very powerful tool, it is often desired to inspect which user performed which operation for auditing purposes. Cockpit operations that change state are logged in the Camunda Platform's [user operation log](../../user-guide/process-engine/history.md#user-operation-log) that is part of the process engine history. The log allows to understand
 
 * which user performed an operation
 * which operation was performed
@@ -23,7 +23,7 @@ Since Cockpit is a very powerful tool, it is often desired to inspect which user
 * which entities (process instances, tasks, etc.) were involved
 * which changes were made
 
-To get a more detailed explanation about the Java and REST API methods to get user operations, check out [this url]({{< ref "/user-guide/process-engine/history.md#accessing-the-user-operation-log" >}}).
+To get a more detailed explanation about the Java and REST API methods to get user operations, check out [this url](../../user-guide/process-engine/history.md#accessing-the-user-operation-log).
 
 # Operation Log in Cockpit
 {{< img src="../img/cockpit-operation-log.png" title="Operation Log" >}}
@@ -42,7 +42,7 @@ If you are only interested in a specific operation, for example, every time a pr
 {{< img src="../img/cockpit-audit-type.png" title="Filter by Type" >}}
 
 ## Annotating Operation Logs
-For each operation, an annotation can be added to provide context. To do this, click on the <button class="btn btn-xs"><i class="glyphicon glyphicon-pencil"></i></button> for the operation you want to annotate. The maximum length of the annotation is limited by your database. The length can be configured in the [Cockpit Configuration]({{<ref "/webapps/cockpit/extend/configuration.md#user-operation-log-annotation-length" >}}).
+For each operation, an annotation can be added to provide context. To do this, click on the <button class="btn btn-xs"><i class="glyphicon glyphicon-pencil"></i></button> for the operation you want to annotate. The maximum length of the annotation is limited by your database. The length can be configured in the [Cockpit Configuration](../../webapps/cockpit/extend/configuration.md#user-operation-log-annotation-length).
 
 {{< img src="../img/cockpit-audit-annotation.png" title="Annotation edit" >}}
 

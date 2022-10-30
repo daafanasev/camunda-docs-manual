@@ -70,9 +70,9 @@ if you want to deploy and test a Process Application multiple times with multipl
 * The `spring.datasource.generate-unique-name=true` property will generate a new datasource for
 each new `ApplicationContext`. Reused (cached) `ApplicationContext`s will use the same datasource.
 
-{{< note title="" class="warning" >}} 
+### Заметка class="warning" >}} 
 Be aware that the `generate-unique-process-engine-name` and `process-engine-name` properties are mutually exclusive. Setting them both will result in an exception.
-{{< /note >}}
+
 
 If a static accessor needs to be used (e.g. processEngines.getProcessEngine(name)) in a given test, then the following properties can be used:
 
@@ -103,13 +103,13 @@ camunda.bpm:
     telemetry-reporter-activate: false
 ```
 
-[engine-config-telemetryReporterActivate]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
-[telemetry-initial-report]: {{< ref "/introduction/telemetry.md#initial-data-report" >}}
+[engine-config-telemetryReporterActivate]: ../../reference/deployment-descriptors/tags/process-engine.md#telemetryReporterActivate" >}}
+[telemetry-initial-report]: ../../introduction/telemetry.md#initial-data-report" >}}
 
 ## Camunda Assertions
 
 The [Camunda Platform Assertions]({{< ref 
-"/user-guide/testing/_index.md#camunda-assertions" >}}) library is 
+"/user-guide/testing/_index.md#camunda-assertions) library is 
 integrated with the Camunda Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 

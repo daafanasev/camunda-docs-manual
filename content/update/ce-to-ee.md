@@ -26,7 +26,7 @@ In this guide, we’ll step through migration from Camunda Platform 7 Community 
 
 {{< note class="info" >}}
 If needed, you can obtain a license key and [start a 30-day trial](https://camunda.com/download/enterprise/) of Camunda Platform 7 Enterprise Edition.
-{{< /note >}}
+
 
 # Set up
 

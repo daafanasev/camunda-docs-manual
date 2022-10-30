@@ -13,7 +13,7 @@ menu:
 ---
 <b>Deprecated!</b> Use `GET /history/cleanup/jobs` instead.
 
-Finds history cleanup job (See [History cleanup]({{< ref "/user-guide/process-engine/history.md#history-cleanup">}})).
+Finds history cleanup job (See [History cleanup](../../user-guide/process-engine/history.md#history-cleanup">}})).
 
 # Method
 
@@ -33,7 +33,7 @@ Not used
 # Result
 
 A JSON object representing scheduled job.
-See [Get Job]({{<ref "/reference/rest/job/get.md#result" >}}) for the structure and example.
+See [Get Job](../../reference/rest/job/get.md#result) for the structure and example.
 
 # Response Codes
 

@@ -72,8 +72,8 @@ The engine uses the id as the decision key of the deployed
 ```
 
 
-[inputs]: {{< ref "/reference/dmn/decision-table/input.md" >}}
-[outputs]: {{< ref "/reference/dmn/decision-table/output.md" >}}
-[rules]: {{< ref "/reference/dmn/decision-table/rule.md" >}}
-[deployed]: {{< ref "/user-guide/process-engine/decisions/repository.md" >}}
-[Decision Requirements Diagram]: {{< ref "/reference/dmn/drg/_index.md" >}}
+[inputs]: ../../reference/dmn/decision-table/input.md" >}}
+[outputs]: ../../reference/dmn/decision-table/output.md" >}}
+[rules]: ../../reference/dmn/decision-table/rule.md" >}}
+[deployed]: ../../user-guide/process-engine/decisions/repository.md" >}}
+[Decision Requirements Diagram]: ../../reference/dmn/drg/_index.md" >}}

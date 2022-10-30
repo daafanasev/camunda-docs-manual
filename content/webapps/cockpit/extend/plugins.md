@@ -11,11 +11,11 @@ menu:
 
 ---
 
-{{< note title="Plugin Compatibility" class="info" >}}
-Please note that we updated the frontend plugin interface with Camunda Platform Runtime 7.14. Plugins written for Camunda Platform Runtime 7.13 and earlier might no longer work with Camunda Platform Runtime 7.14. Checkout the [update guide]({{< ref "/update/minor/713-to-714" >}}) for more details.
+### Plugin Compatibility
+Please note that we updated the frontend plugin interface with Camunda Platform Runtime 7.14. Plugins written for Camunda Platform Runtime 7.13 and earlier might no longer work with Camunda Platform Runtime 7.14. Checkout the [update guide](../../update/minor/713-to-714) for more details.
 
-It is also important to remember that [Camunda Platform Run]({{< ref "/user-guide/camunda-bpm-run" >}}) does not offer support for Cockpit plugins at the moment.
-{{< /note >}}
+It is also important to remember that [Camunda Platform Run](../../user-guide/camunda-bpm-run) does not offer support for Cockpit plugins at the moment.
+
 
 Cockpit defines a plugin concept to add own functionality without being forced to extend or hack the Cockpit web application. You can add plugins at various plugin points, e.g., the processes dashboard as shown in the following example:
 
@@ -75,9 +75,9 @@ As runtime relevant resource it defines
 8. a js file that exports a frontend module. This file must be named `plugin.js` and be located in the `app` directory of the plugin asset directory
 9. a css file that contains the style definitions for the client-side plugin. This file must be named `plugin.css` and be located in the `app` directory of the plugin asset directory
 
-{{< note title="Related Example" class="info">}}
+### Related Example" class="info">}}
   [How to develop a Cockpit plugin](https://github.com/camunda/camunda-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes)
-{{< /note >}}
+
 
 ## Structure of a Frontend Module
 A frontend module always follows the same structure. This is how a sample `plugin.js` could look like:
@@ -92,12 +92,12 @@ export default {
   }
 };
 ```
-This file can also be included standalone as a [custom script]({{< ref "/webapps/cockpit/extend/configuration.md#custom-scripts" >}}).
+This file can also be included standalone as a [custom script](../../webapps/cockpit/extend/configuration.md#custom-scripts).
 
-{{< note title="Important notes about the structure" class="info" >}}
+### Important notes about the structure
  1. The default export is either one plugin or an array of plugins. Only the default export will be considered in Cockpit.
  2. The render function must not have a return value.
-{{< /note >}}
+
 
 ### Attributes in Detail
 
@@ -111,7 +111,7 @@ This file can also be included standalone as a [custom script]({{< ref "/webapps
 The second argument contains API endpoints and CSRF cookie information, as well as constants like a `processDefinitionId`. The `api` key is always present and contains  
   * `engine`: the engine name
   * `CSRFToken`: the current CSRF token for your requests
-  * `baseApi`, `adminApi`, `cockpitApi`, `engineApi`: The paths to different API endpoints. The engineApi corresponds to the [Rest Api]({{< ref "/reference/rest" >}})
+  * `baseApi`, `adminApi`, `cockpitApi`, `engineApi`: The paths to different API endpoints. The engineApi corresponds to the [Rest Api](../../reference/rest)
 The details of which data is passed into the plugin can be found at the [plugin point reference](#plugin-points).
 
 * `unmount`: Optional function which is called when the Plugin is unmounted. Use this to cleanup any listeners you or your Framework might have registered.
@@ -554,7 +554,7 @@ This additional data is passed into the render function:
 
 **Name:** `cockpit.report`
 
-See the [Reports]({{< ref "/webapps/cockpit/reporting.md" >}}) section for an example report plugin.
+See the [Reports](../../webapps/cockpit/reporting.md) section for an example report plugin.
 
 This plugin points properties contain the attribute `label`, which will be rendered in the navigation even when the plugin is not selected.
 

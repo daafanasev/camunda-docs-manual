@@ -26,7 +26,7 @@ There are different ways of using Camunda Platform and different components are 
 
 Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.camunda.org/manual/latest/installation/full/tomcat/manual/)).
 
-{{< note title="Security Consideration" class="warning" >}}
+### Security Consideration
   The pre-packaged distribution is intended for users who want a getting started experience. In case
   you still want to use it in production, consider un-deploying the invoice application and removing the demo user.
 {{</note>}}
@@ -52,7 +52,7 @@ By contrast, authentication is generally not done by Camunda when embedded as a 
 
 ### Enabling Authentication for the REST API
 
-For ease of use by developers, the REST API's authentication is disabled by default. When deploying the REST API in production, it is therefore required to enable authentication. Check the corresponding section in the [REST API documentation]({{< ref "/reference/rest/overview/authentication.md" >}}).
+For ease of use by developers, the REST API's authentication is disabled by default. When deploying the REST API in production, it is therefore required to enable authentication. Check the corresponding section in the [REST API documentation](../../reference/rest/overview/authentication.md).
 
 ### Authentication in the Web Applications
 
@@ -62,10 +62,10 @@ For the web applications, authentication is enabled by default and it is not pos
 
 To perform authentication, Camunda can use two sources: a database or LDAP.
 
-When using the the database, usernames and passwords are stored inside the `ACT_ID_USER` table (see [documentation on database schema]({{< ref "/user-guide/process-engine/database/database-schema.md#identity" >}})). To protect the passwords stored in the database, Camunda uses two concepts:
+When using the the database, usernames and passwords are stored inside the `ACT_ID_USER` table (see [documentation on database schema](../../user-guide/process-engine/database/database-schema.md#identity)). To protect the passwords stored in the database, Camunda uses two concepts:
 
-* **hashing**: instead of storing the password in plain text, a hash is stored. When authenticating, the same hash is generated from the user's input and compared against the hash in the database. If both hashes are equal the authentication attempt is successful. Camunda allows users to configure and customize the hash function used. Please refer the [documentation section on password hashing]({{< ref "/user-guide/process-engine/password-hashing.md" >}}) for details.
-* **salted hashes** to protect the database against rainbow table attacks, Camunda uses salted hashes. Similar to hashing itself, this function can be configured and extended to a user's needs. Please refer the [documentation section on password hashing]({{< ref "/user-guide/process-engine/password-hashing.md" >}}) for details.
+* **hashing**: instead of storing the password in plain text, a hash is stored. When authenticating, the same hash is generated from the user's input and compared against the hash in the database. If both hashes are equal the authentication attempt is successful. Camunda allows users to configure and customize the hash function used. Please refer the [documentation section on password hashing](../../user-guide/process-engine/password-hashing.md) for details.
+* **salted hashes** to protect the database against rainbow table attacks, Camunda uses salted hashes. Similar to hashing itself, this function can be configured and extended to a user's needs. Please refer the [documentation section on password hashing](../../user-guide/process-engine/password-hashing.md) for details.
 
 ### LDAP
 
@@ -77,11 +77,11 @@ Authorization controls what data a user can access and change in Camunda once au
 
 ### Do I need to enable Authorizations?
 
-Similar considerations as for authentication apply. For an in-depth discussion, see the documentation section on [authorizations]({{< ref "/user-guide/process-engine/authorization-service.md#when-is-authorization-required" >}})
+Similar considerations as for authentication apply. For an in-depth discussion, see the documentation section on [authorizations](../../user-guide/process-engine/authorization-service.md#when-is-authorization-required)
 
 ### Restricting Data Access with Authorizations
 
-Authorizations can be used to restrict a user from accessing a data object (such as a process or a task) and can be used to restrict how the user can interact with such data objects (read-only vs. modifications). Authorizations in Camunda are very powerful and it is recommended to read the corresponding [documentation entry on authorizations]({{< ref "/user-guide/process-engine/authorization-service.md" >}}).
+Authorizations can be used to restrict a user from accessing a data object (such as a process or a task) and can be used to restrict how the user can interact with such data objects (read-only vs. modifications). Authorizations in Camunda are very powerful and it is recommended to read the corresponding [documentation entry on authorizations](../../user-guide/process-engine/authorization-service.md).
 
 ### Prevent enumerating user accounts by brute-force creating new users
 
@@ -95,15 +95,15 @@ You don't centrally manage user accounts (e.g., with the help of LDAP or a custo
        and an untrusted person has access to this account (please see the [Authorization Service] docs 
        to learn how permissions are granted to resources)
 
-[Authorization Service]: {{< ref "/user-guide/process-engine/authorization-service.md" >}}
+[Authorization Service]: ../../user-guide/process-engine/authorization-service.md" >}}
 
 As soon as the attacker has obtained information about existing user ids, they can put all their 
 efforts on cracking passwords.
 
-{{< note title="Heads-up!" class="warning" >}}
+### Heads-up!
 We strongly recommend you to use the product with centrally managed user accounts. It is certainly not 
 advisable to manage accounts via the ways mentioned above.
-{{< /note >}}
+
 
 We think that the before mentioned scenarios are uncommon for organizations using the Camunda Platform Runtime. 
 However, we want to inform you about the options to prevent unrecommended usage, which makes the product
@@ -111,7 +111,7 @@ vulnerable to attacks.
 
 ## Deployments
 
-[Deployments]({{< ref "/user-guide/process-engine/deployments.md" >}}) to the process engine can contain resources that are interpreted like code:
+[Deployments](../../user-guide/process-engine/deployments.md) to the process engine can contain resources that are interpreted like code:
 
 * BPMN, DMN, CMMN models that the process engine executes on the Camunda server
 * Scripts and templates in various languages (Javascript, Groovy, Freemarker, ...) that the BPMN, DMN, CMMN models reference and that the process engine executes on the Camunda server
@@ -126,15 +126,15 @@ For example, you can restrict deployment access in the following ways:
 * An application that embeds the Camunda Java API can choose to not expose the deployment API on untrusted channels (such as to HTTP requests)
 * System administrators ensure that only trusted users have network access to the Camunda installation
 
-See also the user guide section [Custom Code & Security]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}}) for further information. 
+See also the user guide section [Custom Code & Security](../../user-guide/process-engine/securing-custom-code.md) for further information. 
 
 ## Throttle login attempts
 
-The engine gives option to throttle login attempts. The mechanism behind this is enabled by default. You can read more about it under [Identity Service]({{< ref "/user-guide/process-engine/identity-service.md#throttle-login-attempts" >}}) in User Guide.
+The engine gives option to throttle login attempts. The mechanism behind this is enabled by default. You can read more about it under [Identity Service](../../user-guide/process-engine/identity-service.md#throttle-login-attempts) in User Guide.
 
 ## Custom Whitelist for User, Group and Tenant IDs
 To determine if the provided ID is acceptable or not, IDs can be matched against a Whitelist Pattern.
-You can read more about it under [Identity Service]({{< ref "/user-guide/process-engine/identity-service.md#custom-whitelist-for-user-group-and-tenant-ids" >}}) in User Guide.
+You can read more about it under [Identity Service](../../user-guide/process-engine/identity-service.md#custom-whitelist-for-user-group-and-tenant-ids) in User Guide.
 
 ## Password Policy
 
@@ -142,27 +142,27 @@ When using the identity management provided by the engine (i.e., not the LDAP id
 it is possible to configure a password policy to ensure that all user passwords meet a certain security 
 standard. 
 
-Since version 7.11, a [built-in password policy]({{< ref "/user-guide/process-engine/password-policy.md#built-in-password-policy" >}}) 
+Since version 7.11, a [built-in password policy](../../user-guide/process-engine/password-policy.md#built-in-password-policy) 
 can be enabled that requires passwords to follow specific rules. However, you can achieve a much higher 
 level of security by implementing a more sophisticated custom password policy (e.g., with the help of 
 [Password Topology Blacklisting] (https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies), 
 also see the [OWASP guide] (https://github.com/OWASP/CheatSheetSeries/blob/7d94e9a29174b8fd76235ca60f47245d1f34df1e/cheatsheets/Authentication_Cheat_Sheet.md#password-complexity) 
 on password complexity).
 
-You can find more information on how to enable the base password policy and how to implement a custom password policy in our [User Guide]({{< ref "/user-guide/process-engine/password-policy.md" >}}).
+You can find more information on how to enable the base password policy and how to implement a custom password policy in our [User Guide](../../user-guide/process-engine/password-policy.md).
 
 ## Forms
 
 Camunda offers different types of forms which are primarily used in Tasklist. In the input inside of this forms you can call and execute scripts which allows you to achieve easily your business logic. Please validate this input each time to prevent malicious behaviour.
 
-If you don't want to display form previews and execute the embedded scripts in Cockpit, you can disable it in the [configuration]({{< ref "/webapps/cockpit/extend/configuration.md#preview-deployed-embedded-forms" >}}).
+If you don't want to display form previews and execute the embedded scripts in Cockpit, you can disable it in the [configuration](../../webapps/cockpit/extend/configuration.md#preview-deployed-embedded-forms).
 
 ## Queries
 
 ### Expressions in Queries
 
 Consider disabling execution of expressions in queries. See also: [Custom Code & Security
-]({{< ref "/user-guide/process-engine/securing-custom-code.md" >}})
+](../../user-guide/process-engine/securing-custom-code.md)
 
 ### Native queries
 
@@ -176,21 +176,21 @@ results or querying  for a vast number of results can lead to a high memory cons
 out of memory exceptions.
 
 You can mitigate the risk of an attack by defining a limit for the maximum number of results
-(`queryMaxResultsLimit`) in the [process engine configuration]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#queryMaxResultsLimit" >}}).
+(`queryMaxResultsLimit`) in the [process engine configuration](../../reference/deployment-descriptors/tags/process-engine.md#queryMaxResultsLimit).
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 To gain the full feature set of the Webapps, and not suffer any UX degradation due to unavailable data, the `queryMaxResultsLimit` must be set to `2000`.
-{{< /note >}}
+
 
 Please see the User Guide to learn more about the
-[Query Maximum Results Limit]({{< ref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}}).
+[Query Maximum Results Limit](../../user-guide/process-engine/process-engine-api.md#query-maximum-results-limit">}}).
 
 ## CSRF Prevention in the Webapps
 A CSRF filter is enabled by default, validating each modifying request performed through the webapps.
-Please also see the detailed overview on how to configure [CSRF Prevention]({{< ref "/webapps/shared-options/csrf-prevention.md" >}}).
+Please also see the detailed overview on how to configure [CSRF Prevention](../../webapps/shared-options/csrf-prevention.md).
 
 The CSRF Prevention makes use of a cookie. By default, some security-related configurations are present for this cookie.
-To ensure full security, please consult the documentation about [Cookie Security]({{< ref "/webapps/shared-options/cookie-security.md" >}}) to learn more about it.
+To ensure full security, please consult the documentation about [Cookie Security](../../webapps/shared-options/cookie-security.md) to learn more about it.
 
 ## XML Security
 Camunda handles many XML files containing configurations of process engines, definitions of process models and more. In order to mitigate possible vulnerabilities that can be introduced by XML files, the following measures are activated by default:
@@ -198,7 +198,7 @@ Camunda handles many XML files containing configurations of process engines, def
 * Prevention against XML eXternal Entity (XXE) injections according to [OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md)
 * Feature Secure Processing (FSP) of XML files according to [Oracle](https://docs.oracle.com/javase/8/docs/api/javax/xml/XMLConstants.html#FEATURE_SECURE_PROCESSING) which introduces [limits](https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html) for several XML properties
 
-If the limitations on XML files introduced by XXE prevention need to be removed, XXE processing can be enabled via `enableXxeProcessing` in the [process engine configuration]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}).
+If the limitations on XML files introduced by XXE prevention need to be removed, XXE processing can be enabled via `enableXxeProcessing` in the [process engine configuration](../../reference/deployment-descriptors/tags/process-engine.md#configuration-properties).
 
 FSP itself can not be disabled in the engine. All properties that are influenced by this can however be configured in the environment via system properties and the `jaxp.properties` file. See the [Oracle documentation](https://docs.oracle.com/javase/tutorial/jaxp/limits/using.html) on how to determine the right limits and how to set them.
 
@@ -216,34 +216,34 @@ Out-of-the-box the web applications support the following security-related HTTP 
 These headers enable browser-side security mechanisms which help to improve the protection against several attacking scenarios.
 
 According to your project requirements, some of these headers can be configured more strict or lax. Please see the
-documentation about the [HTTP Header Security]({{< ref "/webapps/shared-options/header-security.md" >}}) to learn more
+documentation about the [HTTP Header Security](../../webapps/shared-options/header-security.md) to learn more
 about the several headers, the defaults and how to configure the HTTP headers according to your needs.
 
 ## Variable Values from Untrusted Sources
 
 Process variables can be submitted as Java objects using the JDK built-in `application/x-java-serialized-object` data format, JSON or XML along with a Java class name via the Camunda REST API and web applications.
-On server side, they can then be deserialized into Java objects, so that Java code can work with them in a native way. See [Camunda Spin]({{< ref "/user-guide/data-formats/configuring-spin-integration.md" >}}) for details and this [REST API endpoint]({{< ref "/reference/rest/execution/local-variables/put-local-variable.md#example-2" >}}) for an example.
+On server side, they can then be deserialized into Java objects, so that Java code can work with them in a native way. See [Camunda Spin](../../user-guide/data-formats/configuring-spin-integration.md) for details and this [REST API endpoint](../../reference/rest/execution/local-variables/put-local-variable.md#example-2) for an example.
 
 If an attacker can access these endpoints, they can exploit so-called _serialization gadgets_, i.e. classes that run vulnerable code during deserialization resulting in remote code execution in the general case. For example, consider a class constructor that makes a REST request based on a field value. An attacker could submit a forged variable value so that during deserialization, when the constructor is called, the application server would make an arbitrary REST request to a destination of the attacker's choice. For details, see [OWASP's description of Deserialization of untrusted data](https://www.owasp.org/index.php/Deserialization_of_untrusted_data).
 
 ### Java objects using the JDK built-in `application/x-java-serialized-object` data format
 
 Starting with version 7.9, by default, it is not possible to set variables of type `Object` **AND** the data format `application/x-java-serialized-object`.
-The behavior can be restored with the process engine configuration flag [`javaSerializationFormatEnabled`]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}).
+The behavior can be restored with the process engine configuration flag [`javaSerializationFormatEnabled`](../../reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled).
 However, please bear in mind that enabling the java serialization format might make the process engine vulnerable against the aforementioned attacking scenario.
 
 ### JSON/XML serialized objects using Spin
 
-Therefore, we recommend enabling the whitelisting of allowed Java classes by enabling the property [deserializationTypeValidationEnabled]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#deserializationTypeValidationEnabled" >}}) in the process engine configuration. With this, the process engine validates the class names of submitted variables against a whitelist of allowed Java class and package names. Any non-whitelisted content is rejected. The default values are safe, but may be too restrictive for your use case. You can use the engine properties `deserializationAllowedPackages` and `deserializationAllowedClasses` to extend the default whitelist with package and class names of Java types that you consider save to deserialize in your environment.
+Therefore, we recommend enabling the whitelisting of allowed Java classes by enabling the property [deserializationTypeValidationEnabled](../../reference/deployment-descriptors/tags/process-engine.md#deserializationTypeValidationEnabled) in the process engine configuration. With this, the process engine validates the class names of submitted variables against a whitelist of allowed Java class and package names. Any non-whitelisted content is rejected. The default values are safe, but may be too restrictive for your use case. You can use the engine properties `deserializationAllowedPackages` and `deserializationAllowedClasses` to extend the default whitelist with package and class names of Java types that you consider save to deserialize in your environment.
 
 In case this default behavior needs further adjustment, a custom validator can be implemented and registered in the engine with the engine property `deserializationTypeValidator`.
 The provided object needs to be a subtype of `org.camunda.bpm.engine.runtime.DeserializationTypeValidator` and offer an implementation of the `#validate` method.
 In case you want to rely on allowed package and class names from the engine configuration as well, you can provide a subtype of `org.camunda.bpm.engine.runtime.WhitelistingDeserializationTypeValidator`.
 An implementation of this interface registered as validator will be provided with the defined packages and classes from the engine configuration upon initialization of the engine via `#setAllowedClasses` and `#setAllowedPackages`.
 
-{{< note title="Jackson Type Whitelisting" class="info" >}}
+### Jackson Type Whitelisting
   Spin's JSON implementation is based on Jackson. If you configure Camunda Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://medium.com/@cowtowncoder/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Camunda's whitelisting feature does not cover this case.
-{{< /note >}}
+
 
 # Security Configuration in the external Environment
 
@@ -252,7 +252,7 @@ Camunda integrates into an environment, most prominently the database and, when 
 ## Database
 
 Camunda stores its data into a relational database. In order to protect access to this data, it must be configured correctly.
-The documentation section on [supported environments]({{< ref "/introduction/supported-environments.md" >}}) provides a list of supported databases.
+The documentation section on [supported environments](../../introduction/supported-environments.md) provides a list of supported databases.
 
 ### Data encryption
 
@@ -268,7 +268,7 @@ To establish the connection to the database, the database credentials need to be
 
 ## Web Server (applicable when using REST API or Web Applications)
 
-When deploying the REST API or the Camunda web applications, Camunda is integrated with a third party web server. The documentation section on [supported environments]({{< ref "/introduction/supported-environments.md" >}}) provides a list of supported web servers / application servers.
+When deploying the REST API or the Camunda web applications, Camunda is integrated with a third party web server. The documentation section on [supported environments](../../introduction/supported-environments.md) provides a list of supported web servers / application servers.
 It is strongly recommended to consider applying the following configurations.
 
 ### Enabling SSL / HTTPS
@@ -289,7 +289,7 @@ Restriction of the maximum size in bytes of the POST requests is specific to you
 
 ### Securing Cookies (Web Applications)
 
-The container provides the session cookie. Please consult the documentation about [Cookie Security]({{< ref "/webapps/shared-options/cookie-security.md" >}}) to learn what configurations are necessary to ensure full security for the session cookie.
+The container provides the session cookie. Please consult the documentation about [Cookie Security](../../webapps/shared-options/cookie-security.md) to learn what configurations are necessary to ensure full security for the session cookie.
 
 ### Error handling
 

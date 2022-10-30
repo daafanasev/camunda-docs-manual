@@ -19,7 +19,7 @@ This document guides you through the update from Camunda Platform `7.6.x` to `7.
 2. For administrators and developers: [Rolling Update](#rolling-update)
 3. For administrators and developers: [Full Distribution Update](#full-distribution)
 4. For administrators: [Standalone Web Application](#standalone-web-application)
-4. For administrators: [Updating a Tasklist Translation File]({{< relref "#tasklist-translation-file" >}})
+4. For administrators: [Updating a Tasklist Translation File]({{< relref "#tasklist-translation-file)
 5. For administrators and developers: [Application with Embedded Process Engine Update](#application-with-embedded-process-engine)
 
 
@@ -27,12 +27,12 @@ This guide covers mandatory migration steps as well as optional considerations f
 
 Noteworthy new Features and Changes in 7.7:
 
-* [Deploy Processes, Decisions and Cases from Cockpit]({{< ref "/webapps/cockpit/deployment-view.md#create-deployment" >}})
-* [New Batch API for modification of multiple process instances]({{< ref "/user-guide/process-engine/process-instance-modification.md#modification-of-multiple-process-instances" >}})
-* [Process instance restart + Batch API]({{< ref "/user-guide/process-engine/process-instance-restart.md" >}})
-* [Automatic cleanup of historic data based on TTL]({{< ref "/user-guide/process-engine/history.md#history-cleanup" >}})
-* [New cryptographic hash function with salt] ({{< ref "/user-guide/process-engine/password-hashing.md" >}})
-* [External tasks history]({{< ref "/reference/rest/history/external-task-log/_index.md" >}})
+* [Deploy Processes, Decisions and Cases from Cockpit](../../webapps/cockpit/deployment-view.md#create-deployment)
+* [New Batch API for modification of multiple process instances](../../user-guide/process-engine/process-instance-modification.md#modification-of-multiple-process-instances)
+* [Process instance restart + Batch API](../../user-guide/process-engine/process-instance-restart.md)
+* [Automatic cleanup of historic data based on TTL](../../user-guide/process-engine/history.md#history-cleanup)
+* [New cryptographic hash function with salt] (../../user-guide/process-engine/password-hashing.md)
+* [External tasks history](../../reference/rest/history/external-task-log/_index.md)
 
 # Database Updates
 
@@ -40,7 +40,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.6_patch_?.sql`.
@@ -64,7 +64,7 @@ To circumvent that problem you can either update all engines to the version >= 7
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -78,10 +78,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.7 dis
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/76-to-77/tomcat.md" >}})
-* [JBoss AS/Wildfly]({{< ref "/update/minor/76-to-77/jboss.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/76-to-77/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/76-to-77/wls.md" >}})
+* [Apache Tomcat](../../update/minor/76-to-77/tomcat.md)
+* [JBoss AS/Wildfly](../../update/minor/76-to-77/jboss.md)
+* [IBM WebSphere](../../update/minor/76-to-77/was.md)
+* [Oracle WebLogic](../../update/minor/76-to-77/wls.md)
 
 ## Custom Process Applications
 
@@ -102,7 +102,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 

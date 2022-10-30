@@ -12,7 +12,7 @@ menu:
 
 ---
 
-The processes dashboard of Cockpit is the entry point for process monitoring. It comes with a pre-installed plugin, which lets you see deployed process definitions. Additional [plugins]({{< ref "/webapps/cockpit/extend/plugins.md" >}}) can be added to the processes dashboard.
+The processes dashboard of Cockpit is the entry point for process monitoring. It comes with a pre-installed plugin, which lets you see deployed process definitions. Additional [plugins](../../webapps/cockpit/extend/plugins.md) can be added to the processes dashboard.
 
 
 # Deployed processes
@@ -27,8 +27,8 @@ With this plugin you can easily observe the state of a process definition. Green
 You can also switch to the preview tab which displays the rendered process model of each deployed process. Additionally, you get information about how many instances of the process are currently running and about the process state. Green and red dots signalize running and [failed jobs][failed-jobs]. Click on the model to go to the [process definition view][process-definition-view].
 
 
-[process-definition-view]: {{< ref "/webapps/cockpit/bpmn/process-definition-view.md" >}}
-[failed-jobs]: {{< ref "/webapps/cockpit/bpmn/failed-jobs.md" >}}
+[process-definition-view]: ../../webapps/cockpit/bpmn/process-definition-view.md" >}}
+[failed-jobs]: ../../webapps/cockpit/bpmn/failed-jobs.md" >}}
 
 
 # Search
@@ -49,9 +49,9 @@ You can always either search for process instances or for incidents. When you ad
 
 You can perform batch operation on process instances matching search criteria by clicking "Batch operation" button.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
   The process instance search operates on the history endpoint of the engine. In case the requested historic data is not persisted to the database, then the search does not deliver the desired results.
-{{< /note >}}
+
 
 ## CSV Export for Process Instances
 
@@ -75,10 +75,10 @@ the currently displayed page, or all pages.
 
 Additionally, you can specify process variables by name to enrich the export result with the values of these variables.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 * Exporting all pages is more inefficient than exporting a selection or a single page of process instances and can cause extra load on the database and application server. Also, a more complex query that runs against an unbounded number of rows affects the execution time negatively.
-* For security reasons, you can limit the maximum number of process instances that can be exported via the [Query Maximum Results Limit]({{< ref "/user-guide/process-engine/process-engine-api.md#query-maximum-results-limit" >}}).
-{{< /note >}}
+* For security reasons, you can limit the maximum number of process instances that can be exported via the [Query Maximum Results Limit](../../user-guide/process-engine/process-engine-api.md#query-maximum-results-limit).
+
 
 When clicking **Export CSV**, the backend crunches the requested data and creates a CSV file. This could take a while, depending on the amounts of process instances you want to export.
 

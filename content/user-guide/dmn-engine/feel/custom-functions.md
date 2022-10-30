@@ -15,9 +15,9 @@ menu:
 Camunda Platform provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
 called in expressions and unary tests. 
 
-{{< note title="Custom Function Behavior" class="warning" >}}
+### Custom Function Behavior
 Please note that the Custom Function Mechanism of the Standalone FEEL Scala Engine might behave differently.
-{{< /note >}}
+
 
 You can add Custom Functions to the Process Engine (or the Standalone DMN Engine) only programmatically 
 through a [Process Engine Plugin]. Read more about it in the section about how to 
@@ -118,8 +118,8 @@ passed into a Custom Function.
 All Java types listed in the "Return Types" section of the [FEEL Type Handling] documentation plus 
 the types listed in the [FEEL Data Types] documentation can be returned by a Custom Function.
 
-[FEEL Type Handling]: {{< ref "/user-guide/dmn-engine/feel/type-handling.md#return-types" >}}
+[FEEL Type Handling]: ../../user-guide/dmn-engine/feel/type-handling.md#return-types" >}}
 [FEEL Data Types]: https://camunda.github.io/feel-scala/1.11/feel-data-types
-[Process Engine Plugin]: {{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}
-[dmnFeelCustomFunctionProviders]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#dmnFeelCustomFunctionProviders" >}}
+[Process Engine Plugin]: ../../user-guide/process-engine/process-engine-plugins.md" >}}
+[dmnFeelCustomFunctionProviders]: ../../reference/deployment-descriptors/tags/process-engine.md#dmnFeelCustomFunctionProviders" >}}
 [Register Custom Function Providers]: #register-custom-function-providers

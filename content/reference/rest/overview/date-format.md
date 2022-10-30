@@ -56,9 +56,9 @@ With this configuration the REST API will return dates with millisecond
 precision and timezone information. Also, new dates with milliseconds and timezone information 
 can be submitted to the REST API without losing these details.
 
-{{< note title="Webapps compatibility" class="warning" >}}
+### Webapps compatibility
 Be aware that, to be able to use the Camunda webapps, the date format must correspond to the following:
 
 `yyyy-MM-dd['T'HH:mm[:ss[.SSS[Z]]]]`
 
-{{< /note >}}
+

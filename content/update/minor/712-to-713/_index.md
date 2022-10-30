@@ -42,7 +42,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend executing these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.12_patch_?.sql`.
@@ -58,7 +58,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -71,10 +71,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.13 di
 
 Please choose the application server you are working with from the following list:
 
-* [JBoss AS/Wildfly]({{< ref "/update/minor/712-to-713/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/712-to-713/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/712-to-713/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/712-to-713/was.md" >}})
+* [JBoss AS/Wildfly](../../update/minor/712-to-713/jboss.md)
+* [Apache Tomcat](../../update/minor/712-to-713/tomcat.md)
+* [Oracle WebLogic](../../update/minor/712-to-713/wls.md)
+* [IBM WebSphere](../../update/minor/712-to-713/was.md)
 
 ## Custom Process Applications
 
@@ -95,7 +95,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -110,7 +110,7 @@ Pick the version of the Starter that resembles the version of Camunda Platform y
 
 If you are using Camunda Spring Boot Starter within your Spring Boot application, then you need to:
 
-1. Check [Version Compatibility Matrix]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
+1. Check [Version Compatibility Matrix](../../user-guide/spring-boot-integration/version-compatibility.md)
 2. Update **Spring Boot Starter** and, when required, Spring Boot versions in your `pom.xml`.
 3. Remove the Camunda Platform version from your `pom.xml` in case you overrode it before (e.g. when using the enterprise version or a patch release).
 
@@ -169,7 +169,7 @@ If you want to set a license key without using the **`camunda-bpm-spring-boot-st
 ```java
 managementService.setLicenseKey(String licenseKey);
 ```
-Only Spring Boot applications that use one of the mentioned ways of setting the key are affected by these changes. Other mechanisms included in the engine (e.g. automatic pickup from the users home directory) are not affected. You can find more information about license keys in the [dedicated License use section]({{< ref "/user-guide/license-use.md" >}}).
+Only Spring Boot applications that use one of the mentioned ways of setting the key are affected by these changes. Other mechanisms included in the engine (e.g. automatic pickup from the users home directory) are not affected. You can find more information about license keys in the [dedicated License use section](../../user-guide/license-use.md).
 
 ## Changed Behavior for Custom HistoryEventHandler
 
@@ -179,7 +179,7 @@ Camunda Spring Boot projects now use an instance of `CompositeHistoryEventHandle
 
 If you are using the **Camunda External Task Client**, please make sure to:
 
-1. Check out the [Version Compatibility Matrix]({{< ref "/user-guide/ext-client/compatibility-matrix.md" >}})
+1. Check out the [Version Compatibility Matrix](../../user-guide/ext-client/compatibility-matrix.md)
 2. Update the version in your `pom.xml` (Java) or `package.json` (NodeJs)
 
 # Identity Service Queries
@@ -192,7 +192,7 @@ When you provide ...
 With this release, you need to implement a new API method <code>[Query#unlimitedList][javadocs-query-unlimited-list]</code>
 so that the REST API works appropriately.
 
-Please read more about it in the [User Guide]({{< ref "/user-guide/process-engine/process-engine-api.md#custom-identity-service-queries" >}}).
+Please read more about it in the [User Guide](../../user-guide/process-engine/process-engine-api.md#custom-identity-service-queries).
 
 [javadocs-query-unlimited-list]: https://docs.camunda.org/javadoc/camunda-bpm-platform/7.13/org/camunda/bpm/engine/query/Query.html#unlimitedList--
 
@@ -206,7 +206,7 @@ Job Logs as well.
 
 In case a custom implementation of the `MetricsReporterIdProvider` interface is used, it is
 recommended to port it to the new `HostnameProvider` interface and set it to the appropriate Process
-Engine Configuration property (read more about it [here]({{< ref "/user-guide/process-engine/metrics.md#reporter-identifier" >}})).
+Engine Configuration property (read more about it [here](../../user-guide/process-engine/metrics.md#reporter-identifier)).
 Otherwise, different values will be provided for the Metrics Reporter identifier and the Historic
 Job Logs hostname information.
 
@@ -276,7 +276,7 @@ Expression languages defined in the DMN Model (*.dmn file) will override the def
 ## New Logger Category
 
 The new FEEL Engine uses the slf4j logging "facade", as defined in the 
-[Camunda docs]({{< ref "/user-guide/logging.md" >}}).
+[Camunda docs](../../user-guide/logging.md).
 
 However, since the new FEEL Engine is an [independently maintained project](https://github.com/camunda/feel-scala/), 
 it defines its own logger category. Users that filter the old FEEL Engine logs will need to update 
@@ -347,9 +347,9 @@ Please also check out the status of the following known issues when migrating yo
 * https://jira.camunda.com/browse/CAM-11304
 * https://jira.camunda.com/browse/CAM-11382
 
-[feel-legacy-prop]: {{< ref "/user-guide/dmn-engine/feel/legacy-behavior.md" >}}
-[Custom FEEL Functions]: {{< ref "/user-guide/dmn-engine/feel/custom-functions.md" >}}
-[FEEL Engine Spin Integration]: {{< ref "/user-guide/dmn-engine/feel/spin-integration.md" >}}
+[feel-legacy-prop]: ../../user-guide/dmn-engine/feel/legacy-behavior.md" >}}
+[Custom FEEL Functions]: ../../user-guide/dmn-engine/feel/custom-functions.md" >}}
+[FEEL Engine Spin Integration]: ../../user-guide/dmn-engine/feel/spin-integration.md" >}}
 
 # Changes in Cockpit
 
@@ -383,17 +383,17 @@ The `BatchConfiguration` now has a new attribute `idMappings` that comprises a l
 The routine creating the batch entity with the custom batch type handler simply needs to provide such a list of mappings to the configuration.
 The seed job creation as well as the batch job creation in the seed job will transparently take care of producing deployment-aware jobs afterwards.
 
-[batch operations]: {{< ref "/user-guide/process-engine/batch-operations.md" >}}
-[Monitor Jobs]: {{< ref "/user-guide/process-engine/batch.md#monitor-job" >}}
-[Seed Jobs]: {{< ref "/user-guide/process-engine/batch.md#seed-job" >}}
-[Execution Jobs]: {{< ref "/user-guide/process-engine/batch.md#execution-jobs" >}}
-[set-removal-time-batch]: {{< ref "/user-guide/process-engine/batch-operations.md#historic-batches" >}}
-[job-cluster]: {{< ref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
-[Rolling Update scenario]: {{< ref "/update/rolling-update.md" >}}
+[batch operations]: ../../user-guide/process-engine/batch-operations.md" >}}
+[Monitor Jobs]: ../../user-guide/process-engine/batch.md#monitor-job" >}}
+[Seed Jobs]: ../../user-guide/process-engine/batch.md#seed-job" >}}
+[Execution Jobs]: ../../user-guide/process-engine/batch.md#execution-jobs" >}}
+[set-removal-time-batch]: ../../user-guide/process-engine/batch-operations.md#historic-batches" >}}
+[job-cluster]: ../../user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
+[Rolling Update scenario]: ../../update/rolling-update.md" >}}
 
 # Historic Process Instance Variables on Asynchronous Instantiation
 
-This concerns only processes that have a start event with the [asyncBefore]({{< ref "/reference/bpmn20/events/start-events.md#asynchronous-instantiation" >}}) flag set.
+This concerns only processes that have a start event with the [asyncBefore](../../reference/bpmn20/events/start-events.md#asynchronous-instantiation) flag set.
 
 {{< img src="./img/asyncBefore-start-event.svg" title="Asynchronous Instantiation" >}}
 
@@ -437,4 +437,4 @@ Note that this adjustment doesn't change the supported versions of Amazon Aurora
 service built on top of PostgreSQL, and as such, needs to be tested for support separately from PostgreSQL.
 
 [postgresql-versioning]: https://www.postgresql.org/support/versioning/
-[supported-environments]: {{< ref "/introduction/supported-environments.md#supported-database-products" >}}
+[supported-environments]: ../../introduction/supported-environments.md#supported-database-products" >}}

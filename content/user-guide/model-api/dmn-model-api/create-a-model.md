@@ -56,9 +56,9 @@ protected <T extends DmnModelElementInstance> T createElement(DmnModelElementIns
 Validate the model against the DMN 1.3 specification and convert it to
 an XML string or save it to a file or stream.
 
-{{< note title="DMN 1.3 diagram" class="info" >}}
+### DMN 1.3 diagram
 The resulting XML string will reference the DMN 1.3 specification.
-{{< /note >}}
+
 
 ```java
 // validate the model

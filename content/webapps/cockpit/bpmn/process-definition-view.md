@@ -24,12 +24,12 @@ Click on the name to display the process in the process definition view.
 Please note that a filter called Parent is automatically set for the process so that you only see the instances that belong to the parent process. 
 In the *Activity* column you can select the instance that is calling the child process.
 
-The `Job Definitions` tab displays the job definitions that are linked to this process definition. Observe the name of the activity, the type of job, the configuration and the state thereof. You can also suspend and re-activate the job definition (see [Job Definition Suspension][job-definition-suspension] for more information). It is also possible to [set the priority of jobs]({{< ref "/webapps/cockpit/bpmn/process-definition-view.md#set-job-priority">}}).
+The `Job Definitions` tab displays the job definitions that are linked to this process definition. Observe the name of the activity, the type of job, the configuration and the state thereof. You can also suspend and re-activate the job definition (see [Job Definition Suspension][job-definition-suspension] for more information). It is also possible to [set the priority of jobs](../../webapps/cockpit/bpmn/process-definition-view.md#set-job-priority">}}).
 
-[call-activity-navigation]: {{< ref "/webapps/cockpit/bpmn/process-definition-view.md#call-activity-navigation" >}}
-[failed-activities]: {{< ref "/webapps/cockpit/bpmn/failed-jobs.md" >}}
-[process-instance-view]: {{< ref "/webapps/cockpit/bpmn/process-instance-view.md" >}}
-[job-definition-suspension]: {{< ref "/webapps/cockpit/bpmn/suspension.md#job-definition-suspension" >}}
+[call-activity-navigation]: ../../webapps/cockpit/bpmn/process-definition-view.md#call-activity-navigation" >}}
+[failed-activities]: ../../webapps/cockpit/bpmn/failed-jobs.md" >}}
+[process-instance-view]: ../../webapps/cockpit/bpmn/process-instance-view.md" >}}
+[job-definition-suspension]: ../../webapps/cockpit/bpmn/suspension.md#job-definition-suspension" >}}
 
 
 # Filter
@@ -37,9 +37,9 @@ The `Job Definitions` tab displays the job definitions that are linked to this p
 The filter function on the bottom of the Process Definition View in the `Process Instances` tab allows you to find certain instances by filtering for variables, business keys, activity IDs or date and time. In addition, you can filter for the process definition version by selecting the version of a process on the left side of the Process Definition View. Beyond that you can combine different filters as logical *AND* relation. Filter expressions on variables must be specified as `variableName OPERATOR value` where the *operator* may be one of the following terms: `=`, `!=`, `>`, `>=`, `<`, `<=`, `like`. Apart from the `like` operator, the operator expressions do not have to be separated by spaces.
 The `like` operator is for string variables only. You can use `%` as wildcard in the *value* expression. String and date values must be properly enclosed in quotes `" "`.
 
-{{< note title="Complex Data Types" class="info" >}}
+### Complex Data Types
   Please be aware that this feature does not support complex data types.
-{{< /note >}}
+
 
 Furthermore, you can copy a link to the current filter query to your clipboard by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-link"></i></button> button and you can save filter queries to your local browser storage by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and inserting a name in the drop down menu that appears. You can then retrieve the filter query by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and selecting the chosen name in the drop down menu.
 
@@ -112,7 +112,7 @@ Add a filter for process instances by filtering for already completed or still r
 Add a filter for process instances by end date. Please note that the date must be set in accordance to the [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) standard and that this option is only available in the [process definition history view][process-definition-history-view]. Again choose between `before` and `after` to filter for instances that were ended before or after the given date. For example, click on `before` to obtain the selection..
 
 
-[process-definition-history-view]: {{< ref "/webapps/cockpit/bpmn/process-history-views.md#process-definition-history-view" >}}
+[process-definition-history-view]: ../../webapps/cockpit/bpmn/process-history-views.md#process-definition-history-view" >}}
 
 
 # Delete Multiple Running Process Instances
@@ -158,11 +158,11 @@ By using the {{< glyphicon name="cog">}} button to the right of the process diag
 You can navigate from a process that contains Call Activities to its respectively called process definitions. 
 Hover over a Call Activity in the BPMN diagram to display a link in the upper right corner of the Call Activity.
 
-{{< note title="Limitation" class="info" >}}
+### Limitation
 When a to be called process is referenced via a process variable or an expression, the called process 
 can only be determined at runtime. For these types of call activities, the diagram shows a greyed out overlay, unless
 there is currently a process instance running at that call activity.
-{{< /note >}}
+
 
 Additionally, you can use the called process definitions tab to get an overview of which call activity 
 calls which process definition.
@@ -180,4 +180,4 @@ For more drill down options on call activities you can check out the [process in
 and the [process history views][process-history-views].
 
 
-[process-history-views]: {{< ref "/webapps/cockpit/bpmn/process-history-views.md" >}}
+[process-history-views]: ../../webapps/cockpit/bpmn/process-history-views.md" >}}

@@ -13,9 +13,9 @@ menu:
 
 Each version of the Camunda Platform is bound to a specific version of the **External Task Clients**.
 
-{{< note title="Heads Up" class="info" >}}
+### Heads Up
   Starting with version 7.15.0, Camunda Platform and its compatible **Java** External Task Client always share the same version.
-{{< /note >}}
+
 
 <table class="table table-striped">
   <tr>

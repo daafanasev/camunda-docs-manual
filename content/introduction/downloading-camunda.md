@@ -14,7 +14,7 @@ menu:
 # Prerequisites
 
 Before downloading Camunda, make sure you have a JRE (Java Runtime Environment), or better, a JDK
-(Java Development Kit) installed. Please check the supported [Java versions]({{< ref "/introduction/supported-environments.md#java" >}}).
+(Java Development Kit) installed. Please check the supported [Java versions](../../introduction/supported-environments.md#java).
 
 [Download JDK][get-jdk]
 
@@ -22,7 +22,7 @@ Before downloading Camunda, make sure you have a JRE (Java Runtime Environment),
 # Download the Runtime
 
 Camunda is a flexible framework which can be used in different contexts. See [Architecture Overview]
-({{< ref "/introduction/architecture.md" >}}) for more details. Based on how you want
+(../../introduction/architecture.md) for more details. Based on how you want
 to use Camunda, you can choose a different distribution.
 
 
@@ -48,17 +48,17 @@ The full distribution bundles
 * Rest Api,
 * Container / Application Server itself.
 
-{{< note title="Server/Container" class="info" >}}
+### Server/Container
   If you download the full distribution for an open-source application
   server/container, the container itself is included. For example, if you download the Tomcat
   distribution, Tomcat itself is included and the Camunda binaries (process engine and
   web apps) are pre-installed in the container. This is not true for the the Oracle WebLogic
   and IBM WebSphere downloads; these downloads do not include the application servers themselves.
-{{< /note >}}
 
-{{< note title="Wildfly Application Server" class="info" >}}
+
+### Wildfly Application Server
   Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.camunda.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright © JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
-{{< /note >}}
+
 
 See the [Installation Guide][installation-guide-full] for additional details.
 
@@ -92,9 +92,9 @@ from the [community download page][community-download-page].
 [get-jdk]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
 [community-download-page]: https://camunda.com/download/
 [enterprise-download-page]: /enterprise/download
-[shared-engine]: {{< ref "/introduction/architecture.md#shared-container-managed-process-engine" >}}
-[embedded-engine]: {{< ref "/introduction/architecture.md#embedded-process-engine" >}}
-[installation-guide-standalone]: {{< ref "/installation/standalone-webapplication.md" >}}
-[installation-guide-full]: {{< ref "/installation/_index.md" >}}
-[run-with-spring-boot]: {{< ref "/user-guide/spring-boot-integration/_index.md" >}}
-[run-with-docker]: {{< ref "/installation/docker.md" >}}
+[shared-engine]: ../../introduction/architecture.md#shared-container-managed-process-engine" >}}
+[embedded-engine]: ../../introduction/architecture.md#embedded-process-engine" >}}
+[installation-guide-standalone]: ../../installation/standalone-webapplication.md" >}}
+[installation-guide-full]: ../../installation/_index.md" >}}
+[run-with-spring-boot]: ../../user-guide/spring-boot-integration/_index.md" >}}
+[run-with-docker]: ../../installation/docker.md" >}}

@@ -131,11 +131,11 @@ element.
 
 # Implement a Custom Data Type
 
-{{< note title="Use of Internal API" class="warning" >}}
+### Use of Internal API
 
-Please be aware that these APIs are **not** part of the [public API]({{< ref "/introduction/public-api.md" >}}) and may change in later releases.
+Please be aware that these APIs are **not** part of the [public API](../../introduction/public-api.md) and may change in later releases.
 
-{{< /note >}}
+
 
 The default data types of the DMN engine can be extended or replaced by custom
 types. For example, you can add a new type for time or change the
@@ -162,4 +162,4 @@ To use this data type transformer in the DMN engine, add it to the
 [DMN engine configuration][data-type-transformer].
 
 
-[data-type-transformer]: {{< ref "/user-guide/dmn-engine/embed.md#register-dmn-data-type-transformers" >}}
+[data-type-transformer]: ../../user-guide/dmn-engine/embed.md#register-dmn-data-type-transformers" >}}

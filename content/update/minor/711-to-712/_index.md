@@ -35,7 +35,7 @@ Every Camunda installation requires a database schema update.
 
 ## Procedure
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution (where `$DISTRIBUTION_PATH` is the path of an unpacked distribution) or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend executing these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.11_patch_?.sql`.
@@ -51,7 +51,7 @@ Every Camunda installation requires a database schema update.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -64,10 +64,10 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.12 di
 
 Please choose the application server you are working with from the following list:
 
-* [JBoss AS/Wildfly]({{< ref "/update/minor/711-to-712/jboss.md" >}})
-* [Apache Tomcat]({{< ref "/update/minor/711-to-712/tomcat.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/711-to-712/wls.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/711-to-712/was.md" >}})
+* [JBoss AS/Wildfly](../../update/minor/711-to-712/jboss.md)
+* [Apache Tomcat](../../update/minor/711-to-712/tomcat.md)
+* [Oracle WebLogic](../../update/minor/711-to-712/wls.md)
+* [IBM WebSphere](../../update/minor/711-to-712/was.md)
 
 ## Custom Process Applications
 
@@ -88,7 +88,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 1. Undeploy the current version of the standalone web application
 2. Update the database to the new schema as described in the [database update](#database-updates) section
-3. Reconfigure the database as described in the [installation]({{< ref "/installation/standalone-webapplication.md#database-configuration" >}})
+3. Reconfigure the database as described in the [installation](../../installation/standalone-webapplication.md#database-configuration)
    section
 4. Deploy the new and configured standalone web application to the server
 
@@ -96,7 +96,7 @@ If a database other than the default H2 database is used, the following steps mu
 
 If you are using Camunda Spring Boot Starter within you Spring Boot application, then you need to:
 
-1. Check [Version Compatibility Matrix]({{< ref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
+1. Check [Version Compatibility Matrix](../../user-guide/spring-boot-integration/version-compatibility.md)
 2. Update **Spring Boot Starter** and, when required, Spring Boot versions in your `pom.xml`.
 3. Update the Camunda Platform version in your `pom.xml` in case you override it before (e.g., when using the enterprise version or a patch releases)
 
@@ -104,7 +104,7 @@ If you are using Camunda Spring Boot Starter within you Spring Boot application,
 
 If you are using the **Camunda External Task Client**, please make sure to:
 
-1. Check out the [Version Compatibility Matrix]({{< ref "/user-guide/ext-client/compatibility-matrix.md" >}})
+1. Check out the [Version Compatibility Matrix](../../user-guide/ext-client/compatibility-matrix.md)
 2. Update the version in your `pom.xml` (Java) or `package.json` (NodeJs)
 
 # Security-related HTTP Headers (Webapps)
@@ -114,7 +114,7 @@ In this release, we introduced the following HTTP response headers in the web ap
 * Content Security Policy (`Content-Security-Policy`)
 * Content-Type Options (`X-Content-Type-Options`)
 
-Please see the documentation about the [HTTP Header Security]({{< ref "/webapps/shared-options/header-security.md" >}}) 
+Please see the documentation about the [HTTP Header Security](../../webapps/shared-options/header-security.md) 
 to learn more about the several headers, the defaults, and how to configure or even disable them according to your needs.
 
 # Camunda Commons Typed Values Migration
@@ -169,4 +169,4 @@ Note that this adjustment doesn't change the supported versions of Amazon Aurora
 service built on top of PostgreSQL, and as such, needs to be tested for support separately from PostgreSQL.
 
 [postgresql-versioning]: https://www.postgresql.org/support/versioning/
-[supported-environments]: {{< ref "/introduction/supported-environments.md#supported-database-products" >}}
+[supported-environments]: ../../introduction/supported-environments.md#supported-database-products" >}}

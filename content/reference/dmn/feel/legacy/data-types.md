@@ -13,11 +13,11 @@ menu:
 aliases: [reference/dmn11/feel/legacy/data-types/]
 ---
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 This page provides information on the legacy FEEL Engine, that was used before the 
-current <a href="{{< ref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
+current <a href="../../user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
 was integrated into the Camunda Platform.
-{{< /note >}}
+
 
 The Camunda DMN engine supports the following FEEL data types.
 
@@ -64,5 +64,5 @@ the format `yyyy-MM-dd'T'HH:mm:ss`.
 Date types support all [comparison] operators and [ranges].
 
 
-[comparison]: {{< ref "/reference/dmn/feel/legacy/language-elements.md#comparison" >}}
-[ranges]: {{< ref "/reference/dmn/feel/legacy/language-elements.md#range" >}}
+[comparison]: ../../reference/dmn/feel/legacy/language-elements.md#comparison" >}}
+[ranges]: ../../reference/dmn/feel/legacy/language-elements.md#range" >}}

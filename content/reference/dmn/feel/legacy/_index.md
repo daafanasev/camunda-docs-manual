@@ -13,8 +13,8 @@ menu:
 aliases: [reference/dmn11/feel/legacy/]
 ---
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 This page provides information on the legacy FEEL Engine, that was used before the 
-current <a href="{{< ref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
+current <a href="../../user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
 was integrated into the Camunda Platform.
-{{< /note >}}
+

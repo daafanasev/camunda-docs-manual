@@ -15,11 +15,11 @@ menu:
 
 This document guides you through the update from Camunda Platform `7.1.x` to `7.2.0`. It covers these use cases:
 
-1. For administrators and developers: [Database Updates]({{< relref "#database-updates" >}})
-2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution" >}})
-3. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine" >}})
-4. For developers: [Migrating Task Forms]({{< relref "#task-forms" >}})
-5. For developers: [Migrating Cockpit Plugins]({{< relref "#cockpit-plugins" >}})
+1. For administrators and developers: [Database Updates]({{< relref "#database-updates)
+2. For administrators and developers: [Full Distribution Update]({{< relref "#full-distribution)
+3. For administrators and developers: [Application with Embedded Process Engine Update]({{< relref "#application-with-embedded-process-engine)
+4. For developers: [Migrating Task Forms]({{< relref "#task-forms)
+5. For developers: [Migrating Cockpit Plugins]({{< relref "#cockpit-plugins)
 
 This guide covers mandatory migration steps as well as optional considerations for initial configuration of new functionality included in Camunda Platform 7.2.
 
@@ -31,20 +31,20 @@ Noteworthy new Features in 7.2:
 
 Before migrating, decide whether you additionally want to enable Spin/Connect and Freemarker. Based on this decision, you may have to carry out additional migration steps.
 
-[cmmn-ref]: {{< ref "/reference/cmmn11/_index.md" >}}
-[connect-ref]: {{< ref "/user-guide/process-engine/connectors.md" >}}
-[spin-ref]: {{< ref "/user-guide/data-formats/_index.md" >}}
-[freemarker-ref]: {{< ref "/user-guide/process-engine/templating.md" >}}
+[cmmn-ref]: ../../reference/cmmn11/_index.md" >}}
+[connect-ref]: ../../user-guide/process-engine/connectors.md" >}}
+[spin-ref]: ../../user-guide/data-formats/_index.md" >}}
+[freemarker-ref]: ../../user-guide/process-engine/templating.md" >}}
 
-{{< note title="No Rolling Updates" class="warning" >}}
+### No Rolling Updates
 It is not possible to migrate process engines from Camunda 7.1 to 7.2 in a rolling fashion. This means, it is not possible to run process engines of version 7.1 and 7.2 in parallel with the same database configuration. The reason is that a 7.1 engine may not be able to execute process instances that have been previously executed by a 7.2 engine, as these may use features that were not available yet in 7.1.
-{{< /note >}}
+
 
 # Database Updates
 
 The first step consists in updating the database.
 
-1. Check for [available database patch scripts]({{< ref "/update/patch-level.md#database-patches" >}}) for your database that are within the bounds of your update path.
+1. Check for [available database patch scripts](../../update/patch-level.md#database-patches) for your database that are within the bounds of your update path.
  Locate the scripts at `$DISTRIBUTION_PATH/sql/upgrade` in the pre-packaged distribution or in the [Camunda Nexus](https://artifacts.camunda.com/artifactory/camunda-bpm/org/camunda/bpm/distro/camunda-sql-scripts/).
  We highly recommend to execute these patches before updating. Execute them in ascending order by version number.
  The naming pattern is `$DATABASENAME_engine_7.1_patch_?.sql`.
@@ -60,7 +60,7 @@ The first step consists in updating the database.
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< ref "/introduction/downloading-camunda.md#full-distribution" >}}) with a **shared process engine**.
+This section is applicable if you installed the [Full Distribution](../../introduction/downloading-camunda.md#full-distribution) with a **shared process engine**.
 
 The following steps are required:
 
@@ -73,11 +73,11 @@ Before starting, make sure that you have downloaded the Camunda Platform 7.3 dis
 
 Please choose the application server you are working with from the following list:
 
-* [Apache Tomcat]({{< ref "/update/minor/71-to-72/tomcat.md" >}})
-* [JBoss/Wildfly]({{< ref "/update/minor/71-to-72/jboss.md" >}})
-* [Glassfish]({{< ref "/update/minor/71-to-72/glassfish.md" >}})
-* [IBM WebSphere]({{< ref "/update/minor/71-to-72/was.md" >}})
-* [Oracle WebLogic]({{< ref "/update/minor/71-to-72/wls.md" >}})
+* [Apache Tomcat](../../update/minor/71-to-72/tomcat.md)
+* [JBoss/Wildfly](../../update/minor/71-to-72/jboss.md)
+* [Glassfish](../../update/minor/71-to-72/glassfish.md)
+* [IBM WebSphere](../../update/minor/71-to-72/was.md)
+* [Oracle WebLogic](../../update/minor/71-to-72/wls.md)
 
 ## Custom Process Applications
 
@@ -122,7 +122,7 @@ As an alternative, script code can be migrated by replacing all implicit declara
 
 Embedded form support has been redesigned in Camunda Platform 7.2 and existing forms must be migrated.
 
-> Documentation on embedded forms support in 7.2 can be found in the [Embedded Forms Reference]({{< ref "/reference/forms/embedded-forms/_index.md" >}})
+> Documentation on embedded forms support in 7.2 can be found in the [Embedded Forms Reference](../../reference/forms/embedded-forms/_index.md)
 
 ## Overview
 

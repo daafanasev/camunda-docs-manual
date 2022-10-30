@@ -103,10 +103,10 @@ we set process execution-specific data in the [Mapped Diagnostic Context (MDC)](
 
 The process data is held in the MDC for the time of process execution and removed from it after the execution context is successfully left.
 In case of arising exceptions upon execution, the data is kept in the MDC until the calling context,
-i.e. the [JobExecutor]({{< ref "/user-guide/process-engine/the-job-executor.md" >}}) or the surrounding command, finished its logging.
+i.e. the [JobExecutor](../../user-guide/process-engine/the-job-executor.md) or the surrounding command, finished its logging.
 
 The keys at which the properties are accessible in the MDC can be defined in the
-[process engine configuration]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#logging-context-parameters" >}}).
+[process engine configuration](../../reference/deployment-descriptors/tags/process-engine.md#logging-context-parameters).
 
 In order to access the MDC data, you need to adjust the logging pattern of your logging configuration.
 An example using Logback could look as follows
@@ -181,7 +181,7 @@ The process engine logs on the following categories
     <td>
       command context logs including executing atomic operations and bpmn stack traces during exceptions<br/>
       You can override the default <code>DEBUG</code> log level for bpmn stack traces, see the
-      <a href="{{< ref "/reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace" >}}">Logging level parameters</a> section.
+      <a href="../../reference/deployment-descriptors/tags/process-engine.md#logLevelBpmnStackTrace" >}}">Logging level parameters</a> section.
     </td>
   </tr>
   <tr>
@@ -272,13 +272,13 @@ The process engine logs on the following categories
 
 By default, the engine output contains logs with level `ERROR`, `WARNING`, and `INFO`. To enable more log output, e.g. for the purpose of debugging, configure the level of a logger to `DEBUG` or `TRACE`.
 
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 The output of loggers can change with newer Camunda versions.
-{{< /note >}}
 
-{{< note title="Heads Up!" class="warning" >}}
+
+### Heads Up!
 In Tomcat, logging is handled by `java.util.logging` via [Tomcat's JULI](https://tomcat.apache.org/tomcat-9.0-doc/logging.html) implementation. Note that the log levels `DEBUG` and `TRACE` are called `FINE` and `FINEST` in this environment.
-{{< /note >}}
+
 
 ### When to use engine loggers?
 
@@ -389,7 +389,7 @@ The snippet contains the start and of `RemoveExecutionVariablesCmd`, the flush s
 
 #### Telemetry Data
 
-In order to inspect what data is sent when [Telemetry]({{< ref "/introduction/telemetry.md" >}}) is enabled, please enable the Telemetry logger. The logger will help with troubleshooting if no data is sent.
+In order to inspect what data is sent when [Telemetry](../../introduction/telemetry.md) is enabled, please enable the Telemetry logger. The logger will help with troubleshooting if no data is sent.
 
 * `org.camunda.bpm.engine.telemetry`
 
