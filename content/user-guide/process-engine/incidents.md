@@ -31,7 +31,7 @@ If you want to customize the incident handling behavior, it is possible to repla
 There are different types of incidents. Currently the process engine supports the following incidents:
 
 * **failedJob**: is raised when automatic retries for a job (timer or asynchronous continuation) have been depleted. The incident indicates that the corresponding execution is stuck and will not continue automatically. Administrative action is necessary. The incident is resolved when the job is manually executed or when the retries for the corresponding job are set to a value > 0.
-* **failedExternalTask**: is raised when a worker of an [External Task]({{< ref "/user-guide/process-engine/external-tasks.md" >}}) reports a failure and the given retries are set to a value <= 0. The incident indicates that the corresponding external task is stuck and will not be fetched by a worker. Administrative action is necessary to reset the retries.
+* **failedExternalTask**: is raised when a worker of an [External Task](../../user-guide/process-engine/external-tasks.md) reports a failure and the given retries are set to a value <= 0. The incident indicates that the corresponding external task is stuck and will not be fetched by a worker. Administrative action is necessary to reset the retries.
 
 It is possible to create custom incidents of any type with the Java API.
 
@@ -66,7 +66,7 @@ The following properties are available in the `org.camunda.bpm.engine.ProcessEng
 
 # Implement Custom Incident Handlers
 
-Incident Handlers are responsible for handling incidents of a certain type (see [Incident Types]({{< relref "#incident-types" >}}) ).
+Incident Handlers are responsible for handling incidents of a certain type (see [Incident Types]({{< relref "#incident-types) ).
 
 An Incident Handler implements the following interface:
 
@@ -92,11 +92,11 @@ org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl.setCustomIncident
 
 An example of a custom incident handler could be a handler which extends the default behavior by sending an email to an administrator whenever an incident of type ``failedJob`` occurs. However, just adding the custom incident handler overwrites the default behavior with the custom incident handlers behavior. As a consequence, the default incident handler is not executed anymore. If the default behavior should be executed as well, then the custom incident handler also needs to invoke the default incident handler, which includes using internal API.
 
-{{< note title="Use of Internal API" class="warning" >}}
+### Use of Internal API
 
-Please be aware that this API is **not** part of the [public API]({{< ref "/introduction/public-api.md" >}}) and may change in later releases.
+Please be aware that this API is **not** part of the [public API](../../introduction/public-api.md) and may change in later releases.
 
-{{< /note >}}
+
 
 # Composite Incident Handlers
 

@@ -15,9 +15,9 @@ The process engine reports runtime metrics to the database that can help draw co
 # Built-in Metrics
 
 The following table describes the built-in metrics. The identifiers of all built-in metrics are available as constants of the class {{< javadocref page="org/camunda/bpm/engine/management/Metrics.html" text="org.camunda.bpm.engine.management.Metrics" >}}.
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 If you are an enterprise customer, your license agreement might require you to report some metrics annually. Please store `root-process-instance-start`, `activity-instance-start`, `executed-decision-instances` and `executed-decision-elements` metrics from `ACT_RU_METER_LOG` as well as task metrics from `ACT_RU_TASK_METER_LOG` for at least 18 months until they were reported.
-{{< /note >}}
+
 
 <table class="table table-striped">
   <tr>
@@ -166,9 +166,9 @@ public class MetricsConfigurationPlugin implements ProcessEnginePlugin {
 }
 ```
 
-{{< note title="Note" class="info" >}}
+### Note
 Task metric entries are created on every assignment of a user task. This behavior cannot be modified and is not in the responsibility of the metrics reporter.
-{{< /note >}}
+
 
 ## Reporter Identifier
 
@@ -179,11 +179,11 @@ reporter id as `<local IP>$<engine name>`. The generation can be customized by i
 interface {{< javadocref page="org/camunda/bpm/engine/impl/history/event/HostnameProvider.html" text="org.camunda.bpm.engine.impl.history.event.HostnameProvider" >}}
 and setting the engine property `hostnameProvider` to an instance of that class.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 The 
 {{< javadocref page="org/camunda/bpm/engine/impl/metrics/MetricsReporterIdProvider.html" text="org.camunda.bpm.engine.impl.metrics.MetricsReporterIdProvider" >}}
 interface and the corresponding `metricsReporterIdProvider` engine property have been deprecated. 
-{{< /note >}}
+
 
 ## Disable Reporting
 

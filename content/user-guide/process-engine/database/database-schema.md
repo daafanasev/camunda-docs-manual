@@ -23,7 +23,7 @@ match the service API.
 The main tables of the process engines are the entities of process definitions, executions, tasks, variables and
 event subscriptions. Their relationship is shown in the following UML model.
 
-{{< img src="../../img/database-schema.png" title="Database Schema" >}}
+![img](../img/database-schema.png)
 
 
 ## Process Definitions (`ACT_RE_PROCDEF`)
@@ -80,33 +80,33 @@ List<SchemaLogEntry> entries = managementService.createSchemaLogQuery().list();
 
 The `ACT_RU_METER_LOG` table contains a collection of runtime metrics that can help draw conclusions about usage, load
 and performance of the Camunda Platform. Metrics are reported as numbers in the Java `long` range and count the occurrence of
-specific events. Please find detailed information about how metrics are collected in the [Metrics User Guide]({{< ref "/user-guide/process-engine/metrics.md">}}).
+specific events. Please find detailed information about how metrics are collected in the [Metrics User Guide](../../user-guide/process-engine/metrics.md">}}).
 
-The default configuration of the [MetricsReporter]({{< ref "/user-guide/process-engine/metrics.md#metrics-reporter">}}) will create one row per [metric]({{< ref "/user-guide/process-engine/metrics.md#built-in-metrics">}}) in `ACT_RU_METER_LOG` every 15 minutes.
+The default configuration of the [MetricsReporter](../../user-guide/process-engine/metrics.md#metrics-reporter">}}) will create one row per [metric](../../user-guide/process-engine/metrics.md#built-in-metrics">}}) in `ACT_RU_METER_LOG` every 15 minutes.
 
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 If you are an enterprise customer, your license agreement might require you to report some metrics annually. Please store `root-process-instance-start`, `activity-instance-start`, `executed-decision-instances` and `executed-decision-elements` metrics for at least 18 months until they were reported.
-{{< /note >}}
+
 
 ## Task Metrics Log (ACT_RU_TASK_METER_LOG)
 
 The `ACT_RU_TASK_METER_LOG` table contains a collection of task related metrics that can help draw conclusions about usage, load
-and performance of the BPM platform. Task metrics contain a pseudonymized and fixed-length value of task assignees and their time of appearance. Please find detailed information about how task metrics are collected in the [Metrics User Guide]({{< ref "/user-guide/process-engine/metrics.md">}}).
+and performance of the BPM platform. Task metrics contain a pseudonymized and fixed-length value of task assignees and their time of appearance. Please find detailed information about how task metrics are collected in the [Metrics User Guide](../../user-guide/process-engine/metrics.md">}}).
 
 Every assignment of a task to an assignee will create one row in `ACT_RU_TASK_METER_LOG`.
 
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 If you are an enterprise customer, your license agreement might require you to report some metrics annually. Please store task metrics for at least 18 months until they were reported.
-{{< /note >}}
+
 
 # Entity Relationship Diagrams
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   The database is not part of the **public API**. The database schema may change for MINOR and MAJOR version updates.
 
   **Please note:**
   The following diagrams are based on the MySQL database schema. For other databases the diagram may be slightly different.
-{{< /note >}}
+
 
 
 The following Entity Relationship Diagrams visualize the database tables and their explicit foreign key constraints, grouped by Engine with focus on BPMN, Engine with focus on DMN, Engine with focus on CMMN, the Engine History and the Identity. Please note that the diagrams do not visualize implicit connections between the tables.
@@ -114,26 +114,26 @@ The following Entity Relationship Diagrams visualize the database tables and the
 
 ## Engine BPMN
 
-{{< img src="../../img/erd_718_bpmn.svg" title="BPMN Tables" >}}
+![img](../img/erd_718_bpmn.svg)
 
 
 ## Engine DMN
 
-{{< img src="../../img/erd_718_dmn.svg" title="DMN Tables" >}}
+![img](../img/erd_718_dmn.svg)
 
 
 ## Engine CMMN
 
-{{< img src="../../img/erd_718_cmmn.svg" title="CMMN Tables" >}}
+![img](../img/erd_718_cmmn.svg)
 
 
 ## History
 
 To allow different configurations and to keep the tables more flexible, the history tables contain no foreign key constraints.
 
-{{< img src="../../img/erd_718_history.svg" title="History Tables" >}}
+![img](../img/erd_718_history.svg)
 
 
 ## Identity
 
-{{< img src="../../img/erd_718_identity.svg" title="Identity Tables" >}}
+![img](../img/erd_718_identity.svg)

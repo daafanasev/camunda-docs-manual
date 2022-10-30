@@ -158,13 +158,13 @@ Note that the mapper throws an exception if the decision result is not
 suitable. For example, the `singleEntry` mapper throws an exception if the
 decision result contains more than one matched rule.
 
-{{< note title="Limitations of Serialization" class="warning" >}}
+### Limitations of Serialization
 
 If you are using one of the predefined mappers `singleResult`, `collectEntries`
 or `resultList` then you should consider the [limitations of serialization]({{<
-relref "#limitations-of-the-serialization-of-the-mapping-result" >}}).
+relref "#limitations-of-the-serialization-of-the-mapping-result).
 
-{{< /note >}}
+
 
 To specify the name of the process/case variable to store the result of the
 mapping, the `camunda:resultVariable` attribute is used.
@@ -185,26 +185,26 @@ CMMN:
               camunda:resultVariable="result">
 ```
 
-{{< note title="Name of the Result Variable" class="warning" >}}
+### Name of the Result Variable
 
 The result variable should not have the name `decisionResult` since the
 decision result itself is saved in a variable with this name. Otherwise an
 exception is thrown while saving the result variable.
 
-{{< /note >}}
+
 
 ## Custom Mapping of the Decision Result
 
 Instead of a predefined mapping, a custom decision result mapping can be used
 to pass the decision result into variables.
 
-{{< note title="Limitations of Serialization" class="warning" >}}
+### Limitations of Serialization
 
 If you pass a collection or a complex object to a variable then you should
-consider the [limitations of serialization]({{< relref "#limitations-of-the-serialization-of-the-mapping-result" >}}).
+consider the [limitations of serialization]({{< relref "#limitations-of-the-serialization-of-the-mapping-result).
 
 
-{{< /note >}}
+
 
 ### Custom Mapping to Process Variables
 
@@ -377,17 +377,17 @@ possible to access Spring and CDI Beans from JUEL expressions in decisions.
 For more information on this integration, please see the corresponding
 section in the [Spring] and [CDI] guides.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 Beans cannot be accessed when using FEEL as expression language.
-{{< /note >}}
+
 
 ## Extending the Expression Language
 
-{{< note title="Use of Internal API" class="warning" >}}
+### Use of Internal API
 
-These APIs are **not** part of the [public API]({{< ref "/introduction/public-api.md" >}}) and may change in later releases.
+These APIs are **not** part of the [public API](../../introduction/public-api.md) and may change in later releases.
 
-{{< /note >}}
+
 
 It is possible to add own functions which can be used inside JUEL expressions.
 Therefore a new {{< javadocref
@@ -410,17 +410,17 @@ This can be done, for example, by creating a [process engine plugin].
 Please **note** that these functions are available in all JUEL expressions
 in the platform, not only in DMN decisions.
 
-[decision table]: {{< ref "/reference/dmn/decision-table/_index.md" >}}
-[decision literal expression]: {{< ref "/reference/dmn/decision-literal-expression/_index.md" >}}
-[deployed]: {{< ref "/user-guide/process-engine/decisions/repository.md" >}}
-[business rule task]: {{< ref "/reference/bpmn20/tasks/business-rule-task.md" >}}
-[decision task]: {{< ref "/reference/cmmn11/tasks/decision-task.md" >}}
-[Typed Value API]: {{< ref "/user-guide/process-engine/variables.md#typed-value-api" >}}
-[object value serialization]: {{< ref "/user-guide/process-engine/variables.md#object-value-serialization" >}}
-[output variable mapping]: {{< ref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}
-[execution listener]: {{< ref "/user-guide/process-engine/delegation-code.md#execution-listener" >}}
-[expression languages]: {{< ref "/user-guide/dmn-engine/expressions-and-scripts.md" >}}
-[FEEL]: {{< ref "/reference/dmn/feel/_index.md" >}}
-[Spring]: {{< ref "/user-guide/spring-framework-integration/_index.md#expression-resolving" >}}
-[CDI]: {{< ref "/user-guide/cdi-java-ee-integration/expression-resolving.md" >}}
-[process engine plugin]: {{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}
+[decision table]: ../../reference/dmn/decision-table/_index.md" >}}
+[decision literal expression]: ../../reference/dmn/decision-literal-expression/_index.md" >}}
+[deployed]: ../../user-guide/process-engine/decisions/repository.md" >}}
+[business rule task]: ../../reference/bpmn20/tasks/business-rule-task.md" >}}
+[decision task]: ../../reference/cmmn11/tasks/decision-task.md" >}}
+[Typed Value API]: ../../user-guide/process-engine/variables.md#typed-value-api" >}}
+[object value serialization]: ../../user-guide/process-engine/variables.md#object-value-serialization" >}}
+[output variable mapping]: ../../user-guide/process-engine/variables.md#input-output-variable-mapping" >}}
+[execution listener]: ../../user-guide/process-engine/delegation-code.md#execution-listener" >}}
+[expression languages]: ../../user-guide/dmn-engine/expressions-and-scripts.md" >}}
+[FEEL]: ../../reference/dmn/feel/_index.md" >}}
+[Spring]: ../../user-guide/spring-framework-integration/_index.md#expression-resolving" >}}
+[CDI]: ../../user-guide/cdi-java-ee-integration/expression-resolving.md" >}}
+[process engine plugin]: ../../user-guide/process-engine/process-engine-plugins.md" >}}

@@ -16,8 +16,8 @@ certain events occur during process execution.
 
 There are different types of Delegation Code:
 
-* **Java Delegates** can be attached to a [BPMN Service Task]({{< ref "/reference/bpmn20/tasks/service-task.md" >}}).
-* **Delegate Variable Mapping** can be attached to a [Call Activity]({{< ref "/reference/bpmn20/subprocesses/call-activity.md" >}}).
+* **Java Delegates** can be attached to a [BPMN Service Task](../../reference/bpmn20/tasks/service-task.md).
+* **Delegate Variable Mapping** can be attached to a [Call Activity](../../reference/bpmn20/subprocesses/call-activity.md).
 * **Execution Listeners** can be attached to any event within the normal token flow, e.g., starting a process instance or entering an activity.
 * **Task Listeners** can be attached to events within the user task lifecycle, e.g., creation or completion of a user task.
 
@@ -53,9 +53,9 @@ manipulated through the {{< javadocref page="org/camunda/bpm/engine/delegate/Del
 }
 ```
 
-{{< note title="Note!" class="info" >}}
+### Note!
 Each time a delegation class referencing activity is executed, a separate instance of this class will be created. This means that each time an activity is executed there will be used another instance of the class to call `execute(DelegateExecution)`.
-{{< /note >}}
+
 
 The classes that are referenced in the process definition (i.e., by using
 `camunda:class`  ) are **NOT instantiated during deployment**.
@@ -88,11 +88,11 @@ member will be set on the delegate (but using private fields is **not** recommen
 **Regardless of the type of value declared in the process-definition, the type of the
 setter/private field on the injection target should always be `org.camunda.bpm.engine.delegate.Expression`**.
 
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   Private fields cannot always be modified! It does **not work** with e.g.,
   CDI beans (because you have proxies instead of real objects) or with some SecurityManager configurations.
   Please always use a public setter-method for the fields you want to have injected!
-{{< /note >}}
+
 
 The following code snippet shows how to inject a constant value into a field.
 Field Injection is supported when using the `class` or `delegateExpression` attribute. Note that we need
@@ -181,13 +181,13 @@ Alternatively, you can also set the expressions as an attribute instead of a chi
   <camunda:field name="text2" expression="Hello ${gender == 'male' ? 'Mr.' : 'Mrs.'} ${name}" />
 ```
 
-{{< note title="Note!" class="info" >}}
+### Note!
   The injection happens each time the service task is called since a separate instance of the class will be created. When the fields are altered by your code, the values will be re-injected when the activity is executed next time.
-{{< /note >}}
 
-{{< note title="" class="warning" >}}
+
+### Заметка class="warning" >}}
   For the same reasons as mentioned above, field injection should not be (usually) used with Spring beans, which are singletons by default. Otherwise, you may run into inconsistencies due to concurrent modification of the bean fields.
-{{< /note >}}
+
 
 # Delegate Variable Mapping
 
@@ -214,7 +214,7 @@ The `mapInputVariables` method is called before the call activity is executed, t
 The input variables should be put into the given variables map.
 The `mapOutputVariables` method is called after the call activity was executed, to map the output variables.
 The output variables can be directly set into the caller execution.
-The behavior of the class loading is similar to the class loading on [Java Delegates]({{< ref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}).
+The behavior of the class loading is similar to the class loading on [Java Delegates](../../user-guide/process-engine/delegation-code.md#java-delegate).
 
 
 # Execution Listener
@@ -578,11 +578,11 @@ The `BpmnError` will not be caught for the following listeners:
     * a listener is triggered due to interrupting boundary event execution, e.g message correlation on subprocess invokes end listeners throwing an error
 
 
-{{< note title="Note!" class="info" >}}
+### Note!
 
-Throwing a `BpmnError` in the delegation code behaves like modelling an error end event. See the [reference guide]({{< ref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}) about the details on the behavior, especially the error boundary event. If no error boundary event is found on the scope, the execution is ended.
+Throwing a `BpmnError` in the delegation code behaves like modelling an error end event. See the [reference guide](../../reference/bpmn20/events/error-events.md#error-boundary-event) about the details on the behavior, especially the error boundary event. If no error boundary event is found on the scope, the execution is ended.
 
-{{< /note >}}
+
 
 
 # Set Business Key from Delegation Code
@@ -634,22 +634,22 @@ public class MyJavaDelegate implements JavaDelegate {
 
 Setting a custom error code via Delegation Code allows your business logic to react to it by getting 
 the code via `ProcessEngineException#getCode` when calling Camunda Java API or by evaluating the 
-`code` property in the response of an [erroneous REST API call]({{< ref "/reference/rest/overview/_index.md#exception-codes" >}}).
+`code` property in the response of an [erroneous REST API call](../../reference/rest/overview/_index.md#exception-codes).
 
 If you don't set any code, the engine assigns `0`, which a custom or built-in error code provider can override.
 
-Also, you can [register your custom exception code provider]({{< ref "/user-guide/process-engine/error-handling.md#register-a-custom-code-provider" >}}) 
+Also, you can [register your custom exception code provider](../../user-guide/process-engine/error-handling.md#register-a-custom-code-provider) 
 to assign error codes to exceptions you cannot control via your Delegation Code.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 * A custom error code you define via delegation code has precedence over a custom error code provided 
 by a [Custom Code Provider](#custom-code-provider).
 * If your custom error code violates the [reserved code range](#reserved-code-range), it will be 
 overridden with `0` unless you disable the built-in code provider.
-{{< /note >}}
 
 
-[script-sources]: {{< ref "/user-guide/process-engine/scripting.md#script-source" >}}
-[camunda-script]: {{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#camunda-script" >}}
-[timerEventDefinition]: {{< ref "/reference/bpmn20/events/timer-events.md#defining-a-timer" >}}
-[job-executor]: {{< ref "/user-guide/process-engine/the-job-executor.md" >}}
+
+[script-sources]: ../../user-guide/process-engine/scripting.md#script-source" >}}
+[camunda-script]: ../../reference/bpmn20/custom-extensions/extension-elements.md#camunda-script" >}}
+[timerEventDefinition]: ../../reference/bpmn20/events/timer-events.md#defining-a-timer" >}}
+[job-executor]: ../../user-guide/process-engine/the-job-executor.md" >}}

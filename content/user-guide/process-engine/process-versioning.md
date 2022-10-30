@@ -24,11 +24,11 @@ This is supported by the process engine:
 
 You can see different versions in the process definition table and the process instances are linked to this:
 
-{{< img src="../img/versioning.png" title="Versioning" >}}
+![img](img/versioning.png)
 
-{{< note title="Multi-Tenancy" class="info" >}}
-If you are using [multi-tenancy with tenant identifiers]({{< ref "/user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers" >}}) then each tenant has its own process definitions which have versions independent from other tenants. See the [multi-tenancy section]({{< ref "/user-guide/process-engine/multi-tenancy.md#versioning-of-tenant-specific-definitions" >}}) for details.
-{{< /note >}}
+### Multi-Tenancy
+If you are using [multi-tenancy with tenant identifiers](../../user-guide/process-engine/multi-tenancy.md#single-process-engine-with-tenant-identifiers) then each tenant has its own process definitions which have versions independent from other tenants. See the [multi-tenancy section](../../user-guide/process-engine/multi-tenancy.md#versioning-of-tenant-specific-definitions) for details.
+
 
 
 # Which Version Will be Used
@@ -54,7 +54,7 @@ ProcessDefinition pd = processEngine.getRepositoryService().createProcessDefinit
 processEngine.getRuntimeService().startProcessInstanceById(pd.getId());
 ```
 
-When you use [BPMN CallActivities]({{< ref "/reference/bpmn20/subprocesses/call-activity.md" >}}) you can configure which version is used:
+When you use [BPMN CallActivities](../../reference/bpmn20/subprocesses/call-activity.md) you can configure which version is used:
 
 ```xml
 <callActivity id="callSubProcess" calledElement="checkCreditProcess"
@@ -73,7 +73,7 @@ or
 The options are
 
 * latest: Use the latest version of the process definition (as with `startProcessInstanceByKey`).
-* deployment: Use the process definition in the version matching the version of the calling process. This works if they are deployed within one deployment - as they are then always versioned together (see [Process Application Deployment]({{< ref "/user-guide/process-applications/the-processes-xml-deployment-descriptor.md#deployment-descriptor-process-application-deployment" >}}) for more details).
+* deployment: Use the process definition in the version matching the version of the calling process. This works if they are deployed within one deployment - as they are then always versioned together (see [Process Application Deployment](../../user-guide/process-applications/the-processes-xml-deployment-descriptor.md#deployment-descriptor-process-application-deployment) for more details).
 * version: Specify the version hard coded in the XML.
 * versionTag: Specify the versionTag hard coded in the XML.
 
@@ -93,7 +93,7 @@ You might have spotted that two different columns exist in the process definitio
 # Version Tag
 
 It is possible to tag a process definition with a version tag attribute. This can be done by adding the
-[camunda:versionTag]({{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#versiontag" >}})
+[camunda:versionTag](../../reference/bpmn20/custom-extensions/extension-attributes.md#versiontag)
 extension attribute to the process:
 
 ```xml
@@ -141,20 +141,20 @@ ProcessDefinition pd = processEngine.getRepositoryService().createProcessDefinit
 processEngine.getRuntimeService().startProcessInstanceById(pd.getId());
 ```
 
-{{< note title="Version Tag" class="info" >}}
+### Version Tag
 The version tag is only for tagging and will neither influence the `startProcessInstanceByKey`
 nor the `startProcessInstanceById` behavior.
-{{< /note >}}
 
-{{< note title="Latest Version" class="info" >}}
+
+### Latest Version
 The Process Definition `version` and `versionTag` are separate properties. When querying with
 `ProcessDefinitionQuery#latestVersion()`, the Process Definition with the largest `version` number is located for
 a given key. Adding a version tag filter to this query might provide an empty result if the latest Process Definition
 doesn't contain the queried version tag.
-{{< /note >}}
+
 
 # Process Instance Migration
 
 By default, when a new process version is deployed, process instances running on previous versions are not affected.
-[Process instance migration]({{< ref "/user-guide/process-engine/process-instance-migration.md" >}}) can be used
+[Process instance migration](../../user-guide/process-engine/process-instance-migration.md) can be used
 to migrate process instances to a new version.

@@ -48,11 +48,11 @@ Once this is done, you can use the process engine configuration to plug in the c
 
 Note that, even if you have already users created with passwords hashed by other algorithms, e.g., old custom algorithms or the Camunda default hash algorithm `SHA-512`, they can still automatically be resolved by the engine although you have added your custom algorithm afterwards. The property `customPasswordChecker` is a list of hashing algorithms to be used to check (older) passwords. The Camunda default hashing algorithms are automatically added, so please only add your previous custom `passwordEncryptor` implementation to that list.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 
 Please do not use your own implementation of a hash function, but rather a standard that has been peer reviewed!
 
-{{< /note >}}
+
 
 
 # Customize the Salt generation

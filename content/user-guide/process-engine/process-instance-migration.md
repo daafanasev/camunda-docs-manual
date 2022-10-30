@@ -35,7 +35,7 @@ is mostly transparent, so that a task that was started before migration can be c
 The same principle is applied to the other BPMN element types.
 
 For cases in which activities are not semantically equivalent,
-we recommend combining migration with the [process instance modification API]({{< ref "/user-guide/process-engine/process-instance-modification.md" >}}), e.g.,
+we recommend combining migration with the [process instance modification API](../../user-guide/process-engine/process-instance-modification.md), e.g.,
 canceling an activity instance before migration and starting a new instance after migration.
 
 In the remainder of this section, the following process models are used to illustrate the API and effects of migration unless otherwise noted:
@@ -49,7 +49,7 @@ Process `exampleProcess:2`:
 <div data-bpmn-diagram="../bpmn/process-instance-migration/example2"></div>
 
 {{< enterprise >}}
-  The Camunda enterprise edition provides a user interface to migrate process instances in [Camunda Cockpit]({{< ref "/webapps/cockpit/bpmn/process-instance-migration.md" >}})
+  The Camunda enterprise edition provides a user interface to migrate process instances in [Camunda Cockpit](../../webapps/cockpit/bpmn/process-instance-migration.md)
 {{< /enterprise >}}
 
 # Process Instance Migration by Example
@@ -118,7 +118,7 @@ From the accountant's perspective, migration is completely transparent while wor
 # API
 
 The following gives a structured overview of the Java API for process instance migration. Note that these operations are also available
-via [REST]({{< ref "/reference/rest/migration/_index.md" >}}).
+via [REST](../../reference/rest/migration/_index.md).
 
 ## Creating a Migration Plan
 
@@ -146,18 +146,18 @@ Supported activity relationships are:
 
 A migration plan is *validated after creation* to detect migration
 instructions that are not supported by the process engine. See the [chapter on
-creation time validation]({{< relref "#creation-time-validation" >}}) for details.
+creation time validation]({{< relref "#creation-time-validation) for details.
 
 In addition, a migration plan is *validated before execution* to ensure that it can be applied to a specific process instance. For example,
 migration instructions for some activity types are only supported for transition instances (i.e., active asynchronous continuations) but not for
-activity instances. See the [chapter on execution time validation]({{< relref "#execution-time-validation" >}}) for details.
+activity instances. See the [chapter on execution time validation]({{< relref "#execution-time-validation) for details.
 
-{{< note title="Validation Limitations" class="warning" >}}
+### Validation Limitations
 The process engine can only validate that the process model can be migrated.
 But there are other aspects the user has to care about. You can read more
 about this in the section about [aspects not covered by
 validation](#aspects-not-covered-by-validation).
-{{< /note >}}
+
 
 ### One-to-One Relation Instruction
 
@@ -174,16 +174,16 @@ instance state is preserved when migration is executed.
 
 When migrating events, it is possible to decide whether the corresponding event
 triggers should be updated or not.  See the [BPMN-specific considerations on
-events]({{< relref "#events" >}}) for details. When generating a migration
+events]({{< relref "#events) for details. When generating a migration
 plan, it is possible to define this setting for generated instructions on 
-[User Tasks]({{< relref "#user-task" >}}) containing `timeout` task listeners and 
+[User Tasks]({{< relref "#user-task) containing `timeout` task listeners and 
 between events by using the method `updateEventTrigger`. For example, 
 the following code generates a migration instruction for a boundary event and 
 updates its event trigger during migration.
 
-{{< note title="Conditional Events" class="info" >}}
+### Conditional Events
 For conditional events the `#updateEventTrigger` is mandatory.
-{{< /note >}}
+
 
 ```java
 MigrationPlan migrationPlan = processEngine.getRuntimeService()
@@ -216,7 +216,7 @@ MigrationPlan migrationPlan = processEngine.getRuntimeService()
 Currently, it is not possible to set transient variables asynchronously. However,
 you can [set transient variables] synchronously.
 
-[set transient variables]: {{< ref "/user-guide/process-engine/variables.md#transient-variables" >}}
+[set transient variables]: ../../user-guide/process-engine/variables.md#transient-variables" >}}
 
 ## Generating a migration plan
 
@@ -375,7 +375,7 @@ runtimeService.newMigration(migrationPlan)
 ```
 
 Migration is successful if all process instances can be migrated. Confer the
-[chapter on validation]({{< relref "#validation" >}}) to learn which kind of validation is performed before
+[chapter on validation]({{< relref "#validation) to learn which kind of validation is performed before
 a migration plan is executed.
 
 
@@ -437,7 +437,7 @@ from the process definition id and task definition key. The task is not reinitia
 #### Timeout Task Listeners
 
 User tasks with attached task listeners of event type `timeout` define persistent event triggers that can be updated or preserved during migration.
-For the associated timers, the considerations of [catching events]({{< relref "#events" >}}) apply here as well. On migration of the user task, 
+For the associated timers, the considerations of [catching events]({{< relref "#events) apply here as well. On migration of the user task, 
 the following semantics are applied:
 
 * If a timeout task listener is found in the source and target process definition based on its `id`, its persistent event trigger (i.e. timer) is migrated
@@ -448,11 +448,11 @@ the following semantics are applied:
 ### Receive Task
 
 A receive task defines a persistent event trigger that can be updated or preserved during migration.
-The considerations for [intermediate catch events]({{< relref "#events" >}}) apply here as well.
+The considerations for [intermediate catch events]({{< relref "#events) apply here as well.
 
 ### External Task
 
-When an active [external task]({{< relref "external-tasks.md" >}}) is migrated, all properties of the external task instance (i.e., `org.camunda.bpm.engine.externaltask.ExternalTask`) are preserved
+When an active [external task]({{< relref "external-tasks.md) is migrated, all properties of the external task instance (i.e., `org.camunda.bpm.engine.externaltask.ExternalTask`) are preserved
 apart from activity id, process definition key, and process definition id. In particular, this means that attributes like topic and lock state do not change.
 
 It is possible to map activities that are implemented as external tasks to each other even if they have different types. For example, an external send task can be mapped to an external service task.
@@ -474,7 +474,7 @@ In addition, the following conditions must hold:
 
 To migrate an event-based gateway instance, a migration instruction to another event-based gateway must be part of the migration plan.
 In order to migrate the gateway's event triggers (event subscriptions, jobs), the events following to the gateway can be mapped as well.
-See the [events section]({{< relref "#events" >}}) for the semantics of instructions between events.
+See the [events section]({{< relref "#events) for the semantics of instructions between events.
 
 
 ## Events
@@ -490,7 +490,7 @@ When mapping events, there are two configuration options:
 2. **The event trigger is updated**: The migrated event instance is triggered according to the target definition.
   This behavior can be specified by calling `migrationBuilder.mapActivities("sourceTask", "targetTask").updateEventTrigger()`
 
-{{< note title="Timer Events" class="info" >}}
+### Timer Events
   Using `#updateEventTrigger` with a timer event does not take into account that a certain amount of time has already elapsed before migration.
   In consequence, the event trigger is reset according to the target event.
 
@@ -507,11 +507,11 @@ When mapping events, there are two configuration options:
   Specifying the instruction `migrationBuilder.mapActivities("timer", "timer").updateEventTrigger()` is going to reinitialize the timer job.
   In effect, the boundary event fires ten days after migration. In contrast, if `updateEventTrigger` is not used, then the
   timer job configuration is preserved. In effect, it is going to trigger five days after the activity was started regardless of when the migration is performed.
-{{< /note >}}
 
-{{< note title="Conditional Events" class="info" >}}
+
+### Conditional Events
 The usage of `#updateEventTrigger` is mandatory for migrating conditional events. The condition is overridden by the condition of the new conditional event.
-{{< /note >}}
+
 
 
 ### Boundary Event
@@ -588,9 +588,9 @@ And this target process:
 When migrating the same process instance state as in the above example, the inner compensation event is **not** going to
 trigger compensation of the *Archive Application* activity but only the outer compensation event.
 
-{{< note title="Active Compensation" class="info" >}}
+### Active Compensation
   Migrating process instances with active compensation handlers is not supported yet.
-{{< /note >}}
+
 
 
 #### Adding Compensation Events
@@ -652,12 +652,12 @@ If the target activity is not a multi-instance activity, it is sufficient to hav
 
 When an asynchronous continuation is active, i.e., the corresponding job has not been completed by the job executor yet, it is represented in the form of a *transition instance*. For example, this is the case when job execution failed and an incident has been created. For transition instances the mapping instructions apply just like for activity instances. That means, when there is an instruction from activity `userTask` to activity `newUserTask`, all transition instances that represent an asynchronous continuation before or after `userTask` are migrated to `newUserTask`. In order for this to succeed, the target activity must be asynchronous as well.
 
-{{< note title="Limitation with asyncAfter" class="warning" >}}
+### Limitation with asyncAfter
   When migrating a transition instance that represents an asynchronous continuation *after* an activity, migration is only successful if the following limitations hold:
 
   * If the source activity has no outgoing sequence flow, the target activity must not have more than one outgoing sequence flow
   * If the source activity has outgoing sequence flows, the target activity must have sequence flows with the same IDs or must have not more than one outgoing sequence flow. This also applies if the source activity has a single sequence flow.
-{{< /note >}}
+
 
 
 # Operational Semantics
@@ -688,7 +688,7 @@ ensured by the validation step. In particular, the following conditions must hol
 
 * Exactly one instruction must apply to a leaf activity instance (e.g., user task)
 * At most one instruction must apply to a non-leaf activity instance (e.g., embedded subprocess)
-* The overall assignment must be executable. See the [validation chapter]({{< relref "#validation" >}}) for details.
+* The overall assignment must be executable. See the [validation chapter]({{< relref "#validation) for details.
 
 
 ### Cancellation of Unmapped Activity Instances and Event-Handler Entities
@@ -747,10 +747,10 @@ the following requirements:
 * It has to map activities of the same type
 * It has to be a one-to-one mapping
 * A migrated activity must remain a descendant of its closest migrating ancestor scope (**Hierarchy Preservation**)
-* The migration plan adheres to [BPMN-element-specific considerations]({{< relref "#bpmn-specific-api-and-effects" >}})
+* The migration plan adheres to [BPMN-element-specific considerations]({{< relref "#bpmn-specific-api-and-effects)
 * A set variable must not be of type `Object` **AND** its `serializationFormat` must not be `application/x-java-serialized-object`
   * Validation is skipped when the engine configuration flag `javaSerializationFormatEnabled` is set to `true`
-  * Please see [Process Engine Configuration Reference]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled" >}}) for more details
+  * Please see [Process Engine Configuration Reference](../../reference/deployment-descriptors/tags/process-engine.md#javaSerializationFormatEnabled) for more details
 
 If validation reports errors, migration fails with a `MigrationPlanValidationException`
 providing a `MigrationPlanValidationReport` object with details on the
@@ -763,7 +763,7 @@ An activity must stay a descendant of its closest ancestor scope that migrates (
 
 Consider the following migration plan for the example processes shown at the
 [beginning of this chapter]({{<
-ref "/user-guide/process-engine/process-instance-migration.md" >}}):
+ref "/user-guide/process-engine/process-instance-migration.md):
 
 ```java
 MigrationPlan migrationPlan = processEngine.getRuntimeService()
@@ -861,9 +861,9 @@ migrated if they are instances of the following element types:
 
 Transition instances can be migrated for any activity type.
 
-[batch]: {{< ref "/user-guide/process-engine/batch.md" >}}
-[job executor]: {{< ref "/user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
-[execution jobs]: {{< ref "/user-guide/process-engine/batch.md#execution-jobs" >}}
+[batch]: ../../user-guide/process-engine/batch.md" >}}
+[job executor]: ../../user-guide/process-engine/the-job-executor.md#job-execution-in-heterogeneous-clusters" >}}
+[execution jobs]: ../../user-guide/process-engine/batch.md#execution-jobs" >}}
 
 
 ### Aspects Not Covered by Validation
@@ -875,7 +875,7 @@ Validation cannot ensure that such data is useful in the context of the target p
 
 #### Deserialization of Object Variables
 
-[Object type variables]({{< ref "/user-guide/process-engine/variables.md#supported-variable-values" >}}) represent Java objects. That means they have a serialized value along with a Java type name that is used to deserialize the value into a Java object. When migrating between processes of different process
+[Object type variables](../../user-guide/process-engine/variables.md#supported-variable-values) represent Java objects. That means they have a serialized value along with a Java type name that is used to deserialize the value into a Java object. When migrating between processes of different process
 applications, it may occur that an Object variable refers to a Java class that does not exist in the process
 application of the target process.
 

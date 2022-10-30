@@ -10,7 +10,7 @@ menu:
 
 ---
 
-Before a process (or case, or decision) can be executed by the process engine, it has to be deployed. A deployment is a logical entity that groups multiple resources that are deployed together. Deployments can be made programmatically via Java API or [REST API]({{< ref "/reference/rest/deployment/post-deployment.md" >}}), or declaratively for resources of a [Process Application]({{< ref "/user-guide/process-applications/_index.md" >}}). This section covers advanced deployment concepts.
+Before a process (or case, or decision) can be executed by the process engine, it has to be deployed. A deployment is a logical entity that groups multiple resources that are deployed together. Deployments can be made programmatically via Java API or [REST API](../../reference/rest/deployment/post-deployment.md), or declaratively for resources of a [Process Application](../../user-guide/process-applications/_index.md). This section covers advanced deployment concepts.
 
 # Deployments in a Clustered Scenario
 
@@ -26,4 +26,4 @@ By default, the exclusive lock acquisition is enabled. If this is not desired, i
 
 {{< note class="warning" title="H2 Database" >}}
 Note that the H2 database is not supported in a clustered scenario. The process engine creates no exclusive locks because H2 uses table level locks by default, which may cause deadlocks if the deploy command needs to get a new Id using the DbIdGenerator while performing a deployment.
-{{< /note >}}
+

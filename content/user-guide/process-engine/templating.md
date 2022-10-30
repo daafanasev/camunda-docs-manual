@@ -42,9 +42,9 @@ When using an embedded process engine, the template engine libraries must be add
 application deployment. When using the process engine in a maven `war` project, the template engine
 dependencies must be added as dependencies to the maven `pom.xml` file:
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   Please import the [Camunda BOM](/get-started/apache-maven/) to ensure correct versions for every Camunda project.
-{{< /note >}}
+
 
 ```xml
 <dependencies>
@@ -71,9 +71,9 @@ When using a shared process engine, the template engine must be added to the sha
 classpath. The procedure for this depends on the application server. In Apache Tomcat, the
 libraries have to be added to the shared `lib/` folder.
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   [FreeMarker](http://freemarker.org/) is pre-installed in the Camunda pre-packaged distribution.
-{{< /note >}}
+
 
 
 # Use a Template Engine
@@ -145,9 +145,9 @@ When using an embedded process engine, the XSLT template engine library must be 
 application deployment. When using the process engine in a maven `war` project, the template engine
 dependency must be added as dependencies to the maven `pom.xml` file:
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   Please import the [Camunda BOM](/get-started/apache-maven/) to ensure correct versions for every Camunda project.
-{{< /note >}}
+
 
 ```xml
 <dependencies>
@@ -197,6 +197,6 @@ examples repository..
 [freemarker]: http://freemarker.org/
 [velocity]: http://velocity.apache.org/
 [camunda-template-engines]: https://github.com/camunda/camunda-template-engines-jsr223
-[use-scripts]: {{< ref "/user-guide/process-engine/scripting.md" >}}
-[script-source]: {{< ref "/user-guide/process-engine/scripting.md#script-source" >}}
+[use-scripts]: ../../user-guide/process-engine/scripting.md" >}}
+[script-source]: ../../user-guide/process-engine/scripting.md#script-source" >}}
 [xslt-example]: https://github.com/camunda/camunda-bpm-examples/tree/master/scripttask/xslt-scripttask

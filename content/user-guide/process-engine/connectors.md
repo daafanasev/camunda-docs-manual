@@ -29,7 +29,7 @@ connectors. Currently the following connector implementations exist:
   </tr>
 </table>
 
-It is also possible to implement your own custom connector in camunda. For more information about extending connectors please visit the [Connector reference]({{< ref "/reference/connect/extending-connect.md" >}}). 
+It is also possible to implement your own custom connector in camunda. For more information about extending connectors please visit the [Connector reference](../../reference/connect/extending-connect.md). 
 
 
 # Configure Camunda Connect
@@ -45,9 +45,9 @@ The following `connect` artifacts exist:
 
 # Maven Coordinates
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   Please import the [Camunda BOM](/get-started/apache-maven/) to ensure correct versions for every Camunda project.
-{{< /note >}}
+
 
 
 ## camunda-connect-core
@@ -97,7 +97,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 
 ## Configure the Process Engine Plugin
 
-`camunda-engine-plugin-connect` contains a class called `org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< ref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
+`camunda-engine-plugin-connect` contains a class called `org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism](../../user-guide/process-engine/process-engine-plugins.md). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,14 +117,14 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 </bpm-platform>
 ```
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   When using a pre-built distribution of Camunda Platform, the plugin is already pre-configured.
-{{< /note >}}
+
 
 
 # Use Connectors
 
-To use a connector, you have to add the Camunda extension element [connector]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#camunda-connector" >}}). The connector is configured by a unique [connectorId]({{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#camunda-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< ref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
+To use a connector, you have to add the Camunda extension element [connector](../../reference/bpmn20/custom-extensions/extension-elements.md#camunda-connector). The connector is configured by a unique [connectorId](../../reference/bpmn20/custom-extensions/extension-elements.md#camunda-connectorid), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping](../../user-guide/process-engine/variables.md#input-output-variable-mapping) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
 
 As an example, a shortened configuration of the Camunda SOAP connector implementation is shown. A complete [example](https://github.com/camunda/camunda-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Camunda examples repository](https://github.com/camunda/camunda-bpm-examples) on GitHub.
 

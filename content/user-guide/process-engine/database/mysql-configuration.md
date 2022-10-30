@@ -16,11 +16,11 @@ This section documents the supported MySQL configuration.
 The engine's MySQL database schema does not support milliseconds precision for the column types `TIMESTAMP` and `DATETIME`: 
 I.e., a to be stored value is rounded to the next or previous second, e.g., `2021-01-01 15:00:46.731` is rounded to `2021-01-01 15:00:47`.
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 The missing millisecond’s precision for date/time values impacts the process engine's behavior. 
-Please read [how to configure the MySQL JDBC Driver]({{< ref "#jdbc-driver-configuration" >}}) 
+Please read [how to configure the MySQL JDBC Driver]({{< ref "#jdbc-driver-configuration) 
 to ensure that date/time values are handled correctly.
-{{< /note >}}
+
 
 ## JDBC Driver Configuration
 
@@ -29,9 +29,9 @@ of the process engine.
 
 ### Disable sending milliseconds for date/time values
 
-{{< note title="Heads Up!" class="info" >}}
+### Heads Up!
 This configuration flag is mandatory to avoid unexpected behavior when operating the process engine with MySQL.
-{{< /note >}}
+
 
 When sending a date/time value as part of any SQL statement to the database, the MySQL JDBC Driver >= 5.1.23 sends milliseconds. 
 This behavior is problematic since the engine's MySQL database [schema does not support milliseconds precision for date/time values][mysql-schema-milliseconds].

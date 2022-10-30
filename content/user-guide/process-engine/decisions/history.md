@@ -19,12 +19,12 @@ History of the platform. The history entity is of type
 For details about the history mechanism as such, refer to the [History and Audit
 Event Log].
 
-{{< note title="History Level" class="info" >}}
+### History Level
 
 History level **FULL** is required. Otherwise, no history
 for decisions is created.
 
-{{< /note >}}
+
 
 # Query for evaluated Decisions
 
@@ -214,8 +214,8 @@ You can audit the evaluated decision definitions in the [Cockpit] webapp.
 
 
 
-[Cockpit]: {{< ref "/webapps/cockpit/dmn/_index.md" >}}
-[History and Audit Event Log]: {{< ref "/user-guide/process-engine/history.md" >}}
-[DMN 1.3 reference]: {{< ref "/reference/dmn/decision-table/hit-policy.md" >}}
-[BPMN business rule task]: {{< ref "/reference/bpmn20/tasks/business-rule-task.md#using-camunda-dmn-engine" >}}
-[CMMN decision task]: {{< ref "/reference/cmmn11/tasks/decision-task.md" >}}
+[Cockpit]: ../../webapps/cockpit/dmn/_index.md" >}}
+[History and Audit Event Log]: ../../user-guide/process-engine/history.md" >}}
+[DMN 1.3 reference]: ../../reference/dmn/decision-table/hit-policy.md" >}}
+[BPMN business rule task]: ../../reference/bpmn20/tasks/business-rule-task.md#using-camunda-dmn-engine" >}}
+[CMMN decision task]: ../../reference/cmmn11/tasks/decision-task.md" >}}

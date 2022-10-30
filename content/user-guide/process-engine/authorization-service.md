@@ -71,7 +71,7 @@ The basic permissions available in the engine are:
 Note that the permission **None** does not mean no permissions are granted. Instead, it represents "no action".
 Additionally, the **All** permission will vanish from a user if a single permission is revoked.
 
-For detailed list of available permissions please check [Permission by resource]({{< relref "#permissions-by-resource" >}}) section.
+For detailed list of available permissions please check [Permission by resource]({{< relref "#permissions-by-resource) section.
 
 A single authorization object may assign multiple permissions to a single user and resource:
 
@@ -230,9 +230,9 @@ There are three types of authorizations:
   </tr>  
 </table>
 
-{{< note class="warning" title="Performance of REVOKE Authorizations" >}}
-See the [Performance Considerations]({{< relref "#performance-considerations" >}}) section on this Page.
-{{< /note >}}
+{{< note class="warning)
+See the [Performance Considerations]({{< relref "#performance-considerations) section on this Page.
+
 
 ## Authorization Precedence
 
@@ -259,7 +259,7 @@ When embedding the process engine into a custom application, the application nee
 
 {{< note class="info" title="Authentication vs. Authorization" >}}
 Authentication and Authorization are two distinct concepts as explained [here](https://en.wikipedia.org/wiki/Authentication#Authorization).
-{{< /note >}}
+
 
 # Permissions by Resource
 
@@ -403,7 +403,7 @@ The following table gives an overview for which resources they are available:
   </tbody>
 </table>
 
-To execute an operation [asynchronously]({{< ref "/user-guide/process-engine/batch.md">}}), only a **Create** permission on the Batch Resource is required. However, when executing the same operation synchronously, the specific permissions (e.g. **Delete** on **Process Instance Resource**) are checked. 
+To execute an operation [asynchronously](../../user-guide/process-engine/batch.md">}}), only a **Create** permission on the Batch Resource is required. However, when executing the same operation synchronously, the specific permissions (e.g. **Delete** on **Process Instance Resource**) are checked. 
 
 For example, a user without the **Update** permission on the **Process Instance Resource** and granted **Create** permission on the **Batch Resource** can modify multiple process instances asynchronously by creating a batch. However, the user can't execute this operation synchronously.
 
@@ -555,10 +555,10 @@ In Addition to **Update**, **Read** and **Delete**, the following permissions ar
 
 The **Create Instance** permission is required to start new process instances.
 
-{{< note title="Start new process instance" class="info" >}}
+### Start new process instance
   To perform that action, the user also needs to have **Create** permission on the process instance resource.
 
-{{< /note >}}
+
 
 GRANT and REVOKE authorizations with **Retry Job**, **Suspend**, **Suspend Instance**, **Update Instance Variable**, and **Update Task Variable** permissions precede over **Update**.
 Keep in mind that user who is allowed to perform variable updates could trigger other changes in the process by updating a variable. For example, successful evaluation of conditional event related to this variable.
@@ -852,11 +852,11 @@ Camunda Platform has no explicit concept of "administrator" beyond it being a us
 
 When downloading the Camunda Platform distribution, the invoice example application creates a group with id `camunda-admin` and grants all authorizations on all resources to this group.
 
-In absense of the demo application, this task is performed by the [Camunda Admin Web Application]({{< ref "/webapps/admin/user-management.md#initial-user-setup" >}}). If the Camunda webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `camunda-admin` group is created and granted all permissions on all resources. 
+In absense of the demo application, this task is performed by the [Camunda Admin Web Application](../../webapps/admin/user-management.md#initial-user-setup). If the Camunda webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `camunda-admin` group is created and granted all permissions on all resources. 
 
-{{< note title="LDAP" class="info" >}}
+### LDAP
 The group "camunda-admin" is not created when using LDAP (since LDAP is only accessed in a read-only way). Also see the below section on the administrator authorization plugin.
-{{< /note >}}
+
 
 ## The Administrator Authorization Plugin
 
@@ -882,9 +882,9 @@ The following is an example of how to configure the administrator authorization 
 
 The plugin will make sure that administrator authorizations (ALL permissions) are granted on all resources whenever the process engine is started.
 
-{{< note title="" class="info" >}}
+### Заметка class="info" >}}
   It is not necessary to configure all LDAP users and groups which should have administrator authorization. It is usually enough to configure a single user and use that user to log into the webapplication and create additional authorizations using the User Interface.
-{{< /note >}}
+
 
 Complete list of configuration properties:
 
@@ -927,7 +927,7 @@ Available values are:
 
 * `auto` (**default value**): This mode only checks for revoke authorizations if at least one revoke authorization currently exits for the current user or one of the groups the user is a member of. To achieve this it is checked once per command whether potentially applicable revoke authorizations exist. Based on the outcome, the authorization check then uses revoke or not. *NOTE:* Checking revoke authorizations is very expensive for resources with a high potential cardinality like tasks or process instances and can render authorized access to the process engine effectively unusable on most databases.
 
-Also see the [Performance Considerations]({{< relref "#performance-considerations" >}}) section on this page.
+Also see the [Performance Considerations]({{< relref "#performance-considerations) section on this page.
 
 # Java API example
 
@@ -988,7 +988,7 @@ authorizationService.saveAuthorization(authProcessInstance);
 ```
 # Camunda Admin Webapp
 
-The Camunda Admin Webapplication provides an out of the box [UI for configuring Authorizations]({{< ref "/webapps/admin/authorization-management.md" >}}).
+The Camunda Admin Webapplication provides an out of the box [UI for configuring Authorizations](../../webapps/admin/authorization-management.md).
 
 # Performance Considerations
 
@@ -1009,5 +1009,5 @@ On these databases, revoke authorizations are effectively unusable.
 
 Also see the [Configuration Options](#check-revoke-authorizations) section on this page.
 
-[hist-inst-perm-config-flag]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#enable-historic-instance-permissions" >}}
-[Removal-Time-based History Cleanup Strategy]: {{< ref "/user-guide/process-engine/history.md#removal-time-based-strategy" >}}
+[hist-inst-perm-config-flag]: ../../reference/deployment-descriptors/tags/process-engine.md#enable-historic-instance-permissions" >}}
+[Removal-Time-based History Cleanup Strategy]: ../../user-guide/process-engine/history.md#removal-time-based-strategy" >}}

@@ -25,9 +25,9 @@ table.
 
 This id generator is good for debugging and testing since it generates human readable ids.
 
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   The Database Id Generator should **never** be used in production since it cannot handle high levels of concurrency.
-{{< /note >}}
+
 
 
 # The UUID Generator
@@ -35,9 +35,9 @@ This id generator is good for debugging and testing since it generates human rea
 The StrongUuidGenerator uses a UUID generator which uses the [Java UUID Generator (JUG)][1] library
 internally.
 
-{{< note title="" class="warning" >}}
+### Заметка class="warning" >}}
   Always use the StrongUuidGenerator for production setups.
-{{< /note >}}
+
 
 In the [Camunda Platform Full Distributions][2], the
 StrongUuidGenerator is preconfigured and the default Id Generator used by the process engine.
@@ -70,4 +70,4 @@ Additionally, you need the following maven dependency:
 ```
 
 [1]: https://mvnrepository.com/artifact/com.fasterxml.uuid/java-uuid-generator
-[2]: {{< ref "/introduction/downloading-camunda.md#full-distribution" >}}
+[2]: ../../introduction/downloading-camunda.md#full-distribution" >}}

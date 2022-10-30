@@ -27,7 +27,7 @@ for more details).
 # Concurrency conflicts in CockroachDB
 
 Whenever the process engine detects a concurrency conflict between transactions, it reports an
-`OptimisticLockingException` (for more details please see [this docs section]({{< ref "/user-guide/process-engine/transactions-in-processes.md#the-optimisticlockingexception" >}})), 
+`OptimisticLockingException` (for more details please see [this docs section](../../user-guide/process-engine/transactions-in-processes.md#the-optimisticlockingexception)), 
 which is then handled internally, or reported to the user. Since CockroachDB implements the `SERIALIZABLE`
 transaction isolation level, the process engine's optimistic locking mechanism does not apply. When CockroachDB
 is not able to serialize a concurrent transaction, it raises an error that causes the transaction to abort.
@@ -66,9 +66,9 @@ retried using a CRDB-specific mechanism:
   * When the telemetry is configured.
 * When manually triggering history cleanup with {{< javadocref page="org/camunda/bpm/engine/HistoryService.html#cleanUpHistoryAsync-boolean-" text="HistoryService#cleanUpHistoryAsync(boolean immediatelyDue)" >}}.
 * When fetching external tasks:
-  * With the External Tasks Rest API [endpoint]({{< ref "/reference/rest/external-task/fetch.md" >}}).
+  * With the External Tasks Rest API [endpoint](../../reference/rest/external-task/fetch.md).
   * With the execution of the {{< javadocref page="org/camunda/bpm/engine/ExternalTaskService.html" text="ExternalTaskService#fetchAndLock" >}} API calls.
-* When [acquiring jobs]({{< ref "/user-guide/process-engine/the-job-executor.md#job-acquisition" >}}) for execution by the job executor.
+* When [acquiring jobs](../../user-guide/process-engine/the-job-executor.md#job-acquisition) for execution by the job executor.
 
 It is important to note that the CockroachDB retry mechanism is applied to API calls where an 
 `OptimisticLockingException` is handled internally in the regular case. The mechanism is also
@@ -93,7 +93,7 @@ recommendations on how to configure and use the process engine with CockroachDB.
 ### Un-ignorable historic `OptimisticLockingException`
 
 The process engine may generate large amounts of historical data, and provides the [history cleanup
-feature]({{< ref "/user-guide/process-engine/history.md#history-cleanup" >}}) to ensure that "old"
+feature](../../user-guide/process-engine/history.md#history-cleanup) to ensure that "old"
 data is removed. The History Cleanup Removal-Time-based Strategy allows for historical data associated
 with still running Process Instances to be cleaned up. Since running Process Instances continue
 generating historical data, removing the same data in parallel is viewed as an `OptimisticLockingException`.
@@ -143,7 +143,7 @@ same scenario applies when performing multiple concurrent deployments.
 
 ### Using External Transaction management with the Spring/Java EE integrations
 
-{{< note title="When to consider the below recommendations" class="info" >}}
+### When to consider the below recommendations
 This section explains how the process engine can be coupled with CockroachDB using external 
 transaction management. The descriptions below can be applied to both the Spring, and Java EE 
 Transaction integrations, as they operate on similar concepts.
@@ -152,9 +152,9 @@ Note that the configuration described below is only required when transactions i
 [here](#custom-cockroachdb-transaction-retry-mechanism) are managed by the Spring/Java EE frameworks. 
 When the process engine is used inside a Spring/Java EE application but left to manage its own 
 transactions, the recommendations from the sections above remain valid.
-{{< /note >}}
 
-The [Spring]({{< ref "/user-guide/spring-framework-integration/transactions.md" >}})/[Java EE]({{< ref "/user-guide/cdi-java-ee-integration/jta-transaction-integration.md" >}})/[Quarkus]({{< ref "/user-guide/quarkus-integration/configuration.md#datasource" >}}) 
+
+The [Spring](../../user-guide/spring-framework-integration/transactions.md)/[Java EE](../../user-guide/cdi-java-ee-integration/jta-transaction-integration.md)/[Quarkus](../../user-guide/quarkus-integration/configuration.md#datasource) 
 Transaction integrations enable developers to manage transactions through the respective framework. 
 This means that the process engine doesn't control when transactions are started, committed, 
 or rolled back. 
@@ -178,7 +178,7 @@ implement.
 
 ### Unsupported Exclusive Message correlation
 
-Exclusive Message correlation (see {{< javadocref page="org/camunda/bpm/engine/runtime/MessageCorrelationBuilder.html#correlateExclusively()" text="Javadocs" >}}) 
+Exclusive Message correlation (see {{< javadocref page="org/camunda/bpm/engine/runtime/MessageCorrelationBuilder.html#correlateExclusively()" text="Javadocs) 
 prevents multiple concurrent message correlations to be performed on a single Process execution. 
 When using the process engine with CockroachDB, it is not possible to use Exclusive Message correlation.
 
@@ -219,4 +219,4 @@ In the process engine, this may happen when a Process Instance is deleted by one
 transaction performs a modification on another, unrelated Process Instance. This results in a `CrdbTransactionRetryException` 
 , and the modification of the latter Process Instance will have to be retired.
 
-[descriptor-tags]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}
+[descriptor-tags]: ../../reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}

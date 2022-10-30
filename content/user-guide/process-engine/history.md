@@ -13,7 +13,7 @@ menu:
 
 The History Event Stream provides audit information about executed process instances.
 
-{{< img src="../img/process-engine-history.png" title="Process Engine History" >}}
+![img](img/process-engine-history.png)
 
 The process engine maintains the state of running process instances inside the database. This includes *writing* (1.) the state of a process instance to the database as it reaches a wait state and *reading* (2.) the state as process execution continues. We call this database the *runtime database*. In addition to maintaining the runtime state, the process engine creates an audit log providing audit information about executed process instances. We call this event stream the *history event stream* (3.). The individual events which make up this event stream are called *History Events* and contain data about executed process instances, activity instances, changed process variables and so forth. In the default configuration, the process engine will simply write (4.) this event stream to the *history database*. The `HistoryService` API allows querying this database (5.). The history database and the history service are optional components; if the history event stream is not logged to the history database or if the user chooses to log events to a different database, the process engine is still able to work and it is still able to populate the history event stream. This is possible because the BPMN 2.0 Core Engine component does not read state from the history database. It is also possible to configure the amount of data logged, using the `historyLevel` setting in the process engine configuration.
 
@@ -67,9 +67,9 @@ It can also be set using Spring XML or a deployment descriptor (bpm-platform.xml
 
 Note that when using the default history backend, the history level is stored in the database and cannot be changed later.
 
-{{< note title="History levels and Cockpit" class="info" >}}
-[The Camunda Platform Cockpit]({{< ref "/webapps/cockpit/_index.md" >}}) web application works best with History Level set to `FULL`. "Lower" History Levels will disable certain history-related features.
-{{< /note >}}
+### History levels and Cockpit
+[The Camunda Platform Cockpit](../../webapps/cockpit/_index.md) web application works best with History Level set to `FULL`. "Lower" History Levels will disable certain history-related features.
+
 
 # The Default History Implementation
 
@@ -315,9 +315,9 @@ historyService.createHistoricExternalTaskLogQuery()
 
 You can use the reports section to retrieve custom statistics and reports. Currently, we support the following kinds of reports:
 
-* [Instance Duration Report]({{< relref "#instance-duration-report" >}})
-* [Task Report]({{< relref "#task-report" >}})
-* [Finished Instance Report]({{< relref "#finished-instance-report" >}})
+* [Instance Duration Report]({{< relref "#instance-duration-report)
+* [Task Report]({{< relref "#task-report)
+* [Finished Instance Report]({{< relref "#finished-instance-report)
 
 
 
@@ -371,7 +371,7 @@ historyService
   .duration(PeriodUnit.MONTH);
 ```
 
-The supported period times and the confinement of the query works analogously to [Instance Duration Report]({{< relref "#instance-duration-report" >}}).
+The supported period times and the confinement of the query works analogously to [Instance Duration Report]({{< relref "#instance-duration-report).
 
 ### Finished Instance Report
 
@@ -439,7 +439,7 @@ If it is desired that operations are logged regardless whether they are performe
 
 ## Access the User Operation Log
 
-The user operation log can be accessed via the Java API. The history service can be used to execute a `UserOperationLogQuery` by calling `historyService.createUserOperationLogQuery().execute()`. The query can be restricted with various filtering options. The query is also [exposed in the REST API]({{< ref "/reference/rest/history/user-operation-log/get-user-operation-log-query.md" >}}).
+The user operation log can be accessed via the Java API. The history service can be used to execute a `UserOperationLogQuery` by calling `historyService.createUserOperationLogQuery().execute()`. The query can be restricted with various filtering options. The query is also [exposed in the REST API](../../reference/rest/history/user-operation-log/get-user-operation-log-query.md).
 
 
 ## User Operation Log Entries
@@ -1521,7 +1521,7 @@ The following describes the operations logged in the user operation log and the 
 
 In order to understand how to provide a custom history backend, it is useful to first look at a more detailed view of the history architecture:
 
-{{< img src="../img/process-engine-history-architecture.png" title="History Architecture" >}}
+![img](img/process-engine-history-architecture.png)
 
 Whenever the state of a runtime entity is changed, the core execution component of the process engine fires History Events. In order to make this flexible, the actual creation of the History Events as well as populating the history events with data from the runtime structures is delegated to the History Event Producer. The producer is handed in the runtime data structures (such as an ExecutionEntity or a TaskEntity), creates a new History Event and populates it with data extracted from the runtime structures.
 
@@ -1534,13 +1534,13 @@ Exchanging the History Event Handler with a custom implementation allows users t
 * Provide a custom implementation of the {{< javadocref page="org/camunda/bpm/engine/impl/history/handler/HistoryEventHandler.html" text="HistoryEventHandler" >}} interface.
 * Wire the custom implementation in the process engine configuration.
 
-{{< note title="Composite History Handling" class="info" >}}
+### Composite History Handling
   Note that if you provide a custom implementation of the HistoryEventHandler and wire it to the process engine, you override the default DbHistoryEventHandler. The consequence is that the process engine will stop writing to the history database and you will not be able to use the history service for querying the audit log. If you do not want to replace the default behavior but only provide an additional event handler, you can use the class `org.camunda.bpm.engine.impl.history.handler.CompositeHistoryEventHandler` that dispatches events to a collection of handlers.
-{{< /note >}}
-{{< note title="Spring Boot" class="info" >}}
+
+### Spring Boot
 
 Note that providing your custom `HistoryEventHandler` in a Spring Boot Starter environment works slightly differently. By default, the Camunda Spring Boot starter uses a `CompositeHistoryEventHandler` which wraps a list of HistoryEventHandler implementations that you can provide via the `customHistoryEventHandlers` engine configuration property. If you want to override the default `DbHistoryEventHandler`, you have to explicitly set the `enableDefaultDbHistoryEventHandler` engine configuration property to `false`.
-{{< /note >}}
+
 
 
 # Implement a Custom History Level
@@ -1597,7 +1597,7 @@ event for some instances of an event it must still return `true` if `entity` is 
 Please have a look at this [complete example][2] to get a better overview.
 
 ## Removal Time Inheritance
-Historic instances inherit the [removal time]({{< relref "#removal-time" >}}) from the respective historic top-level
+Historic instances inherit the [removal time]({{< relref "#removal-time) from the respective historic top-level
 instance. If the custom history level is configured in a way, so that the historic top-level instance is not written,
 the removal time is not available.
 
@@ -1631,7 +1631,7 @@ It deletes:
 * Historic case instances plus all related historic data (e.g., historic variable instances, historic task instances, etc.)
 * Historic batches plus all related historic data (historic incidents and job logs)
 
-History cleanup can be triggered manually or scheduled on a regular basis. Only [camunda-admins]({{< ref "/user-guide/process-engine/authorization-service.md#the-camunda-admin-group">}}) have permissions to execute history cleanup manually.
+History cleanup can be triggered manually or scheduled on a regular basis. Only [camunda-admins](../../user-guide/process-engine/authorization-service.md#the-camunda-admin-group">}}) have permissions to execute history cleanup manually.
 
 ## History Cleanup by Example
 
@@ -1654,9 +1654,9 @@ The following elements of Camunda history are cleanable:
 
 Note that cleaning one such instance always removes all dependent history data along with it. For example, cleaning a process instance removes the historic process instance as well as all historic activity instances, historic task instances, etc.
 
-{{< note title="Note" class="info" >}}
-The history clean up job does not delete historic [timer-start-event]({{< ref "/reference/bpmn20/events/timer-events.md#timer-start-event" >}}) jobs. The reason being that the responsibility of timer-start-event job is to start a process instance, i.e. it does not belong to a process instance.
-{{< /note >}}
+### Note
+The history clean up job does not delete historic [timer-start-event](../../reference/bpmn20/events/timer-events.md#timer-start-event) jobs. The reason being that the responsibility of timer-start-event job is to start a process instance, i.e. it does not belong to a process instance.
+
 
 ### History Time To Live (TTL)
 
@@ -1689,7 +1689,7 @@ The end time is persisted in the corresponding instance tables `ACT_HI_PROCINST`
 
 For process and decision instances in a hierarchy (e.g. a process instance that is started by another process instance via a BPMN Call Activity), the removal time of all instances is always equal to the removal time of the root instance.
 
-{{< img src="../img/history-cleanup-process-hierarchy.png" title="History Cleanup" >}}
+![img](img/history-cleanup-process-hierarchy.png)
 
 The removal time is persisted in *all* history tables. So in case of a process instance, the removal time is present in `ACT_HI_PROCINST` as well as the corresponding secondary entries in `ACT_HI_ACTINST`, `ACT_HI_TASKINST` etc.
 
@@ -1711,7 +1711,7 @@ Strengths:
 Limitations:
 
 * Can only remove data for which a removal time is set. This is especially not the case for data which has been created with Camunda versions < 7.10.0.
-* Changing the TTL of a definition only applies to history data that is created in the future. It does not dynamically update the removal time of already written history data. However, it is possible to [Set a Removal Time via Batch Operations]({{< ref "/user-guide/process-engine/batch-operations.md#set-a-removal-time">}}).
+* Changing the TTL of a definition only applies to history data that is created in the future. It does not dynamically update the removal time of already written history data. However, it is possible to [Set a Removal Time via Batch Operations](../../user-guide/process-engine/batch-operations.md#set-a-removal-time">}}).
 * History data of case instances is not cleaned up.
 
 ### End-Time-based Strategy
@@ -1728,11 +1728,11 @@ Limitations:
 * End time is only stored in the instances tables (`ACT_HI_PROCINST`, `ACT_HI_CASEINST`, `ACT_HI_DECINST` and `ACT_HI_BATCH`). To delete data from all history tables, the cleanable instances are first fetched via a `SELECT` statement. Based on that, `DELETE` statements are made for each history table. These statements can involve joins. This is less efficient than removal-time-based history cleanup.
 * Instance hierarchies are not cleaned up atomically. Since the individual instances have different end times, they are going to be cleaned up at different times. In consequence, hierarchies can appear partially removed.
 * [Historic Instance Permissions] are not cleaned up.
-* [History Cleanup Jobs]({{< ref "/user-guide/process-engine/history.md#historycleanupjobs-in-the-historic-job-log">}}) are not removed from the historic job log.
+* [History Cleanup Jobs](../../user-guide/process-engine/history.md#historycleanupjobs-in-the-historic-job-log">}}) are not removed from the historic job log.
 
 ## Cleanup Internals
 
-History cleanup is implemented via jobs and performed by the [job executor]({{< ref "/user-guide/process-engine/the-job-executor.md">}}). It therefore competes for execution resources with other jobs, e.g. triggering of BPMN timer events.
+History cleanup is implemented via jobs and performed by the [job executor](../../user-guide/process-engine/the-job-executor.md">}}). It therefore competes for execution resources with other jobs, e.g. triggering of BPMN timer events.
 
 Cleanup execution can be controlled in three ways:
 
@@ -1744,7 +1744,7 @@ See the [Cleanup configuration section](#history-cleanup-configuration) for how 
 
 If there is no cleanable data left, the cleanup job performs exponential backoff between runs to reduce system load. This backoff is limited to a maximum of one hour. Backoff does not apply to manual cleanup runs.
 
-If cleanup fails, the job executor's [retry mechanism]({{< ref "/user-guide/process-engine/the-job-executor.md#failed-jobs">}}) applies. Once the cleanup job has run out of retries, it is not executed again until one of the following actions is performed:
+If cleanup fails, the job executor's [retry mechanism](../../user-guide/process-engine/the-job-executor.md#failed-jobs">}}) applies. Once the cleanup job has run out of retries, it is not executed again until one of the following actions is performed:
 
 * History cleanup is triggered manually
 * The process engine is restarted (this resets the number of job retries to the default value)
@@ -1759,7 +1759,7 @@ The history cleanup jobs can be found via the API method `HistoryService#findHis
 #### Process/Decision/Case Definitions
 
 Process instances are only cleaned up if their corresponding definition has a valid time to live (TTL).
-Use the ["historyTimeToLive" extension attribute]({{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#historytimetolive">}}) of the process definition to define the TTL for all its instances:
+Use the ["historyTimeToLive" extension attribute](../../reference/bpmn20/custom-extensions/extension-attributes.md#historytimetolive">}}) of the process definition to define the TTL for all its instances:
 
 ```xml
 <process id="oneTaskProcess" name="The One Task Process" isExecutable="true" camunda:historyTimeToLive="5">
@@ -1781,12 +1781,12 @@ Once deployed, TTL can be updated via Java API:
   processEngine.getRepositoryService().updateProcessDefinitionHistoryTimeToLive(processDefinitionId, 5);
 ```
 
-Setting the value to `null` clears the TTL. The same can be done via [REST API]({{< ref "/reference/rest/process-definition/put-history-time-to-live.md">}}).
+Setting the value to `null` clears the TTL. The same can be done via [REST API](../../reference/rest/process-definition/put-history-time-to-live.md">}}).
 
 For decision and case definitions, TTL can be defined in a similar way.
 
 In case you want to provide an engine-wide default TTL for all process, decision and case definitions,
-use the ["historyTimeToLive" attribute]({{< ref "/reference/deployment-descriptors/tags/process-engine.md#historytimetolive">}})
+use the ["historyTimeToLive" attribute](../../reference/deployment-descriptors/tags/process-engine.md#historytimetolive">}})
 of the process engine configuration. This value is applied as the default whenever new definitions without TTL are deployed. Note that it therefore does not change the TTL of already deployed definitions. Use the API method given above to change TTL in this case.
 
 #### Batches
@@ -1798,7 +1798,7 @@ TTL for batches can be defined via attribute of the process engine configuration
 <property name="batchOperationHistoryTimeToLive">P5D</property>
 ```
 
-The `batchOperationsForHistoryCleanup` property can be configured in Spring based application or via custom [Process Engine Plugins]({{< ref "/user-guide/process-engine/process-engine-plugins.md">}}). It defines history time to live for each specific historic batch operation.
+The `batchOperationsForHistoryCleanup` property can be configured in Spring based application or via custom [Process Engine Plugins](../../user-guide/process-engine/process-engine-plugins.md">}}). It defines history time to live for each specific historic batch operation.
 
 ```xml
 <!-- specific TTL for each operation type -->
@@ -1829,7 +1829,7 @@ If the specific TTL is not set for a batch operation type, then the option `batc
 
 A history cleanup is always performed by executing a history cleanup job. As with all other jobs, the history cleanup job 
 will produce events that are logged in the historic job log. By default, those entries will stay in the log indefinitely 
-and cleanup must be configured explicitly. Please note that this only works for the [removal-time based history cleanup strategy]({{< ref "/user-guide/process-engine/history.md#removal-time-strategy">}}).
+and cleanup must be configured explicitly. Please note that this only works for the [removal-time based history cleanup strategy](../../user-guide/process-engine/history.md#removal-time-strategy">}}).
 
 The `historyCleanupJobLogTimeToLive` property can be used to define a TTL for historic job log entries produced by 
 history cleanup jobs. The property accepts values in the ISO-8601 date format. Note that only the notation to define a number of days is allowed.
@@ -1840,7 +1840,7 @@ history cleanup jobs. The property accepts values in the ISO-8601 date format. N
 
 #### Task Metrics
 
-The process engine reports [runtime metrics]({{< ref "/user-guide/process-engine/metrics.md">}}) to the database that can help draw conclusions about usage, load, and performance of the BPM platform.
+The process engine reports [runtime metrics](../../user-guide/process-engine/metrics.md">}}) to the database that can help draw conclusions about usage, load, and performance of the BPM platform.
 With every assignment of a user task, the related task worker is stored as a pseudonymized, fixed-length value in the `ACT_RU_TASK_METER_LOG` table together with a timestamp. Cleanup for this data needs to
 be configured explicitly if needed.
 
@@ -1851,9 +1851,9 @@ The property accepts values in the ISO-8601 date format. Note that only the nota
 <property name="taskMetricsTimeToLive">P540D</property>
 ```
 
-{{< note title="Heads Up!" class="warning" >}}
+### Heads Up!
 If you are an enterprise customer, your license agreement might require you to report some metrics annually. Please store task metrics from `ACT_RU_TASK_METER_LOG` for at least 18 months until they were reported.
-{{< /note >}}
+
 
 ### Cleanup Window
 
@@ -1904,10 +1904,10 @@ Removal time is defined per instance as `removal time = base time + TTL`. `base 
 
 Valid values are `start`, `end` and `none`. `end` is the default value and the recommended option. `start` is a bit more efficient when the process engine populates the history tables, because it does not have to make extra `UPDATE` statements when an instance finishes.
 
-{{< note title="Heads-up!" class="info" >}}
+### Heads-up!
 The calculation of the removal time can be enabled independently of the selected cleanup strategy of the process engine.
 This allows to perform a custom cleanup procedure outside the process engine by leveraging database capabilities (e.g. via table partitioning by removal time).
-{{< /note >}}
+
 
 ### Parallel Execution
 
@@ -1953,10 +1953,10 @@ related to the cleanup execution since the particular node ignores them.
 **Please Note:** The history cleanup configuration properties that are unrelated to the cleanup execution (e.g., 
 time to live, removal time strategy) still need to be defined among all nodes. 
 
-[configuration-options]: {{< ref "/reference/deployment-descriptors/tags/process-engine.md#history-cleanup-configuration-parameters">}}
+[configuration-options]: ../../reference/deployment-descriptors/tags/process-engine.md#history-cleanup-configuration-parameters">}}
 [1]: http://docs.camunda.org/latest/api-references/javadoc/org/camunda/bpm/engine/impl/history/event/HistoryEventTypes.html
 [2]: https://github.com/camunda/camunda-bpm-examples/tree/master/process-engine-plugin/custom-history-level
-[op-log-set-annotation-rest]: {{< ref "/reference/rest/history/user-operation-log/set-annotation.md" >}}
-[op-log-clear-annotation-rest]: {{< ref "/reference/rest/history/user-operation-log/clear-annotation.md" >}}
-[op-log-set-annotation-instance-mod]: {{< ref "/user-guide/process-engine/process-instance-modification.md#annotation" >}}
-[Historic Instance Permissions]: {{< ref "/user-guide/process-engine/authorization-service.md#historic-instance-permissions" >}}
+[op-log-set-annotation-rest]: ../../reference/rest/history/user-operation-log/set-annotation.md" >}}
+[op-log-clear-annotation-rest]: ../../reference/rest/history/user-operation-log/clear-annotation.md" >}}
+[op-log-set-annotation-instance-mod]: ../../user-guide/process-engine/process-instance-modification.md#annotation" >}}
+[Historic Instance Permissions]: ../../user-guide/process-engine/authorization-service.md#historic-instance-permissions" >}}
