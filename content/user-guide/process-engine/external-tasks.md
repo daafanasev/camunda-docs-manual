@@ -15,7 +15,7 @@ The process engine supports two ways of executing service tasks:
 1. Internal Service tasks: Synchronous invocation of code deployed along with a process application
 2. External tasks: Providing a unit of work in a list that can be polled by workers
 
-The first option is used when code is implemented as [Delegation Code]({{< ref "/user-guide/process-engine/delegation-code.md" >}}) or as a [Script]({{< ref "/user-guide/process-engine/scripting.md" >}}). By contrast, external (service) tasks work in a way that the process engine publishes a unit of work to a worker to fetch and complete. We refer to this as the *external task pattern*.
+The first option is used when code is implemented as [Delegation Code](../../user-guide/process-engine/delegation-code.md) or as a [Script](../../user-guide/process-engine/scripting.md). By contrast, external (service) tasks work in a way that the process engine publishes a unit of work to a worker to fetch and complete. We refer to this as the *external task pattern*.
 
 Note that the above distinction does not say whether the actual "business logic" is implemented locally or as a remote service. The Java Delegate invoked by an internal service task may either implement the business logic itself or it may call out to a web/rest service, send a message to another system and so forth. The same is true for an external worker. The worker can implement the business logic directly or again delegate to a remote system.
 
@@ -23,7 +23,7 @@ Note that the above distinction does not say whether the actual "business logic"
 
 The flow of executing external tasks can be conceptually separated into three steps, as depicted in the following image:
 
-{{< img src="../img/external-task-pattern.png" title="External Task Pattern" >}}
+![img](img/external-task-pattern.png "External Task Pattern")
 
 1. **Process Engine**: Creation of an external task instance
 2. **External Worker**: Fetch and lock external tasks
